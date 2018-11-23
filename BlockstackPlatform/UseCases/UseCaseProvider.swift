@@ -22,7 +22,7 @@ public final class UseCaseProvider: Core.UseCaseProvider {
     
     public func makeLikesUseCase() -> Core.LikesUseCase {
         let repository = Repository<Like>(configuration: configuration)
-        let cache = Cache<Like>(path: "allPosts")
+        let cache = Cache<Like>(path: "likes")
         return LikesUseCase(repository: repository, cache: cache)
     }
     

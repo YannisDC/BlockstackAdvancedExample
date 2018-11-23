@@ -54,7 +54,9 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     }
     
     func queryAll() -> Observable<[Like]> {
-        return repository.loadIndex(path: path, decrypt: encryption)
+        let fetchLikes = cache.fetchObjects().asObservable()
+        
+        let stored = repository.loadIndex(path: path, decrypt: encryption)
             .asObservable()
             .map({ (indexes) -> [Observable<Like>] in
                 return indexes.ids.map({ fileIndex in
@@ -64,5 +66,22 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
             })
             .flatMap(Observable.combineLatest)
             .share(replay: 1, scope: .forever)
+            .flatMap {
+                return self.cache.save(objects: $0)
+                    .asObservable()
+                    .map(to: [Like].self)
+                    .concat(Observable.just($0))
+            }
+        
+        return fetchLikes.concat(stored)
+    }
+}
+
+struct MapFromNever: Error {}
+extension ObservableType where E == Never {
+    func map<T>(to: T.Type) -> Observable<T> {
+        return self.flatMap { _ in
+            return Observable<T>.error(MapFromNever())
+        }
     }
 }

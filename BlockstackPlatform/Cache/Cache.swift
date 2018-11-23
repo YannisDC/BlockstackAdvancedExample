@@ -35,10 +35,10 @@ final class Cache<T: Cachable>: AbstractCache {
     }
     enum FileNames {
         static var objectFileName: String {
-            return "\(T.self).dat"
+            return "\(T.self).txt"
         }
         static var objectsFileName: String {
-            return "\(T.self)s.dat"
+            return "\(T.self)s.txt"
         }
     }
     
@@ -115,7 +115,7 @@ final class Cache<T: Cachable>: AbstractCache {
                 return Disposables.create()
 
             } catch {
-                observer(.error(error))
+                observer(.completed)
                 return Disposables.create()
             }
         }.subscribeOn(cacheScheduler)
@@ -135,13 +135,12 @@ final class Cache<T: Cachable>: AbstractCache {
                     observer(.completed)
                     return Disposables.create()
                 }
-                
                 let entities = try JSONDecoder().decode([T].self, from: data)
                 observer(MaybeEvent.success(entities.map { $0 }))
                 return Disposables.create()
                 
             } catch {
-                observer(.error(error))
+                observer(.completed)
                 return Disposables.create()
             }
         }.subscribeOn(cacheScheduler)
