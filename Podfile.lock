@@ -1,0 +1,53 @@
+PODS:
+  - Blockstack (0.4.0):
+    - CryptoSwift
+  - CryptoSwift (0.13.0)
+  - Gallery (2.2.0)
+  - GoogleAnalytics (3.17.0)
+  - KeychainAccess (3.1.2)
+  - RxAtomic (4.4.0)
+  - RxCocoa (4.4.0):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.4.0):
+    - RxAtomic (~> 4.4)
+  - SDVersion (4.3.2)
+  - SwiftLint (0.28.0)
+
+DEPENDENCIES:
+  - Blockstack
+  - Gallery
+  - GoogleAnalytics
+  - KeychainAccess
+  - RxCocoa
+  - RxSwift
+  - SDVersion
+  - SwiftLint
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Blockstack
+    - CryptoSwift
+    - Gallery
+    - GoogleAnalytics
+    - KeychainAccess
+    - RxAtomic
+    - RxCocoa
+    - RxSwift
+    - SDVersion
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Blockstack: b81a4d7033e5572823dd220b47acb09c8295bb19
+  CryptoSwift: 16e78bebf567bad1c87b2d58f6547f25b74c31aa
+  Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
+  GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
+  RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
+  RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
+  SwiftLint: 088cfacb75b45970017e62b7524d506776d60148
+
+PODFILE CHECKSUM: 98e01c7c2eb4e9dd22a5a9bd2042e2b42bb58d07
+
+COCOAPODS: 1.5.3

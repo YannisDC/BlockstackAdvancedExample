@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LikesViewController" customModule="PerfectDude" customModuleProvider="target">
+            <connections>
+                <outlet property="newLikeButton" destination="lWd-Js-KDF" id="MwJ-sA-tPU"/>
+                <outlet property="tableView" destination="age-Hd-e6i" id="Iqm-yw-Qnb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="fya-qm-0iv"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="age-Hd-e6i">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lWd-Js-KDF">
+                    <rect key="frame" x="296" y="617" width="63" height="30"/>
+                    <state key="normal" title="New Like"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="age-Hd-e6i" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="6yN-ou-EPN"/>
+                <constraint firstItem="age-Hd-e6i" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="H0Q-Us-uvH"/>
+                <constraint firstAttribute="trailing" secondItem="age-Hd-e6i" secondAttribute="trailing" id="IGO-C1-d52"/>
+                <constraint firstAttribute="bottom" secondItem="lWd-Js-KDF" secondAttribute="bottom" constant="20" id="NaH-2d-WXX"/>
+                <constraint firstAttribute="bottom" secondItem="age-Hd-e6i" secondAttribute="bottom" constant="60" id="dUh-vS-U1n"/>
+                <constraint firstAttribute="trailing" secondItem="lWd-Js-KDF" secondAttribute="trailing" constant="16" id="tJe-yY-Dsg"/>
+            </constraints>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_PerfectDudeTests {
+  umbrella header "Pods-PerfectDudeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
