@@ -14,13 +14,17 @@ final class LikesViewController: ViewController {
     internal var viewModel: LikesViewModel!
     fileprivate let disposeBag = DisposeBag()
     
+    internal var createLikeButton: UIBarButtonItem!
+    
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var newLikeButton: UIButton!
 }
 
 extension LikesViewController: Bindable {
 
     func bindViewModel() {
+        createLikeButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
+        navigationItem.rightBarButtonItem = createLikeButton
+        
         tableView.register(UINib(nibName: LikeTableViewCell.reuseID, bundle: nil), forCellReuseIdentifier: LikeTableViewCell.reuseID)
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 64
@@ -34,7 +38,7 @@ extension LikesViewController: Bindable {
             .asDriver()
         
         let input = LikesViewModel.Input(trigger: Driver.merge(viewWillAppear, pull),
-                                         createLikeTrigger: newLikeButton.rx.tap.asDriver(),
+                                         createLikeTrigger: createLikeButton.rx.tap.asDriver(),
                                          selection: tableView.rx.itemSelected.asDriver())
         let output = viewModel.transform(input: input)
 

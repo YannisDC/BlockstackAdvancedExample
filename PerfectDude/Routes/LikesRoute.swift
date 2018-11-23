@@ -11,6 +11,7 @@ import Core
 
 enum LikesRoute: Route {
     case overview
+    case likes
     case create
     case edit(_ like: Like)
     case selectImage

@@ -14,11 +14,13 @@ import Gallery
 final class LikesCoordinator: BaseCoordinator<LikesRoute> {
 
     fileprivate weak var rootViewController: BaseViewController!
+    fileprivate let navigationController: NavigationController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: LikesFactory
     fileprivate let usecaseProvider: UseCaseProvider
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
+    fileprivate var modalNavigationController = ModalNavigationController()
     
     // MARK: Init
     
@@ -30,6 +32,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
         self.delegate = delegate
         self.factory = factory
         self.usecaseProvider = usecaseProvider
+        self.navigationController = NavigationController()
     }
     
 
@@ -43,6 +46,8 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
         DispatchQueue.main.async {
             switch route {
             case .overview:
+                self.toOverview()
+            case .likes:
                 self.toLikes()
             case .create:
                 self.createLike()
@@ -58,29 +63,41 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
 // MARK: - Private
 
 private extension LikesCoordinator {
-    func toLikes() {
+    func toOverview() {
         let likesViewController = factory.makeLikesViewController(coordinator: self)
-        rootViewController.setContentViewController(likesViewController)
+        navigationController.setViewControllers([likesViewController], animated: false)
+        navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
+                                                      image: UIImage(named: "blockstack_filled"),
+                                                      selectedImage: nil)
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            navigationController
+        ]
+        rootViewController.setContentViewController(tabBarController)
+    }
+    
+    func toLikes() {
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
     }
     
     func createLike() {
         let createLikeViewController = factory.makeCreateLikeViewController(coordinator: self,
                                                                             imagesTrigger: imagesTrigger)
-        rootViewController.setContentViewController(createLikeViewController)
+        navigationController.pushViewController(createLikeViewController, animated: true)
     }
     
     func editLike(like: Like) {
         let editLikeViewController = factory.makeEditLikeViewController(coordinator: self,
                                                                           imagesTrigger: imagesTrigger,
                                                                           like: like)
-        rootViewController.setContentViewController(editLikeViewController)
+        navigationController.pushViewController(editLikeViewController, animated: true)
     }
     
     func toSelectImage() {
         let gallery = GalleryController()
         gallery.delegate = self
         Gallery.Config.tabsToShow = [.imageTab, .cameraTab]
-        rootViewController.setContentViewController(gallery)
+        rootViewController.contentViewController?.present(gallery, animated: true, completion: nil)
     }
 }
 
@@ -106,7 +123,7 @@ extension LikesCoordinator: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) { return }
     
     func galleryControllerDidCancel(_ controller: GalleryController) {
-        self.coordinate(to: .create)
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
         return
     }
     

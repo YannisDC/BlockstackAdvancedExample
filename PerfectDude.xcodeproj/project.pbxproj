@@ -35,6 +35,7 @@
 		DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */; };
 		DE5A6E2F21A5D4220097E941 /* EditLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */; };
 		DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68A76721A69188006E119A /* Observable+Extension.swift */; };
+		DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */; };
 		DE74615D219EEE2200D02824 /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615C219EEE2200D02824 /* LikesUseCase.swift */; };
 		DE746166219EEE7C00D02824 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615F219EEE7C00D02824 /* Repository.swift */; };
 		DE746167219EEE7C00D02824 /* Blockstack+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */; };
@@ -226,6 +227,7 @@
 		DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLikeViewModel.swift; sourceTree = "<group>"; };
 		DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditLikeViewController.xib; sourceTree = "<group>"; };
 		DE68A76721A69188006E119A /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
+		DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		DE74615C219EEE2200D02824 /* LikesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
 		DE74615F219EEE7C00D02824 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Blockstack+Ext.swift"; sourceTree = "<group>"; };
@@ -867,6 +869,7 @@
 				DE96F77021936388007A342A /* BaseViewController.swift */,
 				DE96F7B6219368C0007A342A /* ViewController.swift */,
 				DE96F77921936388007A342A /* NavigationController.swift */,
+				DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -1364,6 +1367,7 @@
 				DE96F7AF21936389007A342A /* NavigationController.swift in Sources */,
 				DE96F6DF21935FB5007A342A /* PerfectDude.xcdatamodeld in Sources */,
 				DE96F78921936389007A342A /* Operator.swift in Sources */,
+				DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */,
 				DE96F78B21936389007A342A /* ErrorPresentable.swift in Sources */,
 				DE96F79421936389007A342A /* String+Extension.swift in Sources */,
 				DE5A6E1821A57CD00097E941 /* LikeItemViewModel.swift in Sources */,

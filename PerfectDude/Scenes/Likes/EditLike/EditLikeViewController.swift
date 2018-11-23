@@ -15,9 +15,10 @@ final class EditLikeViewController: ViewController {
     internal var viewModel: EditLikeViewModel!
     fileprivate let disposeBag = DisposeBag()
     
+    internal var editButton: UIBarButtonItem!
+    internal var deleteButton: UIBarButtonItem!
+    
     @IBOutlet private weak var cancelButton: UIButton!
-    @IBOutlet private weak var editButton: UIButton!
-    @IBOutlet private weak var deleteButton: UIButton!
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
@@ -46,6 +47,9 @@ final class EditLikeViewController: ViewController {
 extension EditLikeViewController: Bindable {
 
     func bindViewModel() {
+        editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
+        deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: nil)
+        navigationItem.rightBarButtonItems = [editButton, deleteButton]
         
         let deleteTrigger = deleteButton.rx.tap.flatMap {
             return Observable<Void>.create { observer in
@@ -73,7 +77,7 @@ extension EditLikeViewController: Bindable {
         
         let output = viewModel.transform(input: input)
         
-        output.editButtonTitle.drive(editButton.rx.title()).disposed(by: disposeBag)
+        output.editButtonTitle.drive(editButton.rx.title).disposed(by: disposeBag)
         output.editing.drive(titleTextField.rx.isEnabled).disposed(by: disposeBag)
         output.editing.drive(selectImageButton.rx.isEnabled).disposed(by: disposeBag)
         output.like.drive(likeBinding).disposed(by: disposeBag)

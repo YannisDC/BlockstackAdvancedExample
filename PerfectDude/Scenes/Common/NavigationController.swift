@@ -13,11 +13,11 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBar <- {
-            $0.shadowImage = UIImage()
-            $0.isTranslucent = false
-            $0.tintColor = .white
-            $0.barStyle = .default
-        }
+//        navigationBar <- {
+//            $0.shadowImage = UIImage()
+//            $0.isTranslucent = false
+//            $0.tintColor = .white
+//            $0.barStyle = .default
+//        }
     }
 }
