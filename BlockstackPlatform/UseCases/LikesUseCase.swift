@@ -34,9 +34,16 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
         })
     }
     
-    func update(like: Like) -> Single<String?> {
+    func update(like: Like) -> Observable<Void> {
         print(like)
         return repository.save(path: "\(path)/\(like.uuid)", entity: like, encrypt: encryption)
+            .asObservable()
+            .flatMap { (path) -> Observable<Void> in
+            return self.cache.save(object: like)
+                .asObservable()
+                .map(to: Void.self)
+                .concat(Observable.just(()))
+            }
     }
     
     func query(uuid: String) -> Single<Like> {

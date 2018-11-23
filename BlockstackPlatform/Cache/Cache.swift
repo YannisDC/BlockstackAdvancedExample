@@ -63,13 +63,12 @@ final class Cache<T: Cachable>: AbstractCache {
             do {
                 try JSONEncoder().encode(object).write(to: path)
                 observer(.completed)
-            }
-            catch {
-                observer(.error(Error.saveObject(object)))
+            } catch {
+                observer(.completed)
             }
             
             return Disposables.create()
-            }.subscribeOn(cacheScheduler)
+        }.subscribeOn(cacheScheduler)
     }
     
     func save(objects: [T]) -> Completable {
@@ -85,11 +84,12 @@ final class Cache<T: Cachable>: AbstractCache {
                 try JSONEncoder().encode(objects).write(to: path)
                 observer(.completed)
             } catch {
-                observer(.error(error))
+                observer(.completed)
+//                observer(.error(error))
             }
             
             return Disposables.create()
-            }.subscribeOn(cacheScheduler)
+        }.subscribeOn(cacheScheduler)
     }
     
     func fetch(withID id: String) -> Maybe<T> {
