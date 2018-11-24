@@ -32,8 +32,8 @@
                     <state key="normal" title="Go to Auth page"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
-                    <rect key="frame" x="164.5" y="366" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                    <rect key="frame" x="168" y="366" width="39" height="30"/>
+                    <state key="normal" title="Reset"/>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-vc-6Eb">
                     <rect key="frame" x="164.5" y="47" width="46" height="20.5"/>

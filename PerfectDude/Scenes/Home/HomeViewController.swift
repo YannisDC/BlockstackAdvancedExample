@@ -31,7 +31,7 @@ extension HomeViewController: Bindable {
         
         output.tapResult.drive().disposed(by: disposeBag)
         output.signOutResult.drive().disposed(by: disposeBag)
-//        output.showResult.drive().disposed(by: disposeBag)
+        output.showResult.drive().disposed(by: disposeBag)
         output.title.drive(rx.title).disposed(by: disposeBag)
 //        output.image.drive(imageView.rx.image).disposed(by: disposeBag)
 //        output.imageToSave.drive(imageView.rx.image).disposed(by: disposeBag)

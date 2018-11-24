@@ -24,8 +24,6 @@ protocol HomeCoordinatorDelegate: class {
 
 final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     
-    
-    
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let disposeBag = DisposeBag()
