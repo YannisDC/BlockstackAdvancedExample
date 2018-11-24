@@ -85,7 +85,6 @@
 		DE96F79721936389007A342A /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75521936388007A342A /* CALayer+Extension.swift */; };
 		DE96F79821936389007A342A /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75721936388007A342A /* AppCoordinator.swift */; };
 		DE96F79921936389007A342A /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75A21936388007A342A /* HomeCoordinator.swift */; };
-		DE96F79A21936389007A342A /* GoalCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75C21936388007A342A /* GoalCoordinator.swift */; };
 		DE96F79B21936389007A342A /* ParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75E21936388007A342A /* ParentCoordinator.swift */; };
 		DE96F79C21936389007A342A /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F75F21936388007A342A /* BaseCoordinator.swift */; };
 		DE96F79D21936389007A342A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F76021936388007A342A /* Coordinator.swift */; };
@@ -98,9 +97,6 @@
 		DE96F7A621936389007A342A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE96F76E21936388007A342A /* HomeViewController.xib */; };
 		DE96F7A721936389007A342A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F76F21936388007A342A /* HomeViewController.swift */; };
 		DE96F7A821936389007A342A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77021936388007A342A /* BaseViewController.swift */; };
-		DE96F7A921936389007A342A /* TargetWeightViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77221936388007A342A /* TargetWeightViewModel.swift */; };
-		DE96F7AA21936389007A342A /* TargetWeightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE96F77321936388007A342A /* TargetWeightViewController.xib */; };
-		DE96F7AB21936389007A342A /* TargetWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77421936388007A342A /* TargetWeightViewController.swift */; };
 		DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE96F77621936388007A342A /* AuthenticationViewController.xib */; };
 		DE96F7AD21936389007A342A /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77721936388007A342A /* AuthenticationViewController.swift */; };
 		DE96F7AE21936389007A342A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77821936388007A342A /* AuthenticationViewModel.swift */; };
@@ -283,7 +279,6 @@
 		DE96F75521936388007A342A /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
 		DE96F75721936388007A342A /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DE96F75A21936388007A342A /* HomeCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
-		DE96F75C21936388007A342A /* GoalCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalCoordinator.swift; sourceTree = "<group>"; };
 		DE96F75E21936388007A342A /* ParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentCoordinator.swift; sourceTree = "<group>"; };
 		DE96F75F21936388007A342A /* BaseCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DE96F76021936388007A342A /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -296,9 +291,6 @@
 		DE96F76E21936388007A342A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		DE96F76F21936388007A342A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		DE96F77021936388007A342A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
-		DE96F77221936388007A342A /* TargetWeightViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetWeightViewModel.swift; sourceTree = "<group>"; };
-		DE96F77321936388007A342A /* TargetWeightViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetWeightViewController.xib; sourceTree = "<group>"; };
-		DE96F77421936388007A342A /* TargetWeightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetWeightViewController.swift; sourceTree = "<group>"; };
 		DE96F77621936388007A342A /* AuthenticationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AuthenticationViewController.xib; sourceTree = "<group>"; };
 		DE96F77721936388007A342A /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewController.swift; sourceTree = "<group>"; };
 		DE96F77821936388007A342A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
@@ -762,7 +754,6 @@
 			isa = PBXGroup;
 			children = (
 				DE96F75921936388007A342A /* Home */,
-				DE96F75B21936388007A342A /* Set Goal */,
 				DE5A6E0F21A53DF40097E941 /* Likes */,
 			);
 			path = Flows;
@@ -774,14 +765,6 @@
 				DE96F75A21936388007A342A /* HomeCoordinator.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		DE96F75B21936388007A342A /* Set Goal */ = {
-			isa = PBXGroup;
-			children = (
-				DE96F75C21936388007A342A /* GoalCoordinator.swift */,
-			);
-			path = "Set Goal";
 			sourceTree = "<group>";
 		};
 		DE96F75D21936388007A342A /* Base */ = {
@@ -817,9 +800,8 @@
 		DE96F76B21936388007A342A /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				DE96F76C21936388007A342A /* Home */,
 				DE96F7B821936A54007A342A /* Common */,
-				DE96F77121936388007A342A /* Set Goal */,
+				DE96F76C21936388007A342A /* Home */,
 				DE96F77521936388007A342A /* Authentication */,
 				DE5A6E1621A53E5A0097E941 /* Likes */,
 			);
@@ -834,16 +816,6 @@
 				DE96F76D21936388007A342A /* HomeViewModel.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		DE96F77121936388007A342A /* Set Goal */ = {
-			isa = PBXGroup;
-			children = (
-				DE96F77221936388007A342A /* TargetWeightViewModel.swift */,
-				DE96F77321936388007A342A /* TargetWeightViewController.xib */,
-				DE96F77421936388007A342A /* TargetWeightViewController.swift */,
-			);
-			path = "Set Goal";
 			sourceTree = "<group>";
 		};
 		DE96F77521936388007A342A /* Authentication */ = {
@@ -877,9 +849,9 @@
 		DED9FA8D219E08E5001C5878 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				DE5A6E0A21A498B90097E941 /* LikesFactory.swift */,
-				DE96F73B21936388007A342A /* HomeFactory.swift */,
 				DE96F73E21936388007A342A /* AppFactory.swift */,
+				DE96F73B21936388007A342A /* HomeFactory.swift */,
+				DE5A6E0A21A498B90097E941 /* LikesFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1142,7 +1114,6 @@
 				DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */,
 				DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
-				DE96F7AA21936389007A342A /* TargetWeightViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1395,14 +1366,11 @@
 				DE96F79321936389007A342A /* UIViewController+Extension.swift in Sources */,
 				DE96F79C21936389007A342A /* BaseCoordinator.swift in Sources */,
 				DE96F78821936389007A342A /* Error.swift in Sources */,
-				DE96F7A921936389007A342A /* TargetWeightViewModel.swift in Sources */,
 				DE96F7A521936389007A342A /* HomeViewModel.swift in Sources */,
 				DE96F7A721936389007A342A /* HomeViewController.swift in Sources */,
 				DE96F79621936389007A342A /* AlertController+Extension.swift in Sources */,
-				DE96F7AB21936389007A342A /* TargetWeightViewController.swift in Sources */,
 				DE96F78621936389007A342A /* CoordinatorFactory.swift in Sources */,
 				DE96F7A121936389007A342A /* Route.swift in Sources */,
-				DE96F79A21936389007A342A /* GoalCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

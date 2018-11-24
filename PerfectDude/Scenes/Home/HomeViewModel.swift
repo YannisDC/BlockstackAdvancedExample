@@ -38,11 +38,6 @@ final class HomeViewModel: ViewModel {
             self.coordinator?.coordinate(to: .signOut)
         })
         
-        let pinButtonTap = input.buttonTap.do(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
-            self.coordinator?.coordinate(to: .nextScreen)
-        })
-        
         let showResult = input.showTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             self.initUsecase.initLikeIndexes().subscribe(onSuccess: { (path) in
@@ -52,8 +47,7 @@ final class HomeViewModel: ViewModel {
             })
         })
         
-        return Output(tapResult: pinButtonTap,
-                      signOutResult: signOutResult,
+        return Output(signOutResult: signOutResult,
                       showResult: showResult,
                       title: title)
     }
@@ -63,13 +57,11 @@ final class HomeViewModel: ViewModel {
 
 extension HomeViewModel {
     struct Input {
-        let buttonTap: Driver<Void>
         let signOutTap: Driver<Void>
         let showTap: Driver<Void>
     }
     
     struct Output {
-        let tapResult: Driver<Void>
         let signOutResult: Driver<Void>
         let showResult: Driver<Void>
         let title: Driver<String>

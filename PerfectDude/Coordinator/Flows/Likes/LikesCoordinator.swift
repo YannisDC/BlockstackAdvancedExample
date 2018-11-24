@@ -12,13 +12,13 @@ import RxSwift
 import Gallery
 
 final class LikesCoordinator: BaseCoordinator<LikesRoute> {
-
+    
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate let navigationController: NavigationController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: LikesFactory
-    fileprivate let usecaseProvider: UseCaseProvider
+    fileprivate let usecaseProvider: Core.UseCaseProvider
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
     fileprivate var modalNavigationController = ModalNavigationController()
     
@@ -27,7 +27,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          factory: ControllerFactory,
-         usecaseProvider: UseCaseProvider) {
+         usecaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.factory = factory
@@ -35,13 +35,13 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
         self.navigationController = NavigationController()
     }
     
-
+    
     // MARK: Coordinator
-
+    
     override func start() {
-        coordinate(to: .overview)
+        coordinate(to: .likes)
     }
-
+    
     override func coordinate(to route: LikesRoute) {
         DispatchQueue.main.async {
             switch route {
@@ -65,32 +65,25 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
 private extension LikesCoordinator {
     func toOverview() {
         let likesViewController = factory.makeLikesViewController(coordinator: self)
-        navigationController.setViewControllers([likesViewController], animated: false)
-        navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
-                                                      image: UIImage(named: "blockstack_filled"),
-                                                      selectedImage: nil)
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [
-            navigationController
-        ]
-        rootViewController.setContentViewController(tabBarController)
+        rootViewController.setContentViewController(likesViewController)
     }
     
     func toLikes() {
-        navigationController.topViewController?.dismiss(animated: true, completion: nil)
+        let likesViewController = factory.makeLikesViewController(coordinator: self)
+        rootViewController.setContentViewController(likesViewController)
     }
     
     func createLike() {
         let createLikeViewController = factory.makeCreateLikeViewController(coordinator: self,
                                                                             imagesTrigger: imagesTrigger)
-        navigationController.pushViewController(createLikeViewController, animated: true)
+        rootViewController.setContentViewController(createLikeViewController)
     }
     
     func editLike(like: Like) {
         let editLikeViewController = factory.makeEditLikeViewController(coordinator: self,
-                                                                          imagesTrigger: imagesTrigger,
-                                                                          like: like)
-        navigationController.pushViewController(editLikeViewController, animated: true)
+                                                                        imagesTrigger: imagesTrigger,
+                                                                        like: like)
+        rootViewController.setContentViewController(editLikeViewController)
     }
     
     func toSelectImage() {
@@ -123,7 +116,7 @@ extension LikesCoordinator: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) { return }
     
     func galleryControllerDidCancel(_ controller: GalleryController) {
-        navigationController.topViewController?.dismiss(animated: true, completion: nil)
+        self.coordinate(to: .create)
         return
     }
     

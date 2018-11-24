@@ -7,11 +7,15 @@
 //
 
 import Foundation
+import Core
 
 protocol AppFactory {
     /// Creates a AuthenticationViewController
     ///
-    /// - Parameter coordinator: BaseCoordinator<AppRoute> instance
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<AppRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
     /// - Returns: AuthenticationViewController instance
-    func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>) -> AuthenticationViewController
+    func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>,
+                                          useCaseProvider: Core.UseCaseProvider) -> AuthenticationViewController
 }

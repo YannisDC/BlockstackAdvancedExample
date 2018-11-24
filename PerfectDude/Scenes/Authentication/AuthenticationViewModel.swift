@@ -10,16 +10,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 import SafariServices
+import Core
 
 final class AuthenticationViewModel: ViewModel {
     
     private weak var coordinator: BaseCoordinator<AppRoute>?
-    private var usecase = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
+    private let usecase: AuthUseCase!
     
     // MARK: Init
     
-    init(coordinator: BaseCoordinator<AppRoute>?) {
+    init(coordinator: BaseCoordinator<AppRoute>?,
+         useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
+        self.usecase = useCaseProvider.makeAuthUseCase()
     }
     
     // MARK: Transform

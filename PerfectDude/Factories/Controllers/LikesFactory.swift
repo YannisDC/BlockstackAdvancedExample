@@ -18,9 +18,22 @@ protocol LikesFactory {
     /// - Returns: LikesViewController
     func makeLikesViewController(coordinator: BaseCoordinator<LikesRoute>) -> LikesViewController
     
+    /// Creates a CreateLikeViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<LikesRoute> instance
+    ///   - imagesTrigger: PublishSubject<UIImage?> instance
+    /// - Returns: CreateLikeViewController instance
     func makeCreateLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
                                       imagesTrigger: PublishSubject<UIImage?>) -> CreateLikeViewController
     
+    /// Creates an EditLikeViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<LikesRoute> instance
+    ///   - imagesTrigger: PublishSubject<UIImage?> instance
+    ///   - like: Like instance
+    /// - Returns: EditLikeViewController instance
     func makeEditLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
                                     imagesTrigger: PublishSubject<UIImage?>,
                                     like: Like) -> EditLikeViewController

@@ -10,7 +10,5 @@ import Foundation
 
 enum HomeRoute: Route {
     case home
-    case nextScreen
-    case signedIn
     case signOut
 }

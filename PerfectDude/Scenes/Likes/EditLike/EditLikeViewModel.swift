@@ -14,6 +14,7 @@ import RxCocoa
 final class EditLikeViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<LikesRoute>?
+    // TODO: inject useCaseProvider
     private var likeUsecase = UseCaseProvider().blockstackUseCaseProvider.makeLikesUseCase()
     private let like: Like
     fileprivate let imagesTrigger: PublishSubject<UIImage?>

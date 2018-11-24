@@ -15,6 +15,21 @@ class ControllerFactory: AppFactory,
 HomeFactory,
 LikesFactory {
     
+    // MARK: AppFactory methods
+    
+    func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>,
+                                          useCaseProvider: Core.UseCaseProvider) -> AuthenticationViewController {
+        
+        let authViewController = AuthenticationViewController.loadFromNib()
+        let authViewModel = AuthenticationViewModel(coordinator: coordinator, useCaseProvider: useCaseProvider)
+        
+        authViewController.bindViewModel(to: authViewModel)
+        return authViewController
+        
+    }
+    
+    // MARK: HomeFactory methods
+    
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
                                 imagesTrigger: PublishSubject<UIImage?>) -> HomeViewController {
         
@@ -26,15 +41,7 @@ LikesFactory {
         
     }
     
-    func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>) -> AuthenticationViewController {
-        
-        let authViewController = AuthenticationViewController.loadFromNib()
-        let authViewModel = AuthenticationViewModel(coordinator: coordinator)
-        
-        authViewController.bindViewModel(to: authViewModel)
-        return authViewController
-        
-    }
+    // MARK: LikesFactory methods
     
     func makeLikesViewController(coordinator: BaseCoordinator<LikesRoute>) -> LikesViewController {
         
@@ -69,4 +76,5 @@ LikesFactory {
         return editLikeViewController
         
     }
+    
 }

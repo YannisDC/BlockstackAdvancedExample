@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Core
 
 final
 class CoordinatorFactory: CoordinatorFactoryProtocol {
@@ -21,7 +22,7 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeHomeCoordinator(rootViewController: BaseViewController,
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,
-                             usecaseProvider: UseCaseProvider) -> HomeCoordinator {
+                             usecaseProvider: Core.UseCaseProvider) -> HomeCoordinator {
         
         return HomeCoordinator(rootViewController: rootViewController,
                                delegate: delegate,
@@ -34,7 +35,7 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeLikesCoordinator(rootViewController: BaseViewController,
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,
-                             usecaseProvider: UseCaseProvider) -> LikesCoordinator {
+                             usecaseProvider: Core.UseCaseProvider) -> LikesCoordinator {
         
         return LikesCoordinator(rootViewController: rootViewController,
                                delegate: delegate,

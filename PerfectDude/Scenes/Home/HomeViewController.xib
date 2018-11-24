@@ -12,8 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="WyU-Bm-e8R" id="EDX-5V-rqi"/>
-                <outlet property="imageView" destination="OxR-2v-0gh" id="nbh-Ac-PWg"/>
                 <outlet property="showCard" destination="ySb-ip-blx" id="68x-iM-fEI"/>
                 <outlet property="signOut" destination="dSJ-kb-EJ3" id="UHI-i5-tjd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -24,13 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WyU-Bm-e8R">
-                    <rect key="frame" x="131.5" y="617" width="112" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="Gu4-hV-VRt"/>
-                    </constraints>
-                    <state key="normal" title="Go to Auth page"/>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
                     <rect key="frame" x="168" y="366" width="39" height="30"/>
                     <state key="normal" title="Reset"/>
@@ -41,13 +32,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OxR-2v-0gh">
-                    <rect key="frame" x="87.5" y="150" width="200" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="OxR-2v-0gh" secondAttribute="height" multiplier="1:1" id="Brw-Sg-Y0P"/>
-                        <constraint firstAttribute="height" constant="200" id="ULk-3L-Eql"/>
-                    </constraints>
-                </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-kb-EJ3">
                     <rect key="frame" x="159" y="427" width="57" height="30"/>
                     <state key="normal" title="Sign out"/>
@@ -55,15 +39,11 @@
             </subviews>
             <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="WyU-Bm-e8R" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="1ne-Ep-kdv"/>
                 <constraint firstItem="4t6-vc-6Eb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="3O6-gt-rCK"/>
-                <constraint firstItem="OxR-2v-0gh" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4nl-gb-NtE"/>
-                <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="OxR-2v-0gh" secondAttribute="bottom" constant="16" id="5cv-uG-qjA"/>
-                <constraint firstItem="OxR-2v-0gh" firstAttribute="top" secondItem="4t6-vc-6Eb" secondAttribute="bottom" constant="82.5" id="7gF-gV-WKI"/>
+                <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="4t6-vc-6Eb" secondAttribute="bottom" constant="298.5" id="4OF-iZ-ltb"/>
                 <constraint firstItem="ySb-ip-blx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9QR-7N-hD6"/>
                 <constraint firstItem="dSJ-kb-EJ3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Uhe-ig-HOd"/>
                 <constraint firstItem="4t6-vc-6Eb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aDT-Hr-CdI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WyU-Bm-e8R" secondAttribute="bottom" constant="20" id="aus-af-5z6"/>
                 <constraint firstItem="dSJ-kb-EJ3" firstAttribute="top" secondItem="ySb-ip-blx" secondAttribute="bottom" constant="31" id="kXa-QZ-uo8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

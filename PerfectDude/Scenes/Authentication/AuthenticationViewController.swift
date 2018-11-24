@@ -14,6 +14,7 @@ final class AuthenticationViewController: ViewController {
     
     internal var viewModel: AuthenticationViewModel!
     fileprivate let disposeBag = DisposeBag()
+    
     @IBOutlet private weak var button: UIButton!
 }
 

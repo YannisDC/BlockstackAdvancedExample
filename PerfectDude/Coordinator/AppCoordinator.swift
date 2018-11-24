@@ -26,7 +26,8 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     fileprivate lazy var navigationController = NavigationController()
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let factory: ControllerFactory
-    private var usecase = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
+    private var useCaseProvider: UseCaseProvider = UseCaseProvider()
+    private var auth = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
     
     // MARK: Init
     
@@ -47,36 +48,19 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
             isActivated = true
         }
         
-        if usecase.isUserSignedIn() {
+        if auth.isUserSignedIn() {
             coordinate(to: .home)
         } else {
             coordinate(to: .authentication)
         }
-        
-//        startLoading()
-//        setup()
-//            .observeOn(MainScheduler.instance)
-//            .subscribe(onSuccess: {[weak self] state in
-//                self?.stopLoading()
-//
-//                defer {
-//                    self?.isActivated = true
-//                }
-//
-//                self?.coordinate(to: .home)
-//                }, onError: {[weak self] error in
-//                    self?.rootViewController
-//                        .contentViewController?
-//                        .showAlert(error: error)
-//            })
-//            .disposed(by: disposeBag)
     }
     
     override func coordinate(to route: AppRoute) {
         DispatchQueue.main.async {
             switch route {
             case .home:
-                self.startHome()
+                self.toHome()
+//                self.toLikes()
             case .authentication:
                 self.toAuthentication()
             }
@@ -96,32 +80,18 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
 
 private extension AppCoordinator {
     
-//    func startLoading() {
-//        let loadingCoordinator = LoadingCoordinator(rootViewController: rootViewController,
-//                                                    useCaseProvider: useCaseProvider)
-//        addDependency(loadingCoordinator)
-//        loadingCoordinator.start()
-//    }
-//
-//    func stopLoading() {
-//        guard let loadingCoordinator = self.getChildCoordinator(type: LoadingCoordinator.self) else {
-//            return
-//        }
-//
-//        removeDependency(loadingCoordinator)
-//    }
-    
-    func startHome() {
+    func toHome() {
         let homeCoordinator = coordinatorFactory.makeHomeCoordinator(rootViewController: rootViewController,
                                                                      delegate: self,
                                                                      factory: factory,
-                                                                     usecaseProvider: UseCaseProvider())
+                                                                     usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
         addDependency(homeCoordinator)
         homeCoordinator.start()
     }
     
     func toAuthentication() {
-        let authViewController = factory.makeAuthenticationViewController(coordinator: self)
+        let authViewController = factory.makeAuthenticationViewController(coordinator: self,
+                                                                          useCaseProvider: UseCaseProvider().blockstackUseCaseProvider)
         rootViewController.setContentViewController(authViewController)
     }
     
@@ -129,7 +99,7 @@ private extension AppCoordinator {
         let likesCoordinator = coordinatorFactory.makeLikesCoordinator(rootViewController: rootViewController,
                                                                      delegate: self,
                                                                      factory: factory,
-                                                                     usecaseProvider: UseCaseProvider())
+                                                                     usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
         addDependency(likesCoordinator)
         likesCoordinator.start()
     }

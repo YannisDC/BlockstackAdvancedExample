@@ -17,5 +17,3 @@ protocol HomeFactory {
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
                                 imagesTrigger: PublishSubject<UIImage?>) -> HomeViewController
 }
-
-

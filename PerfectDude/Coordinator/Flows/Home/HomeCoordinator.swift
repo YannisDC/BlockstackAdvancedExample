@@ -7,20 +7,8 @@
 //
 
 import Foundation
+import Core
 import RxSwift
-
-protocol HomeCoordinatorDelegate: class {
-    /// Delegate method called if the app should be reset
-    /// Can occur when a userlogin fails
-    ///
-    /// - Parameter coordinator: HomeCoordinator instance
-    func reload(from coordinator: HomeCoordinator)
-    
-    /// Delegate method called if the app should reload the startup tasks
-    ///
-    /// - Parameter coordinator: HomeCoordinator instance
-//    func reloadStartupTasks(from coordinator: HomeCoordinator)
-}
 
 final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     
@@ -30,14 +18,14 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     fileprivate let factory: ControllerFactory
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
     private var usecase = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
-    fileprivate let usecaseProvider: UseCaseProvider
+    fileprivate let usecaseProvider: Core.UseCaseProvider
     
     // MARK: Init
     
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          factory: ControllerFactory,
-         usecaseProvider: UseCaseProvider) {
+         usecaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.factory = factory
@@ -56,10 +44,6 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
             switch route {
             case .home:
                 self.toHome()
-            case .nextScreen:
-                self.toNextScreen()
-            case .signedIn:
-                self.toSignedIn()
             case .signOut:
                 self.signOut()
             }
@@ -84,15 +68,6 @@ private extension HomeCoordinator {
         let homeViewController = factory.makeHomeViewController(coordinator: self,
                                                                 imagesTrigger: imagesTrigger)
         rootViewController.setContentViewController(homeViewController)
-    }
-    
-    func toNextScreen() {}
-    
-    func toSignedIn() {
-        let goalCoordinator = GoalCoordinator(rootViewController: rootViewController,
-                                              delegate: self)
-        addDependency(goalCoordinator)
-        goalCoordinator.start()
     }
     
     func signOut() {
