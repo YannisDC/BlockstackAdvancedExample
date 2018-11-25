@@ -14,15 +14,16 @@ import RxCocoa
 final class CreateLikeViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<LikesRoute>?
-    // TODO: inject useCaseProvider
-    private var likeUsecase = UseCaseProvider().blockstackUseCaseProvider.makeLikesUseCase()
+    private let likeUsecase: LikesUseCase!
     fileprivate let imagesTrigger: PublishSubject<UIImage?>
     
     // MARK: Init
     
     init(coordinator: BaseCoordinator<LikesRoute>?,
+         usecaseProvider: Core.UseCaseProvider,
          imagesTrigger: PublishSubject<UIImage?>) {
         self.coordinator = coordinator
+        self.likeUsecase = usecaseProvider.makeLikesUseCase()
         self.imagesTrigger = imagesTrigger
     }
 

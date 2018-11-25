@@ -14,12 +14,11 @@ import Gallery
 final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     
     fileprivate weak var rootViewController: BaseViewController!
-    fileprivate let navigationController: NavigationController!
     fileprivate weak var delegate: CoordinatorDelegate?
-    fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: LikesFactory
     fileprivate let usecaseProvider: Core.UseCaseProvider
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
+    fileprivate let navigationController: NavigationController!
     fileprivate var modalNavigationController = ModalNavigationController()
     
     // MARK: Init
@@ -64,23 +63,27 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
 
 private extension LikesCoordinator {
     func toOverview() {
-        let likesViewController = factory.makeLikesViewController(coordinator: self)
+        let likesViewController = factory.makeLikesViewController(coordinator: self,
+                                                                  usecaseProvider: self.usecaseProvider)
         rootViewController.setContentViewController(likesViewController)
     }
     
     func toLikes() {
-        let likesViewController = factory.makeLikesViewController(coordinator: self)
+        let likesViewController = factory.makeLikesViewController(coordinator: self,
+                                                                  usecaseProvider: self.usecaseProvider)
         rootViewController.setContentViewController(likesViewController)
     }
     
     func createLike() {
         let createLikeViewController = factory.makeCreateLikeViewController(coordinator: self,
+                                                                            usecaseProvider: self.usecaseProvider,
                                                                             imagesTrigger: imagesTrigger)
         rootViewController.setContentViewController(createLikeViewController)
     }
     
     func editLike(like: Like) {
         let editLikeViewController = factory.makeEditLikeViewController(coordinator: self,
+                                                                        usecaseProvider: self.usecaseProvider,
                                                                         imagesTrigger: imagesTrigger,
                                                                         like: like)
         rootViewController.setContentViewController(editLikeViewController)

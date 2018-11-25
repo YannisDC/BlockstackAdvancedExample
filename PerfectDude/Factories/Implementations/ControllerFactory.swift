@@ -17,6 +17,12 @@ LikesFactory {
     
     // MARK: AppFactory methods
     
+    /// Creates an AuthenticationViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: <#coordinator description#>
+    ///   - useCaseProvider: <#useCaseProvider description#>
+    /// - Returns: <#return value description#>
     func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>,
                                           useCaseProvider: Core.UseCaseProvider) -> AuthenticationViewController {
         
@@ -43,10 +49,12 @@ LikesFactory {
     
     // MARK: LikesFactory methods
     
-    func makeLikesViewController(coordinator: BaseCoordinator<LikesRoute>) -> LikesViewController {
+    func makeLikesViewController(coordinator: BaseCoordinator<LikesRoute>,
+                                 usecaseProvider: Core.UseCaseProvider) -> LikesViewController {
         
         let likesViewController = LikesViewController.loadFromNib()
-        let likesViewModel = LikesViewModel(coordinator: coordinator)
+        let likesViewModel = LikesViewModel(coordinator: coordinator,
+                                            usecaseProvider: usecaseProvider)
         
         likesViewController.bindViewModel(to: likesViewModel)
         return likesViewController
@@ -54,10 +62,12 @@ LikesFactory {
     }
     
     func makeCreateLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
+                                      usecaseProvider: Core.UseCaseProvider,
                                       imagesTrigger: PublishSubject<UIImage?>) -> CreateLikeViewController {
         
         let createLikeViewController = CreateLikeViewController.loadFromNib()
         let createLikeViewModel = CreateLikeViewModel(coordinator: coordinator,
+                                                      usecaseProvider: usecaseProvider,
                                                       imagesTrigger: imagesTrigger)
         createLikeViewController.bindViewModel(to: createLikeViewModel)
         return createLikeViewController
@@ -65,13 +75,15 @@ LikesFactory {
     }
     
     func makeEditLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
+                                    usecaseProvider: Core.UseCaseProvider,
                                     imagesTrigger: PublishSubject<UIImage?>,
                                     like: Like) -> EditLikeViewController {
         
         let editLikeViewController = EditLikeViewController.loadFromNib()
         let editLikeViewModel = EditLikeViewModel(coordinator: coordinator,
-                                                  like: like,
-                                                  imagesTrigger: imagesTrigger)
+                                                  usecaseProvider: usecaseProvider,
+                                                  imagesTrigger: imagesTrigger,
+                                                  like: like)
         editLikeViewController.bindViewModel(to: editLikeViewModel)
         return editLikeViewController
         

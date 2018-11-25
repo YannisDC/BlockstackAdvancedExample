@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Core
 
 protocol AppCoordinatorDelegate: class {
     /// Delegate method called if startupTasks should rerun
@@ -20,25 +21,26 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     
     // Properties
     fileprivate let rootViewController: BaseViewController
-    fileprivate let disposeBag = DisposeBag()
-    fileprivate var executionBlock: (() -> Void)? = {}
     fileprivate weak var delegate: AppCoordinatorDelegate?
-    fileprivate lazy var navigationController = NavigationController()
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let factory: ControllerFactory
-    private var useCaseProvider: UseCaseProvider = UseCaseProvider()
-    private var auth = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
+    fileprivate let usecaseProvider: Core.UseCaseProvider
+    private let auth: AuthUseCase!
+    fileprivate lazy var navigationController = NavigationController()
     
     // MARK: Init
     
     init(rootViewController: BaseViewController,
          delegate: AppCoordinatorDelegate?,
          coordinatorFactory: CoordinatorFactory,
-         factory: ControllerFactory) {
+         factory: ControllerFactory,
+         usecaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.coordinatorFactory = coordinatorFactory
         self.factory = factory
+        self.usecaseProvider = usecaseProvider
+        self.auth = usecaseProvider.makeAuthUseCase()
     }
     
     // MARK: Start
@@ -84,14 +86,14 @@ private extension AppCoordinator {
         let homeCoordinator = coordinatorFactory.makeHomeCoordinator(rootViewController: rootViewController,
                                                                      delegate: self,
                                                                      factory: factory,
-                                                                     usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
+                                                                     usecaseProvider: self.usecaseProvider)
         addDependency(homeCoordinator)
         homeCoordinator.start()
     }
     
     func toAuthentication() {
         let authViewController = factory.makeAuthenticationViewController(coordinator: self,
-                                                                          useCaseProvider: UseCaseProvider().blockstackUseCaseProvider)
+                                                                          useCaseProvider: self.usecaseProvider)
         rootViewController.setContentViewController(authViewController)
     }
     
@@ -99,7 +101,7 @@ private extension AppCoordinator {
         let likesCoordinator = coordinatorFactory.makeLikesCoordinator(rootViewController: rootViewController,
                                                                      delegate: self,
                                                                      factory: factory,
-                                                                     usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
+                                                                     usecaseProvider: self.usecaseProvider)
         addDependency(likesCoordinator)
         likesCoordinator.start()
     }

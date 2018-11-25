@@ -14,11 +14,10 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate weak var delegate: CoordinatorDelegate?
-    fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: ControllerFactory
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
-    private var usecase = UseCaseProvider().blockstackUseCaseProvider.makeAuthUseCase()
     fileprivate let usecaseProvider: Core.UseCaseProvider
+    private let auth: AuthUseCase!
     
     // MARK: Init
     
@@ -30,6 +29,7 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
         self.delegate = delegate
         self.factory = factory
         self.usecaseProvider = usecaseProvider
+        self.auth = usecaseProvider.makeAuthUseCase()
     }
     
     // MARK: Coordinator
@@ -71,7 +71,7 @@ private extension HomeCoordinator {
     }
     
     func signOut() {
-        usecase.signUserOut()
+        auth.signUserOut()
         delegate?.didFinish(coordinator: self)
         DispatchQueue.main.async {
             AppDelegate.instance().reloadApp()

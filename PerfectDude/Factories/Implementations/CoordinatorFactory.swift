@@ -32,6 +32,14 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     }
     
     
+    /// Creates a LikesCoordinator
+    ///
+    /// - Parameters:
+    ///   - rootViewController: BaseViewController instance
+    ///   - delegate: CoordinatorDelegate instance
+    ///   - factory: ControllerFactory instance
+    ///   - usecaseProvider: Core.UseCaseProvider instance
+    /// - Returns: LikesCoordinator instance
     func makeLikesCoordinator(rootViewController: BaseViewController,
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,

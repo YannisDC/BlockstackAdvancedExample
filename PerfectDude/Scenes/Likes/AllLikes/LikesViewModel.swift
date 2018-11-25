@@ -14,13 +14,14 @@ import RxCocoa
 final class LikesViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<LikesRoute>?
-    // TODO: inject useCaseProvider
-    private var likeUsecase = UseCaseProvider().blockstackUseCaseProvider.makeLikesUseCase()
+    private let likeUsecase: LikesUseCase!
 
     // MARK: Init
 
-    init(coordinator: BaseCoordinator<LikesRoute>?) {
+    init(coordinator: BaseCoordinator<LikesRoute>?,
+         usecaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
+        self.likeUsecase = usecaseProvider.makeLikesUseCase()
     }
 
     // MARK: Transform

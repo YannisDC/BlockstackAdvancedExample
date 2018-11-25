@@ -14,19 +14,20 @@ import RxCocoa
 final class EditLikeViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<LikesRoute>?
-    // TODO: inject useCaseProvider
-    private var likeUsecase = UseCaseProvider().blockstackUseCaseProvider.makeLikesUseCase()
-    private let like: Like
+    private let likeUsecase: LikesUseCase!
     fileprivate let imagesTrigger: PublishSubject<UIImage?>
+    private let like: Like
     
     // MARK: Init
-
+    
     init(coordinator: BaseCoordinator<LikesRoute>?,
-         like: Like,
-         imagesTrigger: PublishSubject<UIImage?>) {
+         usecaseProvider: Core.UseCaseProvider,
+         imagesTrigger: PublishSubject<UIImage?>,
+         like: Like) {
         self.coordinator = coordinator
-        self.like = like
+        self.likeUsecase = usecaseProvider.makeLikesUseCase()
         self.imagesTrigger = imagesTrigger
+        self.like = like
     }
 
     // MARK: Transform

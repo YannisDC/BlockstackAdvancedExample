@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Core
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -31,7 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         applicationCoordinator = AppCoordinator(rootViewController: rootViewController,
                                                 delegate: self,
                                                 coordinatorFactory: CoordinatorFactory(),
-                                                factory: ControllerFactory())
+                                                factory: ControllerFactory(),
+                                                usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
         applicationCoordinator?.start()
         
         return true
@@ -126,9 +128,4 @@ extension AppDelegate: AppCoordinatorDelegate {
     func reloadStartupTasks(coordinator: HomeCoordinator) {
         
     }
-    
-    
-//    func reloadStartupTasks(coordinator: AppCoordinator) {
-//        //        executeStartUpTasks()
-//    }
 }
