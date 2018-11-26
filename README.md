@@ -1,5 +1,8 @@
 # BlockstackAdvancedExample
-This repository uses a Clean Architecture with MVVM, RxSwift and Coordinators. The Blockstack SDK is seperated into a platform layer to only **import Blockstack** in one place. In this app the **Domain is renamed to Core**.
+This repository uses a Clean Architecture with an Application layer that uses MVVM, RxSwift and Coordinators. (Factories are being used to reuse viewcontrollers accross coordinators.)
+The Blockstack SDK is seperated into a Platform layer to only **import Blockstack** in one place. 
+In this app the **Domain layer is renamed to Core**.
+
 
 ## TODO
 - [ ] Convert Single<T?> to Maybe
