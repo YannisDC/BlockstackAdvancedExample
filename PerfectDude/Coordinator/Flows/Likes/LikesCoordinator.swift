@@ -113,11 +113,10 @@ extension LikesCoordinator: CoordinatorDelegate {
 
 extension LikesCoordinator: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
-        self.coordinate(to: .create)
         Image.resolve(images: images) { (uiImages) in
             self.imagesTrigger.onNext(uiImages[0])
         }
-        
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
         return
     }
     
