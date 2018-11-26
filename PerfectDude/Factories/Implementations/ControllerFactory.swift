@@ -20,9 +20,9 @@ LikesFactory {
     /// Creates an AuthenticationViewController
     ///
     /// - Parameters:
-    ///   - coordinator: <#coordinator description#>
-    ///   - useCaseProvider: <#useCaseProvider description#>
-    /// - Returns: <#return value description#>
+    ///   - coordinator: coordinator description
+    ///   - useCaseProvider: useCaseProvider description
+    /// - Returns: return value description
     func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>,
                                           useCaseProvider: Core.UseCaseProvider) -> AuthenticationViewController {
         
