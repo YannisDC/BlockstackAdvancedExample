@@ -38,7 +38,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     // MARK: Coordinator
     
     override func start() {
-        coordinate(to: .likes)
+        coordinate(to: .overview)
     }
     
     override func coordinate(to route: LikesRoute) {
@@ -65,20 +65,26 @@ private extension LikesCoordinator {
     func toOverview() {
         let likesViewController = factory.makeLikesViewController(coordinator: self,
                                                                   usecaseProvider: self.usecaseProvider)
-        rootViewController.setContentViewController(likesViewController)
+        navigationController.setViewControllers([likesViewController], animated: false)
+        navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
+                                                       image: UIImage(named: "blockstack_filled"),
+                                                       selectedImage: nil)
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            navigationController
+        ]
+        rootViewController.setContentViewController(tabBarController)
     }
     
     func toLikes() {
-        let likesViewController = factory.makeLikesViewController(coordinator: self,
-                                                                  usecaseProvider: self.usecaseProvider)
-        rootViewController.setContentViewController(likesViewController)
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
     }
     
     func createLike() {
         let createLikeViewController = factory.makeCreateLikeViewController(coordinator: self,
                                                                             usecaseProvider: self.usecaseProvider,
                                                                             imagesTrigger: imagesTrigger)
-        rootViewController.setContentViewController(createLikeViewController)
+        navigationController.pushViewController(createLikeViewController, animated: true)
     }
     
     func editLike(like: Like) {
@@ -86,7 +92,7 @@ private extension LikesCoordinator {
                                                                         usecaseProvider: self.usecaseProvider,
                                                                         imagesTrigger: imagesTrigger,
                                                                         like: like)
-        rootViewController.setContentViewController(editLikeViewController)
+        navigationController.pushViewController(editLikeViewController, animated: true)
     }
     
     func toSelectImage() {
@@ -119,7 +125,7 @@ extension LikesCoordinator: GalleryControllerDelegate {
     func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) { return }
     
     func galleryControllerDidCancel(_ controller: GalleryController) {
-        self.coordinate(to: .create)
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
         return
     }
     

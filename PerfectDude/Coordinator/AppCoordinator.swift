@@ -61,8 +61,8 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
         DispatchQueue.main.async {
             switch route {
             case .home:
-                self.toHome()
-//                self.toLikes()
+//                self.toHome()
+                self.toLikes()
             case .authentication:
                 self.toAuthentication()
             }

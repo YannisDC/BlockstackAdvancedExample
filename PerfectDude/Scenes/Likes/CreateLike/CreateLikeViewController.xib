@@ -11,10 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateLikeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="cancelButton" destination="Zu0-Fe-xgf" id="8Zw-Dz-JSd"/>
                 <outlet property="descriptionTextField" destination="XM9-MC-Po6" id="09Q-RX-bxc"/>
                 <outlet property="imageView" destination="Yag-A6-JcJ" id="CBe-gk-07Y"/>
-                <outlet property="saveButton" destination="nJ0-hw-xxT" id="c08-J9-d7G"/>
                 <outlet property="selectImageButton" destination="MVR-Pi-JdJ" id="WOp-L1-KbN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,14 +22,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu0-Fe-xgf">
-                    <rect key="frame" x="16" y="617" width="48" height="30"/>
-                    <state key="normal" title="Cancel"/>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-hw-xxT">
-                    <rect key="frame" x="325" y="617" width="34" height="30"/>
-                    <state key="normal" title="Save"/>
-                </button>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XM9-MC-Po6">
                     <rect key="frame" x="16" y="440" width="343" height="60"/>
                     <constraints>
@@ -65,13 +55,9 @@
                 <constraint firstAttribute="trailing" secondItem="XM9-MC-Po6" secondAttribute="trailing" constant="16" id="7h1-79-KSy"/>
                 <constraint firstItem="Yag-A6-JcJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="Dgp-iT-FFy"/>
                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="trailing" secondItem="Yag-A6-JcJ" secondAttribute="trailing" id="DwO-yd-ieP"/>
-                <constraint firstAttribute="bottom" secondItem="Zu0-Fe-xgf" secondAttribute="bottom" constant="20" id="Hjh-05-bqz"/>
                 <constraint firstItem="XM9-MC-Po6" firstAttribute="top" secondItem="W0z-1r-E4e" secondAttribute="bottom" constant="8" id="Ite-Rb-QiE"/>
-                <constraint firstItem="Zu0-Fe-xgf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Plo-Xi-AOg"/>
                 <constraint firstItem="XM9-MC-Po6" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ZYT-7N-hPI"/>
                 <constraint firstItem="W0z-1r-E4e" firstAttribute="top" secondItem="Yag-A6-JcJ" secondAttribute="bottom" constant="16" id="aa1-yC-leU"/>
-                <constraint firstAttribute="trailing" secondItem="nJ0-hw-xxT" secondAttribute="trailing" constant="16" id="e0g-Ot-630"/>
-                <constraint firstAttribute="bottom" secondItem="nJ0-hw-xxT" secondAttribute="bottom" constant="20" id="fN5-XA-ldL"/>
                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="top" secondItem="Yag-A6-JcJ" secondAttribute="top" id="mCe-DL-Hq7"/>
                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="bottom" secondItem="Yag-A6-JcJ" secondAttribute="bottom" id="pDR-tu-fhg"/>
                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="leading" secondItem="Yag-A6-JcJ" secondAttribute="leading" id="uq6-t0-Lf4"/>
