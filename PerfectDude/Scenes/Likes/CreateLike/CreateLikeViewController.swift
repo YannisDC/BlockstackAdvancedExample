@@ -16,16 +16,16 @@ final class CreateLikeViewController: ViewController {
     
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var selectImageButton: UIButton!
-    @IBOutlet private weak var saveButton: UIButton!
-    @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var descriptionTextField: UITextField!
 }
 
 extension CreateLikeViewController: Bindable {
 
     func bindViewModel() {
-        let input = CreateLikeViewModel.Input(cancelTrigger: cancelButton.rx.tap.asDriver(),
-                                              saveTrigger: saveButton.rx.tap.asDriver(),
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        navigationItem.rightBarButtonItem = saveButton
+        
+        let input = CreateLikeViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
                                               selectImageTrigger: selectImageButton.rx.tap.asDriver(),
                                               title: descriptionTextField.rx.text.orEmpty.asDriver())
         let output = viewModel.transform(input: input)

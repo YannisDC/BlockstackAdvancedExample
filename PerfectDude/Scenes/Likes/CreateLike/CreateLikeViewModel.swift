@@ -54,7 +54,7 @@ final class CreateLikeViewModel: ViewModel {
                     })
         }
         
-        let dismiss = Driver.of(save, input.cancelTrigger)
+        let dismiss = Driver.of(save)
             .merge().do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
@@ -75,7 +75,6 @@ final class CreateLikeViewModel: ViewModel {
 
 extension CreateLikeViewModel {
     struct Input {
-        let cancelTrigger: Driver<Void>
         let saveTrigger: Driver<Void>
         let selectImageTrigger: Driver<Void>
         let title: Driver<String>
