@@ -14,4 +14,5 @@ public protocol AuthUseCase {
     func signIn() -> Single<Void> // UserData convertible
     func isUserSignedIn() -> Bool
     func signUserOut()
+    
 }

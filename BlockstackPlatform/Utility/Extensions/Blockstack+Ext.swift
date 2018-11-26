@@ -11,26 +11,34 @@ import RxSwift
 import Blockstack
 
 extension Reactive where Base: Blockstack {
-    func save(path: String, text: String, encrypt: Bool = false) -> Single<String?> {
-        return Single.create { single in
+    func save(path: String, text: String, encrypt: Bool = false) -> Maybe<String> {
+        return Maybe<String>.create { maybe in
             self.base.putFile(to: path, text: text, encrypt: encrypt) { (publicURL, error)  in
                 if let error = error {
-                    single(.error(error))
+                    maybe(.error(error))
                 } else {
-                    single(.success(publicURL))
+                    if let publicURL = publicURL {
+                        maybe(.success(publicURL))
+                    } else {
+                        maybe(.completed)
+                    }
                 }
             }
             return Disposables.create()
         }
     }
     
-    func save(path: String, bytes: Bytes, encrypt: Bool = false) -> Single<String?> {
-        return Single.create { single in
+    func save(path: String, bytes: Bytes, encrypt: Bool = false) -> Maybe<String> {
+        return Maybe<String>.create { maybe in
             self.base.putFile(to: path, bytes: bytes, encrypt: encrypt) { (publicURL, error)  in
                 if let error = error {
-                    single(.error(error))
+                    maybe(.error(error))
                 } else {
-                    single(.success(publicURL))
+                    if let publicURL = publicURL {
+                        maybe(.success(publicURL))
+                    } else {
+                        maybe(.completed)
+                    }
                 }
             }
             return Disposables.create()

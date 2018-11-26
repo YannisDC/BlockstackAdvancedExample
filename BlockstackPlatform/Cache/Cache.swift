@@ -50,10 +50,10 @@ final class Cache<T: Cachable>: AbstractCache {
     }
     
     func save(object: T) -> Completable {
-        return Completable.create { (observer) -> Disposable in
+        return Completable.create { (completable) -> Disposable in
             guard let url = FileManager.default
                 .urls(for: .documentDirectory, in: .userDomainMask).first else {
-                    observer(.completed)
+                    completable(.completed)
                     return Disposables.create()
             }
             let path = url.appendingPathComponent(self.path)
@@ -62,19 +62,19 @@ final class Cache<T: Cachable>: AbstractCache {
             
             do {
                 try JSONEncoder().encode(object).write(to: path)
-                observer(.completed)
+                completable(.completed)
             } catch {
-                observer(.completed)
+                completable(.completed)
             }
             
             return Disposables.create()
-        }.subscribeOn(cacheScheduler)
+            }.subscribeOn(cacheScheduler)
     }
     
     func save(objects: [T]) -> Completable {
-        return Completable.create { (observer) -> Disposable in
+        return Completable.create { (completable) -> Disposable in
             guard let directoryURL = self.directoryURL() else {
-                observer(.completed)
+                completable(.completed)
                 return Disposables.create()
             }
             let path = directoryURL
@@ -82,21 +82,21 @@ final class Cache<T: Cachable>: AbstractCache {
             self.createDirectoryIfNeeded(at: directoryURL)
             do {
                 try JSONEncoder().encode(objects).write(to: path)
-                observer(.completed)
+                completable(.completed)
             } catch {
-                observer(.completed)
-//                observer(.error(error))
+                completable(.completed)
+                //                observer(.error(error))
             }
             
             return Disposables.create()
-        }.subscribeOn(cacheScheduler)
+            }.subscribeOn(cacheScheduler)
     }
     
     func fetch(withID id: String) -> Maybe<T> {
-        return Maybe<T>.create { (observer) -> Disposable in
+        return Maybe<T>.create { (maybe) -> Disposable in
             guard let url = FileManager.default
                 .urls(for: .documentDirectory, in: .userDomainMask).first else {
-                    observer(.completed)
+                    maybe(.completed)
                     return Disposables.create()
             }
             let path = url.appendingPathComponent(self.path)
@@ -106,25 +106,23 @@ final class Cache<T: Cachable>: AbstractCache {
             do {
                 let dataString = try String(contentsOf: path, encoding: .utf8)
                 guard let data = dataString.data(using: .utf8) else {
-                    observer(.completed)
+                    maybe(.completed)
                     return Disposables.create()
                 }
                 
                 let entity = try JSONDecoder().decode(T.self, from: data)
-                observer(MaybeEvent<T>.success(entity))
-                return Disposables.create()
-
+                maybe(MaybeEvent<T>.success(entity))
             } catch {
-                observer(.completed)
-                return Disposables.create()
+                maybe(.completed)
             }
-        }.subscribeOn(cacheScheduler)
+            return Disposables.create()
+            }.subscribeOn(cacheScheduler)
     }
     
     func fetchObjects() -> Maybe<[T]> {
-        return Maybe<[T]>.create { (observer) -> Disposable in
+        return Maybe<[T]>.create { (maybe) -> Disposable in
             guard let directoryURL = self.directoryURL() else {
-                observer(.completed)
+                maybe(.completed)
                 return Disposables.create()
             }
             let fileURL = directoryURL
@@ -132,18 +130,17 @@ final class Cache<T: Cachable>: AbstractCache {
             do {
                 let dataString = try String(contentsOf: fileURL, encoding: .utf8)
                 guard let data = dataString.data(using: .utf8) else {
-                    observer(.completed)
+                    maybe(.completed)
                     return Disposables.create()
                 }
                 let entities = try JSONDecoder().decode([T].self, from: data)
-                observer(MaybeEvent.success(entities.map { $0 }))
-                return Disposables.create()
+                maybe(MaybeEvent.success(entities.map { $0 }))
                 
             } catch {
-                observer(.completed)
-                return Disposables.create()
+                maybe(.completed)
             }
-        }.subscribeOn(cacheScheduler)
+            return Disposables.create()
+            }.subscribeOn(cacheScheduler)
     }
     
     private func directoryURL() -> URL? {

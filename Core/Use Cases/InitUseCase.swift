@@ -11,6 +11,6 @@ import RxSwift
 
 public protocol InitUseCase {
 
-    func initLikeIndexes() -> Single<String?>
+    func initLikeIndexes() -> Maybe<String>
     
 }

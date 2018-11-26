@@ -21,7 +21,7 @@ Repository.T == Index {
         self.repository = repository
     }
     
-    func initLikeIndexes() -> Single<String?> {
+    func initLikeIndexes() -> Maybe<String> {
         return repository.saveIndex(path: likesPath, index: Index(ids: [], date: Date().timeIntervalSince1970), encrypt: false)
     }
 }

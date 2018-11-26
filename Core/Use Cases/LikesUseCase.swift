@@ -11,10 +11,10 @@ import RxSwift
 
 public protocol LikesUseCase {
     
-    func create(like: Like) -> Single<String?>
+    func create(like: Like) -> Maybe<String>
     func update(like: Like) -> Observable<Void>
     func query(uuid: String) -> Single<Like>
-    func delete(like: Like) -> Single<String?>
+    func delete(like: Like) -> Maybe<String>
     func queryAll() -> Observable<[Like]>
     
 }
