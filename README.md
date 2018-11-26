@@ -4,11 +4,8 @@ The Blockstack SDK is seperated into a Platform layer to only **import Blockstac
 In this app the **Domain layer is renamed to Core**.
 
 
-#### Checkout the demo branch for now to try out the blockstack platform flow with caching
-
-
 ## TODO
-- [ ] Convert Single<T?> to Maybe
+- [x] Convert Single<T?> to Maybe
 - [ ] Add TabBarCoordinator to switch between different example screens
 - [ ] Make a provider to easily make Networks/Repositories for different types (of Structs)
 - [ ] Put the UI components into a seperate framework
