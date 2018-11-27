@@ -16,7 +16,7 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     private let repository: Repository
     private let cache: Cache
     private let path: String = "likes"
-    private let encryption: Bool = false
+    private let indexEncryption: Bool = false
     
     init(repository: Repository, cache: Cache) {
         self.repository = repository
@@ -25,12 +25,12 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     
     // TODO: catchErrors
     func create(like: Like) -> Maybe<String> {
-        return repository.loadIndex(path: path, decrypt: encryption).flatMapMaybe({ (indexes) -> Maybe<String> in
+        return repository.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
             var newIndexes = indexes
             newIndexes.push(like.uuid, encrypted: like.encrypted) // Alert on duplicate uuid
             return self.repository.save(path: "\(self.path)/\(like.uuid)",
                 entity: like,
-                encrypt: self.encryption)
+                encrypt: like.encrypted)
                 .do(onNext: { element in
                     print("Completed with element \(element)")
                 },
@@ -41,14 +41,13 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
                         print("Completed with no element")
                 })
                 .flatMap({ (filepath) -> Maybe<String> in
-                    return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.encryption)
+                    return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
                 })
         })
     }
     
     func update(like: Like) -> Observable<Void> {
-        print(like)
-        return repository.save(path: "\(path)/\(like.uuid)", entity: like, encrypt: encryption)
+        return repository.save(path: "\(path)/\(like.uuid)", entity: like, encrypt: like.encrypted)
             .asObservable()
             .flatMap { (path) -> Observable<Void> in
                 return self.cache.save(object: like)
@@ -63,11 +62,11 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     }
     
     func delete(like: Like) -> Maybe<String> {
-        return repository.loadIndex(path: path, decrypt: encryption).flatMapMaybe({ (indexes) -> Maybe<String> in
+        return repository.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
             var newIndexes = indexes
             newIndexes.pop(like.uuid)
             return self.repository.delete(path: "\(self.path)/\(like.uuid)").flatMap({ (filepath) -> Maybe<String> in
-                return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.encryption)
+                return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
             })
         })
     }
@@ -75,7 +74,7 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     func queryAll() -> Observable<[Like]> {
         let fetchLikes = cache.fetchObjects().asObservable()
         
-        let stored = repository.loadIndex(path: path, decrypt: encryption)
+        let stored = repository.loadIndex(path: path, decrypt: indexEncryption)
             .asObservable()
             .map({ (indexes) -> [Observable<Like>] in
                 return indexes.ids.map({ fileIndex in

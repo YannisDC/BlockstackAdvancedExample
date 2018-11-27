@@ -43,13 +43,13 @@ public struct Like: Codable, Identifiable, Cryptable {
         }
         tags = try container.decodeIfPresent([String].self, forKey: .tags) ?? []
         uuid = try container.decodeIfPresent(String.self, forKey: .uuid) ?? UUID().uuidString
-        encrypted = try container.decodeIfPresent(Bool.self, forKey: .encrypted) ?? false
+        encrypted = try container.decodeIfPresent(Bool.self, forKey: .encrypted) ?? true
     }
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(description, forKey: .description)
-        if let image = image, let imageData = image.pngData() {
+        if let image = image, let imageData = image.jpegData(compressionQuality: 0.4) {
             let imageDataBase64String = imageData.base64EncodedString()
             try container.encode(imageDataBase64String, forKey: .image)
         }
@@ -62,7 +62,7 @@ public struct Like: Codable, Identifiable, Cryptable {
                 image: UIImage?,
                 tags: [String],
                 uuid: String = UUID().uuidString,
-                encrypted: Bool = false) {
+                encrypted: Bool = true) {
         
         self.description = description
         self.image = image

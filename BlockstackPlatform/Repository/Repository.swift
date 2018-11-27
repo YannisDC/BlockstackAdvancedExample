@@ -30,7 +30,7 @@ final class Repository<T: Codable>: AbstractRepository {
     init(configuration: Blockstack.Configuration) {
         self.configuration = configuration
         self.scheduler = OperationQueueScheduler(operationQueue: OperationQueue.init())
-        //        print("File 📁 url: \(RLMRealmPathForFile("default.realm"))")
+        print("Blockstack configured on domain: \(configuration.appDomain)")
     }
     
     func save(path: String, entity: T, encrypt: Bool) -> Maybe<String> {
@@ -47,9 +47,16 @@ final class Repository<T: Codable>: AbstractRepository {
     func load(path: String, decrypt: Bool) -> Single<T> {
         return Single.deferred {
             return self.blockstack.rx.load(path: path, decrypt: decrypt).map { (response) -> T in
-                // TODO: Put some decrption here or just pass it along and only decrypt when taking it out of caching
-                guard let data = response as? Array<UInt8> else { throw CoreError.technical }
-                return try JSONDecoder().decode(T.self, from: Data(bytes: data))
+                if decrypt {
+                    guard let data = response as? DecryptedValue,
+                        let bytes = data.bytes
+                        else { throw CoreError.technical }
+                    return try JSONDecoder().decode(T.self, from: Data(bytes: bytes))
+                } else {
+                    guard let data = response as? Array<UInt8>
+                        else { throw CoreError.technical }
+                    return try JSONDecoder().decode(T.self, from: Data(bytes: data))
+                }
             }
         }.subscribeOn(scheduler)
     }
