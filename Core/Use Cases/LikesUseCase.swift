@@ -13,7 +13,7 @@ public protocol LikesUseCase {
     
     func create(like: Like) -> Maybe<String>
     func update(like: Like) -> Observable<Void>
-    func query(uuid: String) -> Single<Like>
+    func query(uuid: String, encrypted: Bool) -> Single<Like>
     func delete(like: Like) -> Maybe<String>
     func queryAll() -> Observable<[Like]>
     

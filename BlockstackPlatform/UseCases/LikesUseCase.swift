@@ -27,7 +27,7 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     func create(like: Like) -> Maybe<String> {
         return repository.loadIndex(path: path, decrypt: encryption).flatMapMaybe({ (indexes) -> Maybe<String> in
             var newIndexes = indexes
-            newIndexes.push(like.uuid) // Alert on duplicate uuid
+            newIndexes.push(like.uuid, encrypted: like.encrypted) // Alert on duplicate uuid
             return self.repository.save(path: "\(self.path)/\(like.uuid)",
                 entity: like,
                 encrypt: self.encryption)
@@ -58,8 +58,8 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
         }
     }
     
-    func query(uuid: String) -> Single<Like> {
-        return repository.load(path: "\(path)/\(uuid)", decrypt: encryption)
+    func query(uuid: String, encrypted: Bool) -> Single<Like> {
+        return repository.load(path: "\(path)/\(uuid)", decrypt: encrypted)
     }
     
     func delete(like: Like) -> Maybe<String> {
@@ -79,7 +79,7 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
             .asObservable()
             .map({ (indexes) -> [Observable<Like>] in
                 return indexes.ids.map({ fileIndex in
-                    self.query(uuid: fileIndex)
+                    self.query(uuid: fileIndex.id, encrypted: fileIndex.encrypted)
                         .asObservable()
                 })
             })

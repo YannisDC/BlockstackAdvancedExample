@@ -12,11 +12,16 @@ protocol Identifiable {
     var uuid: String { get set }
 }
 
-public struct Like: Codable, Identifiable {
+protocol Cryptable {
+    var encrypted: Bool { get set }
+}
+
+public struct Like: Codable, Identifiable, Cryptable {
     public var description: String?
     public var image: UIImage? // Optional
     public var tags: [String]?
     public var uuid: String
+    public var encrypted: Bool
     // TODO: Add updated: Date
     
     private enum CodingKeys: String, CodingKey {
@@ -24,6 +29,7 @@ public struct Like: Codable, Identifiable {
         case image
         case tags
         case uuid
+        case encrypted
     }
     
     public init(from decoder: Decoder) throws {
@@ -37,6 +43,7 @@ public struct Like: Codable, Identifiable {
         }
         tags = try container.decodeIfPresent([String].self, forKey: .tags) ?? []
         uuid = try container.decodeIfPresent(String.self, forKey: .uuid) ?? UUID().uuidString
+        encrypted = try container.decodeIfPresent(Bool.self, forKey: .encrypted) ?? false
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -48,16 +55,19 @@ public struct Like: Codable, Identifiable {
         }
         try container.encodeIfPresent(tags, forKey: .tags)
         try container.encodeIfPresent(uuid, forKey: .uuid)
+        try container.encodeIfPresent(encrypted, forKey: .encrypted)
     }
     
     public init(description: String,
                 image: UIImage?,
                 tags: [String],
-                uuid: String = UUID().uuidString) {
+                uuid: String = UUID().uuidString,
+                encrypted: Bool = false) {
         
         self.description = description
         self.image = image
         self.tags = tags
         self.uuid = uuid
+        self.encrypted = encrypted
     }
 }

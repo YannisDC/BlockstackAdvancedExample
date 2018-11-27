@@ -47,16 +47,17 @@ final class Repository<T: Codable>: AbstractRepository {
     func load(path: String, decrypt: Bool) -> Single<T> {
         return Single.deferred {
             return self.blockstack.rx.load(path: path, decrypt: decrypt).map { (response) -> T in
+                // TODO: Put some decrption here or just pass it along and only decrypt when taking it out of caching
                 guard let data = response as? Array<UInt8> else { throw CoreError.technical }
                 return try JSONDecoder().decode(T.self, from: Data(bytes: data))
             }
-            }.subscribeOn(scheduler)
+        }.subscribeOn(scheduler)
     }
     
     func delete(path: String) -> Maybe<String> {
         return Maybe.deferred {
             return self.blockstack.rx.save(path: path, text: "")
-            }.subscribeOn(scheduler)
+        }.subscribeOn(scheduler)
     }
     
     func saveIndex(path: String, index: Index, encrypt: Bool) -> Maybe<String> {
@@ -78,6 +79,6 @@ final class Repository<T: Codable>: AbstractRepository {
                 }
                 return try JSONDecoder().decode(Index.self, from: Data(bytes: data))
             }
-            }.subscribeOn(scheduler)
+        }.subscribeOn(scheduler)
     }
 }

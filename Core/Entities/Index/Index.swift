@@ -9,9 +9,13 @@
 import Foundation
 
 public struct Index: Codable {
-    public var ids: [String]
-    // TODO: Add optional encryption
+    public var ids: [Item]
     public var date: TimeInterval?
+    
+    public struct Item: Codable {
+        public var id: String
+        public var encrypted: Bool
+    }
     
     private enum CodingKeys: String, CodingKey {
         case ids
@@ -20,7 +24,13 @@ public struct Index: Codable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        ids = try container.decodeIfPresent([String].self, forKey: .ids) ?? []
+        do {
+            ids = try container.decodeIfPresent([Item].self, forKey: .ids) ?? []
+        } catch {
+            ids = []
+            print("Doesn't decode to Item")
+        }
+        
         date = try container.decodeIfPresent(TimeInterval.self, forKey: .date)
     }
     
@@ -30,17 +40,17 @@ public struct Index: Codable {
         try container.encodeIfPresent(date, forKey: .date)
     }
     
-    public init(ids: [String],
+    public init(ids: [Item],
                 date: TimeInterval) {
         self.ids = ids
         self.date = date
     }
     
-    public mutating func push(_ id: String) {
-        ids.append(id)
+    public mutating func push(_ id: String, encrypted: Bool) {
+        ids.append(Item(id: id, encrypted: encrypted))
     }
     
     public mutating func pop(_ id: String) {
-        return ids.removeAll { $0 == id }
+        return ids.removeAll { $0.id == id }
     }
 }
