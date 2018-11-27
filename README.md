@@ -9,7 +9,7 @@ In this app the **Domain layer is renamed to Core**.
 - [ ] Add TabBarCoordinator to switch between different example screens
 - [ ] Make a provider to easily make Networks/Repositories for different types (of Structs)
 - [ ] Put the UI components into a seperate framework
-- [ ] Add encryption on the cache by implementing a Cryptable protocol in the Structs
+- [x] Add encryption on the cache by implementing a Cryptable protocol in the Structs
 - [ ] Add unit tests
 - [ ] Make seperate Blockstack app endpoint
 
