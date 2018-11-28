@@ -89,7 +89,7 @@ final class EditLikeViewModel: ViewModel {
                     .mapToVoid()
             }
         
-        let dismiss = Driver.of(saveLike, input.cancelTrigger, deleteLike)
+        let dismiss = Driver.of(saveLike, deleteLike)
             .merge().do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
@@ -109,7 +109,6 @@ final class EditLikeViewModel: ViewModel {
 
 extension EditLikeViewModel {
     struct Input {
-        let cancelTrigger: Driver<Void>
         let editTrigger: Driver<Void>
         let deleteTrigger: Driver<Void>
         let title: Driver<String>

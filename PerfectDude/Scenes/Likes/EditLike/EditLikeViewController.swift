@@ -10,6 +10,7 @@ import UIKit
 import Core
 import RxSwift
 import RxCocoa
+import IHKeyboardAvoiding
 
 final class EditLikeViewController: ViewController {
     internal var viewModel: EditLikeViewModel!
@@ -18,7 +19,6 @@ final class EditLikeViewController: ViewController {
     internal var editButton: UIBarButtonItem!
     internal var deleteButton: UIBarButtonItem!
     
-    @IBOutlet private weak var cancelButton: UIButton!
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
@@ -48,6 +48,8 @@ final class EditLikeViewController: ViewController {
 extension EditLikeViewController: Bindable {
 
     func bindViewModel() {
+        KeyboardAvoiding.avoidingView = self.view
+        
         editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
         deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: nil)
         navigationItem.rightBarButtonItems = [editButton, deleteButton]
@@ -70,8 +72,7 @@ extension EditLikeViewController: Bindable {
             }
         }
         
-        let input = EditLikeViewModel.Input(cancelTrigger: cancelButton.rx.tap.asDriver(),
-                                            editTrigger: editButton.rx.tap.asDriver(),
+        let input = EditLikeViewModel.Input(editTrigger: editButton.rx.tap.asDriver(),
                                             deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
                                             title: titleTextField.rx.text.orEmpty.asDriver(),
                                             selectImageTrigger: selectImageButton.rx.tap.asDriver(),
