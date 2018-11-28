@@ -32,15 +32,6 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
             return self.repository.save(path: "\(self.path)/\(like.uuid)",
                 entity: like,
                 encrypt: like.encrypted)
-                .do(onNext: { element in
-                    print("Completed with element \(element)")
-                },
-                    onError: { error in
-                        print("Completed with an error \(error.localizedDescription)")
-                },
-                    onCompleted: {
-                        print("Completed with no element")
-                })
                 .flatMap({ (filepath) -> Maybe<String> in
                     return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
                 })
