@@ -36,18 +36,18 @@ final class CreateLikeViewModel: ViewModel {
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
-        let titleAndImage = Driver.combineLatest(input.title, imageToSave)
+        let titleAndImage = Driver.combineLatest(input.title, imageToSave, input.encryption)
         
         let canSave = Driver.combineLatest(title, activityIndicator.asDriver()) {
             return !$0.isEmpty && !$1
         }
         
         let save = input.saveTrigger.withLatestFrom(titleAndImage)
-            .map { (title, image) in
-                return Like(description: title, image: image, tags: [""])
+            .map { (title, image, encryption) in
+                return Like(description: title, image: image, tags: [""], encrypted: encryption)
             }
             .flatMapLatest { [unowned self] in
-                return self.likeUsecase.create(like: $0)
+                return self.likeUsecase.save(like: $0)
                     .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
@@ -78,6 +78,7 @@ extension CreateLikeViewModel {
         let saveTrigger: Driver<Void>
         let selectImageTrigger: Driver<Void>
         let title: Driver<String>
+        let encryption: Driver<Bool>
     }
 
     struct Output {
