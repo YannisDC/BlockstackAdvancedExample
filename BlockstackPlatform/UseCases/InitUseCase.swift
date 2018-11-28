@@ -10,18 +10,18 @@ import Foundation
 import Core
 import RxSwift
 
-final class InitUseCase<Repository>: Core.InitUseCase where Repository: AbstractRepository,
-Repository.T == Index {
+final class InitUseCase<Network>: Core.InitUseCase where Network: AbstractNetwork,
+Network.T == Index {
     
-    private let repository: Repository
-    private let likesPath: String = "likes"
+    private let network: Network
+    private let likesPath: String = "\(Like.self)"
     private let encryption: Bool = false
     
-    init(repository: Repository) {
-        self.repository = repository
+    init(network: Network) {
+        self.network = network
     }
     
     func initLikeIndexes() -> Maybe<String> {
-        return repository.saveIndex(path: likesPath, index: Index(ids: [], date: Date().timeIntervalSince1970), encrypt: false)
+        return network.saveIndex(path: likesPath, index: Index(ids: [], date: Date().timeIntervalSince1970), encrypt: false)
     }
 }

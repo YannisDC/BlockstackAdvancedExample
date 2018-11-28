@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IHKeyboardAvoiding
 
 final class CreateLikeViewController: ViewController {
     internal var viewModel: CreateLikeViewModel!
@@ -23,6 +24,8 @@ final class CreateLikeViewController: ViewController {
 extension CreateLikeViewController: Bindable {
 
     func bindViewModel() {
+        KeyboardAvoiding.avoidingView = self.view
+        
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
         navigationItem.rightBarButtonItem = saveButton
         

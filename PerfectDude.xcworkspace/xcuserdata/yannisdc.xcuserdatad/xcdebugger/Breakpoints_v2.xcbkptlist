@@ -13,5 +13,53 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlockstackPlatform/Network/NetworkProvider.swift"
+            timestampString = "565128333.5184489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "delete(entity:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BlockstackPlatform.NetworkProvider.delete(entity: A) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.MaybeTrait, Swift.String&gt;"
+                  moduleName = "BlockstackPlatform"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yannisdc/PerfectDude/BlockstackPlatform/Network/NetworkProvider.swift"
+                  timestampString = "565128333.807037"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Core.Index) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.MaybeTrait, Swift.String&gt; in BlockstackPlatform.NetworkProvider.delete(entity: A) -&gt; RxSwift.PrimitiveSequence&lt;RxSwift.MaybeTrait, Swift.String&gt;"
+                  moduleName = "BlockstackPlatform"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yannisdc/PerfectDude/BlockstackPlatform/Network/NetworkProvider.swift"
+                  timestampString = "565128333.809764"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "100">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
