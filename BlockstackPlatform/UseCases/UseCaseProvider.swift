@@ -22,9 +22,8 @@ public final class UseCaseProvider: Core.UseCaseProvider {
     }
     
     public func makeLikesUseCase() -> Core.LikesUseCase {
-        let network = Network<Like>(configuration: configuration)
-        let cache = Cache<Like>(path: "likes")
-        return LikesUseCase(network: network, cache: cache)
+        let network = NetworkFactory(configuration: configuration).makeLikeNetwork()
+        return LikesUseCase(network: network)
     }
     
     public func makeAuthUseCase() -> Core.AuthUseCase {

@@ -16,11 +16,8 @@ class NetworkFactory {
     
     private let configuration: Blockstack.Configuration
     
-    public init() {
-        self.configuration = Blockstack
-            .Configuration(redirectURI: "https://pedantic-mahavira-f15d04.netlify.com/redirect.html",
-                           appDomain: URL(string: "https://pedantic-mahavira-f15d04.netlify.com")!,
-                           scopes: ["store_write", "publish_data"])
+    init(configuration: Blockstack.Configuration) {
+        self.configuration = configuration
     }
     
     func makeLikeNetwork() -> NetworkProvider<Like>{

@@ -14,7 +14,7 @@ final class InitUseCase<Network>: Core.InitUseCase where Network: AbstractNetwor
 Network.T == Index {
     
     private let network: Network
-    private let likesPath: String = "likes"
+    private let likesPath: String = "\(Like.self)"
     private let encryption: Bool = false
     
     init(network: Network) {
