@@ -17,6 +17,7 @@ final class CreateLikeViewController: ViewController {
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var descriptionTextField: UITextField!
+    @IBOutlet private weak var encryptionSwitch: UISwitch!
 }
 
 extension CreateLikeViewController: Bindable {
@@ -27,7 +28,8 @@ extension CreateLikeViewController: Bindable {
         
         let input = CreateLikeViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
                                               selectImageTrigger: selectImageButton.rx.tap.asDriver(),
-                                              title: descriptionTextField.rx.text.orEmpty.asDriver())
+                                              title: descriptionTextField.rx.text.orEmpty.asDriver(),
+                                              encryption: encryptionSwitch.rx.value.asDriver())
         let output = viewModel.transform(input: input)
 
         [output.title.drive(rx.title),

@@ -22,6 +22,7 @@ final class EditLikeViewController: ViewController {
     @IBOutlet private weak var titleTextField: UITextField!
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet var encryptionSwitch: UISwitch!
     
     var likeBinding: Binder<Like> {
         return Binder(self, binding: { (vc, like) in
@@ -73,7 +74,8 @@ extension EditLikeViewController: Bindable {
                                             editTrigger: editButton.rx.tap.asDriver(),
                                             deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
                                             title: titleTextField.rx.text.orEmpty.asDriver(),
-                                            selectImageTrigger: selectImageButton.rx.tap.asDriver())
+                                            selectImageTrigger: selectImageButton.rx.tap.asDriver(),
+                                            encryption: encryptionSwitch.rx.value.asDriver())
         
         let output = viewModel.transform(input: input)
         
@@ -85,5 +87,6 @@ extension EditLikeViewController: Bindable {
         output.save.drive().disposed(by: disposeBag)
         output.error.drive(errorBinding).disposed(by: disposeBag)
         output.delete.drive().disposed(by: disposeBag)
+        output.encryption.drive(encryptionSwitch.rx.value).disposed(by: disposeBag)
     }
 }

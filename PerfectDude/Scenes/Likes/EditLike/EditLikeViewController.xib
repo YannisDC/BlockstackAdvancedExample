@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditLikeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
                 <outlet property="cancelButton" destination="F2P-ou-JXG" id="L0M-6h-1uB"/>
+                <outlet property="encryptionSwitch" destination="o2b-Pe-caP" id="ht3-b5-jwV"/>
                 <outlet property="imageView" destination="IMn-Wm-bBT" id="Enb-sh-21y"/>
                 <outlet property="selectImageButton" destination="h82-oK-dLt" id="fVz-vM-eEg"/>
                 <outlet property="titleTextField" destination="LCd-gC-EHe" id="P7H-PP-R4k"/>
@@ -51,11 +52,15 @@
                     <rect key="frame" x="16" y="617" width="48" height="30"/>
                     <state key="normal" title="Cancel"/>
                 </button>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2b-Pe-caP">
+                    <rect key="frame" x="163" y="516" width="51" height="31"/>
+                </switch>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="F2P-ou-JXG" secondAttribute="bottom" constant="20" id="06x-VT-Yar"/>
                 <constraint firstItem="IMn-Wm-bBT" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7VB-Ct-VVO"/>
+                <constraint firstItem="o2b-Pe-caP" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Buj-Gl-bxl"/>
                 <constraint firstItem="h82-oK-dLt" firstAttribute="leading" secondItem="IMn-Wm-bBT" secondAttribute="leading" id="GCb-Jx-TlN"/>
                 <constraint firstItem="IMn-Wm-bBT" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="RLL-fs-fAz"/>
                 <constraint firstItem="h82-oK-dLt" firstAttribute="top" secondItem="IMn-Wm-bBT" secondAttribute="top" id="Wd2-LT-X4Y"/>
@@ -68,6 +73,7 @@
                 <constraint firstAttribute="trailing" secondItem="IMn-Wm-bBT" secondAttribute="trailing" id="ocV-Wq-dCK"/>
                 <constraint firstItem="LCd-gC-EHe" firstAttribute="top" secondItem="7J8-C3-bw1" secondAttribute="bottom" constant="8" id="qhW-8J-gkb"/>
                 <constraint firstItem="LCd-gC-EHe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="xLr-PC-c45"/>
+                <constraint firstItem="o2b-Pe-caP" firstAttribute="top" secondItem="LCd-gC-EHe" secondAttribute="bottom" constant="16" id="znR-WW-mm5"/>
             </constraints>
             <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>

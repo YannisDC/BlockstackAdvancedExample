@@ -44,12 +44,12 @@ final class EditLikeViewModel: ViewModel {
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
-        let titleAndImage = Driver.combineLatest(input.title, imageToSave) { (like, titleAndImage) in
-            return (like, titleAndImage)
+        let titleAndImage = Driver.combineLatest(input.title, imageToSave, input.encryption) { (like, titleAndImage, encryption) in
+            return (like, titleAndImage, encryption)
         }
         
-        let likeToSave = Driver.combineLatest(Driver.just(self.like), input.title) { (like, title) -> Like in
-                return Like(description: title, image: like.image, tags: [], uuid: like.uuid)
+        let likeToSave = Driver.combineLatest(Driver.just(self.like), input.title, input.encryption) { (like, title, encryption) -> Like in
+            return Like(description: title, image: like.image, tags: [], uuid: like.uuid, encrypted: like.encrypted)
             }
             .startWith(self.like)
         
@@ -79,13 +79,17 @@ final class EditLikeViewModel: ViewModel {
                 self.coordinator?.coordinate(to: .overview)
             })
         
+        let encryption = input.encryption
+            .startWith(like.encrypted)
+        
         return Output(editButtonTitle: editButtonTitle,
                       dismiss: dismiss,
                       save: saveLike,
                       delete: deleteLike,
                       editing: editing,
                       like: likeToSave,
-                      error: errorTracker.asDriver())
+                      error: errorTracker.asDriver(),
+                      encryption: encryption)
     }
 }
 
@@ -98,6 +102,7 @@ extension EditLikeViewModel {
         let deleteTrigger: Driver<Void>
         let title: Driver<String>
         let selectImageTrigger: Driver<Void>
+        let encryption: Driver<Bool>
     }
     
     struct Output {
@@ -108,5 +113,6 @@ extension EditLikeViewModel {
         let editing: Driver<Bool>
         let like: Driver<Like>
         let error: Driver<Error>
+        let encryption: Driver<Bool>
     }
 }
