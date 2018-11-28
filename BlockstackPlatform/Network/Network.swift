@@ -1,5 +1,5 @@
 //
-//  Repository.swift
+//  Network.swift
 //  BlockstackPlatform
 //
 //  Created by Yannis De Cleene on 15/11/2018.
@@ -11,7 +11,7 @@ import Blockstack
 import Core
 import RxSwift
 
-protocol AbstractRepository {
+protocol AbstractNetwork {
     associatedtype T: Codable
     func save(path: String, entity: T, encrypt: Bool) -> Maybe<String>
     func load(path: String, decrypt: Bool) -> Single<T>
@@ -21,7 +21,7 @@ protocol AbstractRepository {
     func loadIndex(path: String, decrypt: Bool) -> Single<Index>
 }
 
-final class Repository<T: Codable>: AbstractRepository {
+final class Network<T: Codable>: AbstractNetwork {
     private let configuration: Blockstack.Configuration
     private let scheduler: OperationQueueScheduler
     

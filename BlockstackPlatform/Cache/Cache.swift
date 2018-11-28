@@ -10,13 +10,7 @@ import Foundation
 import Core
 import RxSwift
 
-protocol Identifiable {
-    var uuid: String { get set }
-}
 
-protocol Cachable: Codable, Identifiable {}
-
-extension Like: Cachable {}
 
 protocol AbstractCache {
     associatedtype T

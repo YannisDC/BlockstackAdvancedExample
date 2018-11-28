@@ -37,7 +37,7 @@
 		DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68A76721A69188006E119A /* Observable+Extension.swift */; };
 		DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */; };
 		DE74615D219EEE2200D02824 /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615C219EEE2200D02824 /* LikesUseCase.swift */; };
-		DE746166219EEE7C00D02824 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615F219EEE7C00D02824 /* Repository.swift */; };
+		DE746166219EEE7C00D02824 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615F219EEE7C00D02824 /* Network.swift */; };
 		DE746167219EEE7C00D02824 /* Blockstack+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */; };
 		DE746168219EEE7C00D02824 /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE746164219EEE7C00D02824 /* LikesUseCase.swift */; };
 		DE746169219EEE7C00D02824 /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE746165219EEE7C00D02824 /* UseCaseProvider.swift */; };
@@ -102,6 +102,8 @@
 		DE96F7AE21936389007A342A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77821936388007A342A /* AuthenticationViewModel.swift */; };
 		DE96F7AF21936389007A342A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77921936388007A342A /* NavigationController.swift */; };
 		DE96F7B7219368C0007A342A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F7B6219368C0007A342A /* ViewController.swift */; };
+		DEA8EC2221AF1D0E0004CB21 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8EC2121AF1D0E0004CB21 /* NetworkProvider.swift */; };
+		DEA8EC2421AF23240004CB21 /* NetworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8EC2321AF23240004CB21 /* NetworkFactory.swift */; };
 		DED9FA9C219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA3219E0D3E001C5878 /* BlockstackPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */; };
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -225,7 +227,7 @@
 		DE68A76721A69188006E119A /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		DE74615C219EEE2200D02824 /* LikesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
-		DE74615F219EEE7C00D02824 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		DE74615F219EEE7C00D02824 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Blockstack+Ext.swift"; sourceTree = "<group>"; };
 		DE746164219EEE7C00D02824 /* LikesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
 		DE746165219EEE7C00D02824 /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
@@ -296,6 +298,8 @@
 		DE96F77821936388007A342A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DE96F77921936388007A342A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		DE96F7B6219368C0007A342A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEA8EC2121AF1D0E0004CB21 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		DEA8EC2321AF23240004CB21 /* NetworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFactory.swift; sourceTree = "<group>"; };
 		DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackPlatform.h; sourceTree = "<group>"; };
 		DED9FA96219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -498,12 +502,14 @@
 			path = EditLike;
 			sourceTree = "<group>";
 		};
-		DE74615E219EEE7C00D02824 /* Repository */ = {
+		DE74615E219EEE7C00D02824 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				DE74615F219EEE7C00D02824 /* Repository.swift */,
+				DE74615F219EEE7C00D02824 /* Network.swift */,
+				DEA8EC2121AF1D0E0004CB21 /* NetworkProvider.swift */,
+				DEA8EC2321AF23240004CB21 /* NetworkFactory.swift */,
 			);
-			path = Repository;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		DE746160219EEE7C00D02824 /* Utility */ = {
@@ -862,7 +868,7 @@
 				DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */,
 				DE1DDF5521A7395D00F95CBF /* Cache */,
 				DE746170219EF81700D02824 /* Authentication */,
-				DE74615E219EEE7C00D02824 /* Repository */,
+				DE74615E219EEE7C00D02824 /* Network */,
 				DE746163219EEE7C00D02824 /* UseCases */,
 				DE746160219EEE7C00D02824 /* Utility */,
 				DED9FA96219E0D3E001C5878 /* Info.plist */,
@@ -1424,11 +1430,13 @@
 			files = (
 				DE746169219EEE7C00D02824 /* UseCaseProvider.swift in Sources */,
 				DE746167219EEE7C00D02824 /* Blockstack+Ext.swift in Sources */,
+				DEA8EC2221AF1D0E0004CB21 /* NetworkProvider.swift in Sources */,
+				DEA8EC2421AF23240004CB21 /* NetworkFactory.swift in Sources */,
 				DE1DDF5421A72D8300F95CBF /* Cache.swift in Sources */,
 				DE746168219EEE7C00D02824 /* LikesUseCase.swift in Sources */,
 				DE74616D219EF60300D02824 /* AuthUseCase.swift in Sources */,
 				DE3BC73E21A2D95A0075B02A /* InitUseCase.swift in Sources */,
-				DE746166219EEE7C00D02824 /* Repository.swift in Sources */,
+				DE746166219EEE7C00D02824 /* Network.swift in Sources */,
 				DE74616F219EF78800D02824 /* Authentication.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

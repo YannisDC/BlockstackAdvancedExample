@@ -22,9 +22,9 @@ public final class UseCaseProvider: Core.UseCaseProvider {
     }
     
     public func makeLikesUseCase() -> Core.LikesUseCase {
-        let repository = Repository<Like>(configuration: configuration)
+        let network = Network<Like>(configuration: configuration)
         let cache = Cache<Like>(path: "likes")
-        return LikesUseCase(repository: repository, cache: cache)
+        return LikesUseCase(network: network, cache: cache)
     }
     
     public func makeAuthUseCase() -> Core.AuthUseCase {
@@ -33,8 +33,8 @@ public final class UseCaseProvider: Core.UseCaseProvider {
     }
     
     public func makeInitUseCase() -> Core.InitUseCase {
-        let repository = Repository<Index>(configuration: configuration)
-        return InitUseCase(repository: repository)
+        let network = Network<Index>(configuration: configuration)
+        return InitUseCase(network: network)
     }
     
 }
