@@ -47,7 +47,7 @@ final class CreateLikeViewModel: ViewModel {
                 return Like(description: title, image: image, tags: [""], encrypted: encryption)
             }
             .flatMapLatest { [unowned self] in
-                return self.likeUsecase.create(like: $0)
+                return self.likeUsecase.save(like: $0)
                     .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())

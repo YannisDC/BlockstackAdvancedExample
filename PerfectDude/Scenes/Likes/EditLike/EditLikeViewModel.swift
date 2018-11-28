@@ -44,25 +44,40 @@ final class EditLikeViewModel: ViewModel {
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
-        let titleAndImage = Driver.combineLatest(input.title, imageToSave, input.encryption) { (like, titleAndImage, encryption) in
-            return (like, titleAndImage, encryption)
-        }
+        let encryption = Driver.merge(input.encryption,
+                                      Driver.just(like.encrypted))
         
-        let likeToSave = Driver.combineLatest(Driver.just(self.like), input.title, input.encryption) { (like, title, encryption) -> Like in
-            return Like(description: title, image: like.image, tags: [], uuid: like.uuid, encrypted: like.encrypted)
-            }
-            .startWith(self.like)
+        let titleAndImage = Driver.combineLatest(input.title,
+                                                 imageToSave,
+                                                 encryption)
+                                                    { (like, titleAndImage, encryption) in
+                                                        return (like, titleAndImage, encryption)
+                                                    }
+        
+        let likeToSave = Driver.combineLatest(Driver.just(self.like),
+                                              input.title,
+                                              encryption)
+                                                { (like, title, encryption) -> Like in
+                                                    return Like(description: title,
+                                                                image: like.image,
+                                                                tags: [],
+                                                                uuid: like.uuid,
+                                                                encrypted: encryption)
+                                                }
+                                                .startWith(self.like)
         
         let editButtonTitle = editing.map { editing -> String in
             return editing == true ? "Save" : "Edit"
         }
         
         let saveLike = saveTrigger.withLatestFrom(likeToSave)
-            .flatMapLatest { like in
-                return self.likeUsecase.update(like: like)
+            .flatMapLatest { [unowned self] in
+                return self.likeUsecase.save(like: $0)
                     .trackError(errorTracker)
                     .asDriverOnErrorJustComplete()
-                    .mapToVoid()
+                    .flatMap({ (_) -> Driver<Void> in
+                        return Driver.just(())
+                    })
         }
         
         let deleteLike = input.deleteTrigger
@@ -78,9 +93,6 @@ final class EditLikeViewModel: ViewModel {
             .merge().do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
-        
-        let encryption = input.encryption
-            .startWith(like.encrypted)
         
         return Output(editButtonTitle: editButtonTitle,
                       dismiss: dismiss,

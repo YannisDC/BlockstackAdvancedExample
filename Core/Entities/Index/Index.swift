@@ -47,6 +47,9 @@ public struct Index: Codable {
     }
     
     public mutating func push(_ id: String, encrypted: Bool) {
+        if ids.contains(where: { $0.id == id }) {
+            pop(id)
+        }
         ids.append(Item(id: id, encrypted: encrypted))
     }
     

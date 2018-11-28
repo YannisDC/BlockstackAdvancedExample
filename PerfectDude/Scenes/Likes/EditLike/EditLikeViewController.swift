@@ -75,18 +75,19 @@ extension EditLikeViewController: Bindable {
                                             deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
                                             title: titleTextField.rx.text.orEmpty.asDriver(),
                                             selectImageTrigger: selectImageButton.rx.tap.asDriver(),
-                                            encryption: encryptionSwitch.rx.value.asDriver())
+                                            encryption: encryptionSwitch.rx.isOn.asDriver())
         
         let output = viewModel.transform(input: input)
         
         output.editButtonTitle.drive(editButton.rx.title).disposed(by: disposeBag)
         output.editing.drive(titleTextField.rx.isEnabled).disposed(by: disposeBag)
         output.editing.drive(selectImageButton.rx.isEnabled).disposed(by: disposeBag)
+        output.editing.drive(encryptionSwitch.rx.isEnabled).disposed(by: disposeBag)
         output.like.drive(likeBinding).disposed(by: disposeBag)
         output.dismiss.drive().disposed(by: disposeBag)
         output.save.drive().disposed(by: disposeBag)
         output.error.drive(errorBinding).disposed(by: disposeBag)
         output.delete.drive().disposed(by: disposeBag)
-        output.encryption.drive(encryptionSwitch.rx.value).disposed(by: disposeBag)
+        output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
     }
 }

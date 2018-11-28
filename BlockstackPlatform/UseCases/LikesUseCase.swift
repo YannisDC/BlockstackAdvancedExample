@@ -24,10 +24,11 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
     }
     
     // TODO: catchErrors
-    func create(like: Like) -> Maybe<String> {
+    func save(like: Like) -> Maybe<String> {
         return repository.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
             var newIndexes = indexes
-            newIndexes.push(like.uuid, encrypted: like.encrypted) // Alert on duplicate uuid
+            newIndexes.push(like.uuid, encrypted: like.encrypted)
+            
             return self.repository.save(path: "\(self.path)/\(like.uuid)",
                 entity: like,
                 encrypt: like.encrypted)
@@ -44,17 +45,6 @@ Repository.T == Like, Cache: AbstractCache, Cache.T == Like {
                     return self.repository.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
                 })
         })
-    }
-    
-    func update(like: Like) -> Observable<Void> {
-        return repository.save(path: "\(path)/\(like.uuid)", entity: like, encrypt: like.encrypted)
-            .asObservable()
-            .flatMap { (path) -> Observable<Void> in
-                return self.cache.save(object: like)
-                    .asObservable()
-                    .map(to: Void.self)
-                    .concat(Observable.just(()))
-        }
     }
     
     func query(uuid: String, encrypted: Bool) -> Single<Like> {
