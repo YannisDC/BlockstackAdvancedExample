@@ -88,13 +88,14 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
     }
     
     func delete(entity: T) -> Maybe<String> {
-        return network.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
-            var newIndexes = indexes
-            newIndexes.pop(entity.uuid)
-            return self.network.delete(path: "\(self.path)/\(entity.uuid)").flatMap({ (filepath) -> Maybe<String> in
-                return self.network.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
-            })
-        })
+        return self.cache.delete(object: entity)
+            .andThen(network.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
+                var newIndexes = indexes
+                newIndexes.pop(entity.uuid)
+                return self.network.delete(path: "\(self.path)/\(entity.uuid)").flatMap({ (filepath) -> Maybe<String> in
+                    return self.network.saveIndex(path: self.path, index: newIndexes, encrypt: self.indexEncryption)
+                })
+            }))
     }
     
     
