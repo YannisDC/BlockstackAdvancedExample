@@ -40,15 +40,19 @@ final class HomeViewModel: ViewModel {
         
         let showResult = input.showTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
-            self.initUsecase.initLikeIndexes().subscribe(onSuccess: { (path) in
-                print(path)
-            }, onError: { (error) in
-                print(error)
+            self.initUsecase.initLikeIndexes().subscribe({ (path) in
+                self.coordinator?.coordinate(to: .likes)
             })
+        })
+        
+        let likesResult = input.likesTap.do(onNext: { [weak self] _ in
+            guard let `self` = self else { return }
+            self.coordinator?.coordinate(to: .likes)
         })
         
         return Output(signOutResult: signOutResult,
                       showResult: showResult,
+                      likesResult: likesResult,
                       title: title)
     }
 }
@@ -59,11 +63,13 @@ extension HomeViewModel {
     struct Input {
         let signOutTap: Driver<Void>
         let showTap: Driver<Void>
+        let likesTap: Driver<Void>
     }
     
     struct Output {
         let signOutResult: Driver<Void>
         let showResult: Driver<Void>
+        let likesResult: Driver<Void>
         let title: Driver<String>
     }
 }

@@ -44,6 +44,8 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
             switch route {
             case .home:
                 self.toHome()
+            case .likes:
+                self.delegate?.didFinish(coordinator: self)
             case .signOut:
                 self.signOut()
             }

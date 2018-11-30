@@ -14,7 +14,7 @@ public class ModalStatusView: UIView {
     @IBOutlet private weak var headlineLabel: UILabel!
     @IBOutlet private weak var subheadLabel: UILabel!
     
-    let nibName = "YDCModalStatusView"
+    let nibName = "ModalStatusView"
     var contentView: UIView!
     var timer: Timer?
     
@@ -33,6 +33,8 @@ public class ModalStatusView: UIView {
     private func setUpView() {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: self.nibName, bundle: bundle)
+        print(bundle)
+        print(nib)
         self.contentView = nib.instantiate(withOwner: self, options: nil).first as! UIView
         addSubview(contentView)
         
