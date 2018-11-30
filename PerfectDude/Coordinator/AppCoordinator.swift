@@ -61,7 +61,8 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
         DispatchQueue.main.async {
             switch route {
             case .home:
-//                self.toHome()
+                self.toHome()
+            case .likes:
                 self.toLikes()
             case .authentication:
                 self.toAuthentication()
@@ -117,7 +118,11 @@ private extension AppCoordinator {
 
 extension AppCoordinator: CoordinatorDelegate {
     func didFinish(coordinator: AnyCoordinator) {
+        
+        if coordinator is HomeCoordinator {
+            coordinate(to: .likes)
+        }
+        
         removeDependency(coordinator)
-        coordinate(to: .home)
     }
 }

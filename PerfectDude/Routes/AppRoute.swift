@@ -10,5 +10,6 @@ import Foundation
 
 enum AppRoute: Route {
     case home
+    case likes
     case authentication
 }

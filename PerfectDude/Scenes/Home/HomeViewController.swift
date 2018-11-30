@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import PerfectUI
 
 final class HomeViewController: ViewController {
     
@@ -17,17 +18,30 @@ final class HomeViewController: ViewController {
     
     @IBOutlet private weak var signOut: UIButton!
     @IBOutlet private weak var showCard: UIButton!
+    @IBOutlet private weak var likesButton: UIButton!
+    
+    var initBinding: Binder<Void> {
+        return Binder(self, binding: { (vc, _ ) in
+            let modalView = ModalStatusView(frame: vc.view.bounds)
+            modalView.set(image: UIImage(named: "download")!)
+            modalView.set(header: "Reset")
+            modalView.set(subheader: "The app was successfully reset")
+            vc.view.addSubview(modalView)
+        })
+    }
 }
 
 extension HomeViewController: Bindable {
     
     func bindViewModel() {
         let input = HomeViewModel.Input(signOutTap: signOut.rx.tap.asDriver(),
-                                        showTap: showCard.rx.tap.asDriver())
+                                        showTap: showCard.rx.tap.asDriver(),
+                                        likesTap: likesButton.rx.tap.asDriver())
         let output = viewModel.transform(input: input)
         
         output.signOutResult.drive().disposed(by: disposeBag)
-        output.showResult.drive().disposed(by: disposeBag)
+        output.showResult.drive(initBinding).disposed(by: disposeBag)
+        output.likesResult.drive().disposed(by: disposeBag)
         output.title.drive(rx.title).disposed(by: disposeBag)
     }
 }

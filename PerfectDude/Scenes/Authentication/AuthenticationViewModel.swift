@@ -34,8 +34,10 @@ final class AuthenticationViewModel: ViewModel {
             guard let `self` = self else { return }
             self.usecase
                 .signIn()
-                .subscribe({ _ in
+                .subscribe(onSuccess: { (_) in
                     self.coordinator?.coordinate(to: .home)
+                }, onError: { (error) in
+                    print(error)
                 })
         })
         

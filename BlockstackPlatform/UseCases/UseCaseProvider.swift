@@ -16,8 +16,8 @@ public final class UseCaseProvider: Core.UseCaseProvider {
 
     public init() {
         self.configuration = Blockstack
-            .Configuration(redirectURI: "https://pedantic-mahavira-f15d04.netlify.com/redirect.html",
-                           appDomain: URL(string: "https://pedantic-mahavira-f15d04.netlify.com")!,
+            .Configuration(redirectURI: "https://youthful-spence-bbda8a.netlify.com/redirect.html",
+                           appDomain: URL(string: "https://youthful-spence-bbda8a.netlify.com")!,
                            scopes: ["store_write", "publish_data"])
     }
     
