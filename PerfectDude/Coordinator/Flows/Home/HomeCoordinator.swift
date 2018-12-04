@@ -18,6 +18,7 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
     fileprivate let usecaseProvider: Core.UseCaseProvider
     private let auth: AuthUseCase!
+    fileprivate let navigationController: NavigationController!
     
     // MARK: Init
     
@@ -30,13 +31,15 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
         self.factory = factory
         self.usecaseProvider = usecaseProvider
         self.auth = usecaseProvider.makeAuthUseCase()
+        self.navigationController = NavigationController()
     }
     
     // MARK: Coordinator
     
     override func start() {
         super.start()
-        coordinate(to: .home)
+        setTabs()
+//        coordinate(to: .home)
     }
     
     override func coordinate(to route: HomeRoute) {
@@ -66,6 +69,32 @@ extension HomeCoordinator: CoordinatorDelegate {
 // MARK: - Navigation
 
 private extension HomeCoordinator {
+    func setTabs() {
+        let homeViewController = factory.makeHomeViewController(coordinator: self,
+                                                                imagesTrigger: imagesTrigger)
+        homeViewController.tabBarItem = UITabBarItem(title: "Blockstack",
+                                                     image: UIImage(named: "blockstack_semi_filled"),
+                                                     selectedImage: nil)
+        
+        let testCoordinator = LikesCoordinator(rootViewController: rootViewController,
+                                               delegate: self,
+                                               factory: factory,
+                                               usecaseProvider: usecaseProvider)
+        testCoordinator.navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
+                                                                       image: UIImage(named: "blockstack_filled"),
+                                                                       selectedImage: nil)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [
+            homeViewController,
+            testCoordinator.navigationController
+        ]
+        rootViewController.setContentViewController(tabBarController)
+        
+        addDependency(testCoordinator)
+        testCoordinator.start()
+    }
+    
     func toHome() {
         let homeViewController = factory.makeHomeViewController(coordinator: self,
                                                                 imagesTrigger: imagesTrigger)

@@ -62,8 +62,6 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
             switch route {
             case .home:
                 self.toHome()
-            case .likes:
-                self.toLikes()
             case .authentication:
                 self.toAuthentication()
             }
@@ -98,15 +96,6 @@ private extension AppCoordinator {
         rootViewController.setContentViewController(authViewController)
     }
     
-    func toLikes() {
-        let likesCoordinator = coordinatorFactory.makeLikesCoordinator(rootViewController: rootViewController,
-                                                                     delegate: self,
-                                                                     factory: factory,
-                                                                     usecaseProvider: self.usecaseProvider)
-        addDependency(likesCoordinator)
-        likesCoordinator.start()
-    }
-    
     func showError(error: Error, completion: @escaping (() -> Void)) {
         guard let contentController = rootViewController.contentViewController,
             let topController = UIApplication.topViewController(controller: contentController) else { return }
@@ -120,7 +109,8 @@ extension AppCoordinator: CoordinatorDelegate {
     func didFinish(coordinator: AnyCoordinator) {
         
         if coordinator is HomeCoordinator {
-            coordinate(to: .likes)
+            auth.signUserOut()
+            coordinate(to: .authentication)
         }
         
         removeDependency(coordinator)

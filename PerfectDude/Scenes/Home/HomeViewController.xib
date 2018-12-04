@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="likesButton" destination="cEe-aX-KgN" id="V01-aY-HG8"/>
                 <outlet property="showCard" destination="ySb-ip-blx" id="68x-iM-fEI"/>
                 <outlet property="signOut" destination="dSJ-kb-EJ3" id="UHI-i5-tjd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,18 +36,12 @@
                     <rect key="frame" x="159" y="427" width="57" height="30"/>
                     <state key="normal" title="Sign out"/>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cEe-aX-KgN">
-                    <rect key="frame" x="138" y="490" width="99" height="30"/>
-                    <state key="normal" title="Go to example"/>
-                </button>
             </subviews>
             <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="cEe-aX-KgN" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="0if-c5-GNg"/>
                 <constraint firstItem="4t6-vc-6Eb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="3O6-gt-rCK"/>
                 <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="4t6-vc-6Eb" secondAttribute="bottom" constant="298.5" id="4OF-iZ-ltb"/>
                 <constraint firstItem="ySb-ip-blx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9QR-7N-hD6"/>
-                <constraint firstItem="cEe-aX-KgN" firstAttribute="top" secondItem="dSJ-kb-EJ3" secondAttribute="bottom" constant="33" id="OeK-f0-hFg"/>
                 <constraint firstItem="dSJ-kb-EJ3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Uhe-ig-HOd"/>
                 <constraint firstItem="4t6-vc-6Eb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aDT-Hr-CdI"/>
                 <constraint firstItem="dSJ-kb-EJ3" firstAttribute="top" secondItem="ySb-ip-blx" secondAttribute="bottom" constant="31" id="kXa-QZ-uo8"/>

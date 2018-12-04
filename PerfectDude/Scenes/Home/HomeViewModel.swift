@@ -45,14 +45,8 @@ final class HomeViewModel: ViewModel {
             })
         })
         
-        let likesResult = input.likesTap.do(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
-            self.coordinator?.coordinate(to: .likes)
-        })
-        
         return Output(signOutResult: signOutResult,
                       showResult: showResult,
-                      likesResult: likesResult,
                       title: title)
     }
 }
@@ -63,13 +57,11 @@ extension HomeViewModel {
     struct Input {
         let signOutTap: Driver<Void>
         let showTap: Driver<Void>
-        let likesTap: Driver<Void>
     }
     
     struct Output {
         let signOutResult: Driver<Void>
         let showResult: Driver<Void>
-        let likesResult: Driver<Void>
         let title: Driver<String>
     }
 }
