@@ -69,11 +69,22 @@ private extension LikesCoordinator {
         navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
                                                        image: UIImage(named: "blockstack_filled"),
                                                        selectedImage: nil)
+        
+        let testCoordinator = TestCoordinator(rootViewController: rootViewController, delegate: self, useCaseProvider: usecaseProvider)
+        testCoordinator.navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
+                                                                     image: UIImage(named: "blockstack_semi_filled"),
+                                                                     selectedImage: nil)
+        
+        
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
-            navigationController
+            navigationController,
+            testCoordinator.navigationController
         ]
         rootViewController.setContentViewController(tabBarController)
+        
+        addDependency(testCoordinator)
+        testCoordinator.start()
     }
     
     func toLikes() {
