@@ -38,17 +38,14 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     
     override func start() {
         super.start()
-        setTabs()
-//        coordinate(to: .home)
+        coordinate(to: .home)
     }
     
     override func coordinate(to route: HomeRoute) {
         DispatchQueue.main.async {
             switch route {
             case .home:
-                self.toHome()
-            case .likes:
-                self.delegate?.didFinish(coordinator: self)
+                self.setTabs()
             case .signOut:
                 self.signOut()
             }
@@ -93,12 +90,6 @@ private extension HomeCoordinator {
         
         addDependency(testCoordinator)
         testCoordinator.start()
-    }
-    
-    func toHome() {
-        let homeViewController = factory.makeHomeViewController(coordinator: self,
-                                                                imagesTrigger: imagesTrigger)
-        rootViewController.setContentViewController(homeViewController)
     }
     
     func signOut() {
