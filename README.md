@@ -14,6 +14,8 @@ In this app the **Domain layer is renamed to Core**.
 - [x] Make seperate Blockstack app endpoint
 - [ ] Add examples of multiple types
 - [ ] Upgrade the UI
+- [ ] Add single object caching (save and remove)
+- [ ] Add batch object loading (e.g. 10 indexes at a time)
 
 ## Final project goal
 Seperate the Blockstack SDK into seperate platform layer and make it easily reusable for different types of structs. Work away the downsides of the Blockstack SDK compared to Firebase like offline first and realtime updates.
