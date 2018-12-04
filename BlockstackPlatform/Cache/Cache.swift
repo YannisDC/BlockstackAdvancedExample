@@ -18,6 +18,7 @@ protocol AbstractCache {
     func save(objects: [T]) -> Completable
     func fetch(withID id: String) -> Maybe<T>
     func fetchObjects() -> Maybe<[T]>
+    func delete(object: T) -> Completable
 }
 
 final class Cache<T: Cachable>: AbstractCache {
@@ -133,6 +134,28 @@ final class Cache<T: Cachable>: AbstractCache {
             } catch {
                 maybe(.completed)
             }
+            return Disposables.create()
+            }.subscribeOn(cacheScheduler)
+    }
+    
+    func delete(object: T) -> Completable {
+        return Completable.create { (completable) -> Disposable in
+            guard let url = FileManager.default
+                .urls(for: .documentDirectory, in: .userDomainMask).first else {
+                    completable(.completed)
+                    return Disposables.create()
+            }
+            let path = url.appendingPathComponent(self.path)
+                .appendingPathComponent("\(object.uuid)")
+                .appendingPathComponent(FileNames.objectFileName)
+            print(path)
+            do {
+                try FileManager.default.removeItem(at: path)
+                completable(.completed)
+            } catch {
+                completable(.completed)
+            }
+            
             return Disposables.create()
             }.subscribeOn(cacheScheduler)
     }

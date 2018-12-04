@@ -18,7 +18,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     fileprivate let factory: LikesFactory
     fileprivate let usecaseProvider: Core.UseCaseProvider
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
-    fileprivate let navigationController: NavigationController!
+    public let navigationController: NavigationController!
     fileprivate var modalNavigationController = ModalNavigationController()
     
     // MARK: Init
@@ -66,14 +66,6 @@ private extension LikesCoordinator {
         let likesViewController = factory.makeLikesViewController(coordinator: self,
                                                                   usecaseProvider: self.usecaseProvider)
         navigationController.setViewControllers([likesViewController], animated: false)
-        navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
-                                                       image: UIImage(named: "blockstack_filled"),
-                                                       selectedImage: nil)
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [
-            navigationController
-        ]
-        rootViewController.setContentViewController(tabBarController)
     }
     
     func toLikes() {

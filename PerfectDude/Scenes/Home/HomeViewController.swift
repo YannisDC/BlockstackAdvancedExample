@@ -18,7 +18,6 @@ final class HomeViewController: ViewController {
     
     @IBOutlet private weak var signOut: UIButton!
     @IBOutlet private weak var showCard: UIButton!
-    @IBOutlet private weak var likesButton: UIButton!
     
     var initBinding: Binder<Void> {
         return Binder(self, binding: { (vc, _ ) in
@@ -35,13 +34,11 @@ extension HomeViewController: Bindable {
     
     func bindViewModel() {
         let input = HomeViewModel.Input(signOutTap: signOut.rx.tap.asDriver(),
-                                        showTap: showCard.rx.tap.asDriver(),
-                                        likesTap: likesButton.rx.tap.asDriver())
+                                        showTap: showCard.rx.tap.asDriver())
         let output = viewModel.transform(input: input)
         
         output.signOutResult.drive().disposed(by: disposeBag)
         output.showResult.drive(initBinding).disposed(by: disposeBag)
-        output.likesResult.drive().disposed(by: disposeBag)
         output.title.drive(rx.title).disposed(by: disposeBag)
     }
 }
