@@ -22,6 +22,7 @@ final class LikesViewController: ViewController {
 extension LikesViewController: Bindable {
 
     func bindViewModel() {
+        extendedLayoutIncludesOpaqueBars = false
         createLikeButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         navigationItem.rightBarButtonItem = createLikeButton
         

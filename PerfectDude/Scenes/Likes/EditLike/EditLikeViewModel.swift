@@ -33,6 +33,7 @@ final class EditLikeViewModel: ViewModel {
     // MARK: Transform
     
     func transform(input: EditLikeViewModel.Input) -> EditLikeViewModel.Output {
+        let title = Driver.just("Edit")
         let errorTracker = ErrorTracker()
         let editing = input.editTrigger.scan(false) { editing, _ in
             return !editing
@@ -101,7 +102,8 @@ final class EditLikeViewModel: ViewModel {
                       editing: editing,
                       like: likeToSave,
                       error: errorTracker.asDriver(),
-                      encryption: encryption)
+                      encryption: encryption,
+                      title: title)
     }
 }
 
@@ -125,5 +127,6 @@ extension EditLikeViewModel {
         let like: Driver<Like>
         let error: Driver<Error>
         let encryption: Driver<Bool>
+        let title: Driver<String>
     }
 }

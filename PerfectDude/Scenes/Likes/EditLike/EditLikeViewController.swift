@@ -90,5 +90,6 @@ extension EditLikeViewController: Bindable {
         output.error.drive(errorBinding).disposed(by: disposeBag)
         output.delete.drive().disposed(by: disposeBag)
         output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
+        output.title.drive(rx.title).disposed(by: disposeBag)
     }
 }

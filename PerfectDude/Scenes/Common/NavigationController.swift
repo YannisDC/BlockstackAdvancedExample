@@ -13,11 +13,21 @@ class NavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        navigationBar <- {
-//            $0.shadowImage = UIImage()
+        navigationBar <- {
+            $0.shadowImage = UIImage()
 //            $0.isTranslucent = false
-//            $0.tintColor = .white
-//            $0.barStyle = .default
-//        }
+            $0.tintColor = .black
+            $0.barStyle = .default
+            $0.prefersLargeTitles = true
+            $0.backgroundColor = .white
+        }
+        
+        navigationItem <- {
+            $0.largeTitleDisplayMode = .always
+        }
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.black
+        ]
     }
 }
