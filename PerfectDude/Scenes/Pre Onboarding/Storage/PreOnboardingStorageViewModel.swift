@@ -1,8 +1,8 @@
 //
-//  TestViewModel.swift
+//  PreOnboardingStorageViewModel.swift
 //  PerfectDude
 //
-//  Created by Yannis De Cleene on 04/12/2018.
+//  Created by Yannis De Cleene on 06/12/2018.
 //  Copyright © 2018 yannisdecleene. All rights reserved.
 //
 
@@ -10,19 +10,19 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-final class TestViewModel: ViewModel {
+final class PreOnboardingStorageViewModel: ViewModel {
 
-    private weak var coordinator: BaseCoordinator<TestRoute>?
+    private weak var coordinator: BaseCoordinator<PreOnboardingRoute>?
 
     // MARK: Init
 
-    init(coordinator: BaseCoordinator<TestRoute>?) {
+    init(coordinator: BaseCoordinator<PreOnboardingRoute>?) {
         self.coordinator = coordinator
     }
 
     // MARK: Transform
 
-    func transform(input: TestViewModel.Input) -> TestViewModel.Output {
+    func transform(input: PreOnboardingStorageViewModel.Input) -> PreOnboardingStorageViewModel.Output {
         let title = Driver.just("".localized())
 
         return Output(title: title)
@@ -31,7 +31,7 @@ final class TestViewModel: ViewModel {
 
 // MARK: - ViewModel
 
-extension TestViewModel {
+extension PreOnboardingStorageViewModel {
     struct Input {
     }
 

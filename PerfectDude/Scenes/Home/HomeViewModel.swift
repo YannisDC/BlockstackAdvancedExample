@@ -38,12 +38,7 @@ final class HomeViewModel: ViewModel {
             self.coordinator?.coordinate(to: .signOut)
         })
         
-        let showResult = input.showTap.do(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
-            self.initUsecase.initLikeIndexes().subscribe({ (path) in
-                self.coordinator?.coordinate(to: .likes)
-            })
-        })
+        let showResult = input.showTap
         
         return Output(signOutResult: signOutResult,
                       showResult: showResult,

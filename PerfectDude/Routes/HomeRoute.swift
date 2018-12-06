@@ -10,6 +10,5 @@ import Foundation
 
 enum HomeRoute: Route {
     case home
-    case likes
     case signOut
 }

@@ -30,15 +30,15 @@ final class CreateLikeViewModel: ViewModel {
     // MARK: Transform
 
     func transform(input: CreateLikeViewModel.Input) -> CreateLikeViewModel.Output {
+        let title = Driver.just("Create".localized())
         
-        let title = input.title
         let activityIndicator = ActivityIndicator()
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
-        let titleAndImage = Driver.combineLatest(input.title, imageToSave, input.encryption)
+        let titleAndImage = Driver.combineLatest(input.likeTitle, imageToSave, input.encryption)
         
-        let canSave = Driver.combineLatest(title, activityIndicator.asDriver()) {
+        let canSave = Driver.combineLatest(input.likeTitle, activityIndicator.asDriver()) {
             return !$0.isEmpty && !$1
         }
         
@@ -77,7 +77,7 @@ extension CreateLikeViewModel {
     struct Input {
         let saveTrigger: Driver<Void>
         let selectImageTrigger: Driver<Void>
-        let title: Driver<String>
+        let likeTitle: Driver<String>
         let encryption: Driver<Bool>
     }
 

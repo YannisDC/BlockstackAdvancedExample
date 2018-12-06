@@ -12,6 +12,17 @@ import Core
 final
 class CoordinatorFactory: CoordinatorFactoryProtocol {
     
+    func makePreOnboardingCoordinator(rootViewController: BaseViewController,
+                                      delegate: CoordinatorDelegate?,
+                                      factory: ControllerFactory,
+                                      usecaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator {
+        
+        return PreOnboardingCoordinator(rootViewController: rootViewController,
+                                        delegate: delegate,
+                                        useCaseProvider: usecaseProvider,
+                                        factory: factory)
+    }
+    
     /// Creates a HomeCoordinator
     ///
     /// - Parameters:

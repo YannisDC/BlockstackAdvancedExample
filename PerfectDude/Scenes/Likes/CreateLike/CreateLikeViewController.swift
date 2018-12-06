@@ -31,7 +31,7 @@ extension CreateLikeViewController: Bindable {
         
         let input = CreateLikeViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
                                               selectImageTrigger: selectImageButton.rx.tap.asDriver(),
-                                              title: descriptionTextField.rx.text.orEmpty.asDriver(),
+                                              likeTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
                                               encryption: encryptionSwitch.rx.value.asDriver())
         let output = viewModel.transform(input: input)
 

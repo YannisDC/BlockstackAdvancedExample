@@ -11,6 +11,18 @@ import Core
 
 protocol CoordinatorFactoryProtocol {
     
+    /// Creates a PreOnboardingCoordinator
+    ///
+    /// - Parameters:
+    ///   - rootViewController: BaseViewController instance
+    ///   - delegate: CoordinatorDelegate instance
+    ///   - factory: ControllerFactory instance
+    /// - Returns: PreOnboardingCoordinator instance
+    func makePreOnboardingCoordinator(rootViewController: BaseViewController,
+                                      delegate: CoordinatorDelegate?,
+                                      factory: ControllerFactory,
+                                      usecaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator
+    
     /// Creates a HomeCoordinator
     ///
     /// - Parameters:
@@ -22,7 +34,6 @@ protocol CoordinatorFactoryProtocol {
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,
                              usecaseProvider: Core.UseCaseProvider) -> HomeCoordinator
-    
     
     /// Creates a LikesCoordinator
     ///
