@@ -10,6 +10,7 @@ In this app the **Domain layer is renamed to Core**.
 - [x] Make a provider to easily make Networks/Repositories for different types (of Structs)
 - [x] Put the UI components into a seperate framework
 - [x] Add encryption on the cache by implementing a Cryptable protocol in the Structs
+- [x] Add Pre Onboarding that explains Blockstack
 - [ ] Add unit tests
 - [x] Make seperate Blockstack app endpoint
 - [ ] Add examples of multiple types
