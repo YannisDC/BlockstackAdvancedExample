@@ -9,6 +9,7 @@
 import Foundation
 
 enum AppRoute: Route {
+    case preOnboarding
     case home
     case authentication
 }

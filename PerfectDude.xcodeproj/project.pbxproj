@@ -17,6 +17,15 @@
 		DE4A19902198DA2400112F0D /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A198F2198DA2400112F0D /* Reminder.swift */; };
 		DE4A19932198DBF000112F0D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19922198DBF000112F0D /* Event.swift */; };
 		DE4A19962198E13800112F0D /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19952198E13800112F0D /* Like.swift */; };
+		DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B76921B9416500D7F905 /* PreOnboardingStorageViewController.swift */; };
+		DE50B76D21B9416500D7F905 /* PreOnboardingStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B76A21B9416500D7F905 /* PreOnboardingStorageViewModel.swift */; };
+		DE50B76E21B9416500D7F905 /* PreOnboardingStorageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B76B21B9416500D7F905 /* PreOnboardingStorageViewController.xib */; };
+		DE50B77321B9451700D7F905 /* PreOnboardingIdentityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77021B9451700D7F905 /* PreOnboardingIdentityViewController.swift */; };
+		DE50B77421B9451700D7F905 /* PreOnboardingIdentityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77121B9451700D7F905 /* PreOnboardingIdentityViewModel.swift */; };
+		DE50B77521B9451700D7F905 /* PreOnboardingIdentityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B77221B9451700D7F905 /* PreOnboardingIdentityViewController.xib */; };
+		DE50B77A21B9454300D7F905 /* PreOnboardingWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */; };
+		DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */; };
+		DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */; };
 		DE5A6E0C21A498B90097E941 /* LikesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0921A498B90097E941 /* LikesCoordinator.swift */; };
 		DE5A6E0D21A498B90097E941 /* LikesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0A21A498B90097E941 /* LikesFactory.swift */; };
 		DE5A6E0E21A498B90097E941 /* LikesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0B21A498B90097E941 /* LikesRoute.swift */; };
@@ -112,6 +121,12 @@
 		DEA8EC4821B00CC10004CB21 /* ModalStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8EC4721B00CC10004CB21 /* ModalStatusView.swift */; };
 		DEA8EC4C21B010510004CB21 /* ModalStatusView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEA8EC4B21B010510004CB21 /* ModalStatusView.xib */; };
 		DEB36B5721B70738007F275C /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEB36B5621B70738007F275C /* Colors.xcassets */; };
+		DEB48E7721B851DD0045A58E /* PreOnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7421B851DD0045A58E /* PreOnboardingCoordinator.swift */; };
+		DEB48E7821B851DD0045A58E /* PreOnboardingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7521B851DD0045A58E /* PreOnboardingFactory.swift */; };
+		DEB48E7921B851DD0045A58E /* PreOnboardingRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7621B851DD0045A58E /* PreOnboardingRoute.swift */; };
+		DEB48E7E21B87B1E0045A58E /* PreOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */; };
+		DEB48E7F21B87B1E0045A58E /* PreOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */; };
+		DEB48E8021B87B1E0045A58E /* PreOnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */; };
 		DED9FA9C219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA3219E0D3E001C5878 /* BlockstackPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */; };
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -237,6 +252,15 @@
 		DE4A198F2198DA2400112F0D /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		DE4A19922198DBF000112F0D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		DE4A19952198E13800112F0D /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
+		DE50B76921B9416500D7F905 /* PreOnboardingStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStorageViewController.swift; sourceTree = "<group>"; };
+		DE50B76A21B9416500D7F905 /* PreOnboardingStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStorageViewModel.swift; sourceTree = "<group>"; };
+		DE50B76B21B9416500D7F905 /* PreOnboardingStorageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingStorageViewController.xib; sourceTree = "<group>"; };
+		DE50B77021B9451700D7F905 /* PreOnboardingIdentityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingIdentityViewController.swift; sourceTree = "<group>"; };
+		DE50B77121B9451700D7F905 /* PreOnboardingIdentityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingIdentityViewModel.swift; sourceTree = "<group>"; };
+		DE50B77221B9451700D7F905 /* PreOnboardingIdentityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingIdentityViewController.xib; sourceTree = "<group>"; };
+		DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewController.swift; sourceTree = "<group>"; };
+		DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewModel.swift; sourceTree = "<group>"; };
+		DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingWalletViewController.xib; sourceTree = "<group>"; };
 		DE5A6E0921A498B90097E941 /* LikesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesCoordinator.swift; sourceTree = "<group>"; };
 		DE5A6E0A21A498B90097E941 /* LikesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesFactory.swift; sourceTree = "<group>"; };
 		DE5A6E0B21A498B90097E941 /* LikesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesRoute.swift; sourceTree = "<group>"; };
@@ -339,6 +363,12 @@
 		DEA8EC4721B00CC10004CB21 /* ModalStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStatusView.swift; sourceTree = "<group>"; };
 		DEA8EC4B21B010510004CB21 /* ModalStatusView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ModalStatusView.xib; sourceTree = "<group>"; };
 		DEB36B5621B70738007F275C /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		DEB48E7421B851DD0045A58E /* PreOnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingCoordinator.swift; sourceTree = "<group>"; };
+		DEB48E7521B851DD0045A58E /* PreOnboardingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingFactory.swift; sourceTree = "<group>"; };
+		DEB48E7621B851DD0045A58E /* PreOnboardingRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingRoute.swift; sourceTree = "<group>"; };
+		DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingViewController.swift; sourceTree = "<group>"; };
+		DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingViewModel.swift; sourceTree = "<group>"; };
+		DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingViewController.xib; sourceTree = "<group>"; };
 		DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackPlatform.h; sourceTree = "<group>"; };
 		DED9FA96219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -496,6 +526,36 @@
 				DE4A19952198E13800112F0D /* Like.swift */,
 			);
 			path = Like;
+			sourceTree = "<group>";
+		};
+		DE50B76F21B9416F00D7F905 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				DE50B76921B9416500D7F905 /* PreOnboardingStorageViewController.swift */,
+				DE50B76A21B9416500D7F905 /* PreOnboardingStorageViewModel.swift */,
+				DE50B76B21B9416500D7F905 /* PreOnboardingStorageViewController.xib */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		DE50B77621B9452100D7F905 /* Identity */ = {
+			isa = PBXGroup;
+			children = (
+				DE50B77021B9451700D7F905 /* PreOnboardingIdentityViewController.swift */,
+				DE50B77121B9451700D7F905 /* PreOnboardingIdentityViewModel.swift */,
+				DE50B77221B9451700D7F905 /* PreOnboardingIdentityViewController.xib */,
+			);
+			path = Identity;
+			sourceTree = "<group>";
+		};
+		DE50B77D21B9454900D7F905 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */,
+				DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */,
+				DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */,
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 		DE5A6E0F21A53DF40097E941 /* Likes */ = {
@@ -819,6 +879,7 @@
 		DE96F75821936388007A342A /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				DEB48E7A21B855F00045A58E /* Pre Onboarding */,
 				DE96F75921936388007A342A /* Home */,
 				DE5A6E0F21A53DF40097E941 /* Likes */,
 			);
@@ -846,11 +907,12 @@
 		DE96F76121936388007A342A /* Routes */ = {
 			isa = PBXGroup;
 			children = (
+				DE96F76521936388007A342A /* Route.swift */,
+				DE96F76421936388007A342A /* AppRoute.swift */,
+				DEB48E7621B851DD0045A58E /* PreOnboardingRoute.swift */,
 				DE96F76221936388007A342A /* HomeRoute.swift */,
 				DE5A6E0B21A498B90097E941 /* LikesRoute.swift */,
 				DE96F76321936388007A342A /* GoalRoute.swift */,
-				DE96F76421936388007A342A /* AppRoute.swift */,
-				DE96F76521936388007A342A /* Route.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -867,6 +929,7 @@
 			isa = PBXGroup;
 			children = (
 				DE96F7B821936A54007A342A /* Common */,
+				DEB48E8121B87B3E0045A58E /* Pre Onboarding */,
 				DE96F76C21936388007A342A /* Home */,
 				DE96F77521936388007A342A /* Authentication */,
 				DE5A6E1621A53E5A0097E941 /* Likes */,
@@ -932,10 +995,32 @@
 			path = PerfectUITests;
 			sourceTree = "<group>";
 		};
+		DEB48E7A21B855F00045A58E /* Pre Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DEB48E7421B851DD0045A58E /* PreOnboardingCoordinator.swift */,
+			);
+			path = "Pre Onboarding";
+			sourceTree = "<group>";
+		};
+		DEB48E8121B87B3E0045A58E /* Pre Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				DE50B77621B9452100D7F905 /* Identity */,
+				DE50B76F21B9416F00D7F905 /* Storage */,
+				DE50B77D21B9454900D7F905 /* Wallet */,
+				DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */,
+				DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */,
+				DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */,
+			);
+			path = "Pre Onboarding";
+			sourceTree = "<group>";
+		};
 		DED9FA8D219E08E5001C5878 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				DE96F73E21936388007A342A /* AppFactory.swift */,
+				DEB48E7521B851DD0045A58E /* PreOnboardingFactory.swift */,
 				DE96F73B21936388007A342A /* HomeFactory.swift */,
 				DE5A6E0A21A498B90097E941 /* LikesFactory.swift */,
 			);
@@ -1249,12 +1334,16 @@
 			files = (
 				DE96F6E421935FB7007A342A /* LaunchScreen.storyboard in Resources */,
 				DE5A6E2F21A5D4220097E941 /* EditLikeViewController.xib in Resources */,
+				DE50B77521B9451700D7F905 /* PreOnboardingIdentityViewController.xib in Resources */,
 				DE96F6E121935FB7007A342A /* Assets.xcassets in Resources */,
+				DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */,
 				DE5A6E1521A53E3B0097E941 /* LikesViewController.xib in Resources */,
 				DE5A6E2821A5D3FC0097E941 /* CreateLikeViewController.xib in Resources */,
 				DEB36B5721B70738007F275C /* Colors.xcassets in Resources */,
+				DEB48E8021B87B1E0045A58E /* PreOnboardingViewController.xib in Resources */,
 				DE96F7A621936389007A342A /* HomeViewController.xib in Resources */,
 				DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */,
+				DE50B76E21B9416500D7F905 /* PreOnboardingStorageViewController.xib in Resources */,
 				DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
 			);
@@ -1475,6 +1564,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE50B77A21B9454300D7F905 /* PreOnboardingWalletViewController.swift in Sources */,
+				DE50B76D21B9416500D7F905 /* PreOnboardingStorageViewModel.swift in Sources */,
 				DE96F78C21936389007A342A /* SearchableViewController.swift in Sources */,
 				DE96F79021936389007A342A /* CustomViewable.swift in Sources */,
 				DE96F79E21936389007A342A /* HomeRoute.swift in Sources */,
@@ -1482,15 +1573,18 @@
 				DE96F79821936389007A342A /* AppCoordinator.swift in Sources */,
 				DE5A6E1F21A584A80097E941 /* ActivityIndicator.swift in Sources */,
 				DE5A6E1421A53E3B0097E941 /* LikesViewModel.swift in Sources */,
+				DEB48E7721B851DD0045A58E /* PreOnboardingCoordinator.swift in Sources */,
 				DE96F78421936389007A342A /* AppFactory.swift in Sources */,
 				DE5A6E0D21A498B90097E941 /* LikesFactory.swift in Sources */,
 				DE5A6E0C21A498B90097E941 /* LikesCoordinator.swift in Sources */,
+				DEB48E7E21B87B1E0045A58E /* PreOnboardingViewController.swift in Sources */,
 				DE96F7AE21936389007A342A /* AuthenticationViewModel.swift in Sources */,
 				DE5A6E1B21A57EEA0097E941 /* LikeTableViewCell.swift in Sources */,
 				DE96F78221936389007A342A /* HomeFactory.swift in Sources */,
 				DE96F78D21936389007A342A /* ActivityPresentable.swift in Sources */,
 				DE96F78721936389007A342A /* CustomView.swift in Sources */,
 				DE5A6E1321A53E3B0097E941 /* LikesViewController.swift in Sources */,
+				DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */,
 				DE96F7A821936389007A342A /* BaseViewController.swift in Sources */,
 				DE96F78F21936389007A342A /* Bindable.swift in Sources */,
 				DE96F79721936389007A342A /* CALayer+Extension.swift in Sources */,
@@ -1500,6 +1594,7 @@
 				DE96F78921936389007A342A /* Operator.swift in Sources */,
 				DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */,
 				DE96F78B21936389007A342A /* ErrorPresentable.swift in Sources */,
+				DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */,
 				DE96F79421936389007A342A /* String+Extension.swift in Sources */,
 				DE5A6E1821A57CD00097E941 /* LikeItemViewModel.swift in Sources */,
 				DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */,
@@ -1508,8 +1603,10 @@
 				DE96F78A21936389007A342A /* Reuseable.swift in Sources */,
 				DE96F79121936389007A342A /* UIApplication+Extension.swift in Sources */,
 				DE96F79F21936389007A342A /* GoalRoute.swift in Sources */,
+				DEB48E7921B851DD0045A58E /* PreOnboardingRoute.swift in Sources */,
 				DE5A6E0E21A498B90097E941 /* LikesRoute.swift in Sources */,
 				DE96F78321936389007A342A /* CoordinatorFactoryProtocol.swift in Sources */,
+				DEB48E7F21B87B1E0045A58E /* PreOnboardingViewModel.swift in Sources */,
 				DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */,
 				DE5A6E2D21A5D4220097E941 /* EditLikeViewController.swift in Sources */,
 				DE96F79221936389007A342A /* NSObject+Extension.swift in Sources */,
@@ -1521,14 +1618,17 @@
 				DE96F79921936389007A342A /* HomeCoordinator.swift in Sources */,
 				DE96F6D721935FB5007A342A /* AppDelegate.swift in Sources */,
 				DE96F78521936389007A342A /* ControllerFactory.swift in Sources */,
+				DE50B77421B9451700D7F905 /* PreOnboardingIdentityViewModel.swift in Sources */,
 				DE5A6E2121A584C40097E941 /* ErrorTracker.swift in Sources */,
 				DE96F79D21936389007A342A /* Coordinator.swift in Sources */,
 				DE96F79321936389007A342A /* UIViewController+Extension.swift in Sources */,
+				DE50B77321B9451700D7F905 /* PreOnboardingIdentityViewController.swift in Sources */,
 				DE96F79C21936389007A342A /* BaseCoordinator.swift in Sources */,
 				DE96F78821936389007A342A /* Error.swift in Sources */,
 				DE96F7A521936389007A342A /* HomeViewModel.swift in Sources */,
 				DE96F7A721936389007A342A /* HomeViewController.swift in Sources */,
 				DE96F79621936389007A342A /* AlertController+Extension.swift in Sources */,
+				DEB48E7821B851DD0045A58E /* PreOnboardingFactory.swift in Sources */,
 				DE96F78621936389007A342A /* CoordinatorFactory.swift in Sources */,
 				DE96F7A121936389007A342A /* Route.swift in Sources */,
 			);

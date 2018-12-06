@@ -50,6 +50,11 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
             isActivated = true
         }
         
+        guard UserDefaults.standard.bool(forKey: "isPreOnboarded") else {
+            coordinate(to: .preOnboarding)
+            return
+        }
+        
         if auth.isUserSignedIn() {
             coordinate(to: .home)
         } else {
@@ -60,6 +65,8 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     override func coordinate(to route: AppRoute) {
         DispatchQueue.main.async {
             switch route {
+            case .preOnboarding:
+                self.toPreOnboarding()
             case .home:
                 self.toHome()
             case .authentication:
@@ -80,6 +87,16 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
 // MARK: - Private
 
 private extension AppCoordinator {
+    
+    func toPreOnboarding() {
+        let preOnboardingCoordinator = coordinatorFactory
+            .makePreOnboardingCoordinator(rootViewController: rootViewController,
+                                          delegate: self,
+                                          factory: factory,
+                                          usecaseProvider: self.usecaseProvider)
+        addDependency(preOnboardingCoordinator)
+        preOnboardingCoordinator.start()
+    }
     
     func toHome() {
         let homeCoordinator = coordinatorFactory.makeHomeCoordinator(rootViewController: rootViewController,
@@ -111,6 +128,11 @@ extension AppCoordinator: CoordinatorDelegate {
         if coordinator is HomeCoordinator {
             auth.signUserOut()
             coordinate(to: .authentication)
+        }
+        
+        if coordinator is PreOnboardingCoordinator {
+            UserDefaults.standard.set(true, forKey: "isPreOnboarded")
+            coordinate(to: .home)
         }
         
         removeDependency(coordinator)

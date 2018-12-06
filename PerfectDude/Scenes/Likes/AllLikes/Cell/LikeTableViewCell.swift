@@ -21,6 +21,10 @@ class LikeTableViewCell: UITableViewCell {
     func bind(_ viewModel:LikeItemViewModel) {
         self.titleLabel.text = viewModel.title
         self.thumbnailView.image = viewModel.image
+        
+        thumbnailView <- {
+            $0.layer.cornerRadius = 4.0
+            $0.layer.masksToBounds = true
+        }
     }
-    
 }

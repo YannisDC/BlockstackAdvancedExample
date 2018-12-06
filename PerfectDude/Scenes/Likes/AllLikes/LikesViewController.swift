@@ -28,8 +28,10 @@ extension LikesViewController: Bindable {
         
         tableView.register(UINib(nibName: LikeTableViewCell.reuseID, bundle: nil), forCellReuseIdentifier: LikeTableViewCell.reuseID)
         tableView.refreshControl = UIRefreshControl()
-        tableView.estimatedRowHeight = 64
+        tableView.estimatedRowHeight = 135
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.separatorInset = UIEdgeInsets(top: 0, left: 134, bottom: 0, right: 20)
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 1))
         
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
             .mapToVoid()

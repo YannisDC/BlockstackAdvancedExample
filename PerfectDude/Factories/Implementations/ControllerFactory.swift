@@ -12,6 +12,7 @@ import RxSwift
 
 final
 class ControllerFactory: AppFactory,
+PreOnboardingFactory,
 HomeFactory,
 LikesFactory {
     
@@ -31,6 +32,39 @@ LikesFactory {
         
         authViewController.bindViewModel(to: authViewModel)
         return authViewController
+        
+    }
+    
+    func makePreOnboardingViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                         useCaseProvider: Core.UseCaseProvider,
+                                         viewControllers: [UIViewController]) -> PreOnboardingViewController {
+        
+        let preOnboardingViewController = PreOnboardingViewController(viewControllers: viewControllers)
+        let preOnboardingViewModel = PreOnboardingViewModel(coordinator: coordinator,
+                                                            useCaseProvider: useCaseProvider)
+        
+        preOnboardingViewController.bindViewModel(to: preOnboardingViewModel)
+        return preOnboardingViewController
+        
+    }
+    
+    func makePreOnboardingIdentityViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingIdentityViewController {
+        
+        let identityViewController = PreOnboardingIdentityViewController.loadFromNib()
+        let identityViewModel = PreOnboardingIdentityViewModel(coordinator: coordinator)
+        
+        identityViewController.bindViewModel(to: identityViewModel)
+        return identityViewController
+        
+    }
+    
+    func makePreOnboardingStorageViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingStorageViewController {
+        
+        let storageViewController = PreOnboardingStorageViewController.loadFromNib()
+        let storageViewModel = PreOnboardingStorageViewModel(coordinator: coordinator)
+        
+        storageViewController.bindViewModel(to: storageViewModel)
+        return storageViewController
         
     }
     
