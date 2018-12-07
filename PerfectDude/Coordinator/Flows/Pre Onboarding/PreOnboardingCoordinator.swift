@@ -58,10 +58,14 @@ private extension PreOnboardingCoordinator {
         
         let storageViewController = factory.makePreOnboardingStorageViewController(coordinator: self)
         
+        let walletViewController = factory.makePreOnboardingWalletViewController(coordinator: self)
+        
         let preOnboardingViewController = factory
             .makePreOnboardingViewController(coordinator: self,
                                              useCaseProvider: self.useCaseProvider,
-                                             viewControllers: [identityViewController, storageViewController])
+                                             viewControllers: [identityViewController,
+                                                               storageViewController,
+                                                               walletViewController])
         rootViewController.present(preOnboardingViewController, animated: false, completion: nil)
     }
 }
