@@ -20,16 +20,17 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Own all your data" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tP-aw-BzX">
-                    <rect key="frame" x="24" y="503" width="327" height="29"/>
+                    <rect key="frame" x="24" y="417" width="327" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc5-58-HXg">
-                    <rect key="frame" x="48" y="548" width="279" height="69"/>
+                    <rect key="frame" x="48" y="462" width="279" height="69"/>
                     <attributedString key="attributedText">
-                        <fragment content="Blockstack lets you access your data anytime you want and puts you in full control of this data.">
+                        <fragment content="Blockstack lets you access your data anytime you want and puts you in full control of this data. Easy and safe.">
                             <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
                             </attributes>
@@ -37,17 +38,27 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pre_onboarding_storage" translatesAutoresizingMaskIntoConstraints="NO" id="gwv-GS-fJJ">
+                    <rect key="frame" x="64" y="120" width="247" height="247"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="gwv-GS-fJJ" secondAttribute="trailing" constant="64" id="9C8-pn-LwV"/>
+                <constraint firstItem="gwv-GS-fJJ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="100" id="Bvk-Dl-jUx"/>
+                <constraint firstItem="gwv-GS-fJJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="Cvv-QH-h59"/>
                 <constraint firstAttribute="trailing" secondItem="0tP-aw-BzX" secondAttribute="trailing" constant="24" id="J1T-Z7-AuE"/>
-                <constraint firstAttribute="bottom" secondItem="kc5-58-HXg" secondAttribute="bottom" constant="50" id="YMc-ck-nAm"/>
                 <constraint firstItem="kc5-58-HXg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="Ykb-PP-s1Y"/>
+                <constraint firstItem="0tP-aw-BzX" firstAttribute="top" secondItem="gwv-GS-fJJ" secondAttribute="bottom" constant="50" id="bcV-VO-yfw"/>
                 <constraint firstItem="kc5-58-HXg" firstAttribute="top" secondItem="0tP-aw-BzX" secondAttribute="bottom" constant="16" id="kxl-dh-6Ka"/>
                 <constraint firstItem="0tP-aw-BzX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="lfM-f2-l4N"/>
+                <constraint firstItem="gwv-GS-fJJ" firstAttribute="width" secondItem="gwv-GS-fJJ" secondAttribute="height" multiplier="1:1" id="mcd-Ao-x6t"/>
                 <constraint firstAttribute="trailing" secondItem="kc5-58-HXg" secondAttribute="trailing" constant="48" id="yt7-jB-bHB"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="pre_onboarding_storage" width="400" height="400"/>
+    </resources>
 </document>

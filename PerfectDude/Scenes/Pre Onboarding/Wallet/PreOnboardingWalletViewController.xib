@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreOnboardingWalletViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreOnboardingWalletViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -15,20 +19,46 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PreOnboardingWallet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OG-AN-M68">
-                    <rect key="frame" x="10" y="323" width="355" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your digital wallet" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePe-WE-gHB">
+                    <rect key="frame" x="24" y="397" width="327" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzO-vP-akQ">
+                    <rect key="frame" x="48" y="442" width="279" height="69"/>
+                    <attributedString key="attributedText">
+                        <fragment content="By using Stacks you can support your favourite creators or just send money to friends without any middlemen.">
+                            <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pre_onboarding_wallet" translatesAutoresizingMaskIntoConstraints="NO" id="cn6-pv-ZWN">
+                    <rect key="frame" x="64" y="100" width="247" height="247"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="0OG-AN-M68" secondAttribute="trailing" constant="10" id="NkK-MU-M74"/>
-                <constraint firstItem="0OG-AN-M68" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="aE1-3S-b8b"/>
-                <constraint firstItem="0OG-AN-M68" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="nlM-k7-FzL"/>
+                <constraint firstAttribute="trailing" secondItem="ePe-WE-gHB" secondAttribute="trailing" constant="24" id="6Xm-MM-r4r"/>
+                <constraint firstAttribute="trailing" secondItem="hzO-vP-akQ" secondAttribute="trailing" constant="48" id="6e0-MB-hdI"/>
+                <constraint firstItem="hzO-vP-akQ" firstAttribute="top" secondItem="ePe-WE-gHB" secondAttribute="bottom" constant="16" id="GCi-RV-wad"/>
+                <constraint firstItem="cn6-pv-ZWN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="80" id="N8L-rN-UhI"/>
+                <constraint firstItem="cn6-pv-ZWN" firstAttribute="width" secondItem="cn6-pv-ZWN" secondAttribute="height" multiplier="1:1" id="Nig-sW-77s"/>
+                <constraint firstItem="ePe-WE-gHB" firstAttribute="top" secondItem="cn6-pv-ZWN" secondAttribute="bottom" constant="50" id="V53-Ec-jle"/>
+                <constraint firstItem="cn6-pv-ZWN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="gUQ-Wf-d4w"/>
+                <constraint firstItem="ePe-WE-gHB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="kXl-zd-UJ6"/>
+                <constraint firstItem="hzO-vP-akQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="nLc-aj-BpY"/>
+                <constraint firstAttribute="trailing" secondItem="cn6-pv-ZWN" secondAttribute="trailing" constant="64" id="o3p-4j-6xs"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="pre_onboarding_wallet" width="400" height="400"/>
+    </resources>
 </document>

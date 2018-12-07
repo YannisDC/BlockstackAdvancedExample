@@ -77,14 +77,12 @@ private extension HomeCoordinator {
                                                delegate: self,
                                                factory: factory,
                                                usecaseProvider: usecaseProvider)
-        testCoordinator.navigationController.tabBarItem = UITabBarItem(title: "Blockstack",
-                                                                       image: UIImage(named: "blockstack_filled"),
-                                                                       selectedImage: nil)
+        testCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
-            homeViewController,
-            testCoordinator.navigationController
+            testCoordinator.navigationController,
+            homeViewController
         ]
         rootViewController.setContentViewController(tabBarController)
         

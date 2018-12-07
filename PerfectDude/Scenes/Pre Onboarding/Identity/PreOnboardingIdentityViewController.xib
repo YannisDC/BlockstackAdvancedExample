@@ -20,16 +20,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage your identity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLp-1w-cMs">
-                    <rect key="frame" x="24" y="480" width="327" height="29"/>
+                    <rect key="frame" x="24" y="417" width="327" height="29"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBI-b9-f5y">
-                    <rect key="frame" x="48" y="525" width="279" height="92"/>
+                    <rect key="frame" x="48" y="462" width="279" height="115"/>
                     <attributedString key="attributedText">
-                        <fragment content="We don't use Facebook or email to sign you in. By using Blockstack you gain full control over your digital identity">
+                        <fragment>
+                            <string key="content">We don't use Facebook or email to sign you in. By using Blockstack you gain full control over your digital identity and can sign into many awesome apps.</string>
                             <attributes>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                 <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.2" tighteningFactorForTruncation="0.0"/>
                             </attributes>
@@ -37,17 +39,29 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pre_onboarding_identity" translatesAutoresizingMaskIntoConstraints="NO" id="Y4z-qn-XEV">
+                    <rect key="frame" x="64" y="120" width="247" height="247"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="Y4z-qn-XEV" secondAttribute="height" multiplier="1:1" id="8Id-KE-LMS"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="dLp-1w-cMs" firstAttribute="top" secondItem="Y4z-qn-XEV" secondAttribute="bottom" constant="50" id="5hX-5q-gtB"/>
                 <constraint firstItem="BBI-b9-f5y" firstAttribute="top" secondItem="dLp-1w-cMs" secondAttribute="bottom" constant="16" id="6SM-Fa-3KU"/>
+                <constraint firstItem="Y4z-qn-XEV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="64" id="XxE-cp-6vN"/>
                 <constraint firstItem="BBI-b9-f5y" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="e1q-uL-jsQ"/>
                 <constraint firstAttribute="trailing" secondItem="dLp-1w-cMs" secondAttribute="trailing" constant="24" id="hRG-WT-icH"/>
-                <constraint firstAttribute="bottom" secondItem="BBI-b9-f5y" secondAttribute="bottom" constant="50" id="ifL-bb-RHU"/>
+                <constraint firstItem="Y4z-qn-XEV" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="100" id="oJO-xK-0BW"/>
+                <constraint firstAttribute="trailing" secondItem="Y4z-qn-XEV" secondAttribute="trailing" constant="64" id="rPQ-cR-Kaa"/>
                 <constraint firstAttribute="trailing" secondItem="BBI-b9-f5y" secondAttribute="trailing" constant="48" id="yQX-Bz-Ydj"/>
                 <constraint firstItem="dLp-1w-cMs" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="yVZ-Rd-abf"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="pre_onboarding_identity" width="400" height="400"/>
+    </resources>
 </document>

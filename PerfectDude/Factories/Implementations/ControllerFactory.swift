@@ -68,6 +68,16 @@ LikesFactory {
         
     }
     
+    func makePreOnboardingWalletViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingWalletViewController {
+        
+        let walletViewController = PreOnboardingWalletViewController.loadFromNib()
+        let walletViewModel = PreOnboardingWalletViewModel(coordinator: coordinator)
+        
+        walletViewController.bindViewModel(to: walletViewModel)
+        return walletViewController
+        
+    }
+    
     // MARK: HomeFactory methods
     
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
