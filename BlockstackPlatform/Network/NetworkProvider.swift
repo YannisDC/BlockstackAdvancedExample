@@ -47,6 +47,7 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
     }
     
     func save(entity: T) -> Maybe<String> {
+        self.cache.save(object: entity)
         return network.loadIndex(path: path, decrypt: indexEncryption).flatMapMaybe({ (indexes) -> Maybe<String> in
             var newIndexes = indexes
             newIndexes.push(entity.uuid, encrypted: entity.encrypted)

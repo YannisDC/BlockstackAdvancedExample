@@ -20,6 +20,7 @@ final class PreOnboardingViewController: ViewController {
     fileprivate var previousIndex: Int = 0
     @IBOutlet var containerView: UIView!
     @IBOutlet private weak var button: UIButton!
+    @IBOutlet var pageControl: UIPageControl!
     
     init(viewControllers: [UIViewController]) {
         self.viewControllers = viewControllers
@@ -84,6 +85,8 @@ extension PreOnboardingViewController: UIPageViewControllerDelegate {
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+//        if (!completed) { return }
+//        pageControl.currentPage = pageViewController.viewControllers!.first!.view.tag
         return
     }
 }

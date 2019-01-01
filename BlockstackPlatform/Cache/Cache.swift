@@ -51,9 +51,9 @@ final class Cache<T: Cachable>: AbstractCache {
                     completable(.completed)
                     return Disposables.create()
             }
-            let path = url.appendingPathComponent(self.path)
-                .appendingPathComponent("\(object.uuid)")
-                .appendingPathComponent(FileNames.objectFileName)
+            var path = url.appendingPathComponent(self.path)
+            self.createDirectoryIfNeeded(at: path)
+            path.appendPathComponent("\(object.uuid).txt")
             
             do {
                 try JSONEncoder().encode(object).write(to: path)
@@ -68,20 +68,22 @@ final class Cache<T: Cachable>: AbstractCache {
     
     func save(objects: [T]) -> Completable {
         return Completable.create { (completable) -> Disposable in
-            guard let directoryURL = self.directoryURL() else {
-                completable(.completed)
-                return Disposables.create()
+            for object in objects {
+                guard let url = FileManager.default
+                    .urls(for: .documentDirectory, in: .userDomainMask).first else {
+                        completable(.completed)
+                        return Disposables.create()
+                }
+                var path = url.appendingPathComponent(self.path)
+                self.createDirectoryIfNeeded(at: path)
+                path.appendPathComponent("\(object.uuid).txt")
+                do {
+                    try JSONEncoder().encode(object).write(to: path)
+                } catch {
+                    completable(.completed)
+                }
             }
-            let path = directoryURL
-                .appendingPathComponent(FileNames.objectsFileName)
-            self.createDirectoryIfNeeded(at: directoryURL)
-            do {
-                try JSONEncoder().encode(objects).write(to: path)
-                completable(.completed)
-            } catch {
-                completable(.completed)
-                //                observer(.error(error))
-            }
+            completable(.completed)
             
             return Disposables.create()
             }.subscribeOn(cacheScheduler)
@@ -121,14 +123,18 @@ final class Cache<T: Cachable>: AbstractCache {
                 return Disposables.create()
             }
             let fileURL = directoryURL
-                .appendingPathComponent(FileNames.objectsFileName)
             do {
-                let dataString = try String(contentsOf: fileURL, encoding: .utf8)
-                guard let data = dataString.data(using: .utf8) else {
-                    maybe(.completed)
-                    return Disposables.create()
+                let directoryContents = try FileManager.default.contentsOfDirectory(at: fileURL, includingPropertiesForKeys: nil, options: [])
+                var entities: [T] = []
+                for url in directoryContents {
+                    let dataString = try String(contentsOf: url, encoding: .utf8)
+                    guard let data = dataString.data(using: .utf8) else {
+                        maybe(.completed)
+                        return Disposables.create()
+                    }
+                    let entity = try JSONDecoder().decode(T.self, from: data)
+                    entities.append(entity)
                 }
-                let entities = try JSONDecoder().decode([T].self, from: data)
                 maybe(MaybeEvent.success(entities.map { $0 }))
                 
             } catch {
@@ -146,9 +152,7 @@ final class Cache<T: Cachable>: AbstractCache {
                     return Disposables.create()
             }
             let path = url.appendingPathComponent(self.path)
-                .appendingPathComponent("\(object.uuid)")
-                .appendingPathComponent(FileNames.objectFileName)
-            print(path)
+                .appendingPathComponent("\(object.uuid).txt")
             do {
                 try FileManager.default.removeItem(at: path)
                 completable(.completed)

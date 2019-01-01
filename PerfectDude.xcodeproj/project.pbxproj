@@ -26,6 +26,12 @@
 		DE50B77A21B9454300D7F905 /* PreOnboardingWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */; };
 		DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */; };
 		DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */; };
+		DE53FA0721C289E300C0DB6D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0621C289E300C0DB6D /* CustomView.swift */; };
+		DE53FA0A21C28A7800C0DB6D /* PreOnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */; };
+		DE53FA0B21C28A7800C0DB6D /* PreOnboardingStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */; };
+		DE53FA0C21C28D4400C0DB6D /* PreOnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */; };
+		DE53FA0D21C28D4700C0DB6D /* PreOnboardingStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */; };
+		DE53FA0F21C2B0DD00C0DB6D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0E21C2B0DD00C0DB6D /* UILabel+Extension.swift */; };
 		DE5A6E0C21A498B90097E941 /* LikesCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0921A498B90097E941 /* LikesCoordinator.swift */; };
 		DE5A6E0D21A498B90097E941 /* LikesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0A21A498B90097E941 /* LikesFactory.swift */; };
 		DE5A6E0E21A498B90097E941 /* LikesRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E0B21A498B90097E941 /* LikesRoute.swift */; };
@@ -54,6 +60,9 @@
 		DE74616D219EF60300D02824 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74616C219EF60300D02824 /* AuthUseCase.swift */; };
 		DE74616F219EF78800D02824 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74616E219EF78800D02824 /* Authentication.swift */; };
 		DE746171219EFB2500D02824 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; };
+		DE751E7921C182D70062533B /* PreOnboardingSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE751E7621C182D70062533B /* PreOnboardingSingleViewController.swift */; };
+		DE751E7A21C182D70062533B /* PreOnboardingSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE751E7721C182D70062533B /* PreOnboardingSingleViewModel.swift */; };
+		DE751E7B21C182D70062533B /* PreOnboardingSingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE751E7821C182D70062533B /* PreOnboardingSingleViewController.xib */; };
 		DE96F6D721935FB5007A342A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6D621935FB5007A342A /* AppDelegate.swift */; };
 		DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE96F6DA21935FB5007A342A /* Main.storyboard */; };
 		DE96F6DF21935FB5007A342A /* PerfectDude.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6DD21935FB5007A342A /* PerfectDude.xcdatamodeld */; };
@@ -261,6 +270,10 @@
 		DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewController.swift; sourceTree = "<group>"; };
 		DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewModel.swift; sourceTree = "<group>"; };
 		DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingWalletViewController.xib; sourceTree = "<group>"; };
+		DE53FA0621C289E300C0DB6D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStepView.swift; sourceTree = "<group>"; };
+		DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingStepView.xib; sourceTree = "<group>"; };
+		DE53FA0E21C2B0DD00C0DB6D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		DE5A6E0921A498B90097E941 /* LikesCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesCoordinator.swift; sourceTree = "<group>"; };
 		DE5A6E0A21A498B90097E941 /* LikesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesFactory.swift; sourceTree = "<group>"; };
 		DE5A6E0B21A498B90097E941 /* LikesRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesRoute.swift; sourceTree = "<group>"; };
@@ -288,6 +301,9 @@
 		DE74616A219EF57800D02824 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DE74616C219EF60300D02824 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DE74616E219EF78800D02824 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
+		DE751E7621C182D70062533B /* PreOnboardingSingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingSingleViewController.swift; sourceTree = "<group>"; };
+		DE751E7721C182D70062533B /* PreOnboardingSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingSingleViewModel.swift; sourceTree = "<group>"; };
+		DE751E7821C182D70062533B /* PreOnboardingSingleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingSingleViewController.xib; sourceTree = "<group>"; };
 		DE96F6D321935FB5007A342A /* PerfectDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE96F6D621935FB5007A342A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE96F6DB21935FB5007A342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -662,6 +678,16 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		DE751E7C21C182E20062533B /* Single */ = {
+			isa = PBXGroup;
+			children = (
+				DE751E7821C182D70062533B /* PreOnboardingSingleViewController.xib */,
+				DE751E7621C182D70062533B /* PreOnboardingSingleViewController.swift */,
+				DE751E7721C182D70062533B /* PreOnboardingSingleViewModel.swift */,
+			);
+			path = Single;
+			sourceTree = "<group>";
+		};
 		DE96F6CA21935FB5007A342A = {
 			isa = PBXGroup;
 			children = (
@@ -979,6 +1005,10 @@
 			isa = PBXGroup;
 			children = (
 				DEA8EC2C21B00C370004CB21 /* PerfectUI.h */,
+				DE53FA0621C289E300C0DB6D /* CustomView.swift */,
+				DE53FA0E21C2B0DD00C0DB6D /* UILabel+Extension.swift */,
+				DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */,
+				DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */,
 				DEA8EC4721B00CC10004CB21 /* ModalStatusView.swift */,
 				DEA8EC4B21B010510004CB21 /* ModalStatusView.xib */,
 				DEA8EC2D21B00C370004CB21 /* Info.plist */,
@@ -1012,6 +1042,7 @@
 				DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */,
 				DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */,
 				DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */,
+				DE751E7C21C182E20062533B /* Single */,
 			);
 			path = "Pre Onboarding";
 			sourceTree = "<group>";
@@ -1338,10 +1369,12 @@
 				DE96F6E121935FB7007A342A /* Assets.xcassets in Resources */,
 				DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */,
 				DE5A6E1521A53E3B0097E941 /* LikesViewController.xib in Resources */,
+				DE751E7B21C182D70062533B /* PreOnboardingSingleViewController.xib in Resources */,
 				DE5A6E2821A5D3FC0097E941 /* CreateLikeViewController.xib in Resources */,
 				DEB36B5721B70738007F275C /* Colors.xcassets in Resources */,
 				DEB48E8021B87B1E0045A58E /* PreOnboardingViewController.xib in Resources */,
 				DE96F7A621936389007A342A /* HomeViewController.xib in Resources */,
+				DE53FA0D21C28D4700C0DB6D /* PreOnboardingStepView.xib in Resources */,
 				DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */,
 				DE50B76E21B9416500D7F905 /* PreOnboardingStorageViewController.xib in Resources */,
 				DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */,
@@ -1382,6 +1415,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEA8EC4C21B010510004CB21 /* ModalStatusView.xib in Resources */,
+				DE53FA0B21C28A7800C0DB6D /* PreOnboardingStepView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1587,6 +1621,7 @@
 				DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */,
 				DE96F7A821936389007A342A /* BaseViewController.swift in Sources */,
 				DE96F78F21936389007A342A /* Bindable.swift in Sources */,
+				DE751E7A21C182D70062533B /* PreOnboardingSingleViewModel.swift in Sources */,
 				DE96F79721936389007A342A /* CALayer+Extension.swift in Sources */,
 				DE96F78E21936389007A342A /* ViewModel.swift in Sources */,
 				DE96F7AF21936389007A342A /* NavigationController.swift in Sources */,
@@ -1600,6 +1635,7 @@
 				DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */,
 				DE5A6E2721A5D3FC0097E941 /* CreateLikeViewModel.swift in Sources */,
 				DE96F7A221936389007A342A /* UseCaseProvider.swift in Sources */,
+				DE53FA0C21C28D4400C0DB6D /* PreOnboardingStepView.swift in Sources */,
 				DE96F78A21936389007A342A /* Reuseable.swift in Sources */,
 				DE96F79121936389007A342A /* UIApplication+Extension.swift in Sources */,
 				DE96F79F21936389007A342A /* GoalRoute.swift in Sources */,
@@ -1617,6 +1653,7 @@
 				DE96F7AD21936389007A342A /* AuthenticationViewController.swift in Sources */,
 				DE96F79921936389007A342A /* HomeCoordinator.swift in Sources */,
 				DE96F6D721935FB5007A342A /* AppDelegate.swift in Sources */,
+				DE751E7921C182D70062533B /* PreOnboardingSingleViewController.swift in Sources */,
 				DE96F78521936389007A342A /* ControllerFactory.swift in Sources */,
 				DE50B77421B9451700D7F905 /* PreOnboardingIdentityViewModel.swift in Sources */,
 				DE5A6E2121A584C40097E941 /* ErrorTracker.swift in Sources */,
@@ -1680,6 +1717,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE53FA0F21C2B0DD00C0DB6D /* UILabel+Extension.swift in Sources */,
+				DE53FA0721C289E300C0DB6D /* CustomView.swift in Sources */,
+				DE53FA0A21C28A7800C0DB6D /* PreOnboardingStepView.swift in Sources */,
 				DEA8EC4821B00CC10004CB21 /* ModalStatusView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

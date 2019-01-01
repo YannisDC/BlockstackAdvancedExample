@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreOnboardingSingleViewController" customModule="PerfectDude" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="fm1-HY-p1p" id="qY2-1e-nPb"/>
+                <outlet property="firstStepView" destination="VCq-Yx-aoD" id="qrf-2X-BaS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Welcome to Perfect Dude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujt-KA-g91">
+                    <rect key="frame" x="24" y="71" width="327" height="84.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="MJx-8X-Vcl">
+                    <rect key="frame" x="27" y="197.5" width="321" height="332.5"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCq-Yx-aoD" customClass="PreOnboardingStepView" customModule="PerfectUI">
+                            <rect key="frame" x="0.0" y="0.0" width="321" height="109.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Manage your identity"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText">
+                                    <string key="value">We don't use Facebook or email to sign you in. By using Blockstack you gain full control over your digital identity and can sign into many awesome apps.</string>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="fingerprint"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-Nb-y8S" customClass="PreOnboardingStepView" customModule="PerfectUI">
+                            <rect key="frame" x="0.0" y="147.5" width="321" height="73.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Own all your data"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="Blockstack lets you access your data anytime you want and puts you in full control of this data. Easy and safe."/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="database"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-iy-dtN" customClass="PreOnboardingStepView" customModule="PerfectUI">
+                            <rect key="frame" x="0.0" y="259" width="321" height="73.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Your digital wallet"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="By using Stacks you can support your favourite creators or just send money to friends without any middlemen."/>
+                                <userDefinedRuntimeAttribute type="image" keyPath="image" value="wallet"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQP-bp-zWJ">
+                    <rect key="frame" x="16" y="565.5" width="343" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-HY-p1p">
+                    <rect key="frame" x="44" y="607" width="287" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="kUT-wG-2bo"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Continue with Blockstack">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="ujt-KA-g91" secondAttribute="trailing" constant="24" id="5a3-vz-YQ3"/>
+                <constraint firstItem="ujt-KA-g91" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="5s8-cr-g3E"/>
+                <constraint firstAttribute="trailing" secondItem="MJx-8X-Vcl" secondAttribute="trailing" constant="27" id="832-df-9Zs"/>
+                <constraint firstItem="PQP-bp-zWJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="KN7-MR-BTw"/>
+                <constraint firstAttribute="trailing" secondItem="fm1-HY-p1p" secondAttribute="trailing" constant="44" id="VbW-Hn-6VO"/>
+                <constraint firstItem="fm1-HY-p1p" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="Vn7-pK-X3v"/>
+                <constraint firstItem="fm1-HY-p1p" firstAttribute="top" secondItem="PQP-bp-zWJ" secondAttribute="bottom" constant="21" id="eDS-Sd-5Ud"/>
+                <constraint firstItem="PQP-bp-zWJ" firstAttribute="top" secondItem="MJx-8X-Vcl" secondAttribute="bottom" constant="35.5" id="hxN-K0-k3a"/>
+                <constraint firstAttribute="trailing" secondItem="PQP-bp-zWJ" secondAttribute="trailing" constant="16" id="iPB-d9-1u0"/>
+                <constraint firstAttribute="bottomMargin" secondItem="fm1-HY-p1p" secondAttribute="bottom" constant="10" id="lsd-Vd-ANM"/>
+                <constraint firstItem="ujt-KA-g91" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="51" id="wb0-AQ-TrW"/>
+                <constraint firstItem="MJx-8X-Vcl" firstAttribute="top" secondItem="ujt-KA-g91" secondAttribute="bottom" constant="42" id="ytJ-bH-3x9"/>
+                <constraint firstItem="MJx-8X-Vcl" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="27" id="zfk-I5-SfV"/>
+            </constraints>
+            <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="database" width="192" height="192"/>
+        <image name="fingerprint" width="409.60000610351562" height="409.60000610351562"/>
+        <image name="wallet" width="192" height="192"/>
+    </resources>
+</document>

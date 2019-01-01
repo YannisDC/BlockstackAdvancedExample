@@ -29,14 +29,20 @@ extension Reactive where Base: Blockstack {
     }
     
     func save(path: String, bytes: Bytes, encrypt: Bool = false) -> Maybe<String> {
+        print(bytes)
         return Maybe<String>.create { maybe in
+            print("Start save")
             self.base.putFile(to: path, bytes: bytes, encrypt: encrypt) { (publicURL, error)  in
+                print(publicURL)
                 if let error = error {
+                    print("Error save")
                     maybe(.error(error))
                 } else {
                     if let publicURL = publicURL {
+                        print("Public URL \(publicURL)")
                         maybe(.success(publicURL))
                     } else {
+                        print("Completed save")
                         maybe(.completed)
                     }
                 }

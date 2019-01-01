@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="button" destination="KHq-LY-c9N" id="gQJ-jo-5tu"/>
                 <outlet property="containerView" destination="THO-2e-fQy" id="skc-VD-nXF"/>
+                <outlet property="pageControl" destination="hgH-Ro-J4w" id="E8a-ce-gBL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,27 +24,27 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="THO-2e-fQy">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="563"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="hgH-Ro-J4w">
-                    <rect key="frame" x="168" y="486" width="39" height="37"/>
+                    <rect key="frame" x="168" y="526" width="39" height="37"/>
                     <color key="pageIndicatorTintColor" red="0.90588235289999997" green="0.89411764709999997" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <color key="currentPageIndicatorTintColor" name="Grey"/>
                 </pageControl>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KHq-LY-c9N">
-                    <rect key="frame" x="32" y="573" width="311" height="64"/>
-                    <color key="backgroundColor" name="BabyBlue"/>
+                    <rect key="frame" x="44" y="593" width="287" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="64" id="ucQ-W4-vnb"/>
+                        <constraint firstAttribute="height" constant="50" id="ucQ-W4-vnb"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <state key="normal" title="Continue with Blockstack">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <integer key="value" value="10"/>
+                            <integer key="value" value="8"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
@@ -53,21 +54,18 @@
             <constraints>
                 <constraint firstItem="hgH-Ro-J4w" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4IN-vO-STS"/>
                 <constraint firstItem="THO-2e-fQy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9Nn-D5-0TE"/>
-                <constraint firstItem="KHq-LY-c9N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="JUh-cG-TkM"/>
+                <constraint firstItem="KHq-LY-c9N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="44" id="JUh-cG-TkM"/>
                 <constraint firstItem="THO-2e-fQy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="L2a-8d-eWE"/>
-                <constraint firstItem="KHq-LY-c9N" firstAttribute="top" secondItem="hgH-Ro-J4w" secondAttribute="bottom" constant="50" id="Vt4-cv-mDo"/>
-                <constraint firstAttribute="trailing" secondItem="KHq-LY-c9N" secondAttribute="trailing" constant="32" id="bv5-pu-oeB"/>
+                <constraint firstItem="KHq-LY-c9N" firstAttribute="top" secondItem="hgH-Ro-J4w" secondAttribute="bottom" constant="30" id="Vt4-cv-mDo"/>
+                <constraint firstAttribute="trailing" secondItem="KHq-LY-c9N" secondAttribute="trailing" constant="44" id="bv5-pu-oeB"/>
                 <constraint firstAttribute="trailing" secondItem="THO-2e-fQy" secondAttribute="trailing" id="leE-vz-Vfe"/>
-                <constraint firstAttribute="bottomMargin" secondItem="KHq-LY-c9N" secondAttribute="bottom" constant="30" id="lsN-VG-oYW"/>
+                <constraint firstAttribute="bottomMargin" secondItem="KHq-LY-c9N" secondAttribute="bottom" constant="24" id="lsN-VG-oYW"/>
                 <constraint firstItem="KHq-LY-c9N" firstAttribute="top" secondItem="THO-2e-fQy" secondAttribute="bottom" constant="30" id="zBQ-Na-8nv"/>
             </constraints>
             <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>
     </objects>
     <resources>
-        <namedColor name="BabyBlue">
-            <color red="0.10196078431372549" green="0.70196078431372544" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="Grey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
