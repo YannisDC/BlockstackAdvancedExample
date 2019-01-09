@@ -81,7 +81,6 @@ final class Network<T: Codable>: AbstractNetwork {
     func loadIndex(path: String, decrypt: Bool) -> Single<Index> {
         return Single.deferred {
             return self.blockstack.rx.load(path: path, decrypt: decrypt).map { (response) -> Index in
-                print(response)
                 guard let data = response as? Array<UInt8> else {
                     throw CoreError.technical
                 }
