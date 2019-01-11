@@ -37,7 +37,7 @@ final class LikesViewModel: ViewModel {
                 .trackActivity(activityIndicator)
                 .trackError(errorTracker)
                 .asDriverOnErrorJustComplete()
-                .map { $0.map { LikeItemViewModel(with: $0) } }
+                .map { $0.map { LikeItemViewModel(with: $0) }.sorted(by: { $0.title < $1.title }) }
         }
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()

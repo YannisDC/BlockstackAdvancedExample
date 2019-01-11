@@ -54,19 +54,10 @@ final class PreOnboardingCoordinator: BaseCoordinator<PreOnboardingRoute> {
 private extension PreOnboardingCoordinator {
     // TODO: - Present ViewControllers
     func toOverView() {
-        let identityViewController = factory.makePreOnboardingIdentityViewController(coordinator: self)
-        
-        let storageViewController = factory.makePreOnboardingStorageViewController(coordinator: self)
-        
-        let walletViewController = factory.makePreOnboardingWalletViewController(coordinator: self)
-        
-        let preOnboardingViewController = factory
-            .makePreOnboardingViewController(coordinator: self,
-                                             useCaseProvider: self.useCaseProvider,
-                                             viewControllers: [identityViewController,
-                                                               storageViewController,
-                                                               walletViewController])
-        rootViewController.present(preOnboardingViewController, animated: false, completion: nil)
+        let preOnboardingSingleViewController = factory
+            .makePreOnboardingSingleViewController(coordinator: self,
+                                             useCaseProvider: self.useCaseProvider)
+        rootViewController.present(preOnboardingSingleViewController, animated: false, completion: nil)
     }
 }
 

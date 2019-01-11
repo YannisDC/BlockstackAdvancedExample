@@ -21,7 +21,7 @@ public enum RepeatSize: String, Codable {
     case years = "year(s)"
 }
 
-public struct Event: Codable {
+public struct Event: Codable, Identifiable, Cryptable {
     public var eventType: EventType?
     public var name: String?
     public var description: String? // Optional
@@ -29,11 +29,11 @@ public struct Event: Codable {
     public var location: String? // Optional
     public var repeatCount: Int = 0
     public var repeatSize: RepeatSize = .weeks
-    public var id: String?
+    
+    public var uuid: String
+    public var encrypted: Bool
     
     public func setNotification() {}
-    
-    public init() {}
     
     private enum CodingKeys: String, CodingKey {
         case eventType
@@ -43,7 +43,9 @@ public struct Event: Codable {
         case location
         case repeatCount
         case repeatSize
-        case id
+        
+        case uuid
+        case encrypted
     }
     
     public init(from decoder: Decoder) throws {
@@ -55,7 +57,9 @@ public struct Event: Codable {
         location = try container.decodeIfPresent(String.self, forKey: .location)
         repeatCount = try container.decodeIfPresent(Int.self, forKey: .repeatCount) ?? 0
         repeatSize = try container.decodeIfPresent(RepeatSize.self, forKey: .repeatSize) ?? .weeks
-        id = try container.decodeIfPresent(String.self, forKey: .id)
+        
+        uuid = try container.decodeIfPresent(String.self, forKey: .uuid) ?? UUID().uuidString
+        encrypted = try container.decodeIfPresent(Bool.self, forKey: .encrypted) ?? true
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -67,8 +71,9 @@ public struct Event: Codable {
         try container.encodeIfPresent(location, forKey: .location)
         try container.encodeIfPresent(repeatCount, forKey: .repeatCount)
         try container.encodeIfPresent(repeatSize, forKey: .repeatSize)
-        try container.encodeIfPresent(id, forKey: .id)
         
+        try container.encodeIfPresent(uuid, forKey: .uuid)
+        try container.encodeIfPresent(encrypted, forKey: .encrypted)
     }
     
     public init(eventType: EventType,
@@ -78,7 +83,8 @@ public struct Event: Codable {
                 location: String,
                 repeatCount: Int,
                 repeatSize: RepeatSize,
-                id: String) {
+                uuid: String = UUID().uuidString,
+                encrypted: Bool = true) {
 
         self.eventType = eventType
         self.name = name
@@ -87,6 +93,8 @@ public struct Event: Codable {
         self.location = location
         self.repeatCount = repeatCount
         self.repeatSize = repeatSize
-        self.id = id
+        
+        self.uuid = uuid
+        self.encrypted = encrypted
     }
 }

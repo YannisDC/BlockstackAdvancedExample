@@ -22,6 +22,8 @@ Network.T == Index {
     }
     
     func initLikeIndexes() -> Maybe<String> {
-        return network.saveIndex(path: likesPath, index: Index(ids: [], date: Date().timeIntervalSince1970), encrypt: false)
+        return network.saveIndex(path: likesPath,
+                                 index: Index(ids: [], date: Date().timeIntervalSince1970),
+                                 encrypt: false)
     }
 }

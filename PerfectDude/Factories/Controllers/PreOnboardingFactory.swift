@@ -25,4 +25,7 @@ protocol PreOnboardingFactory {
     func makePreOnboardingStorageViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingStorageViewController
     
     func makePreOnboardingWalletViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingWalletViewController
+    
+    func makePreOnboardingSingleViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                               useCaseProvider: Core.UseCaseProvider) -> PreOnboardingSingleViewController
 }

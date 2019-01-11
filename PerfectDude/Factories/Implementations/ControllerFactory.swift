@@ -78,6 +78,18 @@ LikesFactory {
         
     }
     
+    func makePreOnboardingSingleViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                               useCaseProvider: Core.UseCaseProvider) -> PreOnboardingSingleViewController {
+        
+        let singleViewController = PreOnboardingSingleViewController.loadFromNib()
+        let singleViewModel = PreOnboardingSingleViewModel(coordinator: coordinator,
+                                                           useCaseProvider: useCaseProvider)
+        
+        singleViewController.bindViewModel(to: singleViewModel)
+        return singleViewController
+        
+    }
+    
     // MARK: HomeFactory methods
     
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
