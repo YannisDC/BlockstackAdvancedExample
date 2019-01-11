@@ -15,7 +15,7 @@ In this app the **Domain layer is renamed to Core**.
 - [x] Make seperate Blockstack app endpoint
 - [ ] Add examples of multiple types
 - [ ] Upgrade the UI
-- [ ] Add single object caching (save and remove)
+- [x] Add single object caching (save and remove)
 - [ ] Add batch object loading (e.g. 10 indexes at a time)
 
 ## Final project goal
