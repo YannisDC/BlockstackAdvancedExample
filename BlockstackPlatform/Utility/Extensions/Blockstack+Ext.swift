@@ -47,7 +47,21 @@ extension Reactive where Base: Blockstack {
     
     func load(path: String, decrypt: Bool) -> Single<Any?> {
         return Single.create { single in
+            print(path)
             self.base.getFile(at: path, decrypt: decrypt) { (response, error)  in
+                if let error = error {
+                    single(.error(error))
+                } else {
+                    single(.success(response))
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func load(path: String, username: String) -> Single<Any?> {
+        return Single.create { single in
+            self.base.getFile(at: path, username: username) { (response, error)  in
                 if let error = error {
                     single(.error(error))
                 } else {

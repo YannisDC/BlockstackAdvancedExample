@@ -12,5 +12,6 @@ import RxSwift
 public protocol InitUseCase {
 
     func initLikeIndexes() -> Maybe<String>
+    func initCalendarEventIndexes() -> Maybe<String>
     
 }

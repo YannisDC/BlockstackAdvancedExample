@@ -15,6 +15,7 @@ Network.T == Index {
     
     private let network: Network
     private let likesPath: String = "\(Like.self)"
+    private let calendarEventsPath: String = "\(CalendarEvent.self)"
     private let encryption: Bool = false
     
     init(network: Network) {
@@ -23,6 +24,12 @@ Network.T == Index {
     
     func initLikeIndexes() -> Maybe<String> {
         return network.saveIndex(path: likesPath,
+                                 index: Index(ids: [], date: Date().timeIntervalSince1970),
+                                 encrypt: false)
+    }
+    
+    func initCalendarEventIndexes() -> Maybe<String> {
+        return network.saveIndex(path: calendarEventsPath,
                                  index: Index(ids: [], date: Date().timeIntervalSince1970),
                                  encrypt: false)
     }

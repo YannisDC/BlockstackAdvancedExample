@@ -99,7 +99,7 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
             }))
     }
     
-    
+    // TODO: Add multiplayer query and queryAll using the network.loadIndex(path: String, username: String)
 }
 
 struct MapFromNever: Error {}

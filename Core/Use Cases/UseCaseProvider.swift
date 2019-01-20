@@ -10,8 +10,8 @@ import Foundation
 
 public protocol UseCaseProvider {
     
-    func makeLikesUseCase() -> LikesUseCase
     func makeAuthUseCase() -> AuthUseCase
     func makeInitUseCase() -> InitUseCase
-    
+    func makeLikesUseCase() -> LikesUseCase
+    func makeCalendarEventsUseCase() -> CalendarEventsUseCase
 }

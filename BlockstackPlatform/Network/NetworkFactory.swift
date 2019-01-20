@@ -11,6 +11,7 @@ import Core
 import Blockstack
 
 extension Like: BlockstackProvidable {}
+extension CalendarEvent: BlockstackProvidable {}
 
 class NetworkFactory {
     
@@ -22,6 +23,10 @@ class NetworkFactory {
     
     func makeLikeNetwork() -> NetworkProvider<Like>{
         return NetworkProvider<Like>(configuration: configuration)
+    }
+    
+    func makeCalendarEventNetwork() -> NetworkProvider<CalendarEvent>{
+        return NetworkProvider<CalendarEvent>(configuration: configuration)
     }
     
 }
