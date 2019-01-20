@@ -73,21 +73,21 @@ private extension HomeCoordinator {
                                                      image: UIImage(named: "blockstack_semi_filled"),
                                                      selectedImage: nil)
         
-        let testCoordinator = LikesCoordinator(rootViewController: rootViewController,
+        let likesCoordinator = LikesCoordinator(rootViewController: rootViewController,
                                                delegate: self,
                                                factory: factory,
                                                usecaseProvider: usecaseProvider)
-        testCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
+        likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
-            testCoordinator.navigationController,
+            likesCoordinator.navigationController,
             homeViewController
         ]
         rootViewController.setContentViewController(tabBarController)
         
-        addDependency(testCoordinator)
-        testCoordinator.start()
+        addDependency(likesCoordinator)
+        likesCoordinator.start()
     }
     
     func signOut() {

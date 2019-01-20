@@ -8,14 +8,6 @@
 
 import Foundation
 
-protocol Identifiable {
-    var uuid: String { get set }
-}
-
-protocol Cryptable {
-    var encrypted: Bool { get set }
-}
-
 public struct Like: Codable, Identifiable, Cryptable {
     public var description: String?
     public var image: UIImage? // Optional

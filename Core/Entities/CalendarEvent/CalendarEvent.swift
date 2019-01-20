@@ -1,5 +1,5 @@
 //
-//  Event.swift
+//  CalendarEvent.swift
 //  Core
 //
 //  Created by Yannis De Cleene on 11/11/2018.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum EventType: String, Codable {
+public enum CalendarEventType: String, Codable {
     case surprise = "LightBlueColor"
     case reminder = "OrangeColor"
     case date = "GreenColor"
@@ -21,8 +21,8 @@ public enum RepeatSize: String, Codable {
     case years = "year(s)"
 }
 
-public struct Event: Codable, Identifiable, Cryptable {
-    public var eventType: EventType?
+public struct CalendarEvent: Codable, Identifiable, Cryptable {
+    public var eventType: CalendarEventType?
     public var name: String?
     public var description: String? // Optional
     public var date: Date?
@@ -50,7 +50,7 @@ public struct Event: Codable, Identifiable, Cryptable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        eventType = try container.decodeIfPresent(EventType.self, forKey: .eventType)
+        eventType = try container.decodeIfPresent(CalendarEventType.self, forKey: .eventType)
         name = try container.decodeIfPresent(String.self, forKey: .name)
         description = try container.decodeIfPresent(String.self, forKey: .description)
         date = try container.decodeIfPresent(Date.self, forKey: .date)
@@ -76,7 +76,7 @@ public struct Event: Codable, Identifiable, Cryptable {
         try container.encodeIfPresent(encrypted, forKey: .encrypted)
     }
     
-    public init(eventType: EventType,
+    public init(eventType: CalendarEventType,
                 name: String,
                 description: String,
                 date: Date,

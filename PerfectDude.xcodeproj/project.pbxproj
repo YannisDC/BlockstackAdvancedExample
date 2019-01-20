@@ -14,8 +14,11 @@
 		DE1DDF5421A72D8300F95CBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DDF5321A72D8300F95CBF /* Cache.swift */; };
 		DE3BC73C21A2D86C0075B02A /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3BC73B21A2D86C0075B02A /* InitUseCase.swift */; };
 		DE3BC73E21A2D95A0075B02A /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3BC73D21A2D95A0075B02A /* InitUseCase.swift */; };
+		DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */; };
+		DE42E5EC21F20EB900AACB16 /* CalendarEventsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5E921F20EB900AACB16 /* CalendarEventsFactory.swift */; };
+		DE42E5ED21F20EB900AACB16 /* CalendarEventsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5EA21F20EB900AACB16 /* CalendarEventsRoute.swift */; };
 		DE4A19902198DA2400112F0D /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A198F2198DA2400112F0D /* Reminder.swift */; };
-		DE4A19932198DBF000112F0D /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19922198DBF000112F0D /* Event.swift */; };
+		DE4A19932198DBF000112F0D /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19922198DBF000112F0D /* CalendarEvent.swift */; };
 		DE4A19962198E13800112F0D /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19952198E13800112F0D /* Like.swift */; };
 		DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B76921B9416500D7F905 /* PreOnboardingStorageViewController.swift */; };
 		DE50B76D21B9416500D7F905 /* PreOnboardingStorageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B76A21B9416500D7F905 /* PreOnboardingStorageViewModel.swift */; };
@@ -120,6 +123,9 @@
 		DE96F7AE21936389007A342A /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77821936388007A342A /* AuthenticationViewModel.swift */; };
 		DE96F7AF21936389007A342A /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F77921936388007A342A /* NavigationController.swift */; };
 		DE96F7B7219368C0007A342A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F7B6219368C0007A342A /* ViewController.swift */; };
+		DEA2A4AF21E8C25D001FFAC6 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A4AE21E8C25D001FFAC6 /* Protocols.swift */; };
+		DEA2A4B121E8C390001FFAC6 /* CalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A4B021E8C390001FFAC6 /* CalendarEventsUseCase.swift */; };
+		DEA2A4B321E8C420001FFAC6 /* CalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA2A4B221E8C420001FFAC6 /* CalendarEventsUseCase.swift */; };
 		DEA8EC2221AF1D0E0004CB21 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8EC2121AF1D0E0004CB21 /* NetworkProvider.swift */; };
 		DEA8EC2421AF23240004CB21 /* NetworkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA8EC2321AF23240004CB21 /* NetworkFactory.swift */; };
 		DEA8EC3321B00C370004CB21 /* PerfectUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA8EC2A21B00C370004CB21 /* PerfectUI.framework */; };
@@ -258,8 +264,11 @@
 		DE1DDF5321A72D8300F95CBF /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		DE3BC73B21A2D86C0075B02A /* InitUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
 		DE3BC73D21A2D95A0075B02A /* InitUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
+		DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsCoordinator.swift; sourceTree = "<group>"; };
+		DE42E5E921F20EB900AACB16 /* CalendarEventsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsFactory.swift; sourceTree = "<group>"; };
+		DE42E5EA21F20EB900AACB16 /* CalendarEventsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsRoute.swift; sourceTree = "<group>"; };
 		DE4A198F2198DA2400112F0D /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
-		DE4A19922198DBF000112F0D /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		DE4A19922198DBF000112F0D /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		DE4A19952198E13800112F0D /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		DE50B76921B9416500D7F905 /* PreOnboardingStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStorageViewController.swift; sourceTree = "<group>"; };
 		DE50B76A21B9416500D7F905 /* PreOnboardingStorageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStorageViewModel.swift; sourceTree = "<group>"; };
@@ -368,6 +377,9 @@
 		DE96F77821936388007A342A /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		DE96F77921936388007A342A /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		DE96F7B6219368C0007A342A /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DEA2A4AE21E8C25D001FFAC6 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		DEA2A4B021E8C390001FFAC6 /* CalendarEventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsUseCase.swift; sourceTree = "<group>"; };
+		DEA2A4B221E8C420001FFAC6 /* CalendarEventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsUseCase.swift; sourceTree = "<group>"; };
 		DEA8EC2121AF1D0E0004CB21 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		DEA8EC2321AF23240004CB21 /* NetworkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFactory.swift; sourceTree = "<group>"; };
 		DEA8EC2A21B00C370004CB21 /* PerfectUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerfectUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,6 +532,14 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		DE42E5EE21F2104400AACB16 /* CalendarEvent */ = {
+			isa = PBXGroup;
+			children = (
+				DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */,
+			);
+			path = CalendarEvent;
+			sourceTree = "<group>";
+		};
 		DE4A19912198DB5D00112F0D /* Reminder */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,12 +548,12 @@
 			path = Reminder;
 			sourceTree = "<group>";
 		};
-		DE4A19942198DBF600112F0D /* Event */ = {
+		DE4A19942198DBF600112F0D /* CalendarEvent */ = {
 			isa = PBXGroup;
 			children = (
-				DE4A19922198DBF000112F0D /* Event.swift */,
+				DE4A19922198DBF000112F0D /* CalendarEvent.swift */,
 			);
-			path = Event;
+			path = CalendarEvent;
 			sourceTree = "<group>";
 		};
 		DE4A19972198E14600112F0D /* Like */ = {
@@ -663,6 +683,7 @@
 			isa = PBXGroup;
 			children = (
 				DE746164219EEE7C00D02824 /* LikesUseCase.swift */,
+				DEA2A4B221E8C420001FFAC6 /* CalendarEventsUseCase.swift */,
 				DE3BC73D21A2D95A0075B02A /* InitUseCase.swift */,
 				DE74616C219EF60300D02824 /* AuthUseCase.swift */,
 				DE746165219EEE7C00D02824 /* UseCaseProvider.swift */,
@@ -787,6 +808,7 @@
 			children = (
 				DE96F72B2193633F007A342A /* UseCaseProvider.swift */,
 				DE74615C219EEE2200D02824 /* LikesUseCase.swift */,
+				DEA2A4B021E8C390001FFAC6 /* CalendarEventsUseCase.swift */,
 				DE3BC73B21A2D86C0075B02A /* InitUseCase.swift */,
 				DE74616A219EF57800D02824 /* AuthUseCase.swift */,
 			);
@@ -796,8 +818,9 @@
 		DE96F72E2193633F007A342A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				DEA2A4AE21E8C25D001FFAC6 /* Protocols.swift */,
 				DE4A19972198E14600112F0D /* Like */,
-				DE4A19942198DBF600112F0D /* Event */,
+				DE4A19942198DBF600112F0D /* CalendarEvent */,
 				DE4A19912198DB5D00112F0D /* Reminder */,
 				DE96F72F2193633F007A342A /* User */,
 				DE96F7312193633F007A342A /* Error */,
@@ -908,6 +931,7 @@
 				DEB48E7A21B855F00045A58E /* Pre Onboarding */,
 				DE96F75921936388007A342A /* Home */,
 				DE5A6E0F21A53DF40097E941 /* Likes */,
+				DE42E5EE21F2104400AACB16 /* CalendarEvent */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -938,6 +962,7 @@
 				DEB48E7621B851DD0045A58E /* PreOnboardingRoute.swift */,
 				DE96F76221936388007A342A /* HomeRoute.swift */,
 				DE5A6E0B21A498B90097E941 /* LikesRoute.swift */,
+				DE42E5EA21F20EB900AACB16 /* CalendarEventsRoute.swift */,
 				DE96F76321936388007A342A /* GoalRoute.swift */,
 			);
 			path = Routes;
@@ -1054,6 +1079,7 @@
 				DEB48E7521B851DD0045A58E /* PreOnboardingFactory.swift */,
 				DE96F73B21936388007A342A /* HomeFactory.swift */,
 				DE5A6E0A21A498B90097E941 /* LikesFactory.swift */,
+				DE42E5E921F20EB900AACB16 /* CalendarEventsFactory.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1630,6 +1656,7 @@
 				DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */,
 				DE96F78B21936389007A342A /* ErrorPresentable.swift in Sources */,
 				DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */,
+				DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */,
 				DE96F79421936389007A342A /* String+Extension.swift in Sources */,
 				DE5A6E1821A57CD00097E941 /* LikeItemViewModel.swift in Sources */,
 				DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */,
@@ -1637,11 +1664,13 @@
 				DE96F7A221936389007A342A /* UseCaseProvider.swift in Sources */,
 				DE53FA0C21C28D4400C0DB6D /* PreOnboardingStepView.swift in Sources */,
 				DE96F78A21936389007A342A /* Reuseable.swift in Sources */,
+				DE42E5ED21F20EB900AACB16 /* CalendarEventsRoute.swift in Sources */,
 				DE96F79121936389007A342A /* UIApplication+Extension.swift in Sources */,
 				DE96F79F21936389007A342A /* GoalRoute.swift in Sources */,
 				DEB48E7921B851DD0045A58E /* PreOnboardingRoute.swift in Sources */,
 				DE5A6E0E21A498B90097E941 /* LikesRoute.swift in Sources */,
 				DE96F78321936389007A342A /* CoordinatorFactoryProtocol.swift in Sources */,
+				DE42E5EC21F20EB900AACB16 /* CalendarEventsFactory.swift in Sources */,
 				DEB48E7F21B87B1E0045A58E /* PreOnboardingViewModel.swift in Sources */,
 				DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */,
 				DE5A6E2D21A5D4220097E941 /* EditLikeViewController.swift in Sources */,
@@ -1694,12 +1723,14 @@
 				DE96F7372193633F007A342A /* Error.swift in Sources */,
 				DE4A19962198E13800112F0D /* Like.swift in Sources */,
 				DE74616B219EF57800D02824 /* AuthUseCase.swift in Sources */,
+				DEA2A4AF21E8C25D001FFAC6 /* Protocols.swift in Sources */,
 				DE96F7342193633F007A342A /* UseCaseProvider.swift in Sources */,
 				DE03764621A2182700CAC5F9 /* Index.swift in Sources */,
 				DE4A19902198DA2400112F0D /* Reminder.swift in Sources */,
 				DE96F7382193633F007A342A /* JSONSerialisation+Extension.swift in Sources */,
+				DEA2A4B121E8C390001FFAC6 /* CalendarEventsUseCase.swift in Sources */,
 				DE3BC73C21A2D86C0075B02A /* InitUseCase.swift in Sources */,
-				DE4A19932198DBF000112F0D /* Event.swift in Sources */,
+				DE4A19932198DBF000112F0D /* CalendarEvent.swift in Sources */,
 				DE74615D219EEE2200D02824 /* LikesUseCase.swift in Sources */,
 				DE96F7362193633F007A342A /* User.swift in Sources */,
 			);
@@ -1736,6 +1767,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEA2A4B321E8C420001FFAC6 /* CalendarEventsUseCase.swift in Sources */,
 				DE746169219EEE7C00D02824 /* UseCaseProvider.swift in Sources */,
 				DE746167219EEE7C00D02824 /* Blockstack+Ext.swift in Sources */,
 				DEA8EC2221AF1D0E0004CB21 /* NetworkProvider.swift in Sources */,

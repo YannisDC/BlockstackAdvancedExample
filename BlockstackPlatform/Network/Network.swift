@@ -19,6 +19,7 @@ protocol AbstractNetwork {
     
     func saveIndex(path: String, index: Index, encrypt: Bool) -> Maybe<String>
     func loadIndex(path: String, decrypt: Bool) -> Single<Index>
+    func loadIndex(path: String, username: String) -> Single<Index>
 }
 
 final class Network<T: Codable>: AbstractNetwork {
@@ -88,4 +89,16 @@ final class Network<T: Codable>: AbstractNetwork {
             }
         }.subscribeOn(scheduler)
     }
+    
+    func loadIndex(path: String, username: String) -> Single<Index> {
+        return Single.deferred {
+            return self.blockstack.rx.load(path: path, username: username).map { (response) -> Index in
+                guard let data = response as? Array<UInt8> else {
+                    throw CoreError.technical
+                }
+                return try JSONDecoder().decode(Index.self, from: Data(bytes: data))
+            }
+        }.subscribeOn(scheduler)
+    }
+    
 }
