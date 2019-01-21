@@ -14,8 +14,8 @@ import Core
 final class HomeViewModel: ViewModel {
     
     private weak var coordinator: BaseCoordinator<HomeRoute>?
-    private var likeUsecase = UseCaseProvider().blockstackUseCaseProvider.makeLikesUseCase()
-    private var initUsecase = UseCaseProvider().blockstackUseCaseProvider.makeInitUseCase()
+    private var likeUsecase: LikesUseCase!
+    private var initUsecase: InitUseCase!
     fileprivate let imagesTrigger: PublishSubject<UIImage?>
     
     fileprivate var likes = Variable<[Like?]>([])
@@ -23,9 +23,12 @@ final class HomeViewModel: ViewModel {
     // MARK: Init
     
     init(coordinator: BaseCoordinator<HomeRoute>?,
-         imagesTrigger: PublishSubject<UIImage?>) {
+         imagesTrigger: PublishSubject<UIImage?>,
+         useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
         self.imagesTrigger = imagesTrigger
+        self.likeUsecase = useCaseProvider.makeLikesUseCase()
+        self.initUsecase = useCaseProvider.makeInitUseCase()
     }
     
     // MARK: Transform

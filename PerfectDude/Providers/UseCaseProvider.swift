@@ -10,13 +10,18 @@ import Foundation
 import Core
 import RxSwift
 import BlockstackPlatform
+import FirebasePlatform
 
 final class UseCaseProvider {
     
     public let blockstackUseCaseProvider: Core.UseCaseProvider
+    private let externalDependencies = ExternalDependency()
+//    public let firebaseUseCaseProvider: Core.UseCaseProvider
     
     init() {
         blockstackUseCaseProvider = BlockstackPlatform.UseCaseProvider()
+        externalDependencies.setup()
+//        firebaseUseCaseProvider = FirebasePlatform.UseCaseProvider()
     }
     
 }

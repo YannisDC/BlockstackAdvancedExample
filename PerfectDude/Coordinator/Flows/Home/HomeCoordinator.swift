@@ -68,7 +68,8 @@ extension HomeCoordinator: CoordinatorDelegate {
 private extension HomeCoordinator {
     func setTabs() {
         let homeViewController = factory.makeHomeViewController(coordinator: self,
-                                                                imagesTrigger: imagesTrigger)
+                                                                imagesTrigger: imagesTrigger,
+                                                                useCaseProvider: usecaseProvider)
         homeViewController.tabBarItem = UITabBarItem(title: "Blockstack",
                                                      image: UIImage(named: "blockstack_semi_filled"),
                                                      selectedImage: nil)
