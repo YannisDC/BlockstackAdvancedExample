@@ -2,10 +2,59 @@ PODS:
   - Blockstack (0.4.0):
     - CryptoSwift
   - CryptoSwift (0.13.1)
+  - Firebase/Core (5.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.4.0)
+  - Firebase/CoreOnly (5.15.0):
+    - FirebaseCore (= 5.1.10)
+  - FirebaseAnalytics (5.4.0):
+    - FirebaseCore (~> 5.1)
+    - FirebaseInstanceID (~> 3.3)
+    - GoogleAppMeasurement (= 5.4.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (5.1.10):
+    - GoogleUtilities/Logger (~> 5.2)
+  - FirebaseInstanceID (3.3.0):
+    - FirebaseCore (~> 5.1)
+    - GoogleUtilities/Environment (~> 5.3)
+    - GoogleUtilities/UserDefaults (~> 5.3)
   - Gallery (2.2.0)
   - GoogleAnalytics (3.17.0)
+  - GoogleAppMeasurement (5.4.0):
+    - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
+    - GoogleUtilities/MethodSwizzler (~> 5.2)
+    - GoogleUtilities/Network (~> 5.2)
+    - "GoogleUtilities/NSData+zlib (~> 5.2)"
+    - nanopb (~> 0.3)
+  - GoogleUtilities/AppDelegateSwizzler (5.3.6):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (5.3.6)
+  - GoogleUtilities/Logger (5.3.6):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (5.3.6):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (5.3.6)"
+  - GoogleUtilities/Reachability (5.3.6):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (5.3.6):
+    - GoogleUtilities/Logger
   - IHKeyboardAvoiding (4.6)
   - KeychainAccess (3.1.2)
+  - nanopb (0.3.901):
+    - nanopb/decode (= 0.3.901)
+    - nanopb/encode (= 0.3.901)
+  - nanopb/decode (0.3.901)
+  - nanopb/encode (0.3.901)
   - RxAtomic (4.4.0)
   - RxCocoa (4.4.0):
     - RxSwift (~> 4.0)
@@ -16,6 +65,7 @@ PODS:
 
 DEPENDENCIES:
   - Blockstack
+  - Firebase/Core
   - Gallery
   - GoogleAnalytics
   - IHKeyboardAvoiding
@@ -29,10 +79,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Blockstack
     - CryptoSwift
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
     - Gallery
     - GoogleAnalytics
+    - GoogleAppMeasurement
+    - GoogleUtilities
     - IHKeyboardAvoiding
     - KeychainAccess
+    - nanopb
     - RxAtomic
     - RxCocoa
     - RxSwift
@@ -42,16 +99,23 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Blockstack: b81a4d7033e5572823dd220b47acb09c8295bb19
   CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
+  Firebase: 8bb9268bff82374f2cbaaabb143e725743c316ae
+  FirebaseAnalytics: c06f9d70577d79074214700a71fd5d39de5550fb
+  FirebaseCore: 35747502d9e8c6ee217385ad04446c7c2aaf9c5c
+  FirebaseInstanceID: e2fa4cb35ef5558c200f7f0ad8a53e212215f93e
   Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
+  GoogleAppMeasurement: 98b71f5e04142793729a5ef23e5b96651ff4b70f
+  GoogleUtilities: 95996bea7c7d9b8fb811b7507669a4a8762f80c7
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
   KeychainAccess: b3816fddcf28aa29d94b10ec305cd52be14c472b
+  nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
 
-PODFILE CHECKSUM: e73d8ca1bc369e840d072cddfe281bb2f1308e1d
+PODFILE CHECKSUM: efe8287f05521a55a267c1a190085c5f84b31132
 
 COCOAPODS: 1.5.3

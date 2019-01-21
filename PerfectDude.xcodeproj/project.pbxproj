@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		05795F78EDDBF76653803A3D /* Pods_PerfectDudeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62A345FA9A5A67D956DEE5D7 /* Pods_PerfectDudeUITests.framework */; };
+		71E1C42F132A2EF1817D36F6 /* Pods_FirebasePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0A1022D751EA2140762E65 /* Pods_FirebasePlatform.framework */; };
 		7D8E7A6457BAAD2DCDCCDC31 /* Pods_PerfectDude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE779A89EAF864458CA5EB92 /* Pods_PerfectDude.framework */; };
 		8D9DD0E97003E085F1219046 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BC5F073482060730AD290D /* Pods_Core.framework */; };
 		DE03764621A2182700CAC5F9 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03764521A2182700CAC5F9 /* Index.swift */; };
@@ -60,6 +61,13 @@
 		DE5A6E2F21A5D4220097E941 /* EditLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */; };
 		DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68A76721A69188006E119A /* Observable+Extension.swift */; };
 		DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */; };
+		DE71F1B721F60AEC00887522 /* FirebasePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */; };
+		DE71F1BE21F60AEC00887522 /* FirebasePlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71F1BD21F60AEC00887522 /* FirebasePlatformTests.swift */; };
+		DE71F1C021F60AEC00887522 /* FirebasePlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DE71F1B021F60AEC00887522 /* FirebasePlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE71F1C321F60AEC00887522 /* FirebasePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */; };
+		DE71F1C421F60AEC00887522 /* FirebasePlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DE71F1CC21F60B0600887522 /* ExternalDependecy.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71F1CB21F60B0600887522 /* ExternalDependecy.swift */; };
+		DE71F1CE21F60C0F00887522 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE71F1CD21F60C0F00887522 /* GoogleService-Info.plist */; };
 		DE74615D219EEE2200D02824 /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615C219EEE2200D02824 /* LikesUseCase.swift */; };
 		DE746166219EEE7C00D02824 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE74615F219EEE7C00D02824 /* Network.swift */; };
 		DE746167219EEE7C00D02824 /* Blockstack+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */; };
@@ -157,6 +165,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		DE71F1B821F60AEC00887522 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE96F6CB21935FB5007A342A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE71F1AD21F60AEB00887522;
+			remoteInfo = FirebasePlatform;
+		};
+		DE71F1BA21F60AEC00887522 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE96F6CB21935FB5007A342A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE96F6D221935FB5007A342A;
+			remoteInfo = PerfectDude;
+		};
+		DE71F1C121F60AEC00887522 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE96F6CB21935FB5007A342A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE71F1AD21F60AEB00887522;
+			remoteInfo = FirebasePlatform;
+		};
 		DE96F6EB21935FB7007A342A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DE96F6CB21935FB5007A342A /* Project object */;
@@ -243,6 +272,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				DE71F1C421F60AEC00887522 /* FirebasePlatform.framework in Embed Frameworks */,
 				DED9FAA9219E0D3E001C5878 /* BlockstackPlatform.framework in Embed Frameworks */,
 				DEA8EC4021B00C370004CB21 /* PerfectUI.framework in Embed Frameworks */,
 				DE96F72221936244007A342A /* Core.framework in Embed Frameworks */,
@@ -253,6 +283,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		16ADD6BB54C2F398E25D86ED /* Pods-FirebasePlatform.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebasePlatform.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebasePlatform/Pods-FirebasePlatform.debug.xcconfig"; sourceTree = "<group>"; };
 		2A0A1022D751EA2140762E65 /* Pods_FirebasePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebasePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A341A8FC8CE66AB594CF827 /* Pods-BlockstackPlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlockstackPlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlockstackPlatform/Pods-BlockstackPlatform.release.xcconfig"; sourceTree = "<group>"; };
 		33F1517FDB7A9E26E8012192 /* Pods-PerfectDudeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectDudeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectDudeTests/Pods-PerfectDudeTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +297,7 @@
 		C6F27C7039D408F3FF370F66 /* Pods-Core.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.release.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.release.xcconfig"; sourceTree = "<group>"; };
 		C85CE9F5F4715F06A54DB2C4 /* Pods-PerfectDudeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PerfectDudeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PerfectDudeUITests/Pods-PerfectDudeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CE779A89EAF864458CA5EB92 /* Pods_PerfectDude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectDude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C4E948E22D18AD1239FBDA /* Pods-FirebasePlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebasePlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebasePlatform/Pods-FirebasePlatform.release.xcconfig"; sourceTree = "<group>"; };
 		DE03764521A2182700CAC5F9 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
 		DE1803FF21F4D17400A93223 /* CalendarEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewController.swift; sourceTree = "<group>"; };
 		DE18040021F4D17400A93223 /* CalendarEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewModel.swift; sourceTree = "<group>"; };
@@ -314,6 +346,14 @@
 		DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditLikeViewController.xib; sourceTree = "<group>"; };
 		DE68A76721A69188006E119A /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
 		DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
+		DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebasePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE71F1B021F60AEC00887522 /* FirebasePlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebasePlatform.h; sourceTree = "<group>"; };
+		DE71F1B121F60AEC00887522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE71F1B621F60AEC00887522 /* FirebasePlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FirebasePlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE71F1BD21F60AEC00887522 /* FirebasePlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePlatformTests.swift; sourceTree = "<group>"; };
+		DE71F1BF21F60AEC00887522 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE71F1CB21F60B0600887522 /* ExternalDependecy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalDependecy.swift; sourceTree = "<group>"; };
+		DE71F1CD21F60C0F00887522 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DE74615C219EEE2200D02824 /* LikesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
 		DE74615F219EEE7C00D02824 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Blockstack+Ext.swift"; sourceTree = "<group>"; };
@@ -420,11 +460,28 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		DE71F1AB21F60AEB00887522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71E1C42F132A2EF1817D36F6 /* Pods_FirebasePlatform.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE71F1B321F60AEC00887522 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE71F1B721F60AEC00887522 /* FirebasePlatform.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE96F6D021935FB5007A342A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DE96F72121936244007A342A /* Core.framework in Frameworks */,
+				DE71F1C321F60AEC00887522 /* FirebasePlatform.framework in Frameworks */,
 				7D8E7A6457BAAD2DCDCCDC31 /* Pods_PerfectDude.framework in Frameworks */,
 				DEA8EC3F21B00C370004CB21 /* PerfectUI.framework in Frameworks */,
 				DED9FAA8219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */,
@@ -524,6 +581,8 @@
 				C6066984DA1D0EEFD1BE39B8 /* Pods-PerfectDudeUITests.release.xcconfig */,
 				458EDFC1AEC22CF1D9F36F39 /* Pods-BlockstackPlatform.debug.xcconfig */,
 				2A341A8FC8CE66AB594CF827 /* Pods-BlockstackPlatform.release.xcconfig */,
+				16ADD6BB54C2F398E25D86ED /* Pods-FirebasePlatform.debug.xcconfig */,
+				D6C4E948E22D18AD1239FBDA /* Pods-FirebasePlatform.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -694,6 +753,26 @@
 			path = Edit;
 			sourceTree = "<group>";
 		};
+		DE71F1AF21F60AEC00887522 /* FirebasePlatform */ = {
+			isa = PBXGroup;
+			children = (
+				DE71F1B021F60AEC00887522 /* FirebasePlatform.h */,
+				DE71F1CB21F60B0600887522 /* ExternalDependecy.swift */,
+				DE71F1CD21F60C0F00887522 /* GoogleService-Info.plist */,
+				DE71F1B121F60AEC00887522 /* Info.plist */,
+			);
+			path = FirebasePlatform;
+			sourceTree = "<group>";
+		};
+		DE71F1BC21F60AEC00887522 /* FirebasePlatformTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE71F1BD21F60AEC00887522 /* FirebasePlatformTests.swift */,
+				DE71F1BF21F60AEC00887522 /* Info.plist */,
+			);
+			path = FirebasePlatformTests;
+			sourceTree = "<group>";
+		};
 		DE74615E219EEE7C00D02824 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -762,6 +841,8 @@
 				DED9FAA1219E0D3E001C5878 /* BlockstackPlatformTests */,
 				DEA8EC2B21B00C370004CB21 /* PerfectUI */,
 				DEA8EC3821B00C370004CB21 /* PerfectUITests */,
+				DE71F1AF21F60AEC00887522 /* FirebasePlatform */,
+				DE71F1BC21F60AEC00887522 /* FirebasePlatformTests */,
 				DE96F6D421935FB5007A342A /* Products */,
 				BFC2D508F34BC3CCFD4C561D /* Pods */,
 				98C8F4618AF84B87A86C26A5 /* Frameworks */,
@@ -780,6 +861,8 @@
 				DED9FA9B219E0D3E001C5878 /* BlockstackPlatformTests.xctest */,
 				DEA8EC2A21B00C370004CB21 /* PerfectUI.framework */,
 				DEA8EC3221B00C370004CB21 /* PerfectUITests.xctest */,
+				DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */,
+				DE71F1B621F60AEC00887522 /* FirebasePlatformTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1151,6 +1234,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		DE71F1A921F60AEB00887522 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE71F1C021F60AEC00887522 /* FirebasePlatform.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE96F70721936243007A342A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -1178,6 +1269,44 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		DE71F1AD21F60AEB00887522 /* FirebasePlatform */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE71F1C921F60AEC00887522 /* Build configuration list for PBXNativeTarget "FirebasePlatform" */;
+			buildPhases = (
+				40309DA52F35E6141FD3C7B7 /* [CP] Check Pods Manifest.lock */,
+				DE71F1A921F60AEB00887522 /* Headers */,
+				DE71F1AA21F60AEB00887522 /* Sources */,
+				DE71F1AB21F60AEB00887522 /* Frameworks */,
+				DE71F1AC21F60AEB00887522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FirebasePlatform;
+			productName = FirebasePlatform;
+			productReference = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE71F1B521F60AEC00887522 /* FirebasePlatformTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE71F1CA21F60AEC00887522 /* Build configuration list for PBXNativeTarget "FirebasePlatformTests" */;
+			buildPhases = (
+				DE71F1B221F60AEC00887522 /* Sources */,
+				DE71F1B321F60AEC00887522 /* Frameworks */,
+				DE71F1B421F60AEC00887522 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE71F1B921F60AEC00887522 /* PBXTargetDependency */,
+				DE71F1BB21F60AEC00887522 /* PBXTargetDependency */,
+			);
+			name = FirebasePlatformTests;
+			productName = FirebasePlatformTests;
+			productReference = DE71F1B621F60AEC00887522 /* FirebasePlatformTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		DE96F6D221935FB5007A342A /* PerfectDude */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = DE96F6FE21935FB7007A342A /* Build configuration list for PBXNativeTarget "PerfectDude" */;
@@ -1195,6 +1324,7 @@
 				DE96F72021936244007A342A /* PBXTargetDependency */,
 				DED9FAA7219E0D3E001C5878 /* PBXTargetDependency */,
 				DEA8EC3E21B00C370004CB21 /* PBXTargetDependency */,
+				DE71F1C221F60AEC00887522 /* PBXTargetDependency */,
 			);
 			name = PerfectDude;
 			productName = PerfectDude;
@@ -1362,6 +1492,14 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = yannisdecleene;
 				TargetAttributes = {
+					DE71F1AD21F60AEB00887522 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
+					};
+					DE71F1B521F60AEC00887522 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DE96F6D221935FB5007A342A;
+					};
 					DE96F6D221935FB5007A342A = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -1421,11 +1559,28 @@
 				DED9FA9A219E0D3E001C5878 /* BlockstackPlatformTests */,
 				DEA8EC2921B00C370004CB21 /* PerfectUI */,
 				DEA8EC3121B00C370004CB21 /* PerfectUITests */,
+				DE71F1AD21F60AEB00887522 /* FirebasePlatform */,
+				DE71F1B521F60AEC00887522 /* FirebasePlatformTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		DE71F1AC21F60AEB00887522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE71F1CE21F60C0F00887522 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE71F1B421F60AEC00887522 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE96F6D121935FB5007A342A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1530,6 +1685,8 @@
 				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
 				"${BUILT_PRODUCTS_DIR}/Blockstack/Blockstack.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -1544,10 +1701,34 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Blockstack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PerfectDude/Pods-PerfectDude-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40309DA52F35E6141FD3C7B7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FirebasePlatform-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		70732F17C097BCC3CBDE72F1 /* [CP] Check Pods Manifest.lock */ = {
@@ -1663,6 +1844,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		DE71F1AA21F60AEB00887522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE71F1CC21F60B0600887522 /* ExternalDependecy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE71F1B221F60AEC00887522 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE71F1BE21F60AEC00887522 /* FirebasePlatformTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE96F6CF21935FB5007A342A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1838,6 +2035,21 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		DE71F1B921F60AEC00887522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE71F1AD21F60AEB00887522 /* FirebasePlatform */;
+			targetProxy = DE71F1B821F60AEC00887522 /* PBXContainerItemProxy */;
+		};
+		DE71F1BB21F60AEC00887522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE96F6D221935FB5007A342A /* PerfectDude */;
+			targetProxy = DE71F1BA21F60AEC00887522 /* PBXContainerItemProxy */;
+		};
+		DE71F1C221F60AEC00887522 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE71F1AD21F60AEB00887522 /* FirebasePlatform */;
+			targetProxy = DE71F1C121F60AEC00887522 /* PBXContainerItemProxy */;
+		};
 		DE96F6EC21935FB7007A342A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DE96F6D221935FB5007A342A /* PerfectDude */;
@@ -1915,6 +2127,107 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		DE71F1C521F60AEC00887522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16ADD6BB54C2F398E25D86ED /* Pods-FirebasePlatform.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6E4D9REFSW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FirebasePlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.FirebasePlatform;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DE71F1C621F60AEC00887522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C4E948E22D18AD1239FBDA /* Pods-FirebasePlatform.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 6E4D9REFSW;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FirebasePlatform/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.FirebasePlatform;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DE71F1C721F60AEC00887522 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E4D9REFSW;
+				INFOPLIST_FILE = FirebasePlatformTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.FirebasePlatformTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfectDude.app/PerfectDude";
+			};
+			name = Debug;
+		};
+		DE71F1C821F60AEC00887522 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6E4D9REFSW;
+				INFOPLIST_FILE = FirebasePlatformTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.FirebasePlatformTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PerfectDude.app/PerfectDude";
+			};
+			name = Release;
+		};
 		DE96F6FC21935FB7007A342A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2511,6 +2824,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		DE71F1C921F60AEC00887522 /* Build configuration list for PBXNativeTarget "FirebasePlatform" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE71F1C521F60AEC00887522 /* Debug */,
+				DE71F1C621F60AEC00887522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE71F1CA21F60AEC00887522 /* Build configuration list for PBXNativeTarget "FirebasePlatformTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE71F1C721F60AEC00887522 /* Debug */,
+				DE71F1C821F60AEC00887522 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		DE96F6CE21935FB5007A342A /* Build configuration list for PBXProject "PerfectDude" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

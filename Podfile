@@ -40,3 +40,8 @@ target 'BlockstackPlatform' do
     common
     pod 'Blockstack'
 end
+
+target 'FirebasePlatform' do
+    common
+    pod 'Firebase/Core'
+end
