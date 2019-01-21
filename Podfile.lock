@@ -1,7 +1,7 @@
 PODS:
   - Blockstack (0.4.0):
     - CryptoSwift
-  - CryptoSwift (0.13.0)
+  - CryptoSwift (0.13.1)
   - Gallery (2.2.0)
   - GoogleAnalytics (3.17.0)
   - IHKeyboardAvoiding (4.6)
@@ -12,7 +12,7 @@ PODS:
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
   - SDVersion (4.3.2)
-  - SwiftLint (0.28.0)
+  - SwiftLint (0.29.2)
 
 DEPENDENCIES:
   - Blockstack
@@ -41,7 +41,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Blockstack: b81a4d7033e5572823dd220b47acb09c8295bb19
-  CryptoSwift: 16e78bebf567bad1c87b2d58f6547f25b74c31aa
+  CryptoSwift: ff68c35a53e03177d31aaa2c1e8b3e010aeed6cb
   Gallery: 3f4c780c4b22906d6b0a5e55d12167cdc4b4fc5b
   GoogleAnalytics: f42cc53a87a51fe94334821868d9c8481ff47a7b
   IHKeyboardAvoiding: 2a664fdb5f964359fa7ec8fc5c9aebb447583ff8
@@ -50,7 +50,7 @@ SPEC CHECKSUMS:
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
-  SwiftLint: 088cfacb75b45970017e62b7524d506776d60148
+  SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
 
 PODFILE CHECKSUM: e73d8ca1bc369e840d072cddfe281bb2f1308e1d
 
