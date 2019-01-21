@@ -19,16 +19,16 @@ final class CalendarEventsUseCase<NetworkProvider>: Core.CalendarEventsUseCase w
     }
     
     // TODO: catchErrors
-    func save(like: CalendarEvent) -> Maybe<String> {
-        return network.save(entity: like)
+    func save(event: CalendarEvent) -> Maybe<String> {
+        return network.save(entity: event)
     }
     
     func query(uuid: String, encrypted: Bool) -> Single<CalendarEvent> {
         return network.query(uuid: uuid, encrypted: encrypted)
     }
     
-    func delete(like: CalendarEvent) -> Maybe<String> {
-        return network.delete(entity: like)
+    func delete(event: CalendarEvent) -> Maybe<String> {
+        return network.delete(entity: event)
     }
     
     func queryAll() -> Observable<[CalendarEvent]> {

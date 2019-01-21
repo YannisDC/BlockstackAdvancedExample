@@ -14,7 +14,9 @@ final
 class ControllerFactory: AppFactory,
 PreOnboardingFactory,
 HomeFactory,
-LikesFactory {
+LikesFactory,
+CalendarEventsFactory
+{
     
     // MARK: AppFactory methods
     
@@ -142,6 +144,32 @@ LikesFactory {
                                                   like: like)
         editLikeViewController.bindViewModel(to: editLikeViewModel)
         return editLikeViewController
+        
+    }
+    
+    // MARK: LikesFactory methods
+    
+    func makeCalendarEventsViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                          usecaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController {
+        
+        let calendarEventsViewController = CalendarEventsViewController.loadFromNib()
+        let calendarEventsViewModel = CalendarEventsViewModel(coordinator: coordinator,
+                                                              usecaseProvider: usecaseProvider)
+        
+        calendarEventsViewController.bindViewModel(to: calendarEventsViewModel)
+        return calendarEventsViewController
+        
+    }
+    
+    func makeCreateCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                          usecaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController {
+        
+        let createCalendarEventViewController = CreateCalendarEventViewController.loadFromNib()
+        let createCalendarEventViewModel = CreateCalendarEventViewModel(coordinator: coordinator,
+                                                              usecaseProvider: usecaseProvider)
+        
+        createCalendarEventViewController.bindViewModel(to: createCalendarEventViewModel)
+        return createCalendarEventViewController
         
     }
     

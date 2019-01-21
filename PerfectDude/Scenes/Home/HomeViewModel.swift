@@ -40,8 +40,8 @@ final class HomeViewModel: ViewModel {
         
         let showResult = input.showTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
-            self.initUsecase.initLikeIndexes()
-            self.initUsecase.initCalendarEventIndexes()
+            self.initUsecase.initLikeIndexes().subscribe()
+            self.initUsecase.initCalendarEventIndexes().subscribe()
         })
         
         return Output(signOutResult: signOutResult,

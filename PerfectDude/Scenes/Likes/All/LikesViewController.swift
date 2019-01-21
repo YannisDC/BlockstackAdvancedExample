@@ -26,7 +26,8 @@ extension LikesViewController: Bindable {
         createLikeButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: nil)
         navigationItem.rightBarButtonItem = createLikeButton
         
-        tableView.register(UINib(nibName: LikeTableViewCell.reuseID, bundle: nil), forCellReuseIdentifier: LikeTableViewCell.reuseID)
+        tableView.register(UINib(nibName: LikeTableViewCell.reuseID, bundle: nil),
+                           forCellReuseIdentifier: LikeTableViewCell.reuseID)
         tableView.refreshControl = UIRefreshControl()
         tableView.estimatedRowHeight = 135
         tableView.rowHeight = UITableView.automaticDimension
@@ -44,13 +45,14 @@ extension LikesViewController: Bindable {
                                          createLikeTrigger: createLikeButton.rx.tap.asDriver(),
                                          selection: tableView.rx.itemSelected.asDriver())
         let output = viewModel.transform(input: input)
-
-        output.title.drive(rx.title).disposed(by: disposeBag)
         
-        output.likes.drive(tableView.rx.items(cellIdentifier: LikeTableViewCell.reuseID, cellType: LikeTableViewCell.self)) { tv, viewModel, cell in
-            cell.bind(viewModel)
-            }.disposed(by: disposeBag)
-
+        
+        output.title.drive(rx.title).disposed(by: disposeBag)
+        output.likes.drive(tableView.rx.items(cellIdentifier: LikeTableViewCell.reuseID,
+                                              cellType: LikeTableViewCell.self)) { tv, viewModel, cell in
+                                                cell.bind(viewModel)
+            }
+            .disposed(by: disposeBag)
         output.fetching
             .drive(tableView.refreshControl!.rx.isRefreshing)
             .disposed(by: disposeBag)

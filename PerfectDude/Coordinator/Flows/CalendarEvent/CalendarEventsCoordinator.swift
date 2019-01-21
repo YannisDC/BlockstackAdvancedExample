@@ -44,6 +44,8 @@ final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
             switch route {
             case .overview:
                 self.toOverview()
+            case .create:
+                self.createCalendarEvent()
             default:
                 break
             }
@@ -55,7 +57,13 @@ final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
 
 private extension CalendarEventsCoordinator {
     func toOverview() {
-        
+        let calendarEventsViewController = factory.makeCalendarEventsViewController(coordinator: self, usecaseProvider: self.useCaseProvider)
+        navigationController.setViewControllers([calendarEventsViewController], animated: false)
+    }
+    
+    func createCalendarEvent() {
+        let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self, usecaseProvider: self.useCaseProvider)
+        navigationController.pushViewController(createCalendarEventsViewController, animated: true)
     }
 }
 
