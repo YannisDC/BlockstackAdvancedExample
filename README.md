@@ -13,7 +13,7 @@ In this app the **Domain layer is renamed to Core**.
 - [x] Add Pre Onboarding that explains Blockstack
 - [ ] Add unit tests
 - [x] Make seperate Blockstack app endpoint
-- [ ] Add examples of multiple types
+- [x] Add examples of multiple types
 - [ ] Upgrade the UI
 - [x] Add single object caching (save and remove)
 - [ ] Add batch object loading (e.g. 10 indexes at a time)
