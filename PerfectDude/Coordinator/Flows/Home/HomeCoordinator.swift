@@ -79,15 +79,25 @@ private extension HomeCoordinator {
                                                usecaseProvider: usecaseProvider)
         likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         
+        let calendarEventsCoordinator = CalendarEventsCoordinator(rootViewController: rootViewController,
+                                                delegate: self,
+                                                useCaseProvider: usecaseProvider,
+                                                factory: factory)
+        calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
             likesCoordinator.navigationController,
+            calendarEventsCoordinator.navigationController,
             homeViewController
         ]
         rootViewController.setContentViewController(tabBarController)
         
         addDependency(likesCoordinator)
         likesCoordinator.start()
+        
+        addDependency(calendarEventsCoordinator)
+        calendarEventsCoordinator.start()
     }
     
     func signOut() {

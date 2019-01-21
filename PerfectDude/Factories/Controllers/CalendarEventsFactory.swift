@@ -7,11 +7,25 @@
 //
 
 import Foundation
+import Core
+import RxSwift
 
 protocol CalendarEventsFactory {
-    /// Creates a ...ViewController
+    /// Creates a CalendarEventsViewController
     ///
     /// - Parameters:
-    ///   -
-    /// - Returns:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - usecaseProvider: Core.UseCaseProvider instance
+    /// - Returns: CalendarEventsViewController
+    func makeCalendarEventsViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                          usecaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController
+    
+    /// Creates a CreateCalendarEventViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - usecaseProvider: Core.UseCaseProvider instance
+    /// - Returns: CreateCalendarEventViewController
+    func makeCreateCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                               usecaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController
 }

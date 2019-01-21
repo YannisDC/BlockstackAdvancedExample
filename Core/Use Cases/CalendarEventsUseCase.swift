@@ -11,9 +11,9 @@ import RxSwift
 
 public protocol CalendarEventsUseCase {
     
-    func save(like: CalendarEvent) -> Maybe<String>
+    func save(event: CalendarEvent) -> Maybe<String>
     func query(uuid: String, encrypted: Bool) -> Single<CalendarEvent>
-    func delete(like: CalendarEvent) -> Maybe<String>
+    func delete(event: CalendarEvent) -> Maybe<String>
     func queryAll() -> Observable<[CalendarEvent]>
     
 }
