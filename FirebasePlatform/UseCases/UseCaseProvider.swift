@@ -10,14 +10,15 @@ import Foundation
 import Core
 import RxSwift
 import Firebase
+import FirebaseDatabase
 
 public final class UseCaseProvider: Core.UseCaseProvider {
     
-//    private var ref: DatabaseReference!
+    private var ref: DatabaseReference!
 //    private var storage: StorageReference
     
     public init() {
-//        ref = Database.database().reference()
+        ref = Database.database().reference()
 //        storage = Storage.storage().reference()
     }
     
@@ -30,7 +31,7 @@ public final class UseCaseProvider: Core.UseCaseProvider {
     }
     
     public func makeLikesUseCase() -> Core.LikesUseCase {
-        return LikesUseCase()
+        return LikesUseCase(reference: ref)
     }
     
     public func makeCalendarEventsUseCase() -> Core.CalendarEventsUseCase {
