@@ -160,6 +160,7 @@
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DED9FAA8219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA9219E0D3E001C5878 /* BlockstackPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEEE49D321F7431900AEAE54 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE49D221F7431900AEAE54 /* Error.swift */; };
 		DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */; };
 		DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */; };
 		DEF7EAFB21F66BF7003758DB /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */; };
@@ -460,6 +461,7 @@
 		DED9FA9B219E0D3E001C5878 /* BlockstackPlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackPlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackPlatformTests.swift; sourceTree = "<group>"; };
 		DED9FAA4219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEEE49D221F7431900AEAE54 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
 		DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
@@ -769,6 +771,7 @@
 			isa = PBXGroup;
 			children = (
 				DE71F1B021F60AEC00887522 /* FirebasePlatform.h */,
+				DEEE49D221F7431900AEAE54 /* Error.swift */,
 				DEF7EAF321F66BF6003758DB /* UseCases */,
 				DE71F1CB21F60B0600887522 /* ExternalDependecy.swift */,
 				DE71F1CD21F60C0F00887522 /* GoogleService-Info.plist */,
@@ -1710,6 +1713,7 @@
 				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
 				"${BUILT_PRODUCTS_DIR}/Blockstack/Blockstack.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -1726,6 +1730,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Blockstack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -1878,6 +1883,7 @@
 				DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */,
 				DEF7EAFD21F66BF7003758DB /* InitUseCase.swift in Sources */,
 				DEF7EAFC21F66BF7003758DB /* CalendarEventsUseCase.swift in Sources */,
+				DEEE49D321F7431900AEAE54 /* Error.swift in Sources */,
 				DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

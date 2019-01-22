@@ -53,4 +53,5 @@ end
 target 'FirebasePlatform' do
     common
     pod 'Firebase/Core'
+    pod 'Firebase/Auth'
 end
