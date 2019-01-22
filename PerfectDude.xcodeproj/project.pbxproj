@@ -160,6 +160,12 @@
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DED9FAA8219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA9219E0D3E001C5878 /* BlockstackPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */; };
+		DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */; };
+		DEF7EAFB21F66BF7003758DB /* UseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */; };
+		DEF7EAFC21F66BF7003758DB /* CalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF721F66BF6003758DB /* CalendarEventsUseCase.swift */; };
+		DEF7EAFD21F66BF7003758DB /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF821F66BF6003758DB /* InitUseCase.swift */; };
+		DEF7EAFE21F70C99003758DB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; };
 		E0441F044A6C31743248D8FD /* Pods_BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E63305DA71F50F7F6A5BEE /* Pods_BlockstackPlatform.framework */; };
 		F6EFB93E34A39C9B8C08C70C /* Pods_PerfectDudeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FEC69957D85A1F6F945AE7A /* Pods_PerfectDudeTests.framework */; };
 /* End PBXBuildFile section */
@@ -454,6 +460,11 @@
 		DED9FA9B219E0D3E001C5878 /* BlockstackPlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackPlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackPlatformTests.swift; sourceTree = "<group>"; };
 		DED9FAA4219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
+		DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
+		DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
+		DEF7EAF721F66BF6003758DB /* CalendarEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsUseCase.swift; sourceTree = "<group>"; };
+		DEF7EAF821F66BF6003758DB /* InitUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
 		E3BC5F073482060730AD290D /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E63305DA71F50F7F6A5BEE /* Pods_BlockstackPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockstackPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F330CE98A4694F92DB429DAA /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -464,6 +475,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF7EAFE21F70C99003758DB /* Core.framework in Frameworks */,
 				71E1C42F132A2EF1817D36F6 /* Pods_FirebasePlatform.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -757,6 +769,7 @@
 			isa = PBXGroup;
 			children = (
 				DE71F1B021F60AEC00887522 /* FirebasePlatform.h */,
+				DEF7EAF321F66BF6003758DB /* UseCases */,
 				DE71F1CB21F60B0600887522 /* ExternalDependecy.swift */,
 				DE71F1CD21F60C0F00887522 /* GoogleService-Info.plist */,
 				DE71F1B121F60AEC00887522 /* Info.plist */,
@@ -1229,6 +1242,18 @@
 				DED9FAA4219E0D3E001C5878 /* Info.plist */,
 			);
 			path = BlockstackPlatformTests;
+			sourceTree = "<group>";
+		};
+		DEF7EAF321F66BF6003758DB /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */,
+				DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */,
+				DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */,
+				DEF7EAF721F66BF6003758DB /* CalendarEventsUseCase.swift */,
+				DEF7EAF821F66BF6003758DB /* InitUseCase.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1848,7 +1873,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEF7EAFB21F66BF7003758DB /* UseCaseProvider.swift in Sources */,
 				DE71F1CC21F60B0600887522 /* ExternalDependecy.swift in Sources */,
+				DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */,
+				DEF7EAFD21F66BF7003758DB /* InitUseCase.swift in Sources */,
+				DEF7EAFC21F66BF7003758DB /* CalendarEventsUseCase.swift in Sources */,
+				DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

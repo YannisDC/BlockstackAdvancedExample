@@ -10,19 +10,19 @@ import Foundation
 import Core
 import Firebase
 
-final class ExternalDependency: Core.ExternalDependenciesInjection {
+public final class ExternalDependency: Core.ExternalDependenciesInjection {
     
     public init() { }
     
-    func setup() {
+    public func setup() {
         FirebaseApp.configure()
     }
     
-    func print(error: Error) {
+    public func print(error: Error) {
         
     }
     
-    func track(event: String) {
+    public func track(event: String) {
         
     }
 }
