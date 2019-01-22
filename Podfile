@@ -13,6 +13,15 @@ def common
     pod 'Gallery'
 end
 
+def firebase
+    pod 'Firebase/Core', '~> 4.0.2'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Database'
+    pod 'Firebase/Messaging'
+    pod 'Firebase/Storage'
+    pod 'FirebaseUI/Storage'
+end
+
 target 'PerfectDude' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   common

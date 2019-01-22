@@ -48,6 +48,8 @@ final class LikesUseCase: Core.LikesUseCase {
     }
     
     func queryAll() -> Observable<[Like]> {
-        return Observable.just([])
+        return Observable.just([Like(description: "Test",
+                                     image: nil,
+                                     tags: [])])
     }
 }
