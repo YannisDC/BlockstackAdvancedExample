@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 delegate: self,
                                                 coordinatorFactory: CoordinatorFactory(),
                                                 factory: ControllerFactory(),
-                                                usecaseProvider: UseCaseProvider().firebaseUseCaseProvider)
+                                                usecaseProvider: UseCaseProvider().blockstackUseCaseProvider)
         applicationCoordinator?.start()
         
         return true

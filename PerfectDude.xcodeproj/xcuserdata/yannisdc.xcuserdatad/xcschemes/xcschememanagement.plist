@@ -7,7 +7,7 @@
 		<key>BlockstackPlatform.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>25</integer>
 		</dict>
 		<key>BlockstackPlatform.xcscheme_^#shared#^_</key>
 		<dict>
@@ -17,7 +17,7 @@
 		<key>Core.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>20</integer>
+			<integer>24</integer>
 		</dict>
 		<key>Core.xcscheme_^#shared#^_</key>
 		<dict>
@@ -27,7 +27,7 @@
 		<key>FirebasePlatform.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>23</integer>
+			<integer>27</integer>
 		</dict>
 		<key>FirebasePlatform.xcscheme_^#shared#^_</key>
 		<dict>
@@ -37,7 +37,7 @@
 		<key>PerfectDude.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>23</integer>
 		</dict>
 		<key>PerfectDude.xcscheme_^#shared#^_</key>
 		<dict>
@@ -47,7 +47,7 @@
 		<key>PerfectUI.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>22</integer>
+			<integer>26</integer>
 		</dict>
 		<key>PerfectUI.xcscheme_^#shared#^_</key>
 		<dict>

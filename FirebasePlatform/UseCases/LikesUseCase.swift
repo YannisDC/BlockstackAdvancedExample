@@ -55,6 +55,17 @@ final class LikesUseCase: Core.LikesUseCase {
         }.subscribeOn(scheduler)
     }
     
+    func query(uuid: String, username: String) -> Single<Like> {
+        return Single.deferred {
+            return Single<Like>.create { single in
+                single(.success(Like(description: "",
+                                     image: nil,
+                                     tags: [])))
+                return Disposables.create()
+            }
+            }.subscribeOn(scheduler)
+    }
+    
     func delete(like: Like) -> Maybe<String> {
         return Maybe.deferred {
             return Maybe<String>.create { maybe in
@@ -88,9 +99,31 @@ final class LikesUseCase: Core.LikesUseCase {
         }.subscribeOn(scheduler)
         
         return maybe.asObservable()
+    }
+    
+    func queryAll(username: String) -> Observable<[Like]> {
         
-//        return Observable.just([Like(description: "Test",
-//                                     image: nil,
-//                                     tags: [])])
+        let maybe = Maybe.deferred {
+            return Maybe<[Like]>.create { maybe in
+                guard let user = Auth.auth().currentUser else {
+                    maybe(.completed)
+                    return Disposables.create()
+                }
+                // TODO: Map Core struct to Firebase
+                self.ref.child("likes").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+                    let value = snapshot.value as? NSDictionary
+                    let description = value?["like"] as? String ?? ""
+                    let like = Like(description: description, image: nil, tags: [])
+                    
+                    maybe(.success([like]))
+                }) { (error) in
+                    print(error.localizedDescription)
+                    maybe(.completed)
+                }
+                return Disposables.create()
+            }
+            }.subscribeOn(scheduler)
+        
+        return maybe.asObservable()
     }
 }

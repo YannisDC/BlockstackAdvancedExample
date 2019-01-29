@@ -155,6 +155,7 @@
 		DEB48E7E21B87B1E0045A58E /* PreOnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */; };
 		DEB48E7F21B87B1E0045A58E /* PreOnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */; };
 		DEB48E8021B87B1E0045A58E /* PreOnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */; };
+		DED024E82200937B0010A73F /* URL+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED024E72200937B0010A73F /* URL+Ext.swift */; };
 		DED9FA9C219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA3219E0D3E001C5878 /* BlockstackPlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */; };
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -455,6 +456,7 @@
 		DEB48E7B21B87B1E0045A58E /* PreOnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingViewController.swift; sourceTree = "<group>"; };
 		DEB48E7C21B87B1E0045A58E /* PreOnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingViewModel.swift; sourceTree = "<group>"; };
 		DEB48E7D21B87B1E0045A58E /* PreOnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingViewController.xib; sourceTree = "<group>"; };
+		DED024E72200937B0010A73F /* URL+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Ext.swift"; sourceTree = "<group>"; };
 		DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BlockstackPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockstackPlatform.h; sourceTree = "<group>"; };
 		DED9FA96219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -811,6 +813,7 @@
 			isa = PBXGroup;
 			children = (
 				DE746162219EEE7C00D02824 /* Blockstack+Ext.swift */,
+				DED024E72200937B0010A73F /* URL+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2055,6 +2058,7 @@
 				DEA8EC2421AF23240004CB21 /* NetworkFactory.swift in Sources */,
 				DE1DDF5421A72D8300F95CBF /* Cache.swift in Sources */,
 				DE746168219EEE7C00D02824 /* LikesUseCase.swift in Sources */,
+				DED024E82200937B0010A73F /* URL+Ext.swift in Sources */,
 				DE74616D219EF60300D02824 /* AuthUseCase.swift in Sources */,
 				DE3BC73E21A2D95A0075B02A /* InitUseCase.swift in Sources */,
 				DE746166219EEE7C00D02824 /* Network.swift in Sources */,
