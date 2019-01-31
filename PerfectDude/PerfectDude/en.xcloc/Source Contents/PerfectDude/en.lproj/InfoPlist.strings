@@ -1,0 +1,8 @@
+/* Bundle display name */
+"CFBundleDisplayName" = "Perfect Dude";
+/* Bundle name */
+"CFBundleName" = "$(PRODUCT_NAME)";
+/* Privacy - Camera Usage Description */
+"NSCameraUsageDescription" = "This app requires access to camera";
+/* Privacy - Photo Library Usage Description */
+"NSPhotoLibraryUsageDescription" = "This app requires access to photo library";

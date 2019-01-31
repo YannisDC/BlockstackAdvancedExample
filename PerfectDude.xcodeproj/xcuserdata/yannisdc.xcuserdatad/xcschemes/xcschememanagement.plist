@@ -55,5 +55,43 @@
 			<integer>26</integer>
 		</dict>
 	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>DE71F1B521F60AEC00887522</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE96F6D221935FB5007A342A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE96F6E921935FB7007A342A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE96F6F421935FB7007A342A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DE96F71321936243007A342A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DEA8EC3121B00C370004CB21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DED9FA9A219E0D3E001C5878</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>
