@@ -24,6 +24,7 @@
 		DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */; };
 		DE42E5EC21F20EB900AACB16 /* CalendarEventsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5E921F20EB900AACB16 /* CalendarEventsFactory.swift */; };
 		DE42E5ED21F20EB900AACB16 /* CalendarEventsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5EA21F20EB900AACB16 /* CalendarEventsRoute.swift */; };
+		DE491EA62202E58300FC8CA8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DE491EA82202E58300FC8CA8 /* Localizable.strings */; };
 		DE4A19902198DA2400112F0D /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A198F2198DA2400112F0D /* Reminder.swift */; };
 		DE4A19932198DBF000112F0D /* CalendarEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19922198DBF000112F0D /* CalendarEvent.swift */; };
 		DE4A19962198E13800112F0D /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4A19952198E13800112F0D /* Like.swift */; };
@@ -319,6 +320,13 @@
 		DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsCoordinator.swift; sourceTree = "<group>"; };
 		DE42E5E921F20EB900AACB16 /* CalendarEventsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsFactory.swift; sourceTree = "<group>"; };
 		DE42E5EA21F20EB900AACB16 /* CalendarEventsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsRoute.swift; sourceTree = "<group>"; };
+		DE491EA72202E58300FC8CA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DE491EA92202E59D00FC8CA8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
+		DE491EAA2202E59D00FC8CA8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DE491EAB2202E59D00FC8CA8 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DE491EAC2202E5AC00FC8CA8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
+		DE491EAD2202E5AC00FC8CA8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DE491EAE2202E5AD00FC8CA8 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		DE4A198F2198DA2400112F0D /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		DE4A19922198DBF000112F0D /* CalendarEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEvent.swift; sourceTree = "<group>"; };
 		DE4A19952198E13800112F0D /* Like.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
@@ -898,6 +906,7 @@
 				DE96F77A21936389007A342A /* UI */,
 				DE96F74221936388007A342A /* Utilities */,
 				DE96F6DA21935FB5007A342A /* Main.storyboard */,
+				DE491EA82202E58300FC8CA8 /* Localizable.strings */,
 				DE96F6E021935FB7007A342A /* Assets.xcassets */,
 				DEB36B5621B70738007F275C /* Colors.xcassets */,
 				DE96F6E221935FB7007A342A /* LaunchScreen.storyboard */,
@@ -1575,6 +1584,8 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
+				fr,
 			);
 			mainGroup = DE96F6CA21935FB5007A342A;
 			productRefGroup = DE96F6D421935FB5007A342A /* Products */;
@@ -1632,6 +1643,7 @@
 				DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */,
 				DE50B76E21B9416500D7F905 /* PreOnboardingStorageViewController.xib in Resources */,
 				DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */,
+				DE491EA62202E58300FC8CA8 /* Localizable.strings in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
 				DE18041221F5B8AE00A93223 /* CreateCalendarEventViewController.xib in Resources */,
 			);
@@ -2150,10 +2162,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		DE491EA82202E58300FC8CA8 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE491EA72202E58300FC8CA8 /* en */,
+				DE491EAB2202E59D00FC8CA8 /* nl */,
+				DE491EAE2202E5AD00FC8CA8 /* fr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		DE96F6DA21935FB5007A342A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				DE96F6DB21935FB5007A342A /* Base */,
+				DE491EA92202E59D00FC8CA8 /* nl */,
+				DE491EAC2202E5AC00FC8CA8 /* fr */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -2162,6 +2186,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				DE96F6E321935FB7007A342A /* Base */,
+				DE491EAA2202E59D00FC8CA8 /* nl */,
+				DE491EAD2202E5AC00FC8CA8 /* fr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -2274,6 +2300,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -2335,6 +2362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
