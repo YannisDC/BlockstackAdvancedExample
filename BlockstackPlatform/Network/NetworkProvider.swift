@@ -105,12 +105,8 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
             }))
     }
     
-    // TODO: Add multiplayer query and queryAll using the network.loadIndex(path: String, username: String)
     func queryAll(username: String) -> Observable<[T]> {
-        
-        let fetchEntities = cache.fetchObjects().asObservable()
-        
-        let stored = network.loadIndex(path: path, username: username)
+        return network.loadIndex(path: path, username: username)
             .asObservable()
             .map({ (indexes) -> [Observable<T>] in
                 return indexes.ids.compactMap({ fileIndex in
@@ -120,27 +116,6 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
                 })
             })
             .flatMap(Observable.combineLatest)
-            .share(replay: 1, scope: .forever)
-            .flatMap {
-                return self.cache.save(objects: $0)
-                    .asObservable()
-                    .map(to: [T].self)
-                    .concat(Observable.just($0))
-        }
-        
-        return fetchEntities.concat(stored)
-        
-        
-//        return network.loadIndex(path: path, username: username)
-//            .asObservable()
-//            .map({ (indexes) -> [Observable<T>] in
-//                return indexes.ids.compactMap({ fileIndex in
-//                    guard !fileIndex.encrypted else { return nil }
-//                    return self.query(uuid: fileIndex.id, encrypted: fileIndex.encrypted)
-//                        .asObservable()
-//                })
-//            })
-//            .flatMap(Observable.combineLatest)
     }
 }
 
