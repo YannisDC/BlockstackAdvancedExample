@@ -27,11 +27,19 @@ final class LikesUseCase<NetworkProvider>: Core.LikesUseCase where NetworkProvid
         return network.query(uuid: uuid, encrypted: encrypted)
     }
     
+    func query(uuid: String, username: String) -> Single<Like> {
+        return network.query(uuid: uuid, username: username)
+    }
+    
     func delete(like: Like) -> Maybe<String> {
         return network.delete(entity: like)
     }
     
     func queryAll() -> Observable<[Like]> {
         return network.queryAll()
+    }
+    
+    func queryAll(username: String) -> Observable<[Like]> {
+        return network.queryAll(username: username)
     }
 }

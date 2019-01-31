@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Core
 import RxSwift
 
 protocol HomeFactory {
@@ -15,5 +16,6 @@ protocol HomeFactory {
     /// - Parameter coordinator: BaseCoordinator<HomeRouter> instance
     /// - Returns: HomeViewController instance
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
-                                imagesTrigger: PublishSubject<UIImage?>) -> HomeViewController
+                                imagesTrigger: PublishSubject<UIImage?>,
+                                useCaseProvider: Core.UseCaseProvider) -> HomeViewController
 }

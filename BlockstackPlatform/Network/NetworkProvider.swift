@@ -30,7 +30,9 @@ protocol AbstractNetworkProvider {
     
     func save(entity: T) -> Maybe<String>
     func query(uuid: String, encrypted: Bool) -> Single<T>
+    func query(uuid: String, username: String) -> Single<T>
     func queryAll() -> Observable<[T]>
+    func queryAll(username: String) -> Observable<[T]>
     func delete(entity: T) -> Maybe<String>
 }
 
@@ -63,6 +65,10 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
     
     func query(uuid: String, encrypted: Bool) -> Single<T> {
         return network.load(path: "\(path)/\(uuid)", decrypt: encrypted)
+    }
+    
+    func query(uuid: String, username: String) -> Single<T> {
+        return network.load(path: "\(path)/\(uuid)", username: username)
     }
     
     func queryAll() -> Observable<[T]> {
@@ -99,7 +105,18 @@ final class NetworkProvider<T: BlockstackProvidable>: AbstractNetworkProvider {
             }))
     }
     
-    // TODO: Add multiplayer query and queryAll using the network.loadIndex(path: String, username: String)
+    func queryAll(username: String) -> Observable<[T]> {
+        return network.loadIndex(path: path, username: username)
+            .asObservable()
+            .map({ (indexes) -> [Observable<T>] in
+                return indexes.ids.compactMap({ fileIndex in
+                    guard !fileIndex.encrypted else { return nil }
+                    return self.query(uuid: fileIndex.id, encrypted: fileIndex.encrypted)
+                        .asObservable()
+                })
+            })
+            .flatMap(Observable.combineLatest)
+    }
 }
 
 struct MapFromNever: Error {}

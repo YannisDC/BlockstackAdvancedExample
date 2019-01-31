@@ -15,3 +15,9 @@ public protocol UseCaseProvider {
     func makeLikesUseCase() -> LikesUseCase
     func makeCalendarEventsUseCase() -> CalendarEventsUseCase
 }
+
+public protocol ExternalDependenciesInjection {
+    func setup()
+    func print(error: Error)
+    func track(event: String)
+}

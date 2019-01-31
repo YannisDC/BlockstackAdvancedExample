@@ -95,11 +95,13 @@ CalendarEventsFactory
     // MARK: HomeFactory methods
     
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
-                                imagesTrigger: PublishSubject<UIImage?>) -> HomeViewController {
+                                imagesTrigger: PublishSubject<UIImage?>,
+                                useCaseProvider: Core.UseCaseProvider) -> HomeViewController {
         
         let homeViewController = HomeViewController.loadFromNib()
         let homeViewModel = HomeViewModel(coordinator: coordinator,
-                                          imagesTrigger: imagesTrigger)
+                                          imagesTrigger: imagesTrigger,
+                                          useCaseProvider: useCaseProvider)
         homeViewController.bindViewModel(to: homeViewModel)
         return homeViewController
         
