@@ -18,6 +18,13 @@ final class InitUseCase: Core.InitUseCase {
         self.scheduler = OperationQueueScheduler(operationQueue: OperationQueue.init())
     }
     
+    func initPublishPublicKey() -> Maybe<String> {
+        return Maybe<String>.create { maybe in
+            maybe(.completed)
+            return Disposables.create()
+        }
+    }
+    
     func initLikeIndexes() -> Maybe<String> {
         return Maybe.deferred {
             return Maybe<String>.create { maybe in
