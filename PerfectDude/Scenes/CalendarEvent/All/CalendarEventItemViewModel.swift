@@ -13,6 +13,7 @@ final class CalendarEventItemViewModel   {
     let event: CalendarEvent
     let date: Date?
     let dateText: String
+    let monthText: String
     let description: String
     
     init (with event: CalendarEvent) {
@@ -20,13 +21,15 @@ final class CalendarEventItemViewModel   {
         self.description = event.name ?? ""
         guard let date = event.date else {
             self.dateText = ""
+            self.monthText = ""
             self.date = nil
             return
         }
-        
-        let dateFormatterPrint = DateFormatter()
-        dateFormatterPrint.dateFormat = "dd"
-        self.dateText = dateFormatterPrint.string(from: date)
         self.date = date
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "d"
+        self.dateText = dateFormatterPrint.string(from: date)
+        dateFormatterPrint.dateFormat = "MMM"
+        self.monthText = dateFormatterPrint.string(from: date)
     }
 }

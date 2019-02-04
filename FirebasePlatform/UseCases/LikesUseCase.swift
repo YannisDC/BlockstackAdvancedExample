@@ -29,6 +29,15 @@ final class LikesUseCase: Core.LikesUseCase {
                     maybe(.completed)
                     return Disposables.create()
                 }
+                /*
+                 Here you can upload the image and then use a custom encoder that doesn't include the image but adds a filepath of where the image is stored.
+ 
+                do {
+                    let jsonData = try JSONEncoder().encode(like)
+                    let jsonString = String(data: jsonData, encoding: .utf8)!
+                    print(jsonString)
+                } catch { print(error) }
+                 */
                 // TODO: Map Core struct to Firebase
                 self.ref.child("likes").child(user.uid).setValue(["like": like.description]) {
                     (error:Error?, ref:DatabaseReference) in
@@ -109,6 +118,8 @@ final class LikesUseCase: Core.LikesUseCase {
                     maybe(.completed)
                     return Disposables.create()
                 }
+                
+                
                 // TODO: Map Core struct to Firebase
                 self.ref.child("likes").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
                     let value = snapshot.value as? NSDictionary

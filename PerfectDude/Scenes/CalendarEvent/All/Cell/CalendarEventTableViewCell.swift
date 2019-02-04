@@ -11,6 +11,7 @@ import UIKit
 class CalendarEventTableViewCell: UITableViewCell {
 
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var monthLabel: UILabel!
     @IBOutlet private weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
@@ -20,6 +21,7 @@ class CalendarEventTableViewCell: UITableViewCell {
     
     func bind(_ viewModel:CalendarEventItemViewModel) {
         self.dateLabel.text = viewModel.dateText
+        self.monthLabel.text = viewModel.monthText
         self.descriptionLabel.text = viewModel.description
     }
     
