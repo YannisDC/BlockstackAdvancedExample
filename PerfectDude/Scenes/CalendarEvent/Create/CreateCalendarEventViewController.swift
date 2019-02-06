@@ -16,6 +16,8 @@ final class CreateCalendarEventViewController: ViewController {
     fileprivate let disposeBag = DisposeBag()
     
     @IBOutlet private weak var descriptionTextField: UITextField!
+    @IBOutlet private weak var datePicker: UIDatePicker!
+    @IBOutlet private weak var frequencyPicker: UIPickerView!
 }
 
 extension CreateCalendarEventViewController: Bindable {
@@ -26,8 +28,11 @@ extension CreateCalendarEventViewController: Bindable {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
         navigationItem.rightBarButtonItem = saveButton
         
+        
+        
         let input = CreateCalendarEventViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
-                                                       calendarEventTitle: descriptionTextField.rx.text.orEmpty.asDriver())
+                                                       calendarEventTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
+                                                       calendarEventDate: datePicker.rx.date.asDriver())
         let output = viewModel.transform(input: input)
 
         output.title.drive(rx.title).disposed(by: disposeBag)

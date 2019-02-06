@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCalendarEventViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
+                <outlet property="datePicker" destination="sGi-A3-kah" id="Wgb-hP-r3O"/>
                 <outlet property="descriptionTextField" destination="wN6-oO-h8A" id="O0h-5O-0NY"/>
+                <outlet property="frequencyPicker" destination="jzo-uR-Ncb" id="ZEA-mF-MVd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -61,6 +61,13 @@
 		DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */; };
 		DE5A6E2F21A5D4220097E941 /* EditLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */; };
 		DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68A76721A69188006E119A /* Observable+Extension.swift */; };
+		DE6DF6712209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6722209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6732209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6742209E37B005C33E5 /* EditCalendarEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */; };
+		DE6DF6772209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
+		DE6DF6782209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
+		DE6DF6792209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
 		DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */; };
 		DE71F1B721F60AEC00887522 /* FirebasePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */; };
 		DE71F1BE21F60AEC00887522 /* FirebasePlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71F1BD21F60AEC00887522 /* FirebasePlatformTests.swift */; };
@@ -374,6 +381,9 @@
 		DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLikeViewModel.swift; sourceTree = "<group>"; };
 		DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditLikeViewController.xib; sourceTree = "<group>"; };
 		DE68A76721A69188006E119A /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
+		DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCalendarEventViewController.swift; sourceTree = "<group>"; };
+		DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCalendarEventViewModel.swift; sourceTree = "<group>"; };
+		DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCalendarEventViewController.xib; sourceTree = "<group>"; };
 		DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebasePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE71F1B021F60AEC00887522 /* FirebasePlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebasePlatform.h; sourceTree = "<group>"; };
@@ -645,6 +655,7 @@
 			children = (
 				DE18040521F4D2F900A93223 /* All */,
 				DE18041321F5B91700A93223 /* Create */,
+				DE6DF67A2209E3F5005C33E5 /* Edit */,
 			);
 			path = CalendarEvent;
 			sourceTree = "<group>";
@@ -796,6 +807,16 @@
 				DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */,
 				DE5A6E2A21A5D4220097E941 /* EditLikeViewController.swift */,
 				DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		DE6DF67A2209E3F5005C33E5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */,
+				DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */,
+				DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -1692,6 +1713,7 @@
 				DE491EA62202E58300FC8CA8 /* Localizable.strings in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
 				DE18041221F5B8AE00A93223 /* CreateCalendarEventViewController.xib in Resources */,
+				DE6DF6772209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1699,6 +1721,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6782209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1706,6 +1729,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6792209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1993,9 +2017,11 @@
 				DE96F79721936389007A342A /* CALayer+Extension.swift in Sources */,
 				DE96F78E21936389007A342A /* ViewModel.swift in Sources */,
 				DE96F7AF21936389007A342A /* NavigationController.swift in Sources */,
+				DE6DF6712209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
 				DE96F6DF21935FB5007A342A /* PerfectDude.xcdatamodeld in Sources */,
 				DE96F78921936389007A342A /* Operator.swift in Sources */,
 				DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */,
+				DE6DF6742209E37B005C33E5 /* EditCalendarEventViewModel.swift in Sources */,
 				DE96F78B21936389007A342A /* ErrorPresentable.swift in Sources */,
 				DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */,
 				DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */,
@@ -2048,6 +2074,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6722209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
 				DE8894172202ED90007B68DA /* TestLikesUseCase.swift in Sources */,
 				DE8894142202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */,
 				DE8894202202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */,
@@ -2061,6 +2088,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6732209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
 				DE8894182202ED90007B68DA /* TestLikesUseCase.swift in Sources */,
 				DE8894152202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */,
 				DE8894212202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */,

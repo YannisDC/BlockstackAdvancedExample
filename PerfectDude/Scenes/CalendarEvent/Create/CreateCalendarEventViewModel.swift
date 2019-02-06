@@ -10,6 +10,7 @@ import Foundation
 import Core
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 final class CreateCalendarEventViewModel: ViewModel {
 
@@ -23,6 +24,14 @@ final class CreateCalendarEventViewModel: ViewModel {
         self.coordinator = coordinator
         self.calendarEventsUsecase = usecaseProvider.makeCalendarEventsUseCase()
     }
+    
+    func setLocalNotification(title: String) {
+        let notification = UILocalNotification()
+        notification.fireDate = Date(timeIntervalSinceNow: 5)
+        notification.alertTitle = title
+        notification.alertBody = "Comming up soon"
+        UIApplication.shared.scheduleLocalNotification(notification)
+    }
 
     // MARK: Transform
 
@@ -34,12 +43,19 @@ final class CreateCalendarEventViewModel: ViewModel {
             return !$0.isEmpty && !$1
         }
         
-        let save = input.saveTrigger.withLatestFrom(input.calendarEventTitle)
-            .map { (title) in
+        let eventInfo = Driver.combineLatest(input.calendarEventTitle, input.calendarEventDate)
+        
+        let save = input.saveTrigger.withLatestFrom(eventInfo)
+            .map { (title, date) in
+                UNUserNotificationCenter.current().requestAuthorization(options:
+                    [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
+                        self.setLocalNotification(title: title)
+                })
+                
                 return CalendarEvent(eventType: CalendarEventType.surprise,
                                      name: title,
                                      description: "",
-                                     date: Date(),
+                                     date: date,
                                      location: "Home",
                                      repeatCount: 1,
                                      repeatSize: RepeatSize.weeks,
@@ -70,6 +86,7 @@ extension CreateCalendarEventViewModel {
     struct Input {
         let saveTrigger: Driver<Void>
         let calendarEventTitle: Driver<String>
+        let calendarEventDate: Driver<Date>
     }
 
     struct Output {
