@@ -37,6 +37,7 @@
 		DE50B77A21B9454300D7F905 /* PreOnboardingWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */; };
 		DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */; };
 		DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */; };
+		DE5358B2220C1D8A007E1F1A /* UIPickerViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */; };
 		DE53FA0721C289E300C0DB6D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0621C289E300C0DB6D /* CustomView.swift */; };
 		DE53FA0A21C28A7800C0DB6D /* PreOnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */; };
 		DE53FA0B21C28A7800C0DB6D /* PreOnboardingStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */; };
@@ -359,6 +360,7 @@
 		DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewController.swift; sourceTree = "<group>"; };
 		DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewModel.swift; sourceTree = "<group>"; };
 		DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingWalletViewController.xib; sourceTree = "<group>"; };
+		DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewAdapter.swift; sourceTree = "<group>"; };
 		DE53FA0621C289E300C0DB6D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStepView.swift; sourceTree = "<group>"; };
 		DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingStepView.xib; sourceTree = "<group>"; };
@@ -1087,6 +1089,7 @@
 				DE96F74321936388007A342A /* CustomView.swift */,
 				DE96F74421936388007A342A /* Error.swift */,
 				DE96F74521936388007A342A /* Operator.swift */,
+				DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */,
 				DE96F74621936388007A342A /* Protocol */,
 				DE96F74E21936388007A342A /* Extensions */,
 			);
@@ -2045,6 +2048,7 @@
 				DE96F79221936389007A342A /* NSObject+Extension.swift in Sources */,
 				DE96F79521936389007A342A /* MealPlanError+Extension.swift in Sources */,
 				DE96F79B21936389007A342A /* ParentCoordinator.swift in Sources */,
+				DE5358B2220C1D8A007E1F1A /* UIPickerViewAdapter.swift in Sources */,
 				DE18040321F4D17400A93223 /* CalendarEventsViewModel.swift in Sources */,
 				DE96F7A021936389007A342A /* AppRoute.swift in Sources */,
 				DEFEF2D42205D2E3006A6DF4 /* CalendarEventTableViewCell.swift in Sources */,

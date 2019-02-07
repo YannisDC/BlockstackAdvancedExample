@@ -28,14 +28,14 @@ extension CreateCalendarEventViewController: Bindable {
         let saveButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
         navigationItem.rightBarButtonItem = saveButton
         
-        
-        
         let input = CreateCalendarEventViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
                                                        calendarEventTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
-                                                       calendarEventDate: datePicker.rx.date.asDriver())
+                                                       calendarEventDate: datePicker.rx.date.asDriver(),
+                                                       selection: frequencyPicker.rx.modelSelected(CustomStringConvertible.self).asDriver())
         let output = viewModel.transform(input: input)
 
         output.title.drive(rx.title).disposed(by: disposeBag)
         output.dismiss.drive().disposed(by: disposeBag)
+        output.calendarEvents.drive(frequencyPicker.rx.items(adapter: PickerViewViewAdapter())).disposed(by: disposeBag)
     }
 }
