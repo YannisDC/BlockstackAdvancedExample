@@ -30,7 +30,7 @@ final class EditCalendarEventViewModel: ViewModel {
     // MARK: Transform
 
     func transform(input: EditCalendarEventViewModel.Input) -> EditCalendarEventViewModel.Output {
-        let title = Driver.just("".localized())
+        let title = Driver.just("Edit".localized())
         let errorTracker = ErrorTracker()
         
         let deleteEvent = input.deleteTrigger

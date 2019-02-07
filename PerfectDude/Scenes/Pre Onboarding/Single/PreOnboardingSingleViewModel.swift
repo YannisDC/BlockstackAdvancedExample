@@ -15,6 +15,7 @@ final class PreOnboardingSingleViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<PreOnboardingRoute>?
     private let usecase: AuthUseCase!
+    private let initUseCase: InitUseCase!
     
     // MARK: Init
     
@@ -22,6 +23,7 @@ final class PreOnboardingSingleViewModel: ViewModel {
          useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
         self.usecase = useCaseProvider.makeAuthUseCase()
+        self.initUseCase = useCaseProvider.makeInitUseCase()
     }
 
     // MARK: Transform
@@ -32,8 +34,9 @@ final class PreOnboardingSingleViewModel: ViewModel {
         let continueButtonTap = input.buttonTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             
-            self.usecase.signIn()
-                .subscribe(onSuccess: { (_) in
+            self.usecase
+                .signIn()
+                .do(onSuccess: { (_) in
                     self.coordinator?.coordinate(to: .finished)
                 }, onError: { (error) in
                     print(error)

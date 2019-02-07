@@ -62,8 +62,6 @@ final class CreateCalendarEventViewModel: ViewModel {
                                              description: "",
                                              date: date,
                                              location: "Home",
-                                             repeatCount: 1,
-                                             repeatSize: RepeatSize.weeks,
                                              encrypted: false)
                 }
                 
