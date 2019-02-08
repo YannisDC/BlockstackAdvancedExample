@@ -21,7 +21,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     public let navigationController: NavigationController!
     fileprivate var modalNavigationController = ModalNavigationController()
     
-    // MARK: Init
+    // MARK: - Init
     
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
@@ -35,7 +35,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     }
     
     
-    // MARK: Coordinator
+    // MARK: - Coordinator
     
     override func start() {
         coordinate(to: .overview)

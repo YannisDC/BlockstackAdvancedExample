@@ -71,9 +71,9 @@ private extension HomeCoordinator {
                                                                 useCaseProvider: useCaseProvider)
         homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
         
-//        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
-//                                                     image: UIImage(named: "blockstack_semi_filled"),
-//                                                     selectedImage: nil)
+        //        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
+        //                                                     image: UIImage(named: "blockstack_semi_filled"),
+        //                                                     selectedImage: nil)
         
         let homeNavigationController = NavigationController()
         homeNavigationController.setViewControllers([homeViewController], animated: false)
@@ -85,9 +85,9 @@ private extension HomeCoordinator {
         calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
         
         let likesCoordinator = LikesCoordinator(rootViewController: rootViewController,
-                                               delegate: self,
-                                               factory: factory,
-                                               useCaseProvider: useCaseProvider)
+                                                delegate: self,
+                                                factory: factory,
+                                                useCaseProvider: useCaseProvider)
         likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
         let tabBarController = UITabBarController()

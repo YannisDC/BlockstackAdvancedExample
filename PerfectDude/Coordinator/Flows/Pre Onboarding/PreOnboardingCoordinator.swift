@@ -11,32 +11,32 @@ import Core
 import RxSwift
 
 final class PreOnboardingCoordinator: BaseCoordinator<PreOnboardingRoute> {
-
+    
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let useCaseProvider: Core.UseCaseProvider
     fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: PreOnboardingFactory
-
-    // MARK: Init
-
+    
+    // MARK: - Init
+    
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          useCaseProvider: Core.UseCaseProvider,
          factory: PreOnboardingFactory) {
-
+        
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.useCaseProvider = useCaseProvider
         self.factory = factory
     }
-
-    // MARK: Coordinator
-
+    
+    // MARK: - Coordinator
+    
     override func start() {
         coordinate(to: .overview)
     }
-
+    
     override func coordinate(to route: PreOnboardingRoute) {
         DispatchQueue.main.async {
             switch route {
@@ -56,7 +56,7 @@ private extension PreOnboardingCoordinator {
     func toOverView() {
         let preOnboardingSingleViewController = factory
             .makePreOnboardingSingleViewController(coordinator: self,
-                                             useCaseProvider: self.useCaseProvider)
+                                                   useCaseProvider: self.useCaseProvider)
         rootViewController.present(preOnboardingSingleViewController, animated: false, completion: nil)
     }
 }

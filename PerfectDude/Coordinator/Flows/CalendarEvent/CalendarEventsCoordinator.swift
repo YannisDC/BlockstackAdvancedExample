@@ -11,34 +11,34 @@ import Core
 import RxSwift
 
 final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
-
+    
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let useCaseProvider: Core.UseCaseProvider
     fileprivate let disposeBag = DisposeBag()
     fileprivate let factory: CalendarEventsFactory
     public let navigationController: NavigationController!
-
-    // MARK: Init
-
+    
+    // MARK: - Init
+    
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          useCaseProvider: Core.UseCaseProvider,
          factory: CalendarEventsFactory) {
-
+        
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.useCaseProvider = useCaseProvider
         self.factory = factory
         self.navigationController = NavigationController()
     }
-
-    // MARK: Coordinator
-
+    
+    // MARK: - Coordinator
+    
     override func start() {
         coordinate(to: .overview)
     }
-
+    
     override func coordinate(to route: CalendarEventsRoute) {
         DispatchQueue.main.async {
             switch route {
@@ -59,7 +59,8 @@ final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
 
 private extension CalendarEventsCoordinator {
     func toOverview() {
-        let calendarEventsViewController = factory.makeCalendarEventsViewController(coordinator: self, useCaseProvider: self.useCaseProvider)
+        let calendarEventsViewController = factory.makeCalendarEventsViewController(coordinator: self,
+                                                                                    useCaseProvider: self.useCaseProvider)
         navigationController.setViewControllers([calendarEventsViewController], animated: false)
     }
     
@@ -68,7 +69,8 @@ private extension CalendarEventsCoordinator {
     }
     
     func createCalendarEvent() {
-        let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self, useCaseProvider: self.useCaseProvider)
+        let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self,
+                                                                                               useCaseProvider: self.useCaseProvider)
         navigationController.pushViewController(createCalendarEventsViewController, animated: true)
     }
     
