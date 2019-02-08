@@ -19,9 +19,9 @@ final class LikesViewModel: ViewModel {
     // MARK: Init
 
     init(coordinator: BaseCoordinator<LikesRoute>?,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
-        self.likeUsecase = usecaseProvider.makeLikesUseCase()
+        self.likeUsecase = useCaseProvider.makeLikesUseCase()
     }
 
     // MARK: Transform

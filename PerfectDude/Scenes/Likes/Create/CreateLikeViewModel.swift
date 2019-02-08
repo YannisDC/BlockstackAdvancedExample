@@ -20,10 +20,10 @@ final class CreateLikeViewModel: ViewModel {
     // MARK: Init
     
     init(coordinator: BaseCoordinator<LikesRoute>?,
-         usecaseProvider: Core.UseCaseProvider,
+         useCaseProvider: Core.UseCaseProvider,
          imagesTrigger: PublishSubject<UIImage?>) {
         self.coordinator = coordinator
-        self.likeUsecase = usecaseProvider.makeLikesUseCase()
+        self.likeUsecase = useCaseProvider.makeLikesUseCase()
         self.imagesTrigger = imagesTrigger
     }
 

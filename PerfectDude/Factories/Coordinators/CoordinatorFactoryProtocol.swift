@@ -21,7 +21,7 @@ protocol CoordinatorFactoryProtocol {
     func makePreOnboardingCoordinator(rootViewController: BaseViewController,
                                       delegate: CoordinatorDelegate?,
                                       factory: ControllerFactory,
-                                      usecaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator
+                                      useCaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator
     
     /// Creates a HomeCoordinator
     ///
@@ -33,7 +33,7 @@ protocol CoordinatorFactoryProtocol {
     func makeHomeCoordinator(rootViewController: BaseViewController,
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,
-                             usecaseProvider: Core.UseCaseProvider) -> HomeCoordinator
+                             useCaseProvider: Core.UseCaseProvider) -> HomeCoordinator
     
     /// Creates a LikesCoordinator
     ///
@@ -46,5 +46,5 @@ protocol CoordinatorFactoryProtocol {
     func makeLikesCoordinator(rootViewController: BaseViewController,
                               delegate: CoordinatorDelegate?,
                               factory: ControllerFactory,
-                              usecaseProvider: Core.UseCaseProvider) -> LikesCoordinator
+                              useCaseProvider: Core.UseCaseProvider) -> LikesCoordinator
 }

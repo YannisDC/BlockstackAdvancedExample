@@ -16,7 +16,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     fileprivate weak var rootViewController: BaseViewController!
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let factory: LikesFactory
-    fileprivate let usecaseProvider: Core.UseCaseProvider
+    fileprivate let useCaseProvider: Core.UseCaseProvider
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
     public let navigationController: NavigationController!
     fileprivate var modalNavigationController = ModalNavigationController()
@@ -26,11 +26,11 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          factory: ControllerFactory,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.factory = factory
-        self.usecaseProvider = usecaseProvider
+        self.useCaseProvider = useCaseProvider
         self.navigationController = NavigationController()
     }
     
@@ -64,7 +64,7 @@ final class LikesCoordinator: BaseCoordinator<LikesRoute> {
 private extension LikesCoordinator {
     func toOverview() {
         let likesViewController = factory.makeLikesViewController(coordinator: self,
-                                                                  usecaseProvider: self.usecaseProvider)
+                                                                  useCaseProvider: self.useCaseProvider)
         navigationController.setViewControllers([likesViewController], animated: false)
     }
     
@@ -74,14 +74,14 @@ private extension LikesCoordinator {
     
     func createLike() {
         let createLikeViewController = factory.makeCreateLikeViewController(coordinator: self,
-                                                                            usecaseProvider: self.usecaseProvider,
+                                                                            useCaseProvider: self.useCaseProvider,
                                                                             imagesTrigger: imagesTrigger)
         navigationController.pushViewController(createLikeViewController, animated: true)
     }
     
     func editLike(like: Like) {
         let editLikeViewController = factory.makeEditLikeViewController(coordinator: self,
-                                                                        usecaseProvider: self.usecaseProvider,
+                                                                        useCaseProvider: self.useCaseProvider,
                                                                         imagesTrigger: imagesTrigger,
                                                                         like: like)
         navigationController.pushViewController(editLikeViewController, animated: true)

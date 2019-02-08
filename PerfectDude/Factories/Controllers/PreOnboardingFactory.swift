@@ -10,7 +10,7 @@ import UIKit
 import Core
 
 protocol PreOnboardingFactory {
-    /// Creates a ...PreOnboardingViewController
+    /// Creates a PreOnboardingViewController
     ///
     /// - Parameters:
     /// - coordinator: BaseCoordinator<PreOnboardingRoute> instance

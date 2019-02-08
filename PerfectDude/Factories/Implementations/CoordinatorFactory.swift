@@ -15,11 +15,11 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makePreOnboardingCoordinator(rootViewController: BaseViewController,
                                       delegate: CoordinatorDelegate?,
                                       factory: ControllerFactory,
-                                      usecaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator {
+                                      useCaseProvider: Core.UseCaseProvider) -> PreOnboardingCoordinator {
         
         return PreOnboardingCoordinator(rootViewController: rootViewController,
                                         delegate: delegate,
-                                        useCaseProvider: usecaseProvider,
+                                        useCaseProvider: useCaseProvider,
                                         factory: factory)
     }
     
@@ -33,12 +33,12 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     func makeHomeCoordinator(rootViewController: BaseViewController,
                              delegate: CoordinatorDelegate?,
                              factory: ControllerFactory,
-                             usecaseProvider: Core.UseCaseProvider) -> HomeCoordinator {
+                             useCaseProvider: Core.UseCaseProvider) -> HomeCoordinator {
         
         return HomeCoordinator(rootViewController: rootViewController,
                                delegate: delegate,
                                factory: factory,
-                               usecaseProvider: usecaseProvider)
+                               useCaseProvider: useCaseProvider)
         
     }
     
@@ -52,14 +52,14 @@ class CoordinatorFactory: CoordinatorFactoryProtocol {
     ///   - usecaseProvider: Core.UseCaseProvider instance
     /// - Returns: LikesCoordinator instance
     func makeLikesCoordinator(rootViewController: BaseViewController,
-                             delegate: CoordinatorDelegate?,
-                             factory: ControllerFactory,
-                             usecaseProvider: Core.UseCaseProvider) -> LikesCoordinator {
+                              delegate: CoordinatorDelegate?,
+                              factory: ControllerFactory,
+                              useCaseProvider: Core.UseCaseProvider) -> LikesCoordinator {
         
         return LikesCoordinator(rootViewController: rootViewController,
-                               delegate: delegate,
-                               factory: factory,
-                               usecaseProvider: usecaseProvider)
+                                delegate: delegate,
+                                factory: factory,
+                                useCaseProvider: useCaseProvider)
         
     }
 }

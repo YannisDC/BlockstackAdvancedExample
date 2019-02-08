@@ -59,7 +59,7 @@ final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
 
 private extension CalendarEventsCoordinator {
     func toOverview() {
-        let calendarEventsViewController = factory.makeCalendarEventsViewController(coordinator: self, usecaseProvider: self.useCaseProvider)
+        let calendarEventsViewController = factory.makeCalendarEventsViewController(coordinator: self, useCaseProvider: self.useCaseProvider)
         navigationController.setViewControllers([calendarEventsViewController], animated: false)
     }
     
@@ -68,13 +68,13 @@ private extension CalendarEventsCoordinator {
     }
     
     func createCalendarEvent() {
-        let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self, usecaseProvider: self.useCaseProvider)
+        let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self, useCaseProvider: self.useCaseProvider)
         navigationController.pushViewController(createCalendarEventsViewController, animated: true)
     }
     
     func editCalendarEvent(event: CalendarEvent) {
         let editCalendarEventViewController = factory.makeEditCalendarEventViewController(coordinator: self,
-                                                                                          usecaseProvider: self.useCaseProvider,
+                                                                                          useCaseProvider: self.useCaseProvider,
                                                                                           event: event)
         navigationController.pushViewController(editCalendarEventViewController, animated: true)
     }

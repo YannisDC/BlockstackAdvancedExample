@@ -24,7 +24,7 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     fileprivate weak var delegate: AppCoordinatorDelegate?
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let factory: ControllerFactory
-    fileprivate let usecaseProvider: Core.UseCaseProvider
+    fileprivate let useCaseProvider: Core.UseCaseProvider
     private let auth: AuthUseCase!
     fileprivate lazy var navigationController = NavigationController()
     
@@ -34,13 +34,13 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
          delegate: AppCoordinatorDelegate?,
          coordinatorFactory: CoordinatorFactory,
          factory: ControllerFactory,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.coordinatorFactory = coordinatorFactory
         self.factory = factory
-        self.usecaseProvider = usecaseProvider
-        self.auth = usecaseProvider.makeAuthUseCase()
+        self.useCaseProvider = useCaseProvider
+        self.auth = useCaseProvider.makeAuthUseCase()
     }
     
     // MARK: Start
@@ -93,7 +93,7 @@ private extension AppCoordinator {
             .makePreOnboardingCoordinator(rootViewController: rootViewController,
                                           delegate: self,
                                           factory: factory,
-                                          usecaseProvider: self.usecaseProvider)
+                                          useCaseProvider: self.useCaseProvider)
         addDependency(preOnboardingCoordinator)
         preOnboardingCoordinator.start()
     }
@@ -102,14 +102,14 @@ private extension AppCoordinator {
         let homeCoordinator = coordinatorFactory.makeHomeCoordinator(rootViewController: rootViewController,
                                                                      delegate: self,
                                                                      factory: factory,
-                                                                     usecaseProvider: self.usecaseProvider)
+                                                                     useCaseProvider: self.useCaseProvider)
         addDependency(homeCoordinator)
         homeCoordinator.start()
     }
     
     func toAuthentication() {
         let authViewController = factory.makeAuthenticationViewController(coordinator: self,
-                                                                          useCaseProvider: self.usecaseProvider)
+                                                                          useCaseProvider: self.useCaseProvider)
         rootViewController.setContentViewController(authViewController)
     }
     
