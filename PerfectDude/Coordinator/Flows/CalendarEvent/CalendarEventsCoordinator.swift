@@ -44,10 +44,12 @@ final class CalendarEventsCoordinator: BaseCoordinator<CalendarEventsRoute> {
             switch route {
             case .overview:
                 self.toOverview()
+            case .events:
+                self.toEvents()
             case .create:
                 self.createCalendarEvent()
-            default:
-                break
+            case .edit(let event):
+                self.editCalendarEvent(event: event)
             }
         }
     }
@@ -61,9 +63,20 @@ private extension CalendarEventsCoordinator {
         navigationController.setViewControllers([calendarEventsViewController], animated: false)
     }
     
+    func toEvents() {
+        navigationController.topViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     func createCalendarEvent() {
         let createCalendarEventsViewController = factory.makeCreateCalendarEventViewController(coordinator: self, usecaseProvider: self.useCaseProvider)
         navigationController.pushViewController(createCalendarEventsViewController, animated: true)
+    }
+    
+    func editCalendarEvent(event: CalendarEvent) {
+        let editCalendarEventViewController = factory.makeEditCalendarEventViewController(coordinator: self,
+                                                                                          usecaseProvider: self.useCaseProvider,
+                                                                                          event: event)
+        navigationController.pushViewController(editCalendarEventViewController, animated: true)
     }
 }
 

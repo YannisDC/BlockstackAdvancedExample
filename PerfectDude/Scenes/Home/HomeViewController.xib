@@ -13,7 +13,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
                 <outlet property="showCard" destination="ySb-ip-blx" id="68x-iM-fEI"/>
-                <outlet property="signOut" destination="dSJ-kb-EJ3" id="UHI-i5-tjd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,28 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
-                    <rect key="frame" x="85.5" y="366" width="204" height="30"/>
+                    <rect key="frame" x="85.5" y="220" width="204" height="30"/>
                     <state key="normal" title="Init / Reset (Press on first run)"/>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-vc-6Eb">
-                    <rect key="frame" x="164.5" y="47" width="46" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSJ-kb-EJ3">
-                    <rect key="frame" x="159" y="427" width="57" height="30"/>
-                    <state key="normal" title="Sign out"/>
-                </button>
             </subviews>
-            <color key="backgroundColor" red="0.91764705879999997" green="0.92156862750000001" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="4t6-vc-6Eb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="27" id="3O6-gt-rCK"/>
-                <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="4t6-vc-6Eb" secondAttribute="bottom" constant="298.5" id="4OF-iZ-ltb"/>
+                <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="5Ud-Hy-Xps"/>
                 <constraint firstItem="ySb-ip-blx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9QR-7N-hD6"/>
-                <constraint firstItem="dSJ-kb-EJ3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Uhe-ig-HOd"/>
-                <constraint firstItem="4t6-vc-6Eb" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="aDT-Hr-CdI"/>
-                <constraint firstItem="dSJ-kb-EJ3" firstAttribute="top" secondItem="ySb-ip-blx" secondAttribute="bottom" constant="31" id="kXa-QZ-uo8"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>

@@ -81,8 +81,8 @@ public struct CalendarEvent: Codable, Identifiable, Cryptable {
                 description: String,
                 date: Date,
                 location: String,
-                repeatCount: Int,
-                repeatSize: RepeatSize,
+                repeatCount: Int = 0,
+                repeatSize: RepeatSize = .weeks,
                 uuid: String = UUID().uuidString,
                 encrypted: Bool = true) {
 

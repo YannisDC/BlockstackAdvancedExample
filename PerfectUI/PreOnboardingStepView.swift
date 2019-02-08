@@ -21,7 +21,7 @@ final class PreOnboardingStepView: CustomView {
     
     @IBInspectable var image: UIImage? = nil {
         didSet {
-            imageView.image = image
+            imageView.image = image?.withRenderingMode(.alwaysTemplate)
         }
     }
     

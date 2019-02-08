@@ -34,7 +34,7 @@ final class HomeViewModel: ViewModel {
     // MARK: Transform
     
     func transform(input: HomeViewModel.Input) -> HomeViewModel.Output {
-        let title = Driver.just("onboarding_set_your_pin_title".localized())
+        let title = Driver.just("Home".localized())
         
         let signOutResult = input.signOutTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
@@ -43,6 +43,7 @@ final class HomeViewModel: ViewModel {
         
         let showResult = input.showTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
+            self.initUsecase.initPublishPublicKey().subscribe()
             self.initUsecase.initLikeIndexes().subscribe()
             self.initUsecase.initCalendarEventIndexes().subscribe()
         })

@@ -52,7 +52,7 @@ final class CreateLikeViewModel: ViewModel {
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
                     })
-        }
+            }
         
         let dismiss = Driver.of(save)
             .merge().do(onNext: {

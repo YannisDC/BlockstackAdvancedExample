@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AuthenticationViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="button" destination="YbO-gj-cBb" id="wna-VM-YAi"/>
+                <outlet property="button" destination="J27-hs-Fgy" id="83H-DB-LNU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,34 +21,51 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clouds" translatesAutoresizingMaskIntoConstraints="NO" id="Fy8-hv-Qs5">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="LB8-qW-LaL">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YbO-gj-cBb">
-                    <rect key="frame" x="16" y="585" width="343" height="66"/>
-                    <color key="backgroundColor" red="1" green="0.46666666666666667" blue="0.38431372549019605" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J27-hs-Fgy">
+                    <rect key="frame" x="44" y="593" width="287" height="50"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="66" id="BOF-5J-9Yb"/>
+                        <constraint firstAttribute="height" constant="50" id="E4R-mz-Uxg"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
-                    <state key="normal" title="SIGN IN WITH BLOCKSTACK"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <state key="normal" title="Continue with Blockstack">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Perfect Dude" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oct-9X-YAJ">
+                    <rect key="frame" x="24" y="291.5" width="327" height="84"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.94518764269406375" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YbO-gj-cBb" secondAttribute="trailing" constant="16" id="2yd-Wn-FGA"/>
-                <constraint firstAttribute="top" secondItem="Fy8-hv-Qs5" secondAttribute="top" id="8bH-5f-xqf"/>
-                <constraint firstAttribute="bottom" secondItem="Fy8-hv-Qs5" secondAttribute="bottom" id="MP7-6C-Kh3"/>
-                <constraint firstAttribute="trailing" secondItem="Fy8-hv-Qs5" secondAttribute="trailing" id="W31-xu-DlD"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="YbO-gj-cBb" secondAttribute="bottom" constant="16" id="kus-g5-FCP"/>
-                <constraint firstItem="Fy8-hv-Qs5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nXm-rh-kWF"/>
-                <constraint firstItem="YbO-gj-cBb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="obk-4D-cBG"/>
+                <constraint firstAttribute="top" secondItem="LB8-qW-LaL" secondAttribute="top" id="D1Q-bC-iPb"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Oct-9X-YAJ" secondAttribute="trailing" constant="24" id="DmT-OI-v6G"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="J27-hs-Fgy" secondAttribute="bottom" constant="24" id="LkK-9E-W8s"/>
+                <constraint firstItem="LB8-qW-LaL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VfJ-6S-8VQ"/>
+                <constraint firstAttribute="trailing" secondItem="LB8-qW-LaL" secondAttribute="trailing" id="ZoR-78-KOm"/>
+                <constraint firstItem="J27-hs-Fgy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="44" id="auS-6x-78I"/>
+                <constraint firstItem="Oct-9X-YAJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="s5a-d8-l7R"/>
+                <constraint firstItem="Oct-9X-YAJ" firstAttribute="centerY" secondItem="LB8-qW-LaL" secondAttribute="centerY" id="sMk-4r-4Pn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="J27-hs-Fgy" secondAttribute="trailing" constant="44" id="stb-zJ-csP"/>
+                <constraint firstAttribute="bottom" secondItem="LB8-qW-LaL" secondAttribute="bottom" id="zrO-Aj-WvM"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="-26.399999999999999" y="122.78860569715144"/>
         </view>
     </objects>
     <resources>
-        <image name="clouds" width="375" height="667"/>
+        <image name="Background" width="375" height="667"/>
     </resources>
 </document>

@@ -28,4 +28,15 @@ protocol CalendarEventsFactory {
     /// - Returns: CreateCalendarEventViewController
     func makeCreateCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
                                                usecaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController
+    
+    /// Creates a EditCalendarEventViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - usecaseProvider: Core.UseCaseProvider instance
+    ///   - event: CalendarEvent instance
+    /// - Returns: EditCalendarEventViewController
+    func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                             usecaseProvider: Core.UseCaseProvider,
+                                             event: CalendarEvent) -> EditCalendarEventViewController
 }

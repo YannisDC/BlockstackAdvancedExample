@@ -28,13 +28,35 @@ final class CalendarEventsViewModel: ViewModel {
 
     func transform(input: CalendarEventsViewModel.Input) -> CalendarEventsViewModel.Output {
         let title = Driver.just("Events".localized())
-
+        let activityIndicator = ActivityIndicator()
+        let errorTracker = ErrorTracker()
+        
+        let calendarEvents = input.trigger.flatMapLatest { _ in
+            return self.calendarEventsUsecase.queryAll()
+                .trackActivity(activityIndicator)
+                .trackError(errorTracker)
+                .asDriverOnErrorJustComplete()
+                .map { $0.map { CalendarEventItemViewModel(with: $0) }.sorted(by: { $0.dateText < $1.dateText }) }
+        }
+        let fetching = activityIndicator.asDriver()
+        let errors = errorTracker.asDriver()
+        let selectedCalendarEvent = input.selection
+            .withLatestFrom(calendarEvents) { (indexPath, calendarEvents) -> CalendarEvent in
+                return calendarEvents[indexPath.row].event
+            }.do(onNext: { event in
+                self.coordinator?.coordinate(to: .edit(event))
+            })
+        
         let createCalendarEvent = input.createCalendarEventTrigger.do(onNext: {
             self.coordinator?.coordinate(to: .create)
         })
         
         return Output(title: title,
-                      createCalendarEvent: createCalendarEvent)
+                      fetching: fetching,
+                      calendarEvents: calendarEvents,
+                      createCalendarEvent: createCalendarEvent,
+                      selectedCalendarEvent: selectedCalendarEvent,
+                      error: errors)
     }
 }
 
@@ -42,11 +64,17 @@ final class CalendarEventsViewModel: ViewModel {
 
 extension CalendarEventsViewModel {
     struct Input {
+        let trigger: Driver<Void>
         let createCalendarEventTrigger: Driver<Void>
+        let selection: Driver<IndexPath>
     }
 
     struct Output {
         let title: Driver<String>
+        let fetching: Driver<Bool>
+        let calendarEvents: Driver<[CalendarEventItemViewModel]>
         let createCalendarEvent: Driver<Void>
+        let selectedCalendarEvent: Driver<CalendarEvent>
+        let error: Driver<Error>
     }
 }

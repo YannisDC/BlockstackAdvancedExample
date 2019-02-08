@@ -16,7 +16,7 @@ final class HomeViewController: ViewController {
     internal var viewModel: HomeViewModel!
     fileprivate let disposeBag = DisposeBag()
     
-    @IBOutlet private weak var signOut: UIButton!
+    internal var signOut: UIBarButtonItem!
     @IBOutlet private weak var showCard: UIButton!
     
     var initBinding: Binder<Void> {
@@ -33,6 +33,11 @@ final class HomeViewController: ViewController {
 extension HomeViewController: Bindable {
     
     func bindViewModel() {
+        extendedLayoutIncludesOpaqueBars = false
+        signOut = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
+        
+        navigationItem.rightBarButtonItem = signOut
+        
         let input = HomeViewModel.Input(signOutTap: signOut.rx.tap.asDriver(),
                                         showTap: showCard.rx.tap.asDriver())
         let output = viewModel.transform(input: input)

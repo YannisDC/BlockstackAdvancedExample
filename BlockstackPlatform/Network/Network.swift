@@ -21,6 +21,8 @@ protocol AbstractNetwork {
     func saveIndex(path: String, index: Index, encrypt: Bool) -> Maybe<String>
     func loadIndex(path: String, decrypt: Bool) -> Single<Index>
     func loadIndex(path: String, username: String) -> Single<Index>
+    
+    func publishPublicKey(path: String) -> Maybe<String>
 }
 
 final class Network<T: Codable>: AbstractNetwork {
@@ -112,4 +114,9 @@ final class Network<T: Codable>: AbstractNetwork {
         }.subscribeOn(scheduler)
     }
     
+    func publishPublicKey(path: String) -> Maybe<String> {
+        return Maybe.deferred {
+            return self.blockstack.rx.publishPublicKey(path: path)
+        }.subscribeOn(scheduler)
+    }
 }

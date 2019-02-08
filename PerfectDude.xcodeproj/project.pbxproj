@@ -37,6 +37,7 @@
 		DE50B77A21B9454300D7F905 /* PreOnboardingWalletViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */; };
 		DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */; };
 		DE50B77C21B9454300D7F905 /* PreOnboardingWalletViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */; };
+		DE5358B2220C1D8A007E1F1A /* UIPickerViewAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */; };
 		DE53FA0721C289E300C0DB6D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0621C289E300C0DB6D /* CustomView.swift */; };
 		DE53FA0A21C28A7800C0DB6D /* PreOnboardingStepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */; };
 		DE53FA0B21C28A7800C0DB6D /* PreOnboardingStepView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */; };
@@ -61,6 +62,13 @@
 		DE5A6E2E21A5D4220097E941 /* EditLikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */; };
 		DE5A6E2F21A5D4220097E941 /* EditLikeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */; };
 		DE68A76821A69188006E119A /* Observable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE68A76721A69188006E119A /* Observable+Extension.swift */; };
+		DE6DF6712209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6722209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6732209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */; };
+		DE6DF6742209E37B005C33E5 /* EditCalendarEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */; };
+		DE6DF6772209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
+		DE6DF6782209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
+		DE6DF6792209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */; };
 		DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */; };
 		DE71F1B721F60AEC00887522 /* FirebasePlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */; };
 		DE71F1BE21F60AEC00887522 /* FirebasePlatformTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE71F1BD21F60AEC00887522 /* FirebasePlatformTests.swift */; };
@@ -81,6 +89,16 @@
 		DE751E7921C182D70062533B /* PreOnboardingSingleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE751E7621C182D70062533B /* PreOnboardingSingleViewController.swift */; };
 		DE751E7A21C182D70062533B /* PreOnboardingSingleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE751E7721C182D70062533B /* PreOnboardingSingleViewModel.swift */; };
 		DE751E7B21C182D70062533B /* PreOnboardingSingleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE751E7821C182D70062533B /* PreOnboardingSingleViewController.xib */; };
+		DE8894142202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894132202ECC6007B68DA /* TestUseCaseProvider.swift */; };
+		DE8894152202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894132202ECC6007B68DA /* TestUseCaseProvider.swift */; };
+		DE8894172202ED90007B68DA /* TestLikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894162202ED90007B68DA /* TestLikesUseCase.swift */; };
+		DE8894182202ED90007B68DA /* TestLikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894162202ED90007B68DA /* TestLikesUseCase.swift */; };
+		DE88941A2202EDA7007B68DA /* TestAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894192202EDA7007B68DA /* TestAuthUseCase.swift */; };
+		DE88941B2202EDA7007B68DA /* TestAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8894192202EDA7007B68DA /* TestAuthUseCase.swift */; };
+		DE88941D2202EFC2007B68DA /* TestInitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88941C2202EFC2007B68DA /* TestInitUseCase.swift */; };
+		DE88941E2202EFC2007B68DA /* TestInitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88941C2202EFC2007B68DA /* TestInitUseCase.swift */; };
+		DE8894202202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88941F2202F031007B68DA /* TestCalendarEventsUseCase.swift */; };
+		DE8894212202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE88941F2202F031007B68DA /* TestCalendarEventsUseCase.swift */; };
 		DE96F6D721935FB5007A342A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6D621935FB5007A342A /* AppDelegate.swift */; };
 		DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE96F6DA21935FB5007A342A /* Main.storyboard */; };
 		DE96F6DF21935FB5007A342A /* PerfectDude.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6DD21935FB5007A342A /* PerfectDude.xcdatamodeld */; };
@@ -169,6 +187,9 @@
 		DEF7EAFC21F66BF7003758DB /* CalendarEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF721F66BF6003758DB /* CalendarEventsUseCase.swift */; };
 		DEF7EAFD21F66BF7003758DB /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF821F66BF6003758DB /* InitUseCase.swift */; };
 		DEF7EAFE21F70C99003758DB /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; };
+		DEFEF2D42205D2E3006A6DF4 /* CalendarEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEF2D22205D2E3006A6DF4 /* CalendarEventTableViewCell.swift */; };
+		DEFEF2D52205D2E3006A6DF4 /* CalendarEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFEF2D32205D2E3006A6DF4 /* CalendarEventTableViewCell.xib */; };
+		DEFEF2D82205D496006A6DF4 /* CalendarEventItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFEF2D72205D496006A6DF4 /* CalendarEventItemViewModel.swift */; };
 		E0441F044A6C31743248D8FD /* Pods_BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7E63305DA71F50F7F6A5BEE /* Pods_BlockstackPlatform.framework */; };
 		F6EFB93E34A39C9B8C08C70C /* Pods_PerfectDudeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FEC69957D85A1F6F945AE7A /* Pods_PerfectDudeTests.framework */; };
 /* End PBXBuildFile section */
@@ -339,6 +360,7 @@
 		DE50B77721B9454300D7F905 /* PreOnboardingWalletViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewController.swift; sourceTree = "<group>"; };
 		DE50B77821B9454300D7F905 /* PreOnboardingWalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingWalletViewModel.swift; sourceTree = "<group>"; };
 		DE50B77921B9454300D7F905 /* PreOnboardingWalletViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingWalletViewController.xib; sourceTree = "<group>"; };
+		DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPickerViewAdapter.swift; sourceTree = "<group>"; };
 		DE53FA0621C289E300C0DB6D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		DE53FA0821C28A7800C0DB6D /* PreOnboardingStepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingStepView.swift; sourceTree = "<group>"; };
 		DE53FA0921C28A7800C0DB6D /* PreOnboardingStepView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingStepView.xib; sourceTree = "<group>"; };
@@ -361,6 +383,9 @@
 		DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditLikeViewModel.swift; sourceTree = "<group>"; };
 		DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditLikeViewController.xib; sourceTree = "<group>"; };
 		DE68A76721A69188006E119A /* Observable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Extension.swift"; sourceTree = "<group>"; };
+		DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCalendarEventViewController.swift; sourceTree = "<group>"; };
+		DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCalendarEventViewModel.swift; sourceTree = "<group>"; };
+		DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditCalendarEventViewController.xib; sourceTree = "<group>"; };
 		DE71945E21A8AA0C001DEB04 /* ModalNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalNavigation.swift; sourceTree = "<group>"; };
 		DE71F1AE21F60AEB00887522 /* FirebasePlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FirebasePlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE71F1B021F60AEC00887522 /* FirebasePlatform.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirebasePlatform.h; sourceTree = "<group>"; };
@@ -381,6 +406,11 @@
 		DE751E7621C182D70062533B /* PreOnboardingSingleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingSingleViewController.swift; sourceTree = "<group>"; };
 		DE751E7721C182D70062533B /* PreOnboardingSingleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreOnboardingSingleViewModel.swift; sourceTree = "<group>"; };
 		DE751E7821C182D70062533B /* PreOnboardingSingleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreOnboardingSingleViewController.xib; sourceTree = "<group>"; };
+		DE8894132202ECC6007B68DA /* TestUseCaseProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUseCaseProvider.swift; sourceTree = "<group>"; };
+		DE8894162202ED90007B68DA /* TestLikesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLikesUseCase.swift; sourceTree = "<group>"; };
+		DE8894192202EDA7007B68DA /* TestAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAuthUseCase.swift; sourceTree = "<group>"; };
+		DE88941C2202EFC2007B68DA /* TestInitUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestInitUseCase.swift; sourceTree = "<group>"; };
+		DE88941F2202F031007B68DA /* TestCalendarEventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCalendarEventsUseCase.swift; sourceTree = "<group>"; };
 		DE96F6D321935FB5007A342A /* PerfectDude.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PerfectDude.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE96F6D621935FB5007A342A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE96F6DB21935FB5007A342A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -477,6 +507,9 @@
 		DEF7EAF621F66BF6003758DB /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		DEF7EAF721F66BF6003758DB /* CalendarEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarEventsUseCase.swift; sourceTree = "<group>"; };
 		DEF7EAF821F66BF6003758DB /* InitUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
+		DEFEF2D22205D2E3006A6DF4 /* CalendarEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventTableViewCell.swift; sourceTree = "<group>"; };
+		DEFEF2D32205D2E3006A6DF4 /* CalendarEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarEventTableViewCell.xib; sourceTree = "<group>"; };
+		DEFEF2D72205D496006A6DF4 /* CalendarEventItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventItemViewModel.swift; sourceTree = "<group>"; };
 		E3BC5F073482060730AD290D /* Pods_Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7E63305DA71F50F7F6A5BEE /* Pods_BlockstackPlatform.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlockstackPlatform.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F330CE98A4694F92DB429DAA /* Pods-Core.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Core.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Core/Pods-Core.debug.xcconfig"; sourceTree = "<group>"; };
@@ -624,6 +657,7 @@
 			children = (
 				DE18040521F4D2F900A93223 /* All */,
 				DE18041321F5B91700A93223 /* Create */,
+				DE6DF67A2209E3F5005C33E5 /* Edit */,
 			);
 			path = CalendarEvent;
 			sourceTree = "<group>";
@@ -631,9 +665,11 @@
 		DE18040521F4D2F900A93223 /* All */ = {
 			isa = PBXGroup;
 			children = (
+				DEFEF2D62205D2EA006A6DF4 /* Cell */,
 				DE18040121F4D17400A93223 /* CalendarEventsViewController.xib */,
 				DE1803FF21F4D17400A93223 /* CalendarEventsViewController.swift */,
 				DE18040021F4D17400A93223 /* CalendarEventsViewModel.swift */,
+				DEFEF2D72205D496006A6DF4 /* CalendarEventItemViewModel.swift */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -749,10 +785,10 @@
 			isa = PBXGroup;
 			children = (
 				DE5A6E1D21A57EFD0097E941 /* Cell */,
+				DE5A6E1221A53E3B0097E941 /* LikesViewController.xib */,
 				DE5A6E1021A53E3B0097E941 /* LikesViewController.swift */,
 				DE5A6E1121A53E3B0097E941 /* LikesViewModel.swift */,
 				DE5A6E1721A57CD00097E941 /* LikeItemViewModel.swift */,
-				DE5A6E1221A53E3B0097E941 /* LikesViewController.xib */,
 			);
 			path = All;
 			sourceTree = "<group>";
@@ -773,6 +809,16 @@
 				DE5A6E2C21A5D4220097E941 /* EditLikeViewController.xib */,
 				DE5A6E2A21A5D4220097E941 /* EditLikeViewController.swift */,
 				DE5A6E2B21A5D4220097E941 /* EditLikeViewModel.swift */,
+			);
+			path = Edit;
+			sourceTree = "<group>";
+		};
+		DE6DF67A2209E3F5005C33E5 /* Edit */ = {
+			isa = PBXGroup;
+			children = (
+				DE6DF6702209E37B005C33E5 /* EditCalendarEventViewController.xib */,
+				DE6DF66E2209E37B005C33E5 /* EditCalendarEventViewController.swift */,
+				DE6DF66F2209E37B005C33E5 /* EditCalendarEventViewModel.swift */,
 			);
 			path = Edit;
 			sourceTree = "<group>";
@@ -856,6 +902,18 @@
 			path = Single;
 			sourceTree = "<group>";
 		};
+		DE8894222202F0FF007B68DA /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				DE8894132202ECC6007B68DA /* TestUseCaseProvider.swift */,
+				DE8894162202ED90007B68DA /* TestLikesUseCase.swift */,
+				DE8894192202EDA7007B68DA /* TestAuthUseCase.swift */,
+				DE88941C2202EFC2007B68DA /* TestInitUseCase.swift */,
+				DE88941F2202F031007B68DA /* TestCalendarEventsUseCase.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		DE96F6CA21935FB5007A342A = {
 			isa = PBXGroup;
 			children = (
@@ -910,8 +968,8 @@
 				DE96F6E021935FB7007A342A /* Assets.xcassets */,
 				DEB36B5621B70738007F275C /* Colors.xcassets */,
 				DE96F6E221935FB7007A342A /* LaunchScreen.storyboard */,
-				DE96F6E521935FB7007A342A /* Info.plist */,
 				DE96F6DD21935FB5007A342A /* PerfectDude.xcdatamodeld */,
+				DE96F6E521935FB7007A342A /* Info.plist */,
 			);
 			path = PerfectDude;
 			sourceTree = "<group>";
@@ -920,6 +978,7 @@
 			isa = PBXGroup;
 			children = (
 				DE96F6EE21935FB7007A342A /* PerfectDudeTests.swift */,
+				DE8894222202F0FF007B68DA /* Providers */,
 				DE96F6F021935FB7007A342A /* Info.plist */,
 			);
 			path = PerfectDudeTests;
@@ -1030,6 +1089,7 @@
 				DE96F74321936388007A342A /* CustomView.swift */,
 				DE96F74421936388007A342A /* Error.swift */,
 				DE96F74521936388007A342A /* Operator.swift */,
+				DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */,
 				DE96F74621936388007A342A /* Protocol */,
 				DE96F74E21936388007A342A /* Extensions */,
 			);
@@ -1269,6 +1329,15 @@
 				DEF7EAF821F66BF6003758DB /* InitUseCase.swift */,
 			);
 			path = UseCases;
+			sourceTree = "<group>";
+		};
+		DEFEF2D62205D2EA006A6DF4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEFEF2D22205D2E3006A6DF4 /* CalendarEventTableViewCell.swift */,
+				DEFEF2D32205D2E3006A6DF4 /* CalendarEventTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1637,6 +1706,7 @@
 				DE751E7B21C182D70062533B /* PreOnboardingSingleViewController.xib in Resources */,
 				DE5A6E2821A5D3FC0097E941 /* CreateLikeViewController.xib in Resources */,
 				DEB36B5721B70738007F275C /* Colors.xcassets in Resources */,
+				DEFEF2D52205D2E3006A6DF4 /* CalendarEventTableViewCell.xib in Resources */,
 				DEB48E8021B87B1E0045A58E /* PreOnboardingViewController.xib in Resources */,
 				DE96F7A621936389007A342A /* HomeViewController.xib in Resources */,
 				DE53FA0D21C28D4700C0DB6D /* PreOnboardingStepView.xib in Resources */,
@@ -1646,6 +1716,7 @@
 				DE491EA62202E58300FC8CA8 /* Localizable.strings in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
 				DE18041221F5B8AE00A93223 /* CreateCalendarEventViewController.xib in Resources */,
+				DE6DF6772209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1653,6 +1724,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6782209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1660,6 +1732,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6792209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1937,6 +2010,7 @@
 				DE96F78D21936389007A342A /* ActivityPresentable.swift in Sources */,
 				DE18041021F5B8AE00A93223 /* CreateCalendarEventViewController.swift in Sources */,
 				DE96F78721936389007A342A /* CustomView.swift in Sources */,
+				DEFEF2D82205D496006A6DF4 /* CalendarEventItemViewModel.swift in Sources */,
 				DE5A6E1321A53E3B0097E941 /* LikesViewController.swift in Sources */,
 				DE18040221F4D17400A93223 /* CalendarEventsViewController.swift in Sources */,
 				DE50B77B21B9454300D7F905 /* PreOnboardingWalletViewModel.swift in Sources */,
@@ -1946,9 +2020,11 @@
 				DE96F79721936389007A342A /* CALayer+Extension.swift in Sources */,
 				DE96F78E21936389007A342A /* ViewModel.swift in Sources */,
 				DE96F7AF21936389007A342A /* NavigationController.swift in Sources */,
+				DE6DF6712209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
 				DE96F6DF21935FB5007A342A /* PerfectDude.xcdatamodeld in Sources */,
 				DE96F78921936389007A342A /* Operator.swift in Sources */,
 				DE71945F21A8AA0C001DEB04 /* ModalNavigation.swift in Sources */,
+				DE6DF6742209E37B005C33E5 /* EditCalendarEventViewModel.swift in Sources */,
 				DE96F78B21936389007A342A /* ErrorPresentable.swift in Sources */,
 				DE50B76C21B9416500D7F905 /* PreOnboardingStorageViewController.swift in Sources */,
 				DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */,
@@ -1972,8 +2048,10 @@
 				DE96F79221936389007A342A /* NSObject+Extension.swift in Sources */,
 				DE96F79521936389007A342A /* MealPlanError+Extension.swift in Sources */,
 				DE96F79B21936389007A342A /* ParentCoordinator.swift in Sources */,
+				DE5358B2220C1D8A007E1F1A /* UIPickerViewAdapter.swift in Sources */,
 				DE18040321F4D17400A93223 /* CalendarEventsViewModel.swift in Sources */,
 				DE96F7A021936389007A342A /* AppRoute.swift in Sources */,
+				DEFEF2D42205D2E3006A6DF4 /* CalendarEventTableViewCell.swift in Sources */,
 				DE96F7B7219368C0007A342A /* ViewController.swift in Sources */,
 				DE96F7AD21936389007A342A /* AuthenticationViewController.swift in Sources */,
 				DE96F79921936389007A342A /* HomeCoordinator.swift in Sources */,
@@ -2000,7 +2078,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6722209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
+				DE8894172202ED90007B68DA /* TestLikesUseCase.swift in Sources */,
+				DE8894142202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */,
+				DE8894202202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */,
 				DE96F6EF21935FB7007A342A /* PerfectDudeTests.swift in Sources */,
+				DE88941D2202EFC2007B68DA /* TestInitUseCase.swift in Sources */,
+				DE88941A2202EDA7007B68DA /* TestAuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2008,7 +2092,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6DF6732209E37B005C33E5 /* EditCalendarEventViewController.swift in Sources */,
+				DE8894182202ED90007B68DA /* TestLikesUseCase.swift in Sources */,
+				DE8894152202ECC6007B68DA /* TestUseCaseProvider.swift in Sources */,
+				DE8894212202F031007B68DA /* TestCalendarEventsUseCase.swift in Sources */,
 				DE96F6FA21935FB7007A342A /* PerfectDudeUITests.swift in Sources */,
+				DE88941E2202EFC2007B68DA /* TestInitUseCase.swift in Sources */,
+				DE88941B2202EDA7007B68DA /* TestAuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2452,10 +2542,10 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.PerfectDude;
+				PRODUCT_BUNDLE_IDENTIFIER = be.zooc.PerfectDude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -2497,10 +2587,10 @@
 					"-framework",
 					"\"SystemConfiguration\"",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = be.yannisdecleene.PerfectDude;
+				PRODUCT_BUNDLE_IDENTIFIER = be.zooc.PerfectDude;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

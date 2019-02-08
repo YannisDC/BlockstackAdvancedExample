@@ -11,7 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateCalendarEventViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
+                <outlet property="datePicker" destination="sGi-A3-kah" id="Wgb-hP-r3O"/>
                 <outlet property="descriptionTextField" destination="wN6-oO-h8A" id="O0h-5O-0NY"/>
+                <outlet property="frequencyPicker" destination="jzo-uR-Ncb" id="ZEA-mF-MVd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,13 +23,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="sGi-A3-kah">
-                    <rect key="frame" x="0.0" y="152" width="375" height="216"/>
+                    <rect key="frame" x="0.0" y="152" width="375" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="vv5-D7-Eqe"/>
+                    </constraints>
                     <date key="date" timeIntervalSinceReferenceDate="569751279.34135699">
                         <!--2019-01-21 08:14:39 +0000-->
                     </date>
                 </datePicker>
                 <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jzo-uR-Ncb">
-                    <rect key="frame" x="0.0" y="421" width="375" height="216"/>
+                    <rect key="frame" x="106" y="305" width="269" height="70"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="70" id="6qv-tD-i5B"/>
+                    </constraints>
                 </pickerView>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wN6-oO-h8A">
                     <rect key="frame" x="16" y="69" width="343" height="30"/>
@@ -39,19 +47,28 @@
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzj-8b-S57">
-                    <rect key="frame" x="16" y="40" width="43" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="16" y="40" width="46.5" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieR-X9-MPm">
-                    <rect key="frame" x="16" y="123" width="36" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="16" y="123" width="38.5" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequency" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEo-1j-t8R">
-                    <rect key="frame" x="16" y="392" width="81" height="21"/>
+                    <rect key="frame" x="16" y="276" width="87" height="21"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Every" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3v-rm-stA">
+                    <rect key="frame" x="16" y="329.5" width="80" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Mn8-9Y-jln"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -61,10 +78,12 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="sGi-A3-kah" secondAttribute="trailing" id="10B-hn-Hrn"/>
                 <constraint firstItem="sGi-A3-kah" firstAttribute="top" secondItem="ieR-X9-MPm" secondAttribute="bottom" constant="8" id="18W-3l-1wD"/>
+                <constraint firstItem="x3v-rm-stA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="3RD-Ct-rkX"/>
                 <constraint firstItem="rzj-8b-S57" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="6is-V3-12X"/>
                 <constraint firstItem="UEo-1j-t8R" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="FXB-zy-fV9"/>
                 <constraint firstItem="ieR-X9-MPm" firstAttribute="top" secondItem="wN6-oO-h8A" secondAttribute="bottom" constant="24" id="Fnf-Lq-Sdr"/>
                 <constraint firstItem="wN6-oO-h8A" firstAttribute="top" secondItem="rzj-8b-S57" secondAttribute="bottom" constant="8" id="JbW-zM-fbb"/>
+                <constraint firstItem="x3v-rm-stA" firstAttribute="centerY" secondItem="jzo-uR-Ncb" secondAttribute="centerY" id="K5u-na-0Oa"/>
                 <constraint firstAttribute="trailing" secondItem="jzo-uR-Ncb" secondAttribute="trailing" id="MWn-O5-bqa"/>
                 <constraint firstItem="rzj-8b-S57" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="20" id="T64-JN-LIG"/>
                 <constraint firstItem="ieR-X9-MPm" firstAttribute="leading" secondItem="rzj-8b-S57" secondAttribute="leading" id="ZnD-1U-fPA"/>
@@ -73,7 +92,7 @@
                 <constraint firstItem="wN6-oO-h8A" firstAttribute="leading" secondItem="rzj-8b-S57" secondAttribute="leading" id="jca-Oh-85J"/>
                 <constraint firstAttribute="trailing" secondItem="wN6-oO-h8A" secondAttribute="trailing" constant="16" id="lY0-oH-3Fj"/>
                 <constraint firstItem="jzo-uR-Ncb" firstAttribute="top" secondItem="UEo-1j-t8R" secondAttribute="bottom" constant="8" id="moW-ik-VU8"/>
-                <constraint firstItem="jzo-uR-Ncb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ya0-Pk-233"/>
+                <constraint firstItem="jzo-uR-Ncb" firstAttribute="leading" secondItem="x3v-rm-stA" secondAttribute="trailing" constant="10" id="nfC-aD-UKG"/>
             </constraints>
             <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>

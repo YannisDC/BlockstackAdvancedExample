@@ -70,35 +70,40 @@ private extension HomeCoordinator {
         let homeViewController = factory.makeHomeViewController(coordinator: self,
                                                                 imagesTrigger: imagesTrigger,
                                                                 useCaseProvider: usecaseProvider)
-        homeViewController.tabBarItem = UITabBarItem(title: "Blockstack",
-                                                     image: UIImage(named: "blockstack_semi_filled"),
-                                                     selectedImage: nil)
+        homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
+        
+//        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
+//                                                     image: UIImage(named: "blockstack_semi_filled"),
+//                                                     selectedImage: nil)
+        
+        let homeNavigationController = NavigationController()
+        homeNavigationController.setViewControllers([homeViewController], animated: false)
+        
+        let calendarEventsCoordinator = CalendarEventsCoordinator(rootViewController: rootViewController,
+                                                                  delegate: self,
+                                                                  useCaseProvider: usecaseProvider,
+                                                                  factory: factory)
+        calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
         
         let likesCoordinator = LikesCoordinator(rootViewController: rootViewController,
                                                delegate: self,
                                                factory: factory,
                                                usecaseProvider: usecaseProvider)
-        likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
-        
-        let calendarEventsCoordinator = CalendarEventsCoordinator(rootViewController: rootViewController,
-                                                delegate: self,
-                                                useCaseProvider: usecaseProvider,
-                                                factory: factory)
-        calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 1)
+        likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [
-            likesCoordinator.navigationController,
             calendarEventsCoordinator.navigationController,
-            homeViewController
+            likesCoordinator.navigationController,
+            homeNavigationController
         ]
         rootViewController.setContentViewController(tabBarController)
         
-        addDependency(likesCoordinator)
-        likesCoordinator.start()
-        
         addDependency(calendarEventsCoordinator)
         calendarEventsCoordinator.start()
+        
+        addDependency(likesCoordinator)
+        likesCoordinator.start()
     }
     
     func signOut() {

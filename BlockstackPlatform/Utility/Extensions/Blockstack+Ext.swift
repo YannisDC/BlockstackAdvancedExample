@@ -71,6 +71,30 @@ extension Reactive where Base: Blockstack {
             return Disposables.create()
         }
     }
+    
+    func publishPublicKey(path: String) -> Maybe<String> {
+        return Maybe<String>.create { maybe in
+            guard let publicKey = self.base.loadUserData()?.publicKeys?.first else {
+                maybe(.completed)
+                return Disposables.create()
+            }
+            
+            self.base.putFile(to: path, text: publicKey, encrypt: false) { (publicURL, error)  in
+                if let error = error {
+                    maybe(.error(error))
+                } else {
+                    if let publicURL = publicURL {
+                        maybe(.success(publicURL))
+                    } else {
+                        maybe(.completed)
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    
 
     func signIn(with configuration: Blockstack.Configuration) -> Single<Void> {
         return Single.create { single in

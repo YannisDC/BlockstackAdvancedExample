@@ -175,4 +175,18 @@ CalendarEventsFactory
         
     }
     
+    func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
+                                             usecaseProvider: Core.UseCaseProvider,
+                                             event: CalendarEvent) -> EditCalendarEventViewController {
+        
+        let editCalendarEventViewController = EditCalendarEventViewController.loadFromNib()
+        let editCalendarEventViewModel = EditCalendarEventViewModel(coordinator: coordinator,
+                                                                         usecaseProvider: usecaseProvider,
+                                                                         event: event)
+        
+        editCalendarEventViewController.bindViewModel(to: editCalendarEventViewModel)
+        return editCalendarEventViewController
+        
+    }
+    
 }

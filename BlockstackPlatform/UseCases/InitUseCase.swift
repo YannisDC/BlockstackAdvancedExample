@@ -14,12 +14,17 @@ final class InitUseCase<Network>: Core.InitUseCase where Network: AbstractNetwor
 Network.T == Index {
     
     private let network: Network
+    private let publicKeyPath: String = "PublicKey"
     private let likesPath: String = "\(Like.self)"
     private let calendarEventsPath: String = "\(CalendarEvent.self)"
     private let encryption: Bool = false
     
     init(network: Network) {
         self.network = network
+    }
+    
+    func initPublishPublicKey() -> Maybe<String> {
+        return network.publishPublicKey(path: publicKeyPath)
     }
     
     func initLikeIndexes() -> Maybe<String> {
