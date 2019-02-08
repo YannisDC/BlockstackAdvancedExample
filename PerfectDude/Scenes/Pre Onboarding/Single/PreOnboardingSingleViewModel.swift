@@ -36,7 +36,7 @@ final class PreOnboardingSingleViewModel: ViewModel {
             
             self.usecase
                 .signIn()
-                .do(onSuccess: { (_) in
+                .subscribe(onSuccess: { (_) in
                     self.coordinator?.coordinate(to: .finished)
                 }, onError: { (error) in
                     print(error)
