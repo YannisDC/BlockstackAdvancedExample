@@ -26,5 +26,6 @@ class BaseDatePickerViewModel: ViewModel {
         let title: Driver<String>
         let continueButtonTitle: Driver<String>
         let continueResult: Driver<Void>
+        let disableTrigger: Driver<Void>
     }
 }

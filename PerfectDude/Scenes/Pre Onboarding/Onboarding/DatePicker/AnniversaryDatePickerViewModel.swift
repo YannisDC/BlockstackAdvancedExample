@@ -17,6 +17,7 @@ final class AnniversaryDatePickerViewModel: BaseDatePickerViewModel {
     private let profile: Profile
     private let profileUseCase: ProfileUseCase
     private let calendarEventsUsecase: CalendarEventsUseCase!
+    private let initUseCase: InitUseCase
     
     // MARK: Init
     
@@ -27,6 +28,7 @@ final class AnniversaryDatePickerViewModel: BaseDatePickerViewModel {
         self.profile = profile
         self.profileUseCase = useCaseProvider.makeProfileUseCase()
         self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
+        self.initUseCase = useCaseProvider.makeInitUseCase()
     }
     
     // MARK: Transform
@@ -46,6 +48,9 @@ final class AnniversaryDatePickerViewModel: BaseDatePickerViewModel {
                 
                 return self.profileUseCase
                     .saveProfile(profile: profile)
+                    .andThen(self.publiskPublicKey())
+                    .andThen(self.initLikeIndex())
+                    .andThen(self.initEventIndex())
                     .andThen(self.saveBirthday(profile: profile))
                     .andThen(self.saveAnniversary(profile: profile))
                     .do(onCompleted: {
@@ -57,7 +62,8 @@ final class AnniversaryDatePickerViewModel: BaseDatePickerViewModel {
         
         return Output(title: title,
                       continueButtonTitle: continueButtonTitle,
-                      continueResult: continueResult)
+                      continueResult: continueResult,
+                      disableTrigger: input.continueTrigger)
     }
 }
 
@@ -87,6 +93,45 @@ extension AnniversaryDatePickerViewModel {
                                            description: "You better remember this one.",
                                            date: profile.anniversary,
                                            location: ""))
+                .subscribe(onSuccess: { (profile) in
+                    completable(.completed)
+                }, onError: { (error) in
+                    completable(.error(error))
+                })
+            return Disposables.create {}
+        }
+    }
+    
+    private func publiskPublicKey() -> Completable {
+        return Completable.create { completable in
+            self.initUseCase
+                .initPublishPublicKey()
+                .subscribe(onSuccess: { (profile) in
+                    completable(.completed)
+                }, onError: { (error) in
+                    completable(.error(error))
+                })
+            return Disposables.create {}
+        }
+    }
+    
+    private func initLikeIndex() -> Completable {
+        return Completable.create { completable in
+            self.initUseCase
+                .initLikeIndexes()
+                .subscribe(onSuccess: { (profile) in
+                    completable(.completed)
+                }, onError: { (error) in
+                    completable(.error(error))
+                })
+            return Disposables.create {}
+        }
+    }
+    
+    private func initEventIndex() -> Completable {
+        return Completable.create { completable in
+            self.initUseCase
+                .initCalendarEventIndexes()
                 .subscribe(onSuccess: { (profile) in
                     completable(.completed)
                 }, onError: { (error) in

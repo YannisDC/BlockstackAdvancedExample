@@ -41,6 +41,7 @@ final class BirthdayDatePickerViewModel: BaseDatePickerViewModel {
 
         return Output(title: title,
                       continueButtonTitle: continueButtonTitle,
-                      continueResult: continueResult)
+                      continueResult: continueResult,
+                      disableTrigger: input.continueTrigger)
     }
 }
