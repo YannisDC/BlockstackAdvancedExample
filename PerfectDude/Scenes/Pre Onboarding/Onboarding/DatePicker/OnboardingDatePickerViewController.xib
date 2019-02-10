@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingDatePickerViewController" customModule="PerfectDude" customModuleProvider="target">
+            <connections>
+                <outlet property="continueButton" destination="K41-go-49E" id="kMh-F7-cFz"/>
+                <outlet property="datePicker" destination="NDt-eo-RTe" id="xTI-AM-vg0"/>
+                <outlet property="titleLabel" destination="pgJ-Hp-5gb" id="ZTo-1e-buS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is her birthday?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgJ-Hp-5gb">
+                    <rect key="frame" x="16" y="200" width="343" height="31.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="NDt-eo-RTe">
+                    <rect key="frame" x="0.0" y="281.5" width="375" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="JyL-7o-BnI"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="569751279.34135699">
+                        <!--2019-01-21 08:14:39 +0000-->
+                    </date>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K41-go-49E">
+                    <rect key="frame" x="16" y="587" width="343" height="64"/>
+                    <color key="backgroundColor" name="ButternutOrange"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="sp7-vX-x9V"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                    <state key="normal" title="Next">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="32"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="pgJ-Hp-5gb" secondAttribute="trailing" constant="16" id="Hc5-cB-kPv"/>
+                <constraint firstItem="NDt-eo-RTe" firstAttribute="top" secondItem="pgJ-Hp-5gb" secondAttribute="bottom" constant="50" id="Iso-2O-w7F"/>
+                <constraint firstItem="pgJ-Hp-5gb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="QnR-vp-C8I"/>
+                <constraint firstAttribute="trailing" secondItem="NDt-eo-RTe" secondAttribute="trailing" id="QtI-PW-Gcb"/>
+                <constraint firstItem="NDt-eo-RTe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fZd-QC-J4E"/>
+                <constraint firstItem="K41-go-49E" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="hSl-UL-Z7s"/>
+                <constraint firstItem="pgJ-Hp-5gb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="mfE-9g-xBF"/>
+                <constraint firstAttribute="bottomMargin" secondItem="K41-go-49E" secondAttribute="bottom" constant="16" id="toj-B2-xOw"/>
+                <constraint firstAttribute="trailing" secondItem="K41-go-49E" secondAttribute="trailing" constant="16" id="xBH-Nu-JjP"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="ButternutOrange">
+            <color red="0.98431372549019602" green="0.72156862745098038" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

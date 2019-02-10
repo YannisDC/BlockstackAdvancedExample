@@ -14,16 +14,21 @@ import Core
 final class PreOnboardingSingleViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<PreOnboardingRoute>?
-    private let usecase: AuthUseCase!
+    private let authUseCase: AuthUseCase!
     private let initUseCase: InitUseCase!
+    private let profileUseCase: ProfileUseCase!
+    private let profile: Profile
     
     // MARK: Init
     
     init(coordinator: BaseCoordinator<PreOnboardingRoute>?,
-         useCaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider,
+         profile: Profile) {
         self.coordinator = coordinator
-        self.usecase = useCaseProvider.makeAuthUseCase()
+        self.authUseCase = useCaseProvider.makeAuthUseCase()
         self.initUseCase = useCaseProvider.makeInitUseCase()
+        self.profileUseCase = useCaseProvider.makeProfileUseCase()
+        self.profile = profile
     }
 
     // MARK: Transform
@@ -31,16 +36,14 @@ final class PreOnboardingSingleViewModel: ViewModel {
     func transform(input: PreOnboardingSingleViewModel.Input) -> PreOnboardingSingleViewModel.Output {
         let title = Driver.just("".localized())
         
-        let continueButtonTap = input.buttonTap.do(onNext: { [weak self] _ in
-            guard let `self` = self else { return }
+        let continueButtonTap = input.buttonTap
+            .flatMap({ [weak self] (_) -> Driver<Void> in
+            guard let `self` = self else { return Driver.empty() }
             
-            self.usecase
-                .signIn()
-                .subscribe(onSuccess: { (_) in
-                    self.coordinator?.coordinate(to: .finished)
-                }, onError: { (error) in
-                    print(error)
-                })
+            return self.signIn()
+                .andThen(self.checkProfile())
+                .asDriver(onErrorDriveWith: .empty())
+                .mapToVoid()
         })
         
         return Output(tapResult: continueButtonTap,
@@ -58,5 +61,35 @@ extension PreOnboardingSingleViewModel {
     struct Output {
         let tapResult: Driver<Void>
         let title: Driver<String>
+    }
+}
+
+extension PreOnboardingSingleViewModel {
+    private func signIn() -> Completable {
+        return Completable.create { completable in
+            self.authUseCase
+                .signIn()
+                .subscribe(onSuccess: { (_) in
+                    completable(.completed)
+                }, onError: { (error) in
+                    completable(.error(CoreError.general))
+                })
+            return Disposables.create {}
+        }
+    }
+    
+    private func checkProfile() -> Completable {
+        return Completable.create { completable in
+            self.profileUseCase
+                .getProfile()
+                .subscribe(onSuccess: { (profile) in
+                    self.coordinator?.coordinate(to: .finished)
+                    completable(.completed)
+                }, onError: { (error) in
+                    self.coordinator?.coordinate(to: .personType(profile: self.profile))
+                    completable(.completed)
+                })
+            return Disposables.create {}
+        }
     }
 }

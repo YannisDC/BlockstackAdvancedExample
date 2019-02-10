@@ -21,11 +21,11 @@ final class EditLikeViewModel: ViewModel {
     // MARK: Init
     
     init(coordinator: BaseCoordinator<LikesRoute>?,
-         usecaseProvider: Core.UseCaseProvider,
+         useCaseProvider: Core.UseCaseProvider,
          imagesTrigger: PublishSubject<UIImage?>,
          like: Like) {
         self.coordinator = coordinator
-        self.likeUsecase = usecaseProvider.makeLikesUseCase()
+        self.likeUsecase = useCaseProvider.makeLikesUseCase()
         self.imagesTrigger = imagesTrigger
         self.like = like
     }

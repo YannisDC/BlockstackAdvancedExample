@@ -26,6 +26,11 @@ public final class UseCaseProvider: Core.UseCaseProvider {
         return AuthUseCase(authentication: authentication)
     }
     
+    public func makeProfileUseCase() -> Core.ProfileUseCase {
+        let network = ProfileNetwork(configuration: configuration)
+        return ProfileUseCase(network: network)
+    }
+    
     public func makeInitUseCase() -> Core.InitUseCase {
         let network = Network<Index>(configuration: configuration)
         return InitUseCase(network: network)

@@ -11,11 +11,13 @@ import Core
 import RxSwift
 
 protocol HomeFactory {
+    
     /// Creates a HomeViewController
     ///
-    /// - Parameter coordinator: BaseCoordinator<HomeRouter> instance
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<HomeRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
     /// - Returns: HomeViewController instance
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
-                                imagesTrigger: PublishSubject<UIImage?>,
                                 useCaseProvider: Core.UseCaseProvider) -> HomeViewController
 }

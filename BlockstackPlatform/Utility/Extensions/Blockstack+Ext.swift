@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Core
 import Blockstack
 
 extension Reactive where Base: Blockstack {
@@ -38,6 +39,23 @@ extension Reactive where Base: Blockstack {
                         maybe(.success(publicURL))
                     } else {
                         maybe(.completed)
+                    }
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func save(path: String, bytes: Bytes, encrypt: Bool = false) -> Completable {
+        return Completable.create { completable in
+            self.base.putFile(to: path, bytes: bytes, encrypt: encrypt) { (publicURL, error)  in
+                if let error = error {
+                    completable(.error(error))
+                } else {
+                    if publicURL != nil {
+                        completable(.completed)
+                    } else {
+                        completable(.error(CoreError.general))
                     }
                 }
             }

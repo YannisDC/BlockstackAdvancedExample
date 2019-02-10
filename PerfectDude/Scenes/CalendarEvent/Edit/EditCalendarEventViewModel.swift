@@ -20,10 +20,10 @@ final class EditCalendarEventViewModel: ViewModel {
     // MARK: Init
     
     init(coordinator: BaseCoordinator<CalendarEventsRoute>?,
-         usecaseProvider: Core.UseCaseProvider,
+         useCaseProvider: Core.UseCaseProvider,
          event: CalendarEvent) {
         self.coordinator = coordinator
-        self.calendarEventsUsecase = usecaseProvider.makeCalendarEventsUseCase()
+        self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
         self.event = event
     }
 

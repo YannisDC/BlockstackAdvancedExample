@@ -14,20 +14,13 @@ import Core
 final class HomeViewModel: ViewModel {
     
     private weak var coordinator: BaseCoordinator<HomeRoute>?
-    private var likeUsecase: LikesUseCase!
     private var initUsecase: InitUseCase!
-    fileprivate let imagesTrigger: PublishSubject<UIImage?>
-    
-    fileprivate var likes = Variable<[Like?]>([])
     
     // MARK: Init
     
     init(coordinator: BaseCoordinator<HomeRoute>?,
-         imagesTrigger: PublishSubject<UIImage?>,
          useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
-        self.imagesTrigger = imagesTrigger
-        self.likeUsecase = useCaseProvider.makeLikesUseCase()
         self.initUsecase = useCaseProvider.makeInitUseCase()
     }
     
@@ -43,9 +36,9 @@ final class HomeViewModel: ViewModel {
         
         let showResult = input.showTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
-            self.initUsecase.initPublishPublicKey().subscribe()
-            self.initUsecase.initLikeIndexes().subscribe()
-            self.initUsecase.initCalendarEventIndexes().subscribe()
+//            self.initUsecase.initPublishPublicKey().subscribe()
+//            self.initUsecase.initLikeIndexes().subscribe()
+//            self.initUsecase.initCalendarEventIndexes().subscribe()
         })
         
         return Output(signOutResult: signOutResult,

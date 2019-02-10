@@ -19,9 +19,9 @@ final class CalendarEventsViewModel: ViewModel {
     // MARK: Init
 
     init(coordinator: BaseCoordinator<CalendarEventsRoute>?,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
-        self.calendarEventsUsecase = usecaseProvider.makeCalendarEventsUseCase()
+        self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
     }
 
     // MARK: Transform

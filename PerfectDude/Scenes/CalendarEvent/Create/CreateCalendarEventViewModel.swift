@@ -20,9 +20,9 @@ final class CreateCalendarEventViewModel: ViewModel {
     // MARK: Init
     
     init(coordinator: BaseCoordinator<CalendarEventsRoute>?,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
-        self.calendarEventsUsecase = usecaseProvider.makeCalendarEventsUseCase()
+        self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
     }
     
     func setLocalNotification(title: String) {
@@ -45,7 +45,7 @@ final class CreateCalendarEventViewModel: ViewModel {
             return !$0.isEmpty && !$1
         }
         
-        let eventInfo = Driver.combineLatest(input.calendarEventTitle, input.calendarEventDate, input.selection)
+        let eventInfo = Driver.combineLatest(input.calendarEventTitle, input.calendarEventDate, input.selection.startWith([1, "week(s)"]))
         
         let save = input.saveTrigger.withLatestFrom(eventInfo)
             .map { (title, date, frequency) in

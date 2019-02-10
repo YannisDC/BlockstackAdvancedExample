@@ -10,7 +10,7 @@ import UIKit
 import Core
 
 protocol PreOnboardingFactory {
-    /// Creates a ...PreOnboardingViewController
+    /// Creates a PreOnboardingViewController
     ///
     /// - Parameters:
     /// - coordinator: BaseCoordinator<PreOnboardingRoute> instance
@@ -27,5 +27,19 @@ protocol PreOnboardingFactory {
     func makePreOnboardingWalletViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingWalletViewController
     
     func makePreOnboardingSingleViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
-                                               useCaseProvider: Core.UseCaseProvider) -> PreOnboardingSingleViewController
+                                               useCaseProvider: Core.UseCaseProvider,
+                                               profile: Profile) -> PreOnboardingSingleViewController
+    
+    func makeOnboardingPersonTypeViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                profile: Profile) -> OnboardingPersonTypeViewController
+    
+    func makeOnboardingRelationshipStatusViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                        profile: Profile) -> OnboardingRelationshipStatusViewController
+    
+    func makeOnboardingBirthdayViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                              profile: Profile) -> OnboardingDatePickerViewController
+    
+    func makeOnboardingAnniversaryViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                 profile: Profile,
+                                                 useCaseProvider: Core.UseCaseProvider) -> OnboardingDatePickerViewController
 }

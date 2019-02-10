@@ -15,14 +15,18 @@ import SafariServices
 final class PreOnboardingViewModel: ViewModel {
 
     private weak var coordinator: BaseCoordinator<PreOnboardingRoute>?
-    private let usecase: AuthUseCase!
+    private let authUseCase: AuthUseCase!
+    private let initUseCase: InitUseCase!
+    private let profileUseCase: ProfileUseCase!
 
     // MARK: Init
 
     init(coordinator: BaseCoordinator<PreOnboardingRoute>?,
          useCaseProvider: Core.UseCaseProvider) {
         self.coordinator = coordinator
-        self.usecase = useCaseProvider.makeAuthUseCase()
+        self.authUseCase = useCaseProvider.makeAuthUseCase()
+        self.initUseCase = useCaseProvider.makeInitUseCase()
+        self.profileUseCase = useCaseProvider.makeProfileUseCase()
     }
 
     // MARK: Transform
@@ -33,11 +37,12 @@ final class PreOnboardingViewModel: ViewModel {
         let pinButtonTap = input.buttonTap.do(onNext: { [weak self] _ in
             guard let `self` = self else { return }
             
-            self.usecase.signIn()
-                .subscribe(onSuccess: { (_) in
+            self.profileUseCase
+                .getProfile()
+                .subscribe(onSuccess: { (profile) in
                     self.coordinator?.coordinate(to: .finished)
                 }, onError: { (error) in
-                    print(error)
+                    print("no profile yet")
                 })
         })
 
@@ -56,5 +61,23 @@ extension PreOnboardingViewModel {
     struct Output {
         let tapResult: Driver<Void>
         let title: Driver<String>
+    }
+}
+
+extension PreOnboardingViewModel {
+    
+    private func checkProfile() -> Completable {
+        return Completable.create { completable in
+            self.profileUseCase
+                .getProfile()
+                .subscribe(onSuccess: { (profile) in
+                    self.coordinator?.coordinate(to: .finished)
+                    completable(.completed)
+                }, onError: { (error) in
+                    self.coordinator?.coordinate(to: .overview)
+                    completable(.completed)
+                })
+            return Disposables.create {}
+        }
     }
 }

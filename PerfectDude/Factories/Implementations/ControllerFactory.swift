@@ -12,20 +12,22 @@ import RxSwift
 
 final
 class ControllerFactory: AppFactory,
-PreOnboardingFactory,
-HomeFactory,
-LikesFactory,
-CalendarEventsFactory
+    PreOnboardingFactory,
+    HomeFactory,
+    LikesFactory,
+    CalendarEventsFactory
 {
     
-    // MARK: AppFactory methods
+    // MARK: - AppFactory methods
     
     /// Creates an AuthenticationViewController
     ///
+    /// Authenticates the user using a platform of choice.
+    ///
     /// - Parameters:
-    ///   - coordinator: coordinator description
-    ///   - useCaseProvider: useCaseProvider description
-    /// - Returns: return value description
+    ///   - coordinator: BaseCoordinator<AppRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: AuthenticationViewController instance
     func makeAuthenticationViewController(coordinator: BaseCoordinator<AppRoute>,
                                           useCaseProvider: Core.UseCaseProvider) -> AuthenticationViewController {
         
@@ -37,6 +39,15 @@ CalendarEventsFactory
         
     }
     
+    /// Creates a PreOnboardingViewController
+    ///
+    /// Is a container for onboarding screens that inform the user about Blockstacks capabilities.
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<PreOnboardingRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    ///   - viewControllers: [UIViewController] instance
+    /// - Returns: PreOnboardingViewController instance
     func makePreOnboardingViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
                                          useCaseProvider: Core.UseCaseProvider,
                                          viewControllers: [UIViewController]) -> PreOnboardingViewController {
@@ -50,6 +61,12 @@ CalendarEventsFactory
         
     }
     
+    /// Creates a PreOnboardingIdentityViewController
+    ///
+    /// Is an embedded onboarding screen that informs the user about Blockstack identity.
+    ///
+    /// - Parameter coordinator: BaseCoordinator<PreOnboardingRoute> instance
+    /// - Returns: PreOnboardingIdentityViewController instance
     func makePreOnboardingIdentityViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingIdentityViewController {
         
         let identityViewController = PreOnboardingIdentityViewController.loadFromNib()
@@ -60,6 +77,12 @@ CalendarEventsFactory
         
     }
     
+    /// Creates a PreOnboardingStorageViewController
+    ///
+    /// Is an embedded onboarding screen that informs the user about Blockstack storage.
+    ///
+    /// - Parameter coordinator: BaseCoordinator<PreOnboardingRoute> instance
+    /// - Returns: PreOnboardingStorageViewController instance
     func makePreOnboardingStorageViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingStorageViewController {
         
         let storageViewController = PreOnboardingStorageViewController.loadFromNib()
@@ -70,6 +93,12 @@ CalendarEventsFactory
         
     }
     
+    /// Creates a PreOnboardingWalletViewController
+    ///
+    /// Is an embedded onboarding screen that informs the user about Blockstack wallet.
+    ///
+    /// - Parameter coordinator: BaseCoordinator<PreOnboardingRoute> instance
+    /// - Returns: PreOnboardingWalletViewController instance
     func makePreOnboardingWalletViewController(coordinator: BaseCoordinator<PreOnboardingRoute>) -> PreOnboardingWalletViewController {
         
         let walletViewController = PreOnboardingWalletViewController.loadFromNib()
@@ -80,68 +109,154 @@ CalendarEventsFactory
         
     }
     
+    
+    /// Creates a PreOnboardingSingleViewController
+    ///
+    /// Is an all-in-one onboarding screen that informs the user about Blockstack identity, storage and wallet.
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<PreOnboardingRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: PreOnboardingSingleViewController instance
     func makePreOnboardingSingleViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
-                                               useCaseProvider: Core.UseCaseProvider) -> PreOnboardingSingleViewController {
+                                               useCaseProvider: Core.UseCaseProvider,
+                                               profile: Profile) -> PreOnboardingSingleViewController {
         
         let singleViewController = PreOnboardingSingleViewController.loadFromNib()
         let singleViewModel = PreOnboardingSingleViewModel(coordinator: coordinator,
-                                                           useCaseProvider: useCaseProvider)
+                                                           useCaseProvider: useCaseProvider,
+                                                           profile: profile)
         
         singleViewController.bindViewModel(to: singleViewModel)
         return singleViewController
         
     }
     
-    // MARK: HomeFactory methods
+    func makeOnboardingPersonTypeViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                profile: Profile) -> OnboardingPersonTypeViewController {
+        
+        let viewController = OnboardingPersonTypeViewController.loadFromNib()
+        let viewModel = OnboardingPersonTypeViewModel(coordinator: coordinator,
+                                                      profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
     
+    func makeOnboardingRelationshipStatusViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                        profile: Profile) -> OnboardingRelationshipStatusViewController {
+        
+        let viewController = OnboardingRelationshipStatusViewController.loadFromNib()
+        let viewModel = OnboardingRelationshipStatusViewModel(coordinator: coordinator,
+                                                              profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    func makeOnboardingBirthdayViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                              profile: Profile) -> OnboardingDatePickerViewController {
+        
+        let viewController = OnboardingDatePickerViewController.loadFromNib()
+        let viewModel = BirthdayDatePickerViewModel(coordinator: coordinator,
+                                                    profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    func makeOnboardingAnniversaryViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                 profile: Profile,
+                                                 useCaseProvider: Core.UseCaseProvider) -> OnboardingDatePickerViewController {
+        
+        let viewController = OnboardingDatePickerViewController.loadFromNib()
+        let viewModel = AnniversaryDatePickerViewModel(coordinator: coordinator,
+                                                       profile: profile,
+                                                       useCaseProvider: useCaseProvider)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    // MARK: - HomeFactory methods
+    
+    /// Creates a HomeViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<HomeRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: HomeViewController instance
     func makeHomeViewController(coordinator: BaseCoordinator<HomeRoute>,
-                                imagesTrigger: PublishSubject<UIImage?>,
                                 useCaseProvider: Core.UseCaseProvider) -> HomeViewController {
         
         let homeViewController = HomeViewController.loadFromNib()
         let homeViewModel = HomeViewModel(coordinator: coordinator,
-                                          imagesTrigger: imagesTrigger,
                                           useCaseProvider: useCaseProvider)
         homeViewController.bindViewModel(to: homeViewModel)
         return homeViewController
         
     }
     
-    // MARK: LikesFactory methods
+    // MARK: - LikesFactory methods
     
+    /// Creates a LikesViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<LikesRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: LikesViewController instance
     func makeLikesViewController(coordinator: BaseCoordinator<LikesRoute>,
-                                 usecaseProvider: Core.UseCaseProvider) -> LikesViewController {
+                                 useCaseProvider: Core.UseCaseProvider) -> LikesViewController {
         
         let likesViewController = LikesViewController.loadFromNib()
         let likesViewModel = LikesViewModel(coordinator: coordinator,
-                                            usecaseProvider: usecaseProvider)
+                                            useCaseProvider: useCaseProvider)
         
         likesViewController.bindViewModel(to: likesViewModel)
         return likesViewController
         
     }
     
+    /// Creates a CreateLikeViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<LikesRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    ///   - imagesTrigger: PublishSubject<UIImage?> instance
+    /// - Returns: CreateLikeViewController instance
     func makeCreateLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
-                                      usecaseProvider: Core.UseCaseProvider,
+                                      useCaseProvider: Core.UseCaseProvider,
                                       imagesTrigger: PublishSubject<UIImage?>) -> CreateLikeViewController {
         
         let createLikeViewController = CreateLikeViewController.loadFromNib()
         let createLikeViewModel = CreateLikeViewModel(coordinator: coordinator,
-                                                      usecaseProvider: usecaseProvider,
+                                                      useCaseProvider: useCaseProvider,
                                                       imagesTrigger: imagesTrigger)
         createLikeViewController.bindViewModel(to: createLikeViewModel)
         return createLikeViewController
         
     }
     
+    /// Creates an EditLikeViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<LikesRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    ///   - imagesTrigger: PublishSubject<UIImage?> instance
+    ///   - like: Like instance
+    /// - Returns: EditLikeViewController instance
     func makeEditLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
-                                    usecaseProvider: Core.UseCaseProvider,
+                                    useCaseProvider: Core.UseCaseProvider,
                                     imagesTrigger: PublishSubject<UIImage?>,
                                     like: Like) -> EditLikeViewController {
         
         let editLikeViewController = EditLikeViewController.loadFromNib()
         let editLikeViewModel = EditLikeViewModel(coordinator: coordinator,
-                                                  usecaseProvider: usecaseProvider,
+                                                  useCaseProvider: useCaseProvider,
                                                   imagesTrigger: imagesTrigger,
                                                   like: like)
         editLikeViewController.bindViewModel(to: editLikeViewModel)
@@ -149,40 +264,59 @@ CalendarEventsFactory
         
     }
     
-    // MARK: LikesFactory methods
+    // MARK: - CalendarEventsFactory methods
     
+    /// Creates a CalendarEventsViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: CalendarEventsViewController
     func makeCalendarEventsViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                          usecaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController {
+                                          useCaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController {
         
         let calendarEventsViewController = CalendarEventsViewController.loadFromNib()
         let calendarEventsViewModel = CalendarEventsViewModel(coordinator: coordinator,
-                                                              usecaseProvider: usecaseProvider)
+                                                              useCaseProvider: useCaseProvider)
         
         calendarEventsViewController.bindViewModel(to: calendarEventsViewModel)
         return calendarEventsViewController
         
     }
     
+    /// Creates a CreateCalendarEventViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    /// - Returns: CreateCalendarEventViewController
     func makeCreateCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                          usecaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController {
+                                               useCaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController {
         
         let createCalendarEventViewController = CreateCalendarEventViewController.loadFromNib()
         let createCalendarEventViewModel = CreateCalendarEventViewModel(coordinator: coordinator,
-                                                              usecaseProvider: usecaseProvider)
+                                                                        useCaseProvider: useCaseProvider)
         
         createCalendarEventViewController.bindViewModel(to: createCalendarEventViewModel)
         return createCalendarEventViewController
         
     }
     
+    /// Creates an EditCalendarEventViewController
+    ///
+    /// - Parameters:
+    ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
+    ///   - event: CalendarEvent instance
+    /// - Returns: EditCalendarEventViewController
     func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                             usecaseProvider: Core.UseCaseProvider,
+                                             useCaseProvider: Core.UseCaseProvider,
                                              event: CalendarEvent) -> EditCalendarEventViewController {
         
         let editCalendarEventViewController = EditCalendarEventViewController.loadFromNib()
         let editCalendarEventViewModel = EditCalendarEventViewModel(coordinator: coordinator,
-                                                                         usecaseProvider: usecaseProvider,
-                                                                         event: event)
+                                                                    useCaseProvider: useCaseProvider,
+                                                                    event: event)
         
         editCalendarEventViewController.bindViewModel(to: editCalendarEventViewModel)
         return editCalendarEventViewController

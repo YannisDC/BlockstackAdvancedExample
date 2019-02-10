@@ -16,25 +16,25 @@ final class HomeCoordinator: BaseCoordinator<HomeRoute> {
     fileprivate weak var delegate: CoordinatorDelegate?
     fileprivate let factory: ControllerFactory
     fileprivate let imagesTrigger = PublishSubject<UIImage?>()
-    fileprivate let usecaseProvider: Core.UseCaseProvider
+    fileprivate let useCaseProvider: Core.UseCaseProvider
     private let auth: AuthUseCase!
     fileprivate let navigationController: NavigationController!
     
-    // MARK: Init
+    // MARK: - Init
     
     init(rootViewController: BaseViewController,
          delegate: CoordinatorDelegate?,
          factory: ControllerFactory,
-         usecaseProvider: Core.UseCaseProvider) {
+         useCaseProvider: Core.UseCaseProvider) {
         self.rootViewController = rootViewController
         self.delegate = delegate
         self.factory = factory
-        self.usecaseProvider = usecaseProvider
-        self.auth = usecaseProvider.makeAuthUseCase()
+        self.useCaseProvider = useCaseProvider
+        self.auth = useCaseProvider.makeAuthUseCase()
         self.navigationController = NavigationController()
     }
     
-    // MARK: Coordinator
+    // MARK: - Coordinator
     
     override func start() {
         super.start()
@@ -68,27 +68,26 @@ extension HomeCoordinator: CoordinatorDelegate {
 private extension HomeCoordinator {
     func setTabs() {
         let homeViewController = factory.makeHomeViewController(coordinator: self,
-                                                                imagesTrigger: imagesTrigger,
-                                                                useCaseProvider: usecaseProvider)
+                                                                useCaseProvider: useCaseProvider)
         homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
         
-//        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
-//                                                     image: UIImage(named: "blockstack_semi_filled"),
-//                                                     selectedImage: nil)
+        //        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
+        //                                                     image: UIImage(named: "blockstack_semi_filled"),
+        //                                                     selectedImage: nil)
         
         let homeNavigationController = NavigationController()
         homeNavigationController.setViewControllers([homeViewController], animated: false)
         
         let calendarEventsCoordinator = CalendarEventsCoordinator(rootViewController: rootViewController,
                                                                   delegate: self,
-                                                                  useCaseProvider: usecaseProvider,
+                                                                  useCaseProvider: useCaseProvider,
                                                                   factory: factory)
         calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
         
         let likesCoordinator = LikesCoordinator(rootViewController: rootViewController,
-                                               delegate: self,
-                                               factory: factory,
-                                               usecaseProvider: usecaseProvider)
+                                                delegate: self,
+                                                factory: factory,
+                                                useCaseProvider: useCaseProvider)
         likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
         let tabBarController = UITabBarController()

@@ -26,6 +26,10 @@ public final class UseCaseProvider: Core.UseCaseProvider {
         return AuthUseCase()
     }
     
+    public func makeProfileUseCase() -> Core.ProfileUseCase {
+        return ProfileUseCase()
+    }
+    
     public func makeInitUseCase() -> Core.InitUseCase {
         return InitUseCase()
     }

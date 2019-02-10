@@ -15,28 +15,28 @@ protocol CalendarEventsFactory {
     ///
     /// - Parameters:
     ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
-    ///   - usecaseProvider: Core.UseCaseProvider instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
     /// - Returns: CalendarEventsViewController
     func makeCalendarEventsViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                          usecaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController
+                                          useCaseProvider: Core.UseCaseProvider) -> CalendarEventsViewController
     
     /// Creates a CreateCalendarEventViewController
     ///
     /// - Parameters:
     ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
-    ///   - usecaseProvider: Core.UseCaseProvider instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
     /// - Returns: CreateCalendarEventViewController
     func makeCreateCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                               usecaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController
+                                               useCaseProvider: Core.UseCaseProvider) -> CreateCalendarEventViewController
     
-    /// Creates a EditCalendarEventViewController
+    /// Creates an EditCalendarEventViewController
     ///
     /// - Parameters:
     ///   - coordinator: BaseCoordinator<CalendarEventsRoute> instance
-    ///   - usecaseProvider: Core.UseCaseProvider instance
+    ///   - useCaseProvider: Core.UseCaseProvider instance
     ///   - event: CalendarEvent instance
     /// - Returns: EditCalendarEventViewController
     func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
-                                             usecaseProvider: Core.UseCaseProvider,
+                                             useCaseProvider: Core.UseCaseProvider,
                                              event: CalendarEvent) -> EditCalendarEventViewController
 }
