@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectionButtonView" customModule="PerfectDude" customModuleProvider="target">
+            <connections>
+                <outlet property="descriptionLabel" destination="nwx-Vo-SbO" id="NsO-Kx-HjM"/>
+                <outlet property="descriptionWidthConstraint" destination="vcA-dX-qhS" id="5OA-Xe-c5x"/>
+                <outlet property="selectionButton" destination="b19-ax-pYF" id="gZU-Wg-Dah"/>
+                <outlet property="titleLabel" destination="Oma-8g-aq5" id="cYs-6O-89c"/>
+                <outlet property="titleWidthConstraint" destination="cy5-Qn-v8f" id="Kcy-nG-JBF"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don Juan:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oma-8g-aq5">
+                    <rect key="frame" x="24" y="51" width="120" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="cy5-Qn-v8f"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes to treat his lady like a real gentleman." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nwx-Vo-SbO">
+                    <rect key="frame" x="148" y="43" width="207" height="36"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="207" id="vcA-dX-qhS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b19-ax-pYF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="122"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="b19-ax-pYF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="8D3-gc-4vF"/>
+                <constraint firstAttribute="trailing" secondItem="nwx-Vo-SbO" secondAttribute="trailing" constant="20" id="AYD-GZ-oJU"/>
+                <constraint firstItem="Oma-8g-aq5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="24" id="KrU-bF-1WG"/>
+                <constraint firstItem="b19-ax-pYF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="LOi-JW-AGj"/>
+                <constraint firstItem="nwx-Vo-SbO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Thy-Dh-Opi"/>
+                <constraint firstAttribute="trailing" secondItem="b19-ax-pYF" secondAttribute="trailing" id="ZVM-oH-RMV"/>
+                <constraint firstAttribute="bottom" secondItem="b19-ax-pYF" secondAttribute="bottom" id="lse-2F-dWw"/>
+                <constraint firstItem="nwx-Vo-SbO" firstAttribute="leading" secondItem="Oma-8g-aq5" secondAttribute="trailing" constant="4" id="lw9-NX-vs5"/>
+                <constraint firstItem="Oma-8g-aq5" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="riX-Xc-TaM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="32"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="32.799999999999997" y="-190.70464767616193"/>
+        </view>
+    </objects>
+</document>

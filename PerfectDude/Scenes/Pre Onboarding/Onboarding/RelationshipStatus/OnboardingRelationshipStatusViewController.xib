@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingRelationshipStatusViewController" customModule="PerfectDude" customModuleProvider="target">
+            <connections>
+                <outlet property="firstOptionView" destination="hgn-4I-3mm" id="0Vl-1N-Q91"/>
+                <outlet property="secondOptionView" destination="bXH-ln-VtD" id="WWX-Cd-3No"/>
+                <outlet property="thirdOptionView" destination="Xlz-qX-37V" id="qKE-gb-fGB"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of relationship are you in?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xz4-3Q-PjQ">
+                    <rect key="frame" x="16" y="200" width="343" height="62.5"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hgn-4I-3mm" customClass="SelectionButtonView" customModule="PerfectDude" customModuleProvider="target">
+                    <rect key="frame" x="16" y="427" width="343" height="64"/>
+                    <color key="backgroundColor" name="CoralPink"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="hhS-V7-f2n"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="32"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXH-ln-VtD" customClass="SelectionButtonView" customModule="PerfectDude" customModuleProvider="target">
+                    <rect key="frame" x="16" y="507" width="343" height="64"/>
+                    <color key="backgroundColor" name="ButternutOrange"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="uve-9a-kzv"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="32"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xlz-qX-37V" customClass="SelectionButtonView" customModule="PerfectDude" customModuleProvider="target">
+                    <rect key="frame" x="16" y="587" width="343" height="64"/>
+                    <color key="backgroundColor" name="BabyBlue"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="64" id="zo2-vs-aHZ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="32"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hgn-4I-3mm" firstAttribute="leading" secondItem="Xz4-3Q-PjQ" secondAttribute="leading" id="784-wx-JGt"/>
+                <constraint firstItem="Xz4-3Q-PjQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Cs8-EF-iXo"/>
+                <constraint firstItem="Xlz-qX-37V" firstAttribute="leading" secondItem="bXH-ln-VtD" secondAttribute="leading" id="EuS-XV-AJD"/>
+                <constraint firstAttribute="trailing" secondItem="Xz4-3Q-PjQ" secondAttribute="trailing" constant="16" id="K93-dx-v2c"/>
+                <constraint firstItem="bXH-ln-VtD" firstAttribute="leading" secondItem="hgn-4I-3mm" secondAttribute="leading" id="Mqe-SP-DCH"/>
+                <constraint firstItem="hgn-4I-3mm" firstAttribute="trailing" secondItem="Xz4-3Q-PjQ" secondAttribute="trailing" id="NlI-lW-cGI"/>
+                <constraint firstItem="Xlz-qX-37V" firstAttribute="top" secondItem="bXH-ln-VtD" secondAttribute="bottom" constant="16" id="VHO-UE-gLZ"/>
+                <constraint firstItem="bXH-ln-VtD" firstAttribute="trailing" secondItem="hgn-4I-3mm" secondAttribute="trailing" id="X9X-tI-E5I"/>
+                <constraint firstItem="Xlz-qX-37V" firstAttribute="trailing" secondItem="bXH-ln-VtD" secondAttribute="trailing" id="ay5-Du-OW5"/>
+                <constraint firstAttribute="bottomMargin" secondItem="Xlz-qX-37V" secondAttribute="bottom" constant="16" id="eyC-ST-uv8"/>
+                <constraint firstItem="bXH-ln-VtD" firstAttribute="top" secondItem="hgn-4I-3mm" secondAttribute="bottom" constant="16" id="wgE-8F-q4P"/>
+                <constraint firstItem="Xz4-3Q-PjQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="200" id="xBo-En-K9Y"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="54.5"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="BabyBlue">
+            <color red="0.10196078431372549" green="0.70196078431372544" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ButternutOrange">
+            <color red="0.98431372549019602" green="0.72156862745098038" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CoralPink">
+            <color red="0.96862745098039216" green="0.61568627450980395" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

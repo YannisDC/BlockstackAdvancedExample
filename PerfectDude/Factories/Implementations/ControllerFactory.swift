@@ -119,14 +119,66 @@ class ControllerFactory: AppFactory,
     ///   - useCaseProvider: Core.UseCaseProvider instance
     /// - Returns: PreOnboardingSingleViewController instance
     func makePreOnboardingSingleViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
-                                               useCaseProvider: Core.UseCaseProvider) -> PreOnboardingSingleViewController {
+                                               useCaseProvider: Core.UseCaseProvider,
+                                               profile: Profile) -> PreOnboardingSingleViewController {
         
         let singleViewController = PreOnboardingSingleViewController.loadFromNib()
         let singleViewModel = PreOnboardingSingleViewModel(coordinator: coordinator,
-                                                           useCaseProvider: useCaseProvider)
+                                                           useCaseProvider: useCaseProvider,
+                                                           profile: profile)
         
         singleViewController.bindViewModel(to: singleViewModel)
         return singleViewController
+        
+    }
+    
+    func makeOnboardingPersonTypeViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                profile: Profile) -> OnboardingPersonTypeViewController {
+        
+        let viewController = OnboardingPersonTypeViewController.loadFromNib()
+        let viewModel = OnboardingPersonTypeViewModel(coordinator: coordinator,
+                                                      profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    func makeOnboardingRelationshipStatusViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                        profile: Profile) -> OnboardingRelationshipStatusViewController {
+        
+        let viewController = OnboardingRelationshipStatusViewController.loadFromNib()
+        let viewModel = OnboardingRelationshipStatusViewModel(coordinator: coordinator,
+                                                              profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    func makeOnboardingBirthdayViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                              profile: Profile) -> OnboardingDatePickerViewController {
+        
+        let viewController = OnboardingDatePickerViewController.loadFromNib()
+        let viewModel = BirthdayDatePickerViewModel(coordinator: coordinator,
+                                                    profile: profile)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
+        
+    }
+    
+    func makeOnboardingAnniversaryViewController(coordinator: BaseCoordinator<PreOnboardingRoute>,
+                                                 profile: Profile,
+                                                 useCaseProvider: Core.UseCaseProvider) -> OnboardingDatePickerViewController {
+        
+        let viewController = OnboardingDatePickerViewController.loadFromNib()
+        let viewModel = AnniversaryDatePickerViewModel(coordinator: coordinator,
+                                                       profile: profile,
+                                                       useCaseProvider: useCaseProvider)
+        
+        viewController.bindViewModel(to: viewModel)
+        return viewController
         
     }
     

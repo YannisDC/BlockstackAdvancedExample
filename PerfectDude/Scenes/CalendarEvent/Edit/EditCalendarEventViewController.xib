@@ -44,7 +44,7 @@
                 <constraint firstItem="Bc7-FC-NCc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="AT3-Fb-3vV"/>
                 <constraint firstItem="qDd-Tk-k8O" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="Le3-Yl-jkB"/>
                 <constraint firstItem="KyO-PO-Ogu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="eyb-7L-oFk"/>
-                <constraint firstItem="KyO-PO-Ogu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="qod-t1-Rqe"/>
+                <constraint firstItem="KyO-PO-Ogu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="30" id="qod-t1-Rqe"/>
                 <constraint firstItem="Bc7-FC-NCc" firstAttribute="top" secondItem="qDd-Tk-k8O" secondAttribute="bottom" constant="132" id="uyB-6a-K4v"/>
             </constraints>
             <point key="canvasLocation" x="33.5" y="54.5"/>

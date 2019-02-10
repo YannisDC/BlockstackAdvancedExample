@@ -10,6 +10,7 @@ import Foundation
 import Core
 import Blockstack
 
+extension Core.Profile: BlockstackProvidable {}
 extension Like: BlockstackProvidable {}
 extension CalendarEvent: BlockstackProvidable {}
 
@@ -19,6 +20,10 @@ class NetworkFactory {
     
     init(configuration: Blockstack.Configuration) {
         self.configuration = configuration
+    }
+    
+    func makeProfileNetwork() -> ProfileNetwork{
+        return ProfileNetwork(configuration: configuration)
     }
     
     func makeLikeNetwork() -> NetworkProvider<Like>{

@@ -28,7 +28,7 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     private let auth: AuthUseCase!
     fileprivate lazy var navigationController = NavigationController()
     
-    // MARK: Init
+    // MARK: - Init
     
     init(rootViewController: BaseViewController,
          delegate: AppCoordinatorDelegate?,
@@ -43,7 +43,7 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
         self.auth = useCaseProvider.makeAuthUseCase()
     }
     
-    // MARK: Start
+    // MARK: - Start
     
     override func start() {
         defer {
@@ -75,7 +75,7 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
         }
     }
     
-    // MARK: Public
+    // MARK: - Public
     
     func reset() {
         removeAllDependencies()

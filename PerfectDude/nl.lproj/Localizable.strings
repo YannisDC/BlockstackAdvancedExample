@@ -7,3 +7,14 @@
 */
 
 "Likes" = "Favorieten";
+
+"don_juan_title" = "Don Juan";
+"cool_boy_title" = "Play It Cool";
+"dont_care_title" = "Don't Care";
+"married_title" = "Married";
+"living_together_title" = "Living together";
+"relationship_title" = "In a relationship";
+
+"don_juan_description" = "Likes to treat his lady like a gentleman.";
+"cool_boy_description" = "Tries to keep his girl happy on multiple occasions.";
+"dont_care_description" = "Just remembers her birthday and anniversary.";

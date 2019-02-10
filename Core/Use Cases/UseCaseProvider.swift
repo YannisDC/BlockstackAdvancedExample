@@ -11,6 +11,7 @@ import Foundation
 public protocol UseCaseProvider {
     
     func makeAuthUseCase() -> AuthUseCase
+    func makeProfileUseCase() -> ProfileUseCase
     func makeInitUseCase() -> InitUseCase
     func makeLikesUseCase() -> LikesUseCase
     func makeCalendarEventsUseCase() -> CalendarEventsUseCase

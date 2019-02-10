@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import Core
 
 enum PreOnboardingRoute: Route {
     case overview
+    case personType(profile: Profile)
+    case relationshipStatus(profile: Profile)
+    case birthday(profile: Profile)
+    case anniversary(profile: Profile)
     case finished
 }
