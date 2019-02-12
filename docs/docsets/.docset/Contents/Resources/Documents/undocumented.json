@@ -526,6 +526,27 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 15,
+      "symbol": "AuthUseCase.signIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 16,
+      "symbol": "AuthUseCase.isUserSignedIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 17,
+      "symbol": "AuthUseCase.signUserOut()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
       "line": 12,
       "symbol": "CalendarEventsUseCase",
