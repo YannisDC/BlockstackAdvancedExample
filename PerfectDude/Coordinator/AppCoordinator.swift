@@ -50,9 +50,6 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
             isActivated = true
         }
         
-        coordinate(to: .preOnboarding)
-        return
-        
         guard UserDefaults.standard.bool(forKey: "isPreOnboarded") else {
             coordinate(to: .preOnboarding)
             return

@@ -1,0 +1,754 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 11,
+      "symbol": "CalendarEventType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 12,
+      "symbol": "CalendarEventType.surprise",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 13,
+      "symbol": "CalendarEventType.reminder",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 14,
+      "symbol": "CalendarEventType.date",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 15,
+      "symbol": "CalendarEventType.special",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 18,
+      "symbol": "RepeatSize",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 19,
+      "symbol": "RepeatSize.weeks",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 20,
+      "symbol": "RepeatSize.months",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 21,
+      "symbol": "RepeatSize.years",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 24,
+      "symbol": "CalendarEvent",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 25,
+      "symbol": "CalendarEvent.eventType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 26,
+      "symbol": "CalendarEvent.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 27,
+      "symbol": "CalendarEvent.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 28,
+      "symbol": "CalendarEvent.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 29,
+      "symbol": "CalendarEvent.location",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 30,
+      "symbol": "CalendarEvent.repeatCount",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 31,
+      "symbol": "CalendarEvent.repeatSize",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 33,
+      "symbol": "CalendarEvent.uuid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 34,
+      "symbol": "CalendarEvent.encrypted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 36,
+      "symbol": "CalendarEvent.setNotification()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/CalendarEvent/CalendarEvent.swift",
+      "line": 79,
+      "symbol": "CalendarEvent.init(eventType:name:description:date:location:repeatCount:repeatSize:uuid:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Error/Error.swift",
+      "line": 11,
+      "symbol": "CoreError",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Error/Error.swift",
+      "line": 12,
+      "symbol": "CoreError.general",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Error/Error.swift",
+      "line": 13,
+      "symbol": "CoreError.technical",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 11,
+      "symbol": "Index",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 12,
+      "symbol": "Index.ids",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 13,
+      "symbol": "Index.date",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 15,
+      "symbol": "Index.Item",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 16,
+      "symbol": "Index.Item.id",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 17,
+      "symbol": "Index.Item.encrypted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 43,
+      "symbol": "Index.init(ids:date:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 49,
+      "symbol": "Index.push(_:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Index/Index.swift",
+      "line": 56,
+      "symbol": "Index.pop(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 11,
+      "symbol": "Like",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 12,
+      "symbol": "Like.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 13,
+      "symbol": "Like.image",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 14,
+      "symbol": "Like.tags",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 15,
+      "symbol": "Like.uuid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 16,
+      "symbol": "Like.encrypted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Like/Like.swift",
+      "line": 53,
+      "symbol": "Like.init(description:image:tags:uuid:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 11,
+      "symbol": "Profile",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 12,
+      "symbol": "Profile.personType",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 13,
+      "symbol": "Profile.maritialStatus",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 14,
+      "symbol": "Profile.birthday",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 15,
+      "symbol": "Profile.anniversary",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 16,
+      "symbol": "Profile.reminders",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 17,
+      "symbol": "Profile.uuid",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 18,
+      "symbol": "Profile.encrypted",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 52,
+      "symbol": "Profile.init(personType:maritialStatus:birthday:anniversary:reminders:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 68,
+      "symbol": "Reminders",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 76,
+      "symbol": "Reminders.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 106,
+      "symbol": "PersonType",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 107,
+      "symbol": "PersonType.donJuan",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 108,
+      "symbol": "PersonType.playItCool",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 109,
+      "symbol": "PersonType.iDontCare",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 147,
+      "symbol": "MaritialStatus",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 148,
+      "symbol": "MaritialStatus.married",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 149,
+      "symbol": "MaritialStatus.livingTogether",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Profile/Profile.swift",
+      "line": 150,
+      "symbol": "MaritialStatus.relationship",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 11,
+      "symbol": "Reminder",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 12,
+      "symbol": "Reminder.firstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 13,
+      "symbol": "Reminder.lastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 14,
+      "symbol": "Reminder.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 15,
+      "symbol": "Reminder.phone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 17,
+      "symbol": "Reminder.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 42,
+      "symbol": "Reminder.init(firstName:lastName:email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/Reminder/Reminder.swift",
+      "line": 51,
+      "symbol": "Reminder.init(firstName:lastName:phone:email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 11,
+      "symbol": "User",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 12,
+      "symbol": "User.firstName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 13,
+      "symbol": "User.lastName",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 14,
+      "symbol": "User.email",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 15,
+      "symbol": "User.phone",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 17,
+      "symbol": "User.init()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 42,
+      "symbol": "User.init(firstName:lastName:email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Entities/User/User.swift",
+      "line": 51,
+      "symbol": "User.init(firstName:lastName:phone:email:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 15,
+      "symbol": "AuthUseCase.signIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 16,
+      "symbol": "AuthUseCase.isUserSignedIn()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/AuthUseCase.swift",
+      "line": 17,
+      "symbol": "AuthUseCase.signUserOut()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
+      "line": 12,
+      "symbol": "CalendarEventsUseCase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
+      "line": 14,
+      "symbol": "CalendarEventsUseCase.save(event:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
+      "line": 15,
+      "symbol": "CalendarEventsUseCase.query(uuid:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
+      "line": 16,
+      "symbol": "CalendarEventsUseCase.delete(event:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/CalendarEventsUseCase.swift",
+      "line": 17,
+      "symbol": "CalendarEventsUseCase.queryAll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/InitUseCase.swift",
+      "line": 12,
+      "symbol": "InitUseCase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/InitUseCase.swift",
+      "line": 14,
+      "symbol": "InitUseCase.initPublishPublicKey()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/InitUseCase.swift",
+      "line": 15,
+      "symbol": "InitUseCase.initLikeIndexes()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/InitUseCase.swift",
+      "line": 16,
+      "symbol": "InitUseCase.initCalendarEventIndexes()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 12,
+      "symbol": "LikesUseCase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 14,
+      "symbol": "LikesUseCase.save(like:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 15,
+      "symbol": "LikesUseCase.query(uuid:encrypted:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 16,
+      "symbol": "LikesUseCase.query(uuid:username:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 17,
+      "symbol": "LikesUseCase.delete(like:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 18,
+      "symbol": "LikesUseCase.queryAll()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/LikesUseCase.swift",
+      "line": 19,
+      "symbol": "LikesUseCase.queryAll(username:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/ProfileUseCase.swift",
+      "line": 12,
+      "symbol": "ProfileUseCase",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/ProfileUseCase.swift",
+      "line": 14,
+      "symbol": "ProfileUseCase.getProfile()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/ProfileUseCase.swift",
+      "line": 15,
+      "symbol": "ProfileUseCase.saveProfile(profile:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 11,
+      "symbol": "UseCaseProvider",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 13,
+      "symbol": "UseCaseProvider.makeAuthUseCase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 14,
+      "symbol": "UseCaseProvider.makeProfileUseCase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 15,
+      "symbol": "UseCaseProvider.makeInitUseCase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 16,
+      "symbol": "UseCaseProvider.makeLikesUseCase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 17,
+      "symbol": "UseCaseProvider.makeCalendarEventsUseCase()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 20,
+      "symbol": "ExternalDependenciesInjection",
+      "symbol_kind": "source.lang.swift.decl.protocol",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 21,
+      "symbol": "ExternalDependenciesInjection.setup()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 22,
+      "symbol": "ExternalDependenciesInjection.print(error:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/yannisdc/PerfectDude/Core/Use Cases/UseCaseProvider.swift",
+      "line": 23,
+      "symbol": "ExternalDependenciesInjection.track(event:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/yannisdc/PerfectDude"
+}
