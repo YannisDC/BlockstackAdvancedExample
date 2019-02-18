@@ -17,6 +17,12 @@ final class LikesViewController: ViewController {
     internal var createLikeButton: UIBarButtonItem!
     
     @IBOutlet var tableView: UITableView!
+    
+    fileprivate var fetchingBinding: Binder<Bool> {
+        return Binder(self, binding: { _, isFetching in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isFetching
+        })
+    }
 }
 
 extension LikesViewController: Bindable {
@@ -55,6 +61,9 @@ extension LikesViewController: Bindable {
             .disposed(by: disposeBag)
         output.fetching
             .drive(tableView.refreshControl!.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        output.fetching
+            .drive(fetchingBinding)
             .disposed(by: disposeBag)
         output.createLike
             .drive()

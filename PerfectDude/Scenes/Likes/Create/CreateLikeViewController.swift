@@ -20,6 +20,12 @@ final class CreateLikeViewController: ViewController {
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var descriptionTextField: UITextField!
     @IBOutlet private weak var encryptionSwitch: UISwitch!
+    
+    fileprivate var fetchingBinding: Binder<Bool> {
+        return Binder(self, binding: { _, isFetching in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isFetching
+        })
+    }
 }
 
 extension CreateLikeViewController: Bindable {
@@ -42,5 +48,6 @@ extension CreateLikeViewController: Bindable {
          output.selectImage.drive(),
          output.imageToSave.drive(imageView.rx.image)]
             .forEach({$0.disposed(by: disposeBag)})
+        output.fetching.drive(fetchingBinding).disposed(by: disposeBag)
     }
 }

@@ -11,6 +11,7 @@ import Core
 import RxSwift
 import RxCocoa
 import IHKeyboardAvoiding
+import PerfectUI
 
 final class EditLikeViewController: ViewController {
     internal var viewModel: EditLikeViewModel!
@@ -28,6 +29,12 @@ final class EditLikeViewController: ViewController {
         return Binder(self, binding: { (vc, like) in
             vc.titleTextField.text = like.description
             vc.imageView.image = like.image
+        })
+    }
+    
+    fileprivate var fetchingBinding: Binder<Bool> {
+        return Binder(self, binding: { vc, isFetching in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isFetching
         })
     }
     
@@ -91,5 +98,6 @@ extension EditLikeViewController: Bindable {
         output.delete.drive().disposed(by: disposeBag)
         output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
         output.title.drive(rx.title).disposed(by: disposeBag)
+        output.fetching.drive(fetchingBinding).disposed(by: disposeBag)
     }
 }

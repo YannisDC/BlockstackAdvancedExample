@@ -33,6 +33,10 @@ final class CreateLikeViewModel: ViewModel {
         let title = Driver.just("Create".localized())
         
         let activityIndicator = ActivityIndicator()
+        let errorTracker = ErrorTracker()
+        
+        let fetching = activityIndicator.asDriver()
+        let errors = errorTracker.asDriver()
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
@@ -48,6 +52,7 @@ final class CreateLikeViewModel: ViewModel {
             }
             .flatMapLatest { [unowned self] in
                 return self.likeUsecase.save(like: $0)
+                    .trackError(errorTracker)
                     .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
@@ -67,7 +72,9 @@ final class CreateLikeViewModel: ViewModel {
                       imageToSave: imageToSave,
                       dismiss: dismiss,
                       saveEnabled: canSave,
-                      selectImage: selectImage)
+                      selectImage: selectImage,
+                      fetching: fetching,
+                      error: errors)
     }
 }
 
@@ -87,5 +94,7 @@ extension CreateLikeViewModel {
         let dismiss: Driver<Void>
         let saveEnabled: Driver<Bool>
         let selectImage: Driver<Void>
+        let fetching: Driver<Bool>
+        let error: Driver<Error>
     }
 }

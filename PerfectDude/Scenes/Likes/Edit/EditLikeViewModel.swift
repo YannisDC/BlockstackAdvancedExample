@@ -34,12 +34,20 @@ final class EditLikeViewModel: ViewModel {
     
     func transform(input: EditLikeViewModel.Input) -> EditLikeViewModel.Output {
         let title = Driver.just("Edit")
+        let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
-        let editing = input.editTrigger.scan(false) { editing, _ in
-            return !editing
-        }.startWith(false)
         
-        let saveTrigger = editing.skip(1) //we dont need initial state
+        let fetching = activityIndicator.asDriver()
+        let errors = errorTracker.asDriver()
+        
+        let editing = input.editTrigger
+            .scan(false) { editing, _ in
+                return !editing
+            }
+            .startWith(false)
+        
+        let saveTrigger = editing
+            .skip(1) //we dont need initial state
             .filter { $0 == false }
             .mapToVoid()
         
@@ -75,6 +83,7 @@ final class EditLikeViewModel: ViewModel {
             .flatMapLatest { [unowned self] in
                 return self.likeUsecase.save(like: $0)
                     .trackError(errorTracker)
+                    .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete()
                     .flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
@@ -86,6 +95,7 @@ final class EditLikeViewModel: ViewModel {
             .flatMapLatest { newLike in
                 return self.likeUsecase.delete(like: newLike)
                     .trackError(errorTracker)
+                    .trackActivity(activityIndicator)
                     .asDriverOnErrorJustComplete()
                     .mapToVoid()
             }
@@ -101,7 +111,8 @@ final class EditLikeViewModel: ViewModel {
                       delete: deleteLike,
                       editing: editing,
                       like: likeToSave,
-                      error: errorTracker.asDriver(),
+                      fetching: fetching,
+                      error: errors,
                       encryption: encryption,
                       title: title)
     }
@@ -125,6 +136,7 @@ extension EditLikeViewModel {
         let delete: Driver<Void>
         let editing: Driver<Bool>
         let like: Driver<Like>
+        let fetching: Driver<Bool>
         let error: Driver<Error>
         let encryption: Driver<Bool>
         let title: Driver<String>
