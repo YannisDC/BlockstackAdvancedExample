@@ -25,13 +25,23 @@ final class CreateCalendarEventViewModel: ViewModel {
         self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
     }
     
-    func setLocalNotification(title: String) {
-        let notification = UILocalNotification()
-        notification.fireDate = Date(timeIntervalSinceNow: 5)
-        notification.alertTitle = title
-        notification.alertBody = "Comming up soon"
-        DispatchQueue.main.async {
-            UIApplication.shared.scheduleLocalNotification(notification)
+    func setLocalNotification(event: CalendarEvent) {
+        let content = UNMutableNotificationContent()
+        content.title = event.name ?? ""
+        content.body = event.description ?? ""
+        
+        let dateComponents = Calendar.current.dateComponents([.hour, .day, .month, .year], from: event.date ?? Date())
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        
+        let request = UNNotificationRequest(identifier: event.uuid,
+                                            content: content,
+                                            trigger: trigger)
+        
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.add(request) { (error) in
+            if error != nil {
+                // Handle any errors.
+            }
         }
     }
 
@@ -49,23 +59,21 @@ final class CreateCalendarEventViewModel: ViewModel {
         
         let save = input.saveTrigger.withLatestFrom(eventInfo)
             .map { (title, date, frequency) in
-                UNUserNotificationCenter.current().requestAuthorization(options:
-                    [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
-                        self.setLocalNotification(title: title)
-                })
+                let event: CalendarEvent
                 
                 guard frequency.count == 2,
                     let repeatCount = frequency[0] as? Int,
                     let repeatSize = RepeatSize(rawValue: frequency[1].description) else {
-                        return CalendarEvent(eventType: CalendarEventType.surprise,
+                        event = CalendarEvent(eventType: CalendarEventType.surprise,
                                              name: title,
                                              description: "",
                                              date: date,
                                              location: "Home",
                                              encrypted: false)
+                        return event
                 }
                 
-                return CalendarEvent(eventType: CalendarEventType.surprise,
+                event = CalendarEvent(eventType: CalendarEventType.surprise,
                                      name: title,
                                      description: "",
                                      date: date,
@@ -74,6 +82,12 @@ final class CreateCalendarEventViewModel: ViewModel {
                                      repeatSize: repeatSize,
                                      encrypted: false)
                 
+                UNUserNotificationCenter.current().requestAuthorization(options:
+                    [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
+                        self.setLocalNotification(event: event)
+                })
+                
+                return event
             }
             .flatMapLatest { [unowned self] in
                 return self.calendarEventsUsecase.save(event: $0)

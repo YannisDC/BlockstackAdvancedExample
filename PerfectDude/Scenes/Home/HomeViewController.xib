@@ -139,7 +139,7 @@
                         <constraint firstItem="cGV-rC-qVA" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="d3F-Gf-GA5"/>
                     </constraints>
                 </stackView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
                     <rect key="frame" x="168" y="600" width="39" height="30"/>
                     <state key="normal" title="Reset">
                         <color key="titleColor" name="KissRed"/>
