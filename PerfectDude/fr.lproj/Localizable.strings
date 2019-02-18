@@ -7,6 +7,8 @@
 */
 
 "Likes" = "Favorites";
+"events" = "Reminders";
+"settings" = "Settings";
 
 "don_juan_title" = "Don Juan";
 "cool_boy_title" = "Play It Cool";

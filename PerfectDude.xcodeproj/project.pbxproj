@@ -19,6 +19,10 @@
 		DE18041121F5B8AE00A93223 /* CreateCalendarEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18040E21F5B8AE00A93223 /* CreateCalendarEventViewModel.swift */; };
 		DE18041221F5B8AE00A93223 /* CreateCalendarEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE18040F21F5B8AE00A93223 /* CreateCalendarEventViewController.xib */; };
 		DE1DDF5421A72D8300F95CBF /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1DDF5321A72D8300F95CBF /* Cache.swift */; };
+		DE363CFF22170CBC00EF5D21 /* ProfileToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE363CFD22170CBC00EF5D21 /* ProfileToggleView.swift */; };
+		DE363D0022170CBC00EF5D21 /* ProfileToggleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE363CFE22170CBC00EF5D21 /* ProfileToggleView.xib */; };
+		DE363D0322198BCF00EF5D21 /* ProfileTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE363D0122198BCF00EF5D21 /* ProfileTypeView.swift */; };
+		DE363D0422198BCF00EF5D21 /* ProfileTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE363D0222198BCF00EF5D21 /* ProfileTypeView.xib */; };
 		DE3BC73C21A2D86C0075B02A /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3BC73B21A2D86C0075B02A /* InitUseCase.swift */; };
 		DE3BC73E21A2D95A0075B02A /* InitUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3BC73D21A2D95A0075B02A /* InitUseCase.swift */; };
 		DE42E5EB21F20EB900AACB16 /* CalendarEventsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */; };
@@ -354,6 +358,10 @@
 		DE18040E21F5B8AE00A93223 /* CreateCalendarEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCalendarEventViewModel.swift; sourceTree = "<group>"; };
 		DE18040F21F5B8AE00A93223 /* CreateCalendarEventViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateCalendarEventViewController.xib; sourceTree = "<group>"; };
 		DE1DDF5321A72D8300F95CBF /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		DE363CFD22170CBC00EF5D21 /* ProfileToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileToggleView.swift; sourceTree = "<group>"; };
+		DE363CFE22170CBC00EF5D21 /* ProfileToggleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileToggleView.xib; sourceTree = "<group>"; };
+		DE363D0122198BCF00EF5D21 /* ProfileTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTypeView.swift; sourceTree = "<group>"; };
+		DE363D0222198BCF00EF5D21 /* ProfileTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTypeView.xib; sourceTree = "<group>"; };
 		DE3BC73B21A2D86C0075B02A /* InitUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
 		DE3BC73D21A2D95A0075B02A /* InitUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitUseCase.swift; sourceTree = "<group>"; };
 		DE42E5E821F20EB900AACB16 /* CalendarEventsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsCoordinator.swift; sourceTree = "<group>"; };
@@ -1265,6 +1273,10 @@
 			children = (
 				DEB762C7220F25EE00B9EAD1 /* SelectionButtonView.xib */,
 				DEB762C6220F25EE00B9EAD1 /* SelectionButtonView.swift */,
+				DE363CFE22170CBC00EF5D21 /* ProfileToggleView.xib */,
+				DE363CFD22170CBC00EF5D21 /* ProfileToggleView.swift */,
+				DE363D0222198BCF00EF5D21 /* ProfileTypeView.xib */,
+				DE363D0122198BCF00EF5D21 /* ProfileTypeView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1819,10 +1831,12 @@
 				DE96F6DC21935FB5007A342A /* Main.storyboard in Resources */,
 				DE50B76E21B9416500D7F905 /* PreOnboardingStorageViewController.xib in Resources */,
 				DE96F7AC21936389007A342A /* AuthenticationViewController.xib in Resources */,
+				DE363D0022170CBC00EF5D21 /* ProfileToggleView.xib in Resources */,
 				DE491EA62202E58300FC8CA8 /* Localizable.strings in Resources */,
 				DE5A6E1C21A57EEA0097E941 /* LikeTableViewCell.xib in Resources */,
 				DE18041221F5B8AE00A93223 /* CreateCalendarEventViewController.xib in Resources */,
 				DE6DF6772209E37B005C33E5 /* EditCalendarEventViewController.xib in Resources */,
+				DE363D0422198BCF00EF5D21 /* ProfileTypeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2183,7 +2197,9 @@
 				DE96F78821936389007A342A /* Error.swift in Sources */,
 				DE96F7A521936389007A342A /* HomeViewModel.swift in Sources */,
 				DE96F7A721936389007A342A /* HomeViewController.swift in Sources */,
+				DE363D0322198BCF00EF5D21 /* ProfileTypeView.swift in Sources */,
 				DE96F79621936389007A342A /* AlertController+Extension.swift in Sources */,
+				DE363CFF22170CBC00EF5D21 /* ProfileToggleView.swift in Sources */,
 				DEB48E7821B851DD0045A58E /* PreOnboardingFactory.swift in Sources */,
 				DE96F78621936389007A342A /* CoordinatorFactory.swift in Sources */,
 				DE96F7A121936389007A342A /* Route.swift in Sources */,

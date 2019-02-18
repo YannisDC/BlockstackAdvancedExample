@@ -66,12 +66,12 @@ public struct Profile: Codable, Identifiable, Cryptable {
 }
 
 public struct Reminders: Codable {
-    var notifications: Bool = false
-    var birthdayReminder: Bool = false
-    var anniversaryReminder: Bool = false
-    var marriageReminder: Bool = false
-    var surprisesReminder: Bool = false
-    var flowersReminder: Bool = false
+    public var notifications: Bool = false
+    public var birthdayReminder: Bool = false
+    public var anniversaryReminder: Bool = false
+    public var marriageReminder: Bool = false
+    public var surprisesReminder: Bool = false
+    public var flowersReminder: Bool = false
     
     public init() {}
     

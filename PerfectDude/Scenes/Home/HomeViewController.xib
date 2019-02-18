@@ -6,13 +6,22 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
+                <outlet property="fifthOptionView" destination="7di-yp-yWN" id="jJ1-Fp-Lxb"/>
+                <outlet property="firstOptionView" destination="ITE-1Q-SNd" id="UPG-Sc-a92"/>
+                <outlet property="fourthOptionView" destination="Nf8-hK-j6Z" id="3uN-pE-EuK"/>
+                <outlet property="profileType" destination="uyb-m0-cGG" id="aaf-Ki-mJt"/>
+                <outlet property="relationshipType" destination="DtK-IE-Fgz" id="qjD-3C-5tT"/>
+                <outlet property="secondOptionView" destination="cGV-rC-qVA" id="OYd-eZ-3yR"/>
                 <outlet property="showCard" destination="ySb-ip-blx" id="68x-iM-fEI"/>
+                <outlet property="sixthOptionView" destination="QTa-RT-3o4" id="fxY-zt-JHK"/>
+                <outlet property="thirdOptionView" destination="QkA-B1-gqz" id="SAc-EN-oVf"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,18 +30,146 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyb-m0-cGG">
+                    <rect key="frame" x="16" y="36" width="343" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="VJc-xF-vHq"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Don Juan"/>
+                        <segment title="Play It Cool"/>
+                        <segment title="I Don't Care"/>
+                    </segments>
+                    <color key="tintColor" name="ButternutOrange"/>
+                </segmentedControl>
+                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DtK-IE-Fgz">
+                    <rect key="frame" x="16" y="100" width="343" height="49"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="1hO-QV-LpN"/>
+                    </constraints>
+                    <segments>
+                        <segment title="Married"/>
+                        <segment title="Living Together"/>
+                        <segment title="Relationship"/>
+                    </segments>
+                    <color key="tintColor" name="ButternutOrange"/>
+                </segmentedControl>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="A6M-ME-G0a">
+                    <rect key="frame" x="0.0" y="172" width="375" height="420"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ITE-1Q-SNd" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="jAc-4d-ftq"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Notifications"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGV-rC-qVA" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="70" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="Fmb-O2-dL0"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Birthday Reminder"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QkA-B1-gqz" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="140" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="wcC-1a-Dev"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Anniversary Reminder"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nf8-hK-j6Z" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="210" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="Pze-Dv-YzO"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Marriage Anniversary Reminder"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7di-yp-yWN" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="280" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="2fD-rC-t5e"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Standard Flower Reminder"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="Every 3 weeks"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QTa-RT-3o4" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="350" width="375" height="70"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="70" id="vFe-6g-D0e"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Standard Suprise Reminder"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="Every 6 weeks"/>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="Nf8-hK-j6Z" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="1UQ-JF-5Wn"/>
+                        <constraint firstAttribute="trailing" secondItem="QkA-B1-gqz" secondAttribute="trailing" id="1al-2A-GBS"/>
+                        <constraint firstAttribute="trailing" secondItem="ITE-1Q-SNd" secondAttribute="trailing" id="2G8-9M-k2P"/>
+                        <constraint firstAttribute="trailing" secondItem="Nf8-hK-j6Z" secondAttribute="trailing" id="CLp-be-kYl"/>
+                        <constraint firstAttribute="trailing" secondItem="cGV-rC-qVA" secondAttribute="trailing" id="FU1-Y2-Lw7"/>
+                        <constraint firstItem="7di-yp-yWN" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="Fdy-FE-09g"/>
+                        <constraint firstItem="QTa-RT-3o4" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="OCS-YY-iyb"/>
+                        <constraint firstAttribute="trailing" secondItem="7di-yp-yWN" secondAttribute="trailing" id="Oec-ma-Ncm"/>
+                        <constraint firstItem="ITE-1Q-SNd" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="Pvf-Tp-6fs"/>
+                        <constraint firstItem="QkA-B1-gqz" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="Q5b-kd-oDo"/>
+                        <constraint firstAttribute="trailing" secondItem="QTa-RT-3o4" secondAttribute="trailing" id="byp-Ge-Xi9"/>
+                        <constraint firstItem="cGV-rC-qVA" firstAttribute="leading" secondItem="A6M-ME-G0a" secondAttribute="leading" id="d3F-Gf-GA5"/>
+                    </constraints>
+                </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySb-ip-blx">
-                    <rect key="frame" x="85.5" y="220" width="204" height="30"/>
-                    <state key="normal" title="Init / Reset (Press on first run)"/>
+                    <rect key="frame" x="168" y="600" width="39" height="30"/>
+                    <state key="normal" title="Reset">
+                        <color key="titleColor" name="KissRed"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="ySb-ip-blx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="5Ud-Hy-Xps"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uyb-m0-cGG" secondAttribute="trailing" constant="16" id="8fj-wN-xeL"/>
                 <constraint firstItem="ySb-ip-blx" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="9QR-7N-hD6"/>
+                <constraint firstItem="DtK-IE-Fgz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Gil-JU-xvN"/>
+                <constraint firstItem="A6M-ME-G0a" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GvP-7t-bbo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A6M-ME-G0a" secondAttribute="trailing" id="PbC-uc-SBt"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DtK-IE-Fgz" secondAttribute="trailing" constant="16" id="fO3-PE-QeL"/>
+                <constraint firstItem="uyb-m0-cGG" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="skV-aL-3Fg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ySb-ip-blx" secondAttribute="bottom" constant="37" id="tGM-dg-Ugh"/>
+                <constraint firstItem="uyb-m0-cGG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="usD-Dg-i9F"/>
+                <constraint firstItem="DtK-IE-Fgz" firstAttribute="top" secondItem="uyb-m0-cGG" secondAttribute="bottom" constant="16" id="yML-sJ-tGy"/>
+                <constraint firstItem="A6M-ME-G0a" firstAttribute="top" secondItem="DtK-IE-Fgz" secondAttribute="bottom" constant="24" id="znm-h6-L6W"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="ButternutOrange">
+            <color red="0.98431372549019602" green="0.72156862745098038" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="KissRed">
+            <color red="0.98431372549019602" green="0.24313725490196078" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

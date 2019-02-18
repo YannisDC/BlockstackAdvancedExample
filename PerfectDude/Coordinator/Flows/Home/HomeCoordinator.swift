@@ -71,9 +71,6 @@ private extension HomeCoordinator {
                                                                 useCaseProvider: useCaseProvider)
         homeViewController.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 2)
         
-        //        homeViewController.tabBarItem = UITabBarItem(title: "Settings",
-        //                                                     image: UIImage(named: "blockstack_semi_filled"),
-        //                                                     selectedImage: nil)
         
         let homeNavigationController = NavigationController()
         homeNavigationController.setViewControllers([homeViewController], animated: false)
@@ -82,13 +79,21 @@ private extension HomeCoordinator {
                                                                   delegate: self,
                                                                   useCaseProvider: useCaseProvider,
                                                                   factory: factory)
-        calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 0)
+        
+        
+        calendarEventsCoordinator.navigationController.tabBarItem = UITabBarItem(title: "events".localized(),
+                                                                                 image: UIImage(named: "alarm_clock"),
+                                                                                 selectedImage: nil)
+
         
         let likesCoordinator = LikesCoordinator(rootViewController: rootViewController,
                                                 delegate: self,
                                                 factory: factory,
                                                 useCaseProvider: useCaseProvider)
-        likesCoordinator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        likesCoordinator.navigationController.tabBarItem = UITabBarItem(title: "Likes",
+                                                                        image: UIImage(named: "heart"),
+                                                                        selectedImage: nil)
+        
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [

@@ -33,3 +33,33 @@ final class CalendarEventItemViewModel   {
         self.monthText = dateFormatterPrint.string(from: date)
     }
 }
+
+
+extension CalendarEventItemViewModel: Comparable {
+    
+    static func == (lhs: CalendarEventItemViewModel, rhs: CalendarEventItemViewModel) -> Bool {
+        return false
+    }
+    
+    static func < (lhs: CalendarEventItemViewModel, rhs: CalendarEventItemViewModel) -> Bool {
+        guard let lhsDate = lhs.date?.withoutYearComponent().compensateForToday(), let rhsDate = rhs.date?.withoutYearComponent().compensateForToday() else {
+            return false
+        }
+        return lhsDate < rhsDate
+    }
+}
+
+extension Date {
+    func withoutYearComponent() -> Date {
+        let components = Calendar.current.dateComponents([.day, .month, .hour], from: self)
+        return Calendar.current.date(from: components) ?? self
+    }
+    
+    func compensateForToday() -> Date {
+        if self < Date().withoutYearComponent() {
+            return Calendar.current.date(byAdding: .year, value: 1, to: self) ?? self
+        } else {
+            return self
+        }
+    }
+}
