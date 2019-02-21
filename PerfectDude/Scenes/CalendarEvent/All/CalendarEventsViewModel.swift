@@ -44,7 +44,8 @@ final class CalendarEventsViewModel: ViewModel {
         let selectedCalendarEvent = input.selection
             .withLatestFrom(calendarEvents) { (indexPath, calendarEvents) -> CalendarEvent in
                 return calendarEvents[indexPath.row].event
-            }.do(onNext: { event in
+            }
+            .do(onNext: { event in
                 self.coordinator?.coordinate(to: .edit(event))
             })
         

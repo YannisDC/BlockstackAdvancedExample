@@ -25,18 +25,32 @@ final class CreateCalendarEventViewModel: ViewModel {
         self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
     }
     
-    func setLocalNotification(event: CalendarEvent) {
+    func setLocalNotification(event: CalendarEvent, repeatCount: Int, repeatSize: RepeatSize) {
+        
+//        let day = 60 * 60 * 24
+//        var interval: Int?
+//
+//        switch repeatSize {
+//        case .weeks:
+//            interval = day * 7 * repeatCount
+//        case .months:
+//            interval = day * 31 * repeatCount
+//        case .years:
+//            interval = day * 365 * repeatCount
+//        }
+//        print(interval)
+        
         let content = UNMutableNotificationContent()
         content.title = event.name ?? ""
         content.body = event.description ?? ""
-        
+
         let dateComponents = Calendar.current.dateComponents([.hour, .day, .month, .year], from: event.date ?? Date())
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
+
         let request = UNNotificationRequest(identifier: event.uuid,
                                             content: content,
                                             trigger: trigger)
-        
+
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request) { (error) in
             if error != nil {
@@ -82,9 +96,11 @@ final class CreateCalendarEventViewModel: ViewModel {
                                      repeatSize: repeatSize,
                                      encrypted: false)
                 
+                self.setLocalNotification(event: event, repeatCount: repeatCount, repeatSize: repeatSize)
+                
                 UNUserNotificationCenter.current().requestAuthorization(options:
                     [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
-                        self.setLocalNotification(event: event)
+                        self.setLocalNotification(event: event, repeatCount: repeatCount, repeatSize: repeatSize)
                 })
                 
                 return event
@@ -95,10 +111,11 @@ final class CreateCalendarEventViewModel: ViewModel {
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
                     })
-        }
+            }
         
         let dismiss = Driver.of(save)
-            .merge().do(onNext: {
+            .merge()
+            .do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
         

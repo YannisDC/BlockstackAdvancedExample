@@ -10,6 +10,7 @@ import Foundation
 import Core
 import RxSwift
 import RxCocoa
+import UserNotifications
 
 final class EditCalendarEventViewModel: ViewModel {
 
@@ -26,6 +27,16 @@ final class EditCalendarEventViewModel: ViewModel {
         self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
         self.event = event
     }
+    
+    func removeLocalNotification(event: CalendarEvent) {
+        let notificationCenter = UNUserNotificationCenter.current()
+        notificationCenter.getPendingNotificationRequests { (requests) in
+            requests.forEach({ (request) in
+                print("Content: \(request.content) - Identifier: \(request.identifier)")
+            })
+        }
+        notificationCenter.removePendingNotificationRequests(withIdentifiers: [event.uuid])
+    }
 
     // MARK: Transform
 
@@ -35,12 +46,19 @@ final class EditCalendarEventViewModel: ViewModel {
         
         let deleteEvent = input.deleteTrigger
             .withLatestFrom(Driver.just(self.event))
+            .do(onNext: { (event) in
+                UNUserNotificationCenter.current().requestAuthorization(options:
+                    [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
+                        self.removeLocalNotification(event: event)
+                })
+
+            })
             .flatMapLatest { event in
                 return self.calendarEventsUsecase.delete(event: event)
                     .trackError(errorTracker)
                     .asDriverOnErrorJustComplete()
                     .mapToVoid()
-        }
+            }
         
         let dismiss = Driver.of(deleteEvent)
             .merge().do(onNext: {
