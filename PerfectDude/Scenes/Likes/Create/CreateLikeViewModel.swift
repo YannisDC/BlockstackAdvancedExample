@@ -10,6 +10,7 @@ import Foundation
 import Core
 import RxSwift
 import RxCocoa
+import TagListView
 
 final class CreateLikeViewModel: ViewModel {
 
@@ -67,6 +68,14 @@ final class CreateLikeViewModel: ViewModel {
         let selectImage = input.selectImageTrigger.do(onNext: {
             self.coordinator?.coordinate(to: .selectImage)
         })
+        
+        let tagDeleteResult = input.tagDeleteTrigger
+            .do(onNext: { (tag) in
+                print(tag)
+            })
+        
+        let tags = Driver<[TagView]>
+            .just([TagView(title: "yannis"), TagView(title: "de"), TagView(title: "cleene")])
 
         return Output(title: title,
                       imageToSave: imageToSave,
@@ -74,7 +83,9 @@ final class CreateLikeViewModel: ViewModel {
                       saveEnabled: canSave,
                       selectImage: selectImage,
                       fetching: fetching,
-                      error: errors)
+                      error: errors,
+                      tags: tags,
+                      tagDeleteResult: tagDeleteResult)
     }
 }
 
@@ -86,6 +97,7 @@ extension CreateLikeViewModel {
         let selectImageTrigger: Driver<Void>
         let likeTitle: Driver<String>
         let encryption: Driver<Bool>
+        let tagDeleteTrigger: Driver<TagView>
     }
 
     struct Output {
@@ -96,5 +108,7 @@ extension CreateLikeViewModel {
         let selectImage: Driver<Void>
         let fetching: Driver<Bool>
         let error: Driver<Error>
+        let tags: Driver<[TagView]>
+        let tagDeleteResult: Driver<TagView>
     }
 }

@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import PerfectUI
 import IHKeyboardAvoiding
+import TagListView
 
 final class CreateLikeViewController: ViewController {
     internal var viewModel: CreateLikeViewModel!
@@ -20,6 +21,7 @@ final class CreateLikeViewController: ViewController {
     @IBOutlet private weak var selectImageButton: UIButton!
     @IBOutlet private weak var descriptionTextField: UITextField!
     @IBOutlet private weak var encryptionSwitch: UISwitch!
+    @IBOutlet private weak var taglistView: TagListView!
     
     fileprivate var fetchingBinding: Binder<Bool> {
         return Binder(self, binding: { _, isFetching in
@@ -39,7 +41,8 @@ extension CreateLikeViewController: Bindable {
         let input = CreateLikeViewModel.Input(saveTrigger: saveButton.rx.tap.asDriver(),
                                               selectImageTrigger: selectImageButton.rx.tap.asDriver(),
                                               likeTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
-                                              encryption: encryptionSwitch.rx.value.asDriver())
+                                              encryption: encryptionSwitch.rx.value.asDriver(),
+                                              tagDeleteTrigger: taglistView.rx.didRemoveTagView.asDriver())
         let output = viewModel.transform(input: input)
 
         [output.title.drive(rx.title),
@@ -49,5 +52,7 @@ extension CreateLikeViewController: Bindable {
          output.imageToSave.drive(imageView.rx.image)]
             .forEach({$0.disposed(by: disposeBag)})
         output.fetching.drive(fetchingBinding).disposed(by: disposeBag)
+        output.tags.drive(taglistView.rx.tagViewsValues).disposed(by: disposeBag)
+        output.tagDeleteResult.drive().disposed(by: disposeBag)
     }
 }

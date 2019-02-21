@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,6 +16,7 @@
                 <outlet property="encryptionSwitch" destination="db7-mv-Qdv" id="0dU-BO-12z"/>
                 <outlet property="imageView" destination="Yag-A6-JcJ" id="CBe-gk-07Y"/>
                 <outlet property="selectImageButton" destination="MVR-Pi-JdJ" id="WOp-L1-KbN"/>
+                <outlet property="taglistView" destination="FZh-K4-74t" id="n0A-EG-cYp"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,7 +29,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGw-B0-k10">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="748"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here to select an image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acw-9e-TN9">
                                     <rect key="frame" x="77" y="177" width="221" height="21"/>
@@ -68,9 +70,45 @@
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="db7-mv-Qdv">
                                     <rect key="frame" x="16" y="565" width="51" height="31"/>
                                 </switch>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZh-K4-74t" customClass="TagListView" customModule="TagListView">
+                                    <rect key="frame" x="16" y="610" width="343" height="100"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="JTp-MU-jOy"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="enableRemoveButton" value="YES"/>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
+                                            <real key="value" value="12"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="18"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="removeIconLineColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
+                                            <color key="value" name="CoralPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="tagHighlightedBackgroundColor">
+                                            <color key="value" name="BabyBlue"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="removeIconLineWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstItem="FZh-K4-74t" firstAttribute="top" secondItem="db7-mv-Qdv" secondAttribute="bottom" constant="14" id="0D3-cQ-CyE"/>
+                                <constraint firstAttribute="trailing" secondItem="FZh-K4-74t" secondAttribute="trailing" constant="16" id="2gx-f8-ezR"/>
                                 <constraint firstItem="Uq5-sR-0Wh" firstAttribute="top" secondItem="XM9-MC-Po6" secondAttribute="bottom" constant="24" id="60i-gd-zEg"/>
                                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="leading" secondItem="Yag-A6-JcJ" secondAttribute="leading" id="DKF-0d-Dsh"/>
                                 <constraint firstAttribute="trailing" secondItem="Yag-A6-JcJ" secondAttribute="trailing" id="DOn-V4-OcF"/>
@@ -82,7 +120,6 @@
                                 <constraint firstItem="Yag-A6-JcJ" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" id="TJN-fB-Pql"/>
                                 <constraint firstItem="Uq5-sR-0Wh" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="Ugx-8c-nnD"/>
                                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="trailing" secondItem="Yag-A6-JcJ" secondAttribute="trailing" id="VOB-jR-tm8"/>
-                                <constraint firstAttribute="bottom" secondItem="db7-mv-Qdv" secondAttribute="bottom" constant="71" id="Vhn-94-wR3"/>
                                 <constraint firstItem="acw-9e-TN9" firstAttribute="centerY" secondItem="Yag-A6-JcJ" secondAttribute="centerY" id="bXT-WF-mSQ"/>
                                 <constraint firstItem="Yag-A6-JcJ" firstAttribute="top" secondItem="CGw-B0-k10" secondAttribute="top" id="bkM-Dx-OAG"/>
                                 <constraint firstItem="XM9-MC-Po6" firstAttribute="top" secondItem="W0z-1r-E4e" secondAttribute="bottom" constant="16" id="ePn-vr-d60"/>
@@ -92,7 +129,9 @@
                                 <constraint firstItem="W0z-1r-E4e" firstAttribute="top" secondItem="Yag-A6-JcJ" secondAttribute="bottom" constant="32" id="iHr-7A-7Qw"/>
                                 <constraint firstItem="db7-mv-Qdv" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="qq9-1u-qD7"/>
                                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="bottom" secondItem="Yag-A6-JcJ" secondAttribute="bottom" id="tUg-ec-tJJ"/>
+                                <constraint firstAttribute="bottom" secondItem="FZh-K4-74t" secondAttribute="bottom" constant="38" id="uTb-KU-Ocx"/>
                                 <constraint firstAttribute="trailing" secondItem="Uq5-sR-0Wh" secondAttribute="trailing" constant="16" id="wDT-Ip-7Td"/>
+                                <constraint firstItem="FZh-K4-74t" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="xsI-lR-4vO"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -115,4 +154,12 @@
             <point key="canvasLocation" x="32.799999999999997" y="54.422788605697157"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="BabyBlue">
+            <color red="0.10196078431372549" green="0.70196078431372544" blue="0.95686274509803926" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="CoralPink">
+            <color red="0.96862745098039216" green="0.61568627450980395" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

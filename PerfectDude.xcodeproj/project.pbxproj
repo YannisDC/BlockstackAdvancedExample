@@ -203,6 +203,7 @@
 		DED9FAA5219E0D3E001C5878 /* BlockstackPlatform.h in Headers */ = {isa = PBXBuildFile; fileRef = DED9FA95219E0D3E001C5878 /* BlockstackPlatform.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DED9FAA8219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA9219E0D3E001C5878 /* BlockstackPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DEE8405F221EBB6100161BD3 /* TagListView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8405E221EBB6100161BD3 /* TagListView+Extension.swift */; };
 		DEEE49D321F7431900AEAE54 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE49D221F7431900AEAE54 /* Error.swift */; };
 		DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */; };
 		DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */; };
@@ -547,6 +548,7 @@
 		DED9FA9B219E0D3E001C5878 /* BlockstackPlatformTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlockstackPlatformTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackPlatformTests.swift; sourceTree = "<group>"; };
 		DED9FAA4219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEE8405E221EBB6100161BD3 /* TagListView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagListView+Extension.swift"; sourceTree = "<group>"; };
 		DEEE49D221F7431900AEAE54 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
@@ -1174,6 +1176,7 @@
 				DE96F75521936388007A342A /* CALayer+Extension.swift */,
 				DE68A76721A69188006E119A /* Observable+Extension.swift */,
 				DE1CB904221EAFB000D3A6E2 /* UIColor+Extension.swift */,
+				DEE8405E221EBB6100161BD3 /* TagListView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1922,6 +1925,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDVersion/SDVersion.framework",
+				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/Blockstack/Blockstack.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
@@ -1940,6 +1944,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDVersion.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Blockstack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
@@ -2119,6 +2124,7 @@
 				DEB762CB22106F2E00B9EAD1 /* BaseDatePickerViewModel.swift in Sources */,
 				DE50B76D21B9416500D7F905 /* PreOnboardingStorageViewModel.swift in Sources */,
 				DE96F78C21936389007A342A /* SearchableViewController.swift in Sources */,
+				DEE8405F221EBB6100161BD3 /* TagListView+Extension.swift in Sources */,
 				DE96F79021936389007A342A /* CustomViewable.swift in Sources */,
 				DE96F79E21936389007A342A /* HomeRoute.swift in Sources */,
 				DE5A6E2621A5D3FC0097E941 /* CreateLikeViewController.swift in Sources */,

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2424A6004D30694528B5F8F28A77FA6C"
-               BlueprintName = "GoogleUtilities"
+               BlueprintIdentifier = "C5395852FB9F833613A268A75BE0ACBB"
+               BlueprintName = "TagListView"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "GoogleUtilities.framework">
+               BuildableName = "TagListView.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
