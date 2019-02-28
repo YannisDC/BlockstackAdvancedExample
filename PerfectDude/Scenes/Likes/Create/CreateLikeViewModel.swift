@@ -30,7 +30,7 @@ final class CreateLikeViewModel: ViewModel {
 
     // MARK: Transform
 
-    func transform(input: CreateLikeViewModel.Input) -> CreateLikeViewModel.Output {
+    func transform(input: Input) -> Output {
         let title = Driver.just("Create".localized())
         
         let activityIndicator = ActivityIndicator()
@@ -41,21 +41,45 @@ final class CreateLikeViewModel: ViewModel {
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
-        let titleAndImage = Driver.combineLatest(input.likeTitle, imageToSave, input.encryption)
+        let tagsAndNew = Driver.combineLatest(input.newTagTitle, input.tags)
         
-        let canSave = Driver.combineLatest(input.likeTitle, activityIndicator.asDriver()) {
+        let newTagsAndTitle = input.newTagTrigger
+            .withLatestFrom(tagsAndNew)
+            .filter({ !$0.0.isEmpty })
+            .map { (title, list) -> (String, [TagView]) in
+                var newList = list
+                newList.append(TagView(title: title))
+                return ("", newList)
+        }
+        
+        let tags = newTagsAndTitle.map { $0.1 }
+            .startWith([TagView(title: "Gift")])
+        
+        let newTagTitle = newTagsAndTitle.map { $0.0 }
+        
+        let newTagTrigger = newTagsAndTitle.mapToVoid()
+        
+        let titleAndImage = Driver.combineLatest(input.likeTitle,
+                                                 imageToSave,
+                                                 tags,
+                                                 input.encryption)
+        
+        let canSave = Driver.combineLatest(input.likeTitle,
+                                           activityIndicator.asDriver()) {
             return !$0.isEmpty && !$1
         }
         
         let save = input.saveTrigger.withLatestFrom(titleAndImage)
-            .map { (title, image, encryption) in
-                return Like(description: title, image: image, tags: [""], encrypted: encryption)
+            .map { (title, image, tags, encryption) in
+                let likeTags = tags.map {$0.title(for: UIControl.State()) ?? ""}
+                return Like(description: title, image: image, tags: likeTags, encrypted: encryption)
             }
             .flatMapLatest { [unowned self] in
                 return self.likeUsecase.save(like: $0)
                     .trackError(errorTracker)
                     .trackActivity(activityIndicator)
-                    .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
+                    .asDriverOnErrorJustComplete()
+                    .flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
                     })
             }
@@ -70,12 +94,9 @@ final class CreateLikeViewModel: ViewModel {
         })
         
         let tagDeleteResult = input.tagDeleteTrigger
-            .do(onNext: { (tag) in
-                print(tag)
+            .do(onNext: { (tag, list) in
+                list.removeTagView(tag)
             })
-        
-        let tags = Driver<[TagView]>
-            .just([TagView(title: "yannis"), TagView(title: "de"), TagView(title: "cleene")])
 
         return Output(title: title,
                       imageToSave: imageToSave,
@@ -85,7 +106,9 @@ final class CreateLikeViewModel: ViewModel {
                       fetching: fetching,
                       error: errors,
                       tags: tags,
-                      tagDeleteResult: tagDeleteResult)
+                      tagDeleteResult: tagDeleteResult,
+                      newTagTitle: newTagTitle,
+                      newTagTrigger: newTagTrigger)
     }
 }
 
@@ -97,7 +120,10 @@ extension CreateLikeViewModel {
         let selectImageTrigger: Driver<Void>
         let likeTitle: Driver<String>
         let encryption: Driver<Bool>
-        let tagDeleteTrigger: Driver<TagView>
+        let tags: Driver<[TagView]>
+        let tagDeleteTrigger: Driver<(TagView, TagListView)>
+        let newTagTitle: Driver<String>
+        let newTagTrigger: Driver<Void>
     }
 
     struct Output {
@@ -109,6 +135,8 @@ extension CreateLikeViewModel {
         let fetching: Driver<Bool>
         let error: Driver<Error>
         let tags: Driver<[TagView]>
-        let tagDeleteResult: Driver<TagView>
+        let tagDeleteResult: Driver<(TagView, TagListView)>
+        let newTagTitle: Driver<String>
+        let newTagTrigger: Driver<Void>
     }
 }

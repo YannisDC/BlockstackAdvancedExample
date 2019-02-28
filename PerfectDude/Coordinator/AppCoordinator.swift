@@ -21,6 +21,7 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     
     // Properties
     fileprivate let rootViewController: BaseViewController
+    fileprivate let disposeBag = DisposeBag()
     fileprivate weak var delegate: AppCoordinatorDelegate?
     fileprivate let coordinatorFactory: CoordinatorFactory
     fileprivate let factory: ControllerFactory
@@ -45,17 +46,29 @@ final class AppCoordinator: BaseCoordinator<AppRoute> {
     
     // MARK: - Start
     
-    override func start() {
-        defer {
-            isActivated = true
-        }
-        
+    override func start(with option: DeepLinkOption?) {
         guard UserDefaults.standard.bool(forKey: "isPreOnboarded") else {
             coordinate(to: .preOnboarding)
             return
         }
         
+        let deepLink = option
+        if let deepLink = deepLink, !isActivated.value {
+            isActivated.asObservable()
+                .observeOn(MainScheduler.instance) // important to keep it on this thread
+                .subscribe(onNext: { [weak self] isStarted in
+                    guard isStarted else { return }
+                    self?.start(with: deepLink)
+                })
+                .disposed(by: disposeBag)
+            return
+        }
+
         if auth.isUserSignedIn() {
+            if let deepLink = deepLink {
+                childCoordinators.forEach { $0.start(with: deepLink) }
+                return
+            }
             coordinate(to: .home)
         } else {
             coordinate(to: .authentication)

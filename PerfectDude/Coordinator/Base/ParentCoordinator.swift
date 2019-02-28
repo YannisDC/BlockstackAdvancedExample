@@ -10,7 +10,11 @@ import Foundation
 
 class ParentCoordinator: NSObject, AnyCoordinator {
     
-    func start() {}
+    func start() {
+        start(with: nil)
+    }
+    
+    func start(with option: DeepLinkOption?) {}
     
     fileprivate(set) var childCoordinators: [AnyCoordinator] = []
     

@@ -11,7 +11,7 @@ import Foundation
 public struct Like: Codable, Identifiable, Cryptable {
     public var description: String?
     public var image: UIImage? // Optional
-    public var tags: [String]?
+    public var tags: [String]
     public var uuid: String
     public var encrypted: Bool
     // TODO: Add updated: Date

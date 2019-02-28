@@ -12,6 +12,7 @@
 		7D8E7A6457BAAD2DCDCCDC31 /* Pods_PerfectDude.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE779A89EAF864458CA5EB92 /* Pods_PerfectDude.framework */; };
 		8D9DD0E97003E085F1219046 /* Pods_Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3BC5F073482060730AD290D /* Pods_Core.framework */; };
 		DE03764621A2182700CAC5F9 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE03764521A2182700CAC5F9 /* Index.swift */; };
+		DE04750C2223DEB900FBB45D /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE04750B2223DEB900FBB45D /* DeepLinkOption.swift */; };
 		DE18040221F4D17400A93223 /* CalendarEventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1803FF21F4D17400A93223 /* CalendarEventsViewController.swift */; };
 		DE18040321F4D17400A93223 /* CalendarEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE18040021F4D17400A93223 /* CalendarEventsViewModel.swift */; };
 		DE18040421F4D17400A93223 /* CalendarEventsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE18040121F4D17400A93223 /* CalendarEventsViewController.xib */; };
@@ -204,6 +205,7 @@
 		DED9FAA8219E0D3E001C5878 /* BlockstackPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; };
 		DED9FAA9219E0D3E001C5878 /* BlockstackPlatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DED9FA93219E0D3D001C5878 /* BlockstackPlatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DEE8405F221EBB6100161BD3 /* TagListView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE8405E221EBB6100161BD3 /* TagListView+Extension.swift */; };
+		DEEC873E2227CE7C00F5C825 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEC873D2227CE7C00F5C825 /* LikeViewModel.swift */; };
 		DEEE49D321F7431900AEAE54 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEE49D221F7431900AEAE54 /* Error.swift */; };
 		DEF7EAF921F66BF7003758DB /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */; };
 		DEF7EAFA21F66BF7003758DB /* LikesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */; };
@@ -353,6 +355,7 @@
 		CE779A89EAF864458CA5EB92 /* Pods_PerfectDude.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PerfectDude.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C4E948E22D18AD1239FBDA /* Pods-FirebasePlatform.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebasePlatform.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebasePlatform/Pods-FirebasePlatform.release.xcconfig"; sourceTree = "<group>"; };
 		DE03764521A2182700CAC5F9 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		DE04750B2223DEB900FBB45D /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
 		DE1803FF21F4D17400A93223 /* CalendarEventsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewController.swift; sourceTree = "<group>"; };
 		DE18040021F4D17400A93223 /* CalendarEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventsViewModel.swift; sourceTree = "<group>"; };
 		DE18040121F4D17400A93223 /* CalendarEventsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarEventsViewController.xib; sourceTree = "<group>"; };
@@ -549,6 +552,7 @@
 		DED9FAA2219E0D3E001C5878 /* BlockstackPlatformTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockstackPlatformTests.swift; sourceTree = "<group>"; };
 		DED9FAA4219E0D3E001C5878 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEE8405E221EBB6100161BD3 /* TagListView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TagListView+Extension.swift"; sourceTree = "<group>"; };
+		DEEC873D2227CE7C00F5C825 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 		DEEE49D221F7431900AEAE54 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		DEF7EAF421F66BF6003758DB /* AuthUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		DEF7EAF521F66BF6003758DB /* LikesUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikesUseCase.swift; sourceTree = "<group>"; };
@@ -847,6 +851,7 @@
 				DE5A6E2521A5D3FC0097E941 /* CreateLikeViewController.xib */,
 				DE5A6E2321A5D3FC0097E941 /* CreateLikeViewController.swift */,
 				DE5A6E2421A5D3FC0097E941 /* CreateLikeViewModel.swift */,
+				DEEC873D2227CE7C00F5C825 /* LikeViewModel.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
@@ -1144,6 +1149,7 @@
 				DE5358B1220C1D8A007E1F1A /* UIPickerViewAdapter.swift */,
 				DE96F74621936388007A342A /* Protocol */,
 				DE96F74E21936388007A342A /* Extensions */,
+				DE04750B2223DEB900FBB45D /* DeepLinkOption.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -1454,8 +1460,8 @@
 		DEFEF2D62205D2EA006A6DF4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				DEFEF2D22205D2E3006A6DF4 /* CalendarEventTableViewCell.swift */,
 				DEFEF2D32205D2E3006A6DF4 /* CalendarEventTableViewCell.xib */,
+				DEFEF2D22205D2E3006A6DF4 /* CalendarEventTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -2137,6 +2143,7 @@
 				DEB762A5220F16E800B9EAD1 /* OnboardingPersonTypeViewController.swift in Sources */,
 				DE96F78421936389007A342A /* AppFactory.swift in Sources */,
 				DE5A6E0D21A498B90097E941 /* LikesFactory.swift in Sources */,
+				DE04750C2223DEB900FBB45D /* DeepLinkOption.swift in Sources */,
 				DE5A6E0C21A498B90097E941 /* LikesCoordinator.swift in Sources */,
 				DEB48E7E21B87B1E0045A58E /* PreOnboardingViewController.swift in Sources */,
 				DE96F7AE21936389007A342A /* AuthenticationViewModel.swift in Sources */,
@@ -2213,6 +2220,7 @@
 				DEB48E7821B851DD0045A58E /* PreOnboardingFactory.swift in Sources */,
 				DE96F78621936389007A342A /* CoordinatorFactory.swift in Sources */,
 				DE96F7A121936389007A342A /* Route.swift in Sources */,
+				DEEC873E2227CE7C00F5C825 /* LikeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

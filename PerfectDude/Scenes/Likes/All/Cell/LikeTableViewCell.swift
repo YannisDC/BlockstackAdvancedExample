@@ -23,6 +23,7 @@ class LikeTableViewCell: UITableViewCell {
     func bind(_ viewModel:LikeItemViewModel) {
         self.titleLabel.text = viewModel.title
         self.thumbnailView.image = viewModel.image
+        self.descriptionTitle.text = viewModel.tags.first
         
         thumbnailView <- {
             $0.layer.cornerRadius = 4.0
@@ -37,7 +38,8 @@ private extension LikeTableViewCell {
         
         titleLabel <- {
             $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-            $0.textColor = UIColor.textPrimary        }
+            $0.textColor = UIColor.textPrimary
+        }
         
         descriptionTitle <- {
             $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)

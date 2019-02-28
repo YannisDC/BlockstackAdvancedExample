@@ -31,28 +31,11 @@ final class EditLikeViewController: ViewController {
             vc.imageView.image = like.image
         })
     }
-    
-    fileprivate var fetchingBinding: Binder<Bool> {
-        return Binder(self, binding: { vc, isFetching in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = isFetching
-        })
-    }
-    
-    var errorBinding: Binder<Error> {
-        return Binder(self, binding: { (vc, _) in
-            let alert = UIAlertController(title: "Save Error",
-                                          message: "Something went wrong",
-                                          preferredStyle: .alert)
-            let action = UIAlertAction(title: "Dismiss",
-                                       style: UIAlertAction.Style.cancel,
-                                       handler: nil)
-            alert.addAction(action)
-            vc.present(alert, animated: true, completion: nil)
-        })
-    }
 }
 
-extension EditLikeViewController: Bindable {
+extension EditLikeViewController: Bindable,
+ErrorPresentable,
+ActivityPresentable {
 
     func bindViewModel() {
         KeyboardAvoiding.avoidingView = self.view
@@ -94,10 +77,11 @@ extension EditLikeViewController: Bindable {
         output.like.drive(likeBinding).disposed(by: disposeBag)
         output.dismiss.drive().disposed(by: disposeBag)
         output.save.drive().disposed(by: disposeBag)
-        output.error.drive(errorBinding).disposed(by: disposeBag)
         output.delete.drive().disposed(by: disposeBag)
         output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
         output.title.drive(rx.title).disposed(by: disposeBag)
-        output.fetching.drive(fetchingBinding).disposed(by: disposeBag)
+        
+        output.error.drive(errorAlertBinding).disposed(by: disposeBag)
+        output.fetching.drive(activityBinding).disposed(by: disposeBag)
     }
 }

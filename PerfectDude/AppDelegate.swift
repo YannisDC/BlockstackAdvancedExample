@@ -61,6 +61,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        let option = DeepLinkOption.build(from: url)
+        applicationCoordinator?.start(with: option)
+        return true
+    }
 
     // MARK: - Core Data stack
 

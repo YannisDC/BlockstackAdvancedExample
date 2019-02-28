@@ -87,12 +87,15 @@ extension Reactive where Base: TagListView {
     var tagViewsValues: ControlProperty<[TagView]> {
         return base.rx.controlProperty(editingEvents: UIControlEvents.valueChanged,
                                        getter: { customView in return customView.tagViews }, // FIXME: Not getting the values yet
-            setter: { (customView, newValue) in customView.addTags(newValue.map {$0.title(for: UIControl.State()) ?? ""}) })
+            setter: { (customView, newValue) in
+                customView.removeAllTags() // FIXME: just filter out duplicates alright
+                customView.addTags(newValue.map {$0.title(for: UIControl.State()) ?? ""})
+        })
     }
     
-    var didRemoveTagView: ControlEvent<TagView> {
-        return ControlEvent<TagView>(events: delegate.methodInvoked(#selector(TagListViewDelegate.tagRemoveButtonPressed(_:tagView:sender:)))
-            .map { $0[1] as! TagView })
+    var didRemoveTagView: ControlEvent<(TagView, TagListView)> {
+        return ControlEvent<(TagView, TagListView)>(events: delegate.methodInvoked(#selector(TagListViewDelegate.tagRemoveButtonPressed(_:tagView:sender:)))
+            .map { ($0[1] as! TagView, $0[2] as! TagListView) })
     }
     
 }
