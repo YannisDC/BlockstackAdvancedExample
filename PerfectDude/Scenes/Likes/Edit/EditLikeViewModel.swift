@@ -105,6 +105,8 @@ final class EditLikeViewModel: ViewModel {
                 self.coordinator?.coordinate(to: .overview)
             })
         
+        // TODO: make it inherit from LikeViewModel
+        
         return Output(editButtonTitle: editButtonTitle,
                       dismiss: dismiss,
                       save: saveLike,

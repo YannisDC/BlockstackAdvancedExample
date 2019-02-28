@@ -14,7 +14,7 @@ import IHKeyboardAvoiding
 import TagListView
 
 final class CreateLikeViewController: ViewController {
-    internal var viewModel: CreateLikeViewModel!
+    internal var viewModel: LikeViewModel!
     fileprivate let disposeBag = DisposeBag()
     
     internal var editButton: UIBarButtonItem!
@@ -60,7 +60,7 @@ extension CreateLikeViewController: Bindable,
             }
         }
         
-        let input = CreateLikeViewModel.Input(editTrigger: editButton.rx.tap.asDriver(),
+        let input = LikeViewModel.Input(editTrigger: editButton.rx.tap.asDriver(),
                                               deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
                                               selectImageTrigger: selectImageButton.rx.tap.asDriver(),
                                               likeTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
@@ -89,6 +89,18 @@ extension CreateLikeViewController: Bindable,
         
         output.error.drive(errorAlertBinding).disposed(by: disposeBag)
         output.fetching.drive(activityBinding).disposed(by: disposeBag)
+        
+        
+        
+//        output.editButtonTitle.drive(editButton.rx.title).disposed(by: disposeBag)
+//        output.editing.drive(titleTextField.rx.isEnabled).disposed(by: disposeBag)
+//        output.editing.drive(selectImageButton.rx.isEnabled).disposed(by: disposeBag)
+//        output.editing.drive(encryptionSwitch.rx.isEnabled).disposed(by: disposeBag)
+//        output.like.drive(likeBinding).disposed(by: disposeBag)
+//        output.dismiss.drive().disposed(by: disposeBag)
+//        output.save.drive().disposed(by: disposeBag)
+//        output.delete.drive().disposed(by: disposeBag)
+//        output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
     }
     
     func addToolbarForTags() {

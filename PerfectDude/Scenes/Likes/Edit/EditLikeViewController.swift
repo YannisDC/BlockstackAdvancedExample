@@ -27,8 +27,8 @@ final class EditLikeViewController: ViewController {
     
     var likeBinding: Binder<Like> {
         return Binder(self, binding: { (vc, like) in
-            vc.titleTextField.text = like.description
-            vc.imageView.image = like.image
+            vc.titleTextField.text = like.description // TODO: rework this into viewmodel
+            vc.imageView.image = like.image // TODO: rework this into viewmodel
         })
     }
 }
