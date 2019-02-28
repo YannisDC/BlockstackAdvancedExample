@@ -19,7 +19,6 @@ class LikeViewModel: ViewModel {
     }
     
     struct Input {
-        let saveTrigger: Driver<Void>
         let editTrigger: Driver<Void>
         let deleteTrigger: Driver<Void>
         let selectImageTrigger: Driver<Void>
@@ -38,9 +37,8 @@ class LikeViewModel: ViewModel {
         let dismiss: Driver<Void>
         let save: Driver<Void>
         let delete: Driver<Void>
-        let editing: Driver<Bool>
-        
-        let like: Driver<Like>
+        let isEditing: Driver<Bool>
+        let isUpdating: Driver<Bool>
         
         let imageToSave: Driver<UIImage?>
         let saveEnabled: Driver<Bool>

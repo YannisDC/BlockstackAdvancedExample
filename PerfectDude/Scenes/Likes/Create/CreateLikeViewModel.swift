@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import TagListView
 
-final class CreateLikeViewModel: ViewModel {
+final class CreateLikeViewModel: LikeViewModel {
 
     private weak var coordinator: BaseCoordinator<LikesRoute>?
     private let likeUsecase: LikesUseCase!
@@ -30,12 +30,13 @@ final class CreateLikeViewModel: ViewModel {
 
     // MARK: Transform
 
-    func transform(input: Input) -> Output {
+    override func transform(input: Input) -> Output {
         let title = Driver.just("Create".localized())
+        
+        let editButtonTitle = Driver<String>.just("Save")
         
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
-        
         let fetching = activityIndicator.asDriver()
         let errors = errorTracker.asDriver()
         
@@ -69,7 +70,7 @@ final class CreateLikeViewModel: ViewModel {
             return !$0.isEmpty && !$1
         }
         
-        let save = input.saveTrigger.withLatestFrom(titleAndImage)
+        let save = input.editTrigger.withLatestFrom(titleAndImage)
             .map { (title, image, tags, encryption) in
                 let likeTags = tags.map {$0.title(for: UIControl.State()) ?? ""}
                 return Like(description: title, image: image, tags: likeTags, encrypted: encryption)
@@ -99,44 +100,21 @@ final class CreateLikeViewModel: ViewModel {
             })
 
         return Output(title: title,
-                      imageToSave: imageToSave,
+                      editButtonTitle: editButtonTitle,
                       dismiss: dismiss,
+                      save: save,
+                      delete: Driver<Void>.just(()),
+                      isEditing: Driver<Bool>.just(false),
+                      isUpdating: Driver<Bool>.just(false),
+                      imageToSave: imageToSave,
                       saveEnabled: canSave,
                       selectImage: selectImage,
-                      fetching: fetching,
-                      error: errors,
                       tags: tags,
                       tagDeleteResult: tagDeleteResult,
                       newTagTitle: newTagTitle,
-                      newTagTrigger: newTagTrigger)
-    }
-}
-
-// MARK: - ViewModel
-
-extension CreateLikeViewModel {
-    struct Input {
-        let saveTrigger: Driver<Void>
-        let selectImageTrigger: Driver<Void>
-        let likeTitle: Driver<String>
-        let encryption: Driver<Bool>
-        let tags: Driver<[TagView]>
-        let tagDeleteTrigger: Driver<(TagView, TagListView)>
-        let newTagTitle: Driver<String>
-        let newTagTrigger: Driver<Void>
-    }
-
-    struct Output {
-        let title: Driver<String>
-        let imageToSave: Driver<UIImage?>
-        let dismiss: Driver<Void>
-        let saveEnabled: Driver<Bool>
-        let selectImage: Driver<Void>
-        let fetching: Driver<Bool>
-        let error: Driver<Error>
-        let tags: Driver<[TagView]>
-        let tagDeleteResult: Driver<(TagView, TagListView)>
-        let newTagTitle: Driver<String>
-        let newTagTrigger: Driver<Void>
+                      newTagTrigger: newTagTrigger,
+                      encryption: Driver<Bool>.just(false),
+                      fetching: fetching,
+                      error: errors)
     }
 }

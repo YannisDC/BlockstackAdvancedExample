@@ -99,3 +99,14 @@ extension Reactive where Base: TagListView {
     }
     
 }
+
+
+extension Reactive where Base: UIBarButtonItem {
+    
+    /// Bindable sink for `visible` property.
+    public var isVisible: Binder<Bool> {
+        return Binder(self.base) { element, value in
+            element.tintColor = value ? .black : .clear
+        }
+    }
+}

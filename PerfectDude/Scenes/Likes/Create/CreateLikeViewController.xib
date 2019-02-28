@@ -12,7 +12,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateLikeViewController" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="addTagButton" destination="jEh-Lg-Q5u" id="D8E-Wh-okb"/>
                 <outlet property="descriptionTextField" destination="XM9-MC-Po6" id="09Q-RX-bxc"/>
                 <outlet property="encryptionSwitch" destination="db7-mv-Qdv" id="0dU-BO-12z"/>
                 <outlet property="imageView" destination="Yag-A6-JcJ" id="CBe-gk-07Y"/>
@@ -105,7 +104,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r6i-6n-sxq">
-                                    <rect key="frame" x="16" y="570" width="267" height="60"/>
+                                    <rect key="frame" x="16" y="570" width="343" height="60"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="60" id="t5R-C3-HP6"/>
                                     </constraints>
@@ -113,24 +112,6 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jEh-Lg-Q5u">
-                                    <rect key="frame" x="299" y="570" width="60" height="60"/>
-                                    <color key="backgroundColor" name="BabyBlue"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="60" id="dLu-Yl-vg1"/>
-                                        <constraint firstAttribute="width" constant="60" id="ult-Xr-9pd"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
-                                    <state key="normal" title="Add">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                            <integer key="value" value="4"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bwo-rA-33R">
                                     <rect key="frame" x="16" y="534.5" width="37" height="19.5"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -144,15 +125,12 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="FZh-K4-74t" secondAttribute="trailing" constant="16" id="2gx-f8-ezR"/>
-                                <constraint firstAttribute="trailing" secondItem="jEh-Lg-Q5u" secondAttribute="trailing" constant="16" id="6r7-DQ-zJW"/>
                                 <constraint firstItem="FZh-K4-74t" firstAttribute="top" secondItem="r6i-6n-sxq" secondAttribute="bottom" constant="16" id="BqU-Ke-EdO"/>
                                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="leading" secondItem="Yag-A6-JcJ" secondAttribute="leading" id="DKF-0d-Dsh"/>
                                 <constraint firstAttribute="trailing" secondItem="Yag-A6-JcJ" secondAttribute="trailing" id="DOn-V4-OcF"/>
-                                <constraint firstItem="jEh-Lg-Q5u" firstAttribute="leading" secondItem="r6i-6n-sxq" secondAttribute="trailing" constant="16" id="FMr-cT-QoL"/>
                                 <constraint firstItem="r6i-6n-sxq" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="H3I-RA-1H2"/>
                                 <constraint firstItem="db7-mv-Qdv" firstAttribute="top" secondItem="Uq5-sR-0Wh" secondAttribute="bottom" constant="7.5" id="H6d-Kh-siu"/>
                                 <constraint firstItem="Bwo-rA-33R" firstAttribute="top" secondItem="XM9-MC-Po6" secondAttribute="bottom" constant="32" id="HJI-sK-KFY"/>
-                                <constraint firstItem="jEh-Lg-Q5u" firstAttribute="centerY" secondItem="r6i-6n-sxq" secondAttribute="centerY" id="Hx1-qJ-rRa"/>
                                 <constraint firstItem="Uq5-sR-0Wh" firstAttribute="top" secondItem="FZh-K4-74t" secondAttribute="bottom" constant="32" id="J46-eg-OQp"/>
                                 <constraint firstItem="W0z-1r-E4e" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="Jdx-gD-Ous"/>
                                 <constraint firstAttribute="trailing" secondItem="db7-mv-Qdv" secondAttribute="trailing" constant="310" id="Jvv-js-YKF"/>
@@ -162,6 +140,7 @@
                                 <constraint firstItem="Yag-A6-JcJ" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" id="TJN-fB-Pql"/>
                                 <constraint firstItem="Uq5-sR-0Wh" firstAttribute="leading" secondItem="CGw-B0-k10" secondAttribute="leading" constant="16" id="Ugx-8c-nnD"/>
                                 <constraint firstItem="MVR-Pi-JdJ" firstAttribute="trailing" secondItem="Yag-A6-JcJ" secondAttribute="trailing" id="VOB-jR-tm8"/>
+                                <constraint firstAttribute="trailing" secondItem="r6i-6n-sxq" secondAttribute="trailing" constant="16" id="Wvl-Rt-pDQ"/>
                                 <constraint firstItem="acw-9e-TN9" firstAttribute="centerY" secondItem="Yag-A6-JcJ" secondAttribute="centerY" id="bXT-WF-mSQ"/>
                                 <constraint firstItem="Yag-A6-JcJ" firstAttribute="top" secondItem="CGw-B0-k10" secondAttribute="top" id="bkM-Dx-OAG"/>
                                 <constraint firstItem="XM9-MC-Po6" firstAttribute="top" secondItem="W0z-1r-E4e" secondAttribute="bottom" constant="16" id="ePn-vr-d60"/>
