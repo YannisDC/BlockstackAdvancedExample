@@ -42,5 +42,5 @@ protocol LikesFactory {
     func makeEditLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
                                     useCaseProvider: Core.UseCaseProvider,
                                     imagesTrigger: PublishSubject<UIImage?>,
-                                    like: Like) -> EditLikeViewController
+                                    like: Like) -> CreateLikeViewController
 }

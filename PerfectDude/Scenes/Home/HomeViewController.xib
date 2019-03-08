@@ -70,7 +70,7 @@
                                                 <constraint firstAttribute="height" constant="70" id="Hfn-Wc-Z4G"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Notifications"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="notifications"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -81,7 +81,7 @@
                                                 <constraint firstAttribute="height" constant="70" id="yA6-RK-xRi"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Birthday Reminder"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="birthday_reminder"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -92,7 +92,7 @@
                                                 <constraint firstAttribute="height" constant="70" id="gUd-fp-gsb"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Anniversary Reminder"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="anniversary_reminder"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -103,7 +103,7 @@
                                                 <constraint firstAttribute="height" constant="70" id="oxO-sn-7C6"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Marriage Anniversary Reminder"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="marriage_anniversary_reminder"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value=" "/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
@@ -114,8 +114,8 @@
                                                 <constraint firstAttribute="height" constant="70" id="n0y-jc-sLP"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Standard Flower Reminder"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="Every 3 weeks"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="flower_reminder"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="flower_reminder_frequency"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qrd-ck-zRb" customClass="ProfileToggleView" customModule="PerfectDude" customModuleProvider="target">
@@ -125,8 +125,8 @@
                                                 <constraint firstAttribute="height" constant="70" id="3Sq-Qg-dr9"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="Standard Suprise Reminder"/>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="Every 6 weeks"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="title" value="surpise_reminder"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="subTitle" value="surpise_reminder_frequency"/>
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>

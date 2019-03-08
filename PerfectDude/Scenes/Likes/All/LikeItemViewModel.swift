@@ -17,7 +17,7 @@ final class LikeItemViewModel   {
     
     init (with like:Like) {
         self.like = like
-        self.title = like.description?.capitalized ?? ""
+        self.title = like.description.capitalized
         self.image = like.image
         self.tags = like.tags
     }

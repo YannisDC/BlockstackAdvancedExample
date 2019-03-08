@@ -17,15 +17,19 @@ final class PreOnboardingSingleViewController: ViewController {
     
     @IBOutlet var backgroundImageView: UIImageView!
     @IBOutlet var blurView: UIVisualEffectView!
+    @IBOutlet var welcomeLabel: UILabel!
     @IBOutlet var firstStepView: PreOnboardingStepView!
+    @IBOutlet var secondStepView: PreOnboardingStepView!
+    @IBOutlet var thirdStepView: PreOnboardingStepView!
     @IBOutlet private weak var continueButton: UIButton!
 }
 
 extension PreOnboardingSingleViewController: Bindable {
 
     func bindViewModel() {
-        blurView.layer.cornerRadius = 16
-        blurView.layer.masksToBounds = true
+        
+        welcomeLabel.text = "welcome_title".localized()
+        continueButton.setTitle("continue_blockstack".localized(), for: .normal)
         
         backgroundImageView.image = UIImage(named: "Background")?.blurred(withRadius: 5)
         

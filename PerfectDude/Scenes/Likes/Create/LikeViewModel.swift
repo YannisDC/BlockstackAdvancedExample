@@ -19,13 +19,16 @@ class LikeViewModel: ViewModel {
     }
     
     struct Input {
+        let trigger: Driver<Void>
         let editTrigger: Driver<Void>
         let deleteTrigger: Driver<Void>
         let selectImageTrigger: Driver<Void>
+        
         let likeTitle: Driver<String>
         let tags: Driver<[TagView]>
         let encryption: Driver<Bool>
-        let tagDeleteTrigger: Driver<(TagView, TagListView)>
+        
+        let tagDeleteTrigger: Driver<TagView>
         let newTagTitle: Driver<String>
         let newTagTrigger: Driver<Void>
     }
@@ -39,13 +42,13 @@ class LikeViewModel: ViewModel {
         let delete: Driver<Void>
         let isEditing: Driver<Bool>
         let isUpdating: Driver<Bool>
-        
         let imageToSave: Driver<UIImage?>
+        let likeTitle: Driver<String>
         let saveEnabled: Driver<Bool>
         let selectImage: Driver<Void>
         
         let tags: Driver<[TagView]>
-        let tagDeleteResult: Driver<(TagView, TagListView)>
+        let tagDeleteResult: Driver<TagView>
         let newTagTitle: Driver<String>
         let newTagTrigger: Driver<Void>
         

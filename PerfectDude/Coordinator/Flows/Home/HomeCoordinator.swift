@@ -90,7 +90,7 @@ private extension HomeCoordinator {
                                                 delegate: self,
                                                 factory: factory,
                                                 useCaseProvider: useCaseProvider)
-        likesCoordinator.navigationController.tabBarItem = UITabBarItem(title: "Likes",
+        likesCoordinator.navigationController.tabBarItem = UITabBarItem(title: "likes".localized(),
                                                                         image: UIImage(named: "heart"),
                                                                         selectedImage: nil)
         

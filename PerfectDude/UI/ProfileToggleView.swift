@@ -17,13 +17,13 @@ final class ProfileToggleView: CustomView {
     
     @IBInspectable var title: String = "" {
         didSet {
-            titleLabel.text = title
+            titleLabel.text = title.localized()
         }
     }
     
     @IBInspectable var subTitle: String = "" {
         didSet {
-            subTitleLabel.text = subTitle
+            subTitleLabel.text = subTitle.localized()
         }
     }
     

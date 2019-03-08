@@ -2,7 +2,7 @@
 //  EditCalendarEventViewModel.swift
 //  PerfectDude
 //
-//  Created by Yannis De Cleene on 05/02/2019.
+//  Created by Yannis De Cleene on 07/03/2019.
 //  Copyright © 2019 yannisdecleene. All rights reserved.
 //
 
@@ -12,8 +12,8 @@ import RxSwift
 import RxCocoa
 import UserNotifications
 
-final class EditCalendarEventViewModel: ViewModel {
-
+final class EditCalendarEventViewModel: CalendarEventViewModel {
+    
     private weak var coordinator: BaseCoordinator<CalendarEventsRoute>?
     private let calendarEventsUsecase: CalendarEventsUseCase!
     private let event: CalendarEvent!
@@ -37,12 +37,23 @@ final class EditCalendarEventViewModel: ViewModel {
         }
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [event.uuid])
     }
-
+    
     // MARK: Transform
-
-    func transform(input: EditCalendarEventViewModel.Input) -> EditCalendarEventViewModel.Output {
-        let title = Driver.just("Edit".localized())
+    
+    override func transform(input: Input) -> Output {
+        let title = Driver.just("edit".localized())
         let errorTracker = ErrorTracker()
+        
+        let eventDescription = Driver.merge(input.calendarEventTitle,
+                                            Driver.just(event.name?.capitalized ?? ""))
+        
+        let isEditing = input.editTrigger
+            .scan(false) { isEditing, _ in
+                return !isEditing
+            }
+            .startWith(false)
+        
+        let isUpdating = Driver<Bool>.just(true)
         
         let deleteEvent = input.deleteTrigger
             .withLatestFrom(Driver.just(self.event))
@@ -51,7 +62,7 @@ final class EditCalendarEventViewModel: ViewModel {
                     [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
                         self.removeLocalNotification(event: event)
                 })
-
+                
             })
             .flatMapLatest { event in
                 return self.calendarEventsUsecase.delete(event: event)
@@ -64,23 +75,30 @@ final class EditCalendarEventViewModel: ViewModel {
             .merge().do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
-
+        
+        let date = Driver<CalendarEvent>
+            .just(event)
+            .map { (event) -> Date in
+                return event.date ?? Date()
+            }
+        
+        let calendarEvents = Driver<[[CustomStringConvertible]]>
+            .just([[1, 2, 3, 4, 5, 6], ["weeks".localized(), "months".localized(), "years".localized()]])
+        
+        let editButtonTitle = isEditing
+            .map { isEditing -> String in
+                return isEditing == true ? "save".localized() : "edit".localized()
+            }
+        
         return Output(title: title,
+                      editButtonTitle: editButtonTitle,
+                      saveEnabled: Driver<Bool>.just(true),
+                      isEditing: isEditing,
+                      isUpdating: isUpdating,
+                      calendarEvents: calendarEvents,
+                      date: date,
+                      eventDescription: eventDescription,
                       delete: deleteEvent,
                       dismiss: dismiss)
-    }
-}
-
-// MARK: - ViewModel
-
-extension EditCalendarEventViewModel {
-    struct Input {
-        let deleteTrigger: Driver<Void>
-    }
-
-    struct Output {
-        let title: Driver<String>
-        let delete: Driver<Void>
-        let dismiss: Driver<Void>
     }
 }

@@ -93,9 +93,9 @@ extension Reactive where Base: TagListView {
         })
     }
     
-    var didRemoveTagView: ControlEvent<(TagView, TagListView)> {
-        return ControlEvent<(TagView, TagListView)>(events: delegate.methodInvoked(#selector(TagListViewDelegate.tagRemoveButtonPressed(_:tagView:sender:)))
-            .map { ($0[1] as! TagView, $0[2] as! TagListView) })
+    var didRemoveTagView: ControlEvent<TagView> {
+        return ControlEvent<TagView>(events: delegate.methodInvoked(#selector(TagListViewDelegate.tagRemoveButtonPressed(_:tagView:sender:)))
+            .map { ($0[1] as! TagView) })
     }
     
 }
@@ -108,5 +108,18 @@ extension Reactive where Base: UIBarButtonItem {
         return Binder(self.base) { element, value in
             element.tintColor = value ? .black : .clear
         }
+    }
+}
+
+
+extension Array where Element: Equatable {
+    mutating func removeDuplicates() {
+        var result = [Element]()
+        for value in self {
+            if !result.contains(value) {
+                result.append(value)
+            }
+        }
+        self = result
     }
 }

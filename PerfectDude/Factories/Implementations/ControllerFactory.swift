@@ -252,9 +252,9 @@ class ControllerFactory: AppFactory,
     func makeEditLikeViewController(coordinator: BaseCoordinator<LikesRoute>,
                                     useCaseProvider: Core.UseCaseProvider,
                                     imagesTrigger: PublishSubject<UIImage?>,
-                                    like: Like) -> EditLikeViewController {
+                                    like: Like) -> CreateLikeViewController {
         
-        let editLikeViewController = EditLikeViewController.loadFromNib()
+        let editLikeViewController = CreateLikeViewController.loadFromNib()
         let editLikeViewModel = EditLikeViewModel(coordinator: coordinator,
                                                   useCaseProvider: useCaseProvider,
                                                   imagesTrigger: imagesTrigger,
@@ -311,9 +311,9 @@ class ControllerFactory: AppFactory,
     /// - Returns: EditCalendarEventViewController
     func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
                                              useCaseProvider: Core.UseCaseProvider,
-                                             event: CalendarEvent) -> EditCalendarEventViewController {
+                                             event: CalendarEvent) -> CreateCalendarEventViewController {
         
-        let editCalendarEventViewController = EditCalendarEventViewController.loadFromNib()
+        let editCalendarEventViewController = CreateCalendarEventViewController.loadFromNib()
         let editCalendarEventViewModel = EditCalendarEventViewModel(coordinator: coordinator,
                                                                     useCaseProvider: useCaseProvider,
                                                                     event: event)

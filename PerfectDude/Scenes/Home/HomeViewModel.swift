@@ -73,7 +73,7 @@ final class HomeViewModel: ViewModel {
         let surpriseToggle = Driver.merge(profile.map { $0.reminders.surprisesReminder }, input.surpriseToggle)
         
         let editButtonTitle = editing.map { editing -> String in
-            return editing == true ? "Save" : "Edit"
+            return editing == true ? "save".localized() : "edit".localized()
         }
         
         let profileToSave = Driver.combineLatest(profile,

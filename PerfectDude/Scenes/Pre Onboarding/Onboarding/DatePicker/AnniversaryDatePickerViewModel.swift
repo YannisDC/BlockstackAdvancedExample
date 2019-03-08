@@ -34,7 +34,7 @@ final class AnniversaryDatePickerViewModel: BaseDatePickerViewModel {
     // MARK: Transform
     
     override func transform(input: Input) -> Output {
-        let title = Driver.just("When did you get together with her?".localized())
+        let title = Driver.just("anniversary_question".localized())
         
         let continueButtonTitle = Driver.just("".localized())
         
@@ -72,8 +72,8 @@ extension AnniversaryDatePickerViewModel {
         return Completable.create { completable in
             self.calendarEventsUsecase
                 .save(event: CalendarEvent(eventType: .special,
-                                           name: "Birthday",
-                                           description: "Make her feel like a queen.",
+                                           name: "birthday".localized(),
+                                           description: "birthday_description".localized(),
                                            date: profile.birthday,
                                            location: ""))
                 .subscribe(onSuccess: { (profile) in
@@ -89,8 +89,8 @@ extension AnniversaryDatePickerViewModel {
         return Completable.create { completable in
             self.calendarEventsUsecase
                 .save(event: CalendarEvent(eventType: .special,
-                                           name: "Anniversary",
-                                           description: "You better remember this one.",
+                                           name: "anniversary".localized(),
+                                           description: "anniversary_description".localized(),
                                            date: profile.anniversary,
                                            location: ""))
                 .subscribe(onSuccess: { (profile) in

@@ -33,12 +33,26 @@ final class CreateLikeViewModel: LikeViewModel {
     override func transform(input: Input) -> Output {
         let title = Driver.just("Create".localized())
         
-        let editButtonTitle = Driver<String>.just("Save")
+        let editButtonTitle = Driver<String>.just("save".localized())
         
+        // MARK: Activity and Error tracking
         let activityIndicator = ActivityIndicator()
-        let errorTracker = ErrorTracker()
         let fetching = activityIndicator.asDriver()
+        let errorTracker = ErrorTracker()
         let errors = errorTracker.asDriver()
+        
+        // MARK: View states
+        let isEditing = Driver<Bool>.just(true)
+        let isUpdating = Driver<Bool>.just(false)
+        
+        let canSave = Driver
+            .combineLatest(input.likeTitle, activityIndicator.asDriver()) {
+                return !$0.isEmpty && !$1
+            }
+        
+        
+        // MARK: Like fields
+        let encryption = input.encryption
         
         let imageToSave = imagesTrigger.asDriver(onErrorJustReturn: nil)
         
@@ -51,10 +65,11 @@ final class CreateLikeViewModel: LikeViewModel {
                 var newList = list
                 newList.append(TagView(title: title))
                 return ("", newList)
-        }
+            }
         
-        let tags = newTagsAndTitle.map { $0.1 }
-            .startWith([TagView(title: "Gift")])
+        let tags = newTagsAndTitle
+            .map { $0.1 }
+//            .startWith([TagView(title: "Gift")])
         
         let newTagTitle = newTagsAndTitle.map { $0.0 }
         
@@ -62,18 +77,13 @@ final class CreateLikeViewModel: LikeViewModel {
         
         let titleAndImage = Driver.combineLatest(input.likeTitle,
                                                  imageToSave,
-                                                 tags,
                                                  input.encryption)
         
-        let canSave = Driver.combineLatest(input.likeTitle,
-                                           activityIndicator.asDriver()) {
-            return !$0.isEmpty && !$1
-        }
-        
+        // MARK: Actions
         let save = input.editTrigger.withLatestFrom(titleAndImage)
-            .map { (title, image, tags, encryption) in
-                let likeTags = tags.map {$0.title(for: UIControl.State()) ?? ""}
-                return Like(description: title, image: image, tags: likeTags, encrypted: encryption)
+            .map { (title, image, encryption) in
+//                let likeTags = tags.map {$0.title(for: UIControl.State()) ?? ""}
+                return Like(description: title, image: image, tags: [""], encrypted: encryption)
             }
             .flatMapLatest { [unowned self] in
                 return self.likeUsecase.save(like: $0)
@@ -95,25 +105,26 @@ final class CreateLikeViewModel: LikeViewModel {
         })
         
         let tagDeleteResult = input.tagDeleteTrigger
-            .do(onNext: { (tag, list) in
-                list.removeTagView(tag)
-            })
+//            .do(onNext: { (tag, list) in
+//                list.removeTagView(tag)
+//            })
 
         return Output(title: title,
                       editButtonTitle: editButtonTitle,
                       dismiss: dismiss,
                       save: save,
                       delete: Driver<Void>.just(()),
-                      isEditing: Driver<Bool>.just(false),
-                      isUpdating: Driver<Bool>.just(false),
+                      isEditing: isEditing,
+                      isUpdating: isUpdating,
                       imageToSave: imageToSave,
+                      likeTitle: Driver<String>.just(""),
                       saveEnabled: canSave,
                       selectImage: selectImage,
                       tags: tags,
                       tagDeleteResult: tagDeleteResult,
                       newTagTitle: newTagTitle,
                       newTagTrigger: newTagTrigger,
-                      encryption: Driver<Bool>.just(false),
+                      encryption: encryption,
                       fetching: fetching,
                       error: errors)
     }

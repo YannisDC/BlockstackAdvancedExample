@@ -6,7 +6,7 @@
   Copyright © 2019 yannisdecleene. All rights reserved.
 */
 
-"Likes" = "Likes";
+"likes" = "Likes";
 "events" = "Reminders";
 "settings" = "Settings";
 
@@ -17,6 +17,61 @@
 "living_together_title" = "Living together";
 "relationship_title" = "In a relationship";
 
+"birthday_question" = "When is her birthday?";
+"anniversary_question" = "When did you get together with her?";
+
 "don_juan_description" = "Likes to treat his lady like a gentleman.";
 "cool_boy_description" = "Tries to keep his girl happy on multiple occasions.";
 "dont_care_description" = "Just remembers her birthday and anniversary.";
+
+"birthday" = "Birthday";
+"birthday_description" = "Make her feel like a queen.";
+"anniversary" = "Anniversary";
+"anniversary_description" = "You better remember this one.";
+
+"create" = "Create";
+"save" = "Save";
+"edit" = "Edit";
+"loading" = "Loading";
+
+"weeks" = "week(s)";
+"months" = "month(s)";
+"years" = "year(s)";
+
+"yes" = "Yes";
+"no" = "No";
+
+"delete_event" = "Delete Event";
+"delete_event_sure" = "Are you sure you want to delete this event?";
+
+"delete_post" = "Delete Post";
+"delete_post_sure" = "Are you sure you want to delete this post?";
+
+"sign_out" = "Sign Out";
+"sign_out_sure" = "Are you sure you want to sign out?";
+
+/* PreOnboardingSingleViewController */
+
+"welcome_title" = "Welcome to Perfect Dude";
+
+"manage_identity" = "Manage your identity";
+"manage_identity_description" = "We don't use Facebook or email to sign you in. By using Blockstack you gain full control over your digital identity and can sign into many awesome apps.";
+
+"data_ownership" = "Own all your data";
+"data_ownership_description" = "Blockstack lets you access your data anytime you want and puts you in full control of this data. Easy and safe.";
+
+"digital_wallet" = "Your digital wallet";
+"digital_wallet_description" = "By using Stacks you can support your favourite creators or just send money to friends without any middlemen.";
+
+"continue_blockstack" = "Continue with Blockstack";
+
+/* HomeViewController */
+
+"notifications" = "Notifications";
+"birthday_reminder" = "Birthday Reminder";
+"anniversary_reminder" = "Anniversary Reminder";
+"marriage_anniversary_reminder" = "Marriage Anniversary Reminder";
+"flower_reminder" = "Standard Flower Reminder";
+"flower_reminder_frequency" = "Every 3 weeks";
+"surpise_reminder" = "Standard Suprise Reminder";
+"surpise_reminder_frequency" = "Every 6 weeks";

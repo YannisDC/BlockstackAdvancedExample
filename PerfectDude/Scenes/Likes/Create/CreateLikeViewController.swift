@@ -36,7 +36,7 @@ extension CreateLikeViewController: Bindable,
     func bindViewModel() {
         KeyboardAvoiding.avoidingView = self.view
         
-        editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
+        editButton = UIBarButtonItem(title: "edit".localized(), style: .plain, target: self, action: nil)
         deleteButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: nil)
         navigationItem.rightBarButtonItems = [editButton, deleteButton]
         
@@ -45,12 +45,12 @@ extension CreateLikeViewController: Bindable,
         let deleteTrigger = deleteButton.rx.tap.flatMap {
             return Observable<Void>.create { observer in
                 
-                let alert = UIAlertController(title: "Delete Post",
-                                              message: "Are you sure you want to delete this post?",
+                let alert = UIAlertController(title: "delete_post".localized(),
+                                              message: "delete_post_sure".localized(),
                                               preferredStyle: .alert
                 )
-                let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { _ -> () in observer.onNext(()) })
-                let noAction = UIAlertAction(title: "No", style: .cancel)
+                let yesAction = UIAlertAction(title: "yes".localized(), style: .destructive, handler: { _ -> () in observer.onNext(()) })
+                let noAction = UIAlertAction(title: "no".localized(), style: .cancel)
                 alert.addAction(yesAction)
                 alert.addAction(noAction)
                 
@@ -60,15 +60,16 @@ extension CreateLikeViewController: Bindable,
             }
         }
         
-        let input = LikeViewModel.Input(editTrigger: editButton.rx.tap.asDriver(),
-                                              deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
-                                              selectImageTrigger: selectImageButton.rx.tap.asDriver(),
-                                              likeTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
-                                              tags: taglistView.rx.tagViewsValues.asDriver(),
-                                              encryption: encryptionSwitch.rx.value.asDriver(),
-                                              tagDeleteTrigger: taglistView.rx.didRemoveTagView.asDriver(),
-                                              newTagTitle: newTagTextField.rx.text.orEmpty.asDriver(),
-                                              newTagTrigger: addTagButton.rx.tap.asDriver())
+        let input = LikeViewModel.Input(trigger: Driver<Void>.just(()),
+                                        editTrigger: editButton.rx.tap.asDriver(),
+                                        deleteTrigger: deleteTrigger.asDriverOnErrorJustComplete(),
+                                        selectImageTrigger: selectImageButton.rx.tap.asDriver(),
+                                        likeTitle: descriptionTextField.rx.text.orEmpty.asDriver(),
+                                        tags: taglistView.rx.tagViewsValues.asDriver(),
+                                        encryption: encryptionSwitch.rx.value.asDriver(),
+                                        tagDeleteTrigger: taglistView.rx.didRemoveTagView.asDriver(),
+                                        newTagTitle: newTagTextField.rx.text.orEmpty.asDriver(),
+                                        newTagTrigger: addTagButton.rx.tap.asDriver())
         let output = viewModel.transform(input: input)
 
         [output.title.drive(rx.title),
@@ -91,16 +92,16 @@ extension CreateLikeViewController: Bindable,
         output.fetching.drive(activityBinding).disposed(by: disposeBag)
         
         
+        output.isEditing.drive(selectImageButton.rx.isEnabled).disposed(by: disposeBag)
+        output.isEditing.drive(descriptionTextField.rx.isEnabled).disposed(by: disposeBag)
+        output.isEditing.drive(newTagTextField.rx.isEnabled).disposed(by: disposeBag)
+        output.isEditing.drive(encryptionSwitch.rx.isEnabled).disposed(by: disposeBag)
         
-//        output.editButtonTitle.drive(editButton.rx.title).disposed(by: disposeBag)
-//        output.editing.drive(titleTextField.rx.isEnabled).disposed(by: disposeBag)
-//        output.editing.drive(selectImageButton.rx.isEnabled).disposed(by: disposeBag)
-//        output.editing.drive(encryptionSwitch.rx.isEnabled).disposed(by: disposeBag)
-//        output.like.drive(likeBinding).disposed(by: disposeBag)
-//        output.dismiss.drive().disposed(by: disposeBag)
-//        output.save.drive().disposed(by: disposeBag)
-//        output.delete.drive().disposed(by: disposeBag)
-//        output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
+        output.likeTitle.drive(descriptionTextField.rx.text).disposed(by: disposeBag)
+        output.encryption.drive(encryptionSwitch.rx.isOn).disposed(by: disposeBag)
+        
+        output.save.drive().disposed(by: disposeBag)
+        output.delete.drive().disposed(by: disposeBag)
     }
     
     func addToolbarForTags() {
