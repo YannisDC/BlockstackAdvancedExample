@@ -42,13 +42,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>9</string>
+	<string>10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app requires access to camera</string>
+	<string>So you can add pictures to gift ideas</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to photo library</string>
+	<string>So you can add pictures to gift ideas</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
