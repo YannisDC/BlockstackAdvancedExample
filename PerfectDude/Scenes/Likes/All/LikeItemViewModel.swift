@@ -13,10 +13,12 @@ final class LikeItemViewModel   {
     let title:String
     let like: Like
     let image: UIImage?
+    let tags: [String]
     
     init (with like:Like) {
         self.like = like
-        self.title = like.description?.uppercased() ?? "Not found"
+        self.title = like.description.capitalized
         self.image = like.image
+        self.tags = like.tags
     }
 }

@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import RxSwift
 
 class BaseCoordinator<AnyRoute: Route>: ParentCoordinator, Coordinator {
-    var isActivated: Bool = false
+    var isActivated = Variable<Bool>(false)
     
     typealias CoordinatorRoute = AnyRoute
     
@@ -18,8 +19,12 @@ class BaseCoordinator<AnyRoute: Route>: ParentCoordinator, Coordinator {
     }
     
     override func start() {
+        start(with: nil)
+    }
+    
+    override func start(with option: DeepLinkOption?) {
         defer {
-            isActivated = true
+            isActivated.value = true
         }
     }
     

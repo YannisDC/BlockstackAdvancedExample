@@ -18,7 +18,7 @@ final class CalendarEventItemViewModel   {
     
     init (with event: CalendarEvent) {
         self.event = event
-        self.description = event.name ?? ""
+        self.description = event.name?.capitalized ?? ""
         guard let date = event.date else {
             self.dateText = ""
             self.monthText = ""

@@ -17,13 +17,13 @@ final class ProfileToggleView: CustomView {
     
     @IBInspectable var title: String = "" {
         didSet {
-            titleLabel.text = title
+            titleLabel.text = title.localized()
         }
     }
     
     @IBInspectable var subTitle: String = "" {
         didSet {
-            subTitleLabel.text = subTitle
+            subTitleLabel.text = subTitle.localized()
         }
     }
     
@@ -37,6 +37,14 @@ final class ProfileToggleView: CustomView {
 
 private extension ProfileToggleView {
     func setup() {
-    
+        titleLabel <- {
+            $0.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+            $0.textColor = UIColor.textPrimary
+        }
+        
+        subTitleLabel <- {
+            $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+            $0.textColor = UIColor.textSecondary
+        }
     }
 }

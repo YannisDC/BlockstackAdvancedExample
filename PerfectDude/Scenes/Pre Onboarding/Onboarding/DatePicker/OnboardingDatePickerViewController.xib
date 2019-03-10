@@ -37,6 +37,9 @@
                     <date key="date" timeIntervalSinceReferenceDate="569751279.34135699">
                         <!--2019-01-21 08:14:39 +0000-->
                     </date>
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="-2556187200">
+                        <!--1920-01-01 12:00:00 +0000-->
+                    </date>
                 </datePicker>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K41-go-49E">
                     <rect key="frame" x="16" y="587" width="343" height="64"/>

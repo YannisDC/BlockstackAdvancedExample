@@ -80,8 +80,16 @@ final class HomeViewController: ViewController {
 extension HomeViewController: Bindable {
     
     func bindViewModel() {
+        profileType.setTitle("don_juan_title".localized(), forSegmentAt: 0)
+        profileType.setTitle("cool_boy_title".localized(), forSegmentAt: 1)
+        profileType.setTitle("dont_care_title".localized(), forSegmentAt: 2)
+        
+        relationshipType.setTitle("married_title".localized(), forSegmentAt: 0)
+        relationshipType.setTitle("living_together_title".localized(), forSegmentAt: 1)
+        relationshipType.setTitle("relationship_title".localized(), forSegmentAt: 2)
+        
         extendedLayoutIncludesOpaqueBars = false
-        editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
+        editButton = UIBarButtonItem(title: "edit".localized(), style: .plain, target: self, action: nil)
         signOut = UIBarButtonItem(barButtonSystemItem: .stop, target: self, action: nil)
         
         navigationItem.rightBarButtonItems = [signOut, editButton]
@@ -93,12 +101,12 @@ extension HomeViewController: Bindable {
         let signOutTrigger = signOut.rx.tap.flatMap {
             return Observable<Void>.create { observer in
                 
-                let alert = UIAlertController(title: "Sign Out",
-                                              message: "Are you sure you want to sign out?",
+                let alert = UIAlertController(title: "sign_out".localized(),
+                                              message: "sign_out_sure".localized(),
                                               preferredStyle: .alert
                 )
-                let yesAction = UIAlertAction(title: "Yes", style: .destructive, handler: { _ -> () in observer.onNext(()) })
-                let noAction = UIAlertAction(title: "No", style: .cancel)
+                let yesAction = UIAlertAction(title: "yes".localized(), style: .destructive, handler: { _ -> () in observer.onNext(()) })
+                let noAction = UIAlertAction(title: "no".localized(), style: .cancel)
                 alert.addAction(yesAction)
                 alert.addAction(noAction)
                 

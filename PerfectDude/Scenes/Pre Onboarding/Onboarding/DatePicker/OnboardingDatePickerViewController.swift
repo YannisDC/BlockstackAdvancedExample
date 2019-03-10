@@ -29,7 +29,9 @@ final class OnboardingDatePickerViewController: ViewController {
 extension OnboardingDatePickerViewController: Bindable {
 
     func bindViewModel() {
-        continueButton.setTitle("Loading", for: .disabled)
+        continueButton.setTitle("loading".localized(), for: .disabled)
+        
+        datePicker.maximumDate = Date()
         
         let input = BaseDatePickerViewModel.Input(selection: datePicker.rx.date.asDriver(),
                                                   continueTrigger: continueButton.rx.tap.asDriver())

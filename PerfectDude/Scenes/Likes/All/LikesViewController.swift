@@ -17,6 +17,12 @@ final class LikesViewController: ViewController {
     internal var createLikeButton: UIBarButtonItem!
     
     @IBOutlet var tableView: UITableView!
+    
+    fileprivate var fetchingBinding: Binder<Bool> {
+        return Binder(self, binding: { _, isFetching in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = isFetching
+        })
+    }
 }
 
 extension LikesViewController: Bindable {
@@ -29,9 +35,9 @@ extension LikesViewController: Bindable {
         tableView.register(UINib(nibName: LikeTableViewCell.reuseID, bundle: nil),
                            forCellReuseIdentifier: LikeTableViewCell.reuseID)
         tableView.refreshControl = UIRefreshControl()
-        tableView.estimatedRowHeight = 135
+        tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.separatorInset = UIEdgeInsets(top: 0, left: 134, bottom: 0, right: 20)
+        tableView.separatorStyle = .none
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 1))
         
         let viewWillAppear = rx.sentMessage(#selector(UIViewController.viewWillAppear(_:)))
@@ -55,6 +61,9 @@ extension LikesViewController: Bindable {
             .disposed(by: disposeBag)
         output.fetching
             .drive(tableView.refreshControl!.rx.isRefreshing)
+            .disposed(by: disposeBag)
+        output.fetching
+            .drive(fetchingBinding)
             .disposed(by: disposeBag)
         output.createLike
             .drive()

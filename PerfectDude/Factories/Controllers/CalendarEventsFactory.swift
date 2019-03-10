@@ -38,5 +38,5 @@ protocol CalendarEventsFactory {
     /// - Returns: EditCalendarEventViewController
     func makeEditCalendarEventViewController(coordinator: BaseCoordinator<CalendarEventsRoute>,
                                              useCaseProvider: Core.UseCaseProvider,
-                                             event: CalendarEvent) -> EditCalendarEventViewController
+                                             event: CalendarEvent) -> CreateCalendarEventViewController
 }

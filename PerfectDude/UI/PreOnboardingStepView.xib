@@ -11,9 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PreOnboardingStepView" customModule="PerfectDude" customModuleProvider="target">
             <connections>
-                <outlet property="descriptionLabel" destination="AES-zp-AvH" id="XJh-cn-VbV"/>
-                <outlet property="imageView" destination="doq-Rg-deS" id="0SN-SX-LVm"/>
-                <outlet property="titleLabel" destination="w9Y-bq-tu3" id="1Ak-4B-hBj"/>
+                <outlet property="descriptionLabel" destination="AES-zp-AvH" id="ltv-3T-mry"/>
+                <outlet property="imageView" destination="doq-Rg-deS" id="oW1-sk-tb3"/>
+                <outlet property="titleLabel" destination="w9Y-bq-tu3" id="FUm-Yc-SXL"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,14 +29,17 @@
                         <constraint firstAttribute="width" constant="45" id="LW2-8O-X8E"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9Y-bq-tu3">
-                    <rect key="frame" x="59" y="0.0" width="312" height="21"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w9Y-bq-tu3">
+                    <rect key="frame" x="59" y="0.0" width="312" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="uXr-Xm-9j1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AES-zp-AvH">
-                    <rect key="frame" x="59" y="98" width="312" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AES-zp-AvH">
+                    <rect key="frame" x="59" y="24" width="312" height="144"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>

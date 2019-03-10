@@ -15,7 +15,10 @@
                 <outlet property="blurView" destination="YKW-zs-vbT" id="fjc-oq-vHw"/>
                 <outlet property="continueButton" destination="fm1-HY-p1p" id="qY2-1e-nPb"/>
                 <outlet property="firstStepView" destination="VCq-Yx-aoD" id="qrf-2X-BaS"/>
+                <outlet property="secondStepView" destination="N6f-Nb-y8S" id="M45-UM-Q9k"/>
+                <outlet property="thirdStepView" destination="5Ow-iy-dtN" id="ZYJ-eR-m0g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="welcomeLabel" destination="ujt-KA-g91" id="nLi-tA-Awj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -45,38 +48,36 @@
                 <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="MJx-8X-Vcl">
                     <rect key="frame" x="32" y="197" width="311" height="353.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCq-Yx-aoD" customClass="PreOnboardingStepView" customModule="PerfectUI">
-                            <rect key="frame" x="0.0" y="0.0" width="311" height="109.5"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VCq-Yx-aoD" customClass="PreOnboardingStepView" customModule="PerfectDude">
+                            <rect key="frame" x="0.0" y="0.0" width="311" height="94.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Manage your identity"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText">
-                                    <string key="value">We don't use Facebook or email to sign you in. By using Blockstack you gain full control over your digital identity and can sign into many awesome apps.</string>
-                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="manage_identity"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="manage_identity_description"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="fingerprint"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-Nb-y8S" customClass="PreOnboardingStepView" customModule="PerfectUI">
-                            <rect key="frame" x="0.0" y="147.5" width="311" height="76.5"/>
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N6f-Nb-y8S" customClass="PreOnboardingStepView" customModule="PerfectDude">
+                            <rect key="frame" x="0.0" y="132.5" width="311" height="91.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Own all your data"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="Blockstack lets you access your data anytime you want and puts you in full control of this data. Easy and safe."/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="data_ownership"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="data_ownership_description"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="database"/>
                             </userDefinedRuntimeAttributes>
                         </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-iy-dtN" customClass="PreOnboardingStepView" customModule="PerfectUI">
+                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ow-iy-dtN" customClass="PreOnboardingStepView" customModule="PerfectDude">
                             <rect key="frame" x="0.0" y="262" width="311" height="91.5"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="Your digital wallet"/>
-                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="By using Stacks you can support your favourite creators or just send money to friends without any middlemen."/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="titleText" value="digital_wallet"/>
+                                <userDefinedRuntimeAttribute type="string" keyPath="descriptionText" value="digital_wallet_description"/>
                                 <userDefinedRuntimeAttribute type="image" keyPath="image" value="wallet"/>
                             </userDefinedRuntimeAttributes>
                         </view>
                     </subviews>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQP-bp-zWJ">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PQP-bp-zWJ">
                     <rect key="frame" x="16" y="586" width="343" height="0.0"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                     <nil key="textColor"/>

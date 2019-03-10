@@ -27,15 +27,18 @@ final class PreOnboardingStepView: CustomView {
     
     @IBInspectable var titleText: String? = nil {
         didSet {
-            titleLabel.text = titleText
-//                $0.setLineSpacing(lineSpacing: 1.2, lineHeightMultiple: 1.2)
-            
+            if let titleText = titleText {
+                titleLabel.text = titleText.localized()
+//                titleLabel!.setLineSpacing(lineSpacing: 1.2, lineHeightMultiple: 1.2)
+            }
         }
     }
     
     @IBInspectable var descriptionText: String? = nil {
         didSet {
-            descriptionLabel.text = descriptionText
+            if let descriptionText = descriptionText {
+                descriptionLabel.text = descriptionText.localized()
+            }
         }
     }
 }

@@ -47,7 +47,8 @@ final class PreOnboardingSingleViewModel: ViewModel {
         })
         
         return Output(tapResult: continueButtonTap,
-                      title: title)
+                      title: title,
+                      firstStepViewTitle: Driver<String>.just("test"))
     }
 }
 
@@ -61,6 +62,7 @@ extension PreOnboardingSingleViewModel {
     struct Output {
         let tapResult: Driver<Void>
         let title: Driver<String>
+        let firstStepViewTitle: Driver<String>
     }
 }
 

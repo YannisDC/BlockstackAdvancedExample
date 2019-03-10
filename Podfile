@@ -26,6 +26,7 @@ target 'PerfectDude' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   common
   pod 'IHKeyboardAvoiding'
+  pod 'TagListView', '~> 1.0'
 
   # Pods for PerfectDude
 

@@ -13,10 +13,65 @@
 "don_juan_title" = "Don Juan";
 "cool_boy_title" = "Play It Cool";
 "dont_care_title" = "Don't Care";
-"married_title" = "Married";
-"living_together_title" = "Living together";
-"relationship_title" = "In a relationship";
+"married_title" = "Getrouwd";
+"living_together_title" = "Samenwonend";
+"relationship_title" = "In een relatie";
 
-"don_juan_description" = "Likes to treat his lady like a gentleman.";
-"cool_boy_description" = "Tries to keep his girl happy on multiple occasions.";
-"dont_care_description" = "Just remembers her birthday and anniversary.";
+"birthday_question" = "Wanneer is haar verjaardag?";
+"anniversary_question" = "Sinds wanneer zij jullie samen?";
+
+"don_juan_description" = "Houdt ervan zijn vriendin te verwennen als een godin.";
+"cool_boy_description" = "Houdt zijn vriendin gelukkig genoeg.";
+"dont_care_description" = "Kent haar verjaardag en relatieverjaardag.";
+
+"birthday" = "Verjaardag";
+"birthday_description" = "Vandaag is zij jouw koninging.";
+"anniversary" = "Relatie verjaardag";
+"anniversary_description" = "Deze vergeet je beter niet.";
+
+"create" = "Toevoegen";
+"save" = "Opslaan";
+"edit" = "Wijzigen";
+"loading" = "Laden";
+
+"weeks" = "week/weken";
+"months" = "maanden";
+"years" = "jaar/jaren";
+
+"yes" = "Ja";
+"no" = "Nee";
+
+"delete_event" = "Event verwijderen";
+"delete_event_sure" = "Ben je zeker dat je dit event wilt verwijderen?";
+
+"delete_post" = "Like verwijderen";
+"delete_post_sure" = "Ben je zeker dat je deze like wilt verwijderen?";
+
+"sign_out" = "Afmelden";
+"sign_out_sure" = "Ben je zeker dat je wilt afmelden?";
+
+/* PreOnboardingSingleViewController */
+
+"welcome_title" = "Welkom bij Perfect Dude";
+
+"manage_identity" = "Controleer je indentiteit";
+"manage_identity_description" = "Wij gebruiken geen Facebook of email om je aan te melden. Door Blockstack te gebruiken krijg je de volledige controlle over je digitale indetiteit en kan je inloggen in allerlei apps.";
+
+"data_ownership" = "Eigenaar van je data";
+"data_ownership_description" = "Blockstack laat jou je data beheren wanneer zoals jij het wil en geeft jou volledige controle. Gemakkelijk en veilig.";
+
+"digital_wallet" = "Je digitale portefeuille";
+"digital_wallet_description" = "Met Stacks kan je je favoriete artiesten steunen of geld sturen naar je vrienden zonder tussen personen.";
+
+"continue_blockstack" = "Ga verder met Blockstack";
+
+/* HomeViewController */
+
+"notifications" = "Notificaties";
+"birthday_reminder" = "Verjaardags Herinnering";
+"anniversary_reminder" = "Relatiedag Herinnering";
+"marriage_anniversary_reminder" = "Huwelijksverjaardags Herinnering";
+"flower_reminder" = "Standaard Bloemen Herinnering";
+"flower_reminder_frequency" = "Elke 3 weken";
+"surpise_reminder" = "Standaard Verrassing Herinnering";
+"surpise_reminder_frequency" = "Elke 6 weken";

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol CoordinatorDelegate: class {
     /// Delegate method called if the coordinator is finished completely
@@ -19,6 +20,11 @@ protocol CoordinatorDelegate: class {
 protocol AnyCoordinator: class {
     /// Start method for the coordinator
     func start()
+    
+    /// Start method for a coordinator
+    ///
+    /// - Parameter option: DeepLinkOption instance
+    func start(with option: DeepLinkOption?)
 }
 
 protocol Coordinator: AnyCoordinator {
@@ -29,5 +35,5 @@ protocol Coordinator: AnyCoordinator {
     /// - Parameter route: CoordinatorRoute instance
     func coordinate(to route: CoordinatorRoute)
     
-    var isActivated: Bool { get set }
+    var isActivated: Variable<Bool> { get set }
 }

@@ -28,7 +28,7 @@ final class LikesViewModel: ViewModel {
 
     func transform(input: LikesViewModel.Input) -> LikesViewModel.Output {
         
-        let title = Driver.just("Likes".localized())
+        let title = Driver.just("likes".localized())
         let activityIndicator = ActivityIndicator()
         let errorTracker = ErrorTracker()
         

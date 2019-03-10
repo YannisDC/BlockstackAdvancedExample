@@ -12,7 +12,7 @@ import RxSwift
 import RxCocoa
 import UserNotifications
 
-final class CreateCalendarEventViewModel: ViewModel {
+final class CreateCalendarEventViewModel: CalendarEventViewModel {
 
     private weak var coordinator: BaseCoordinator<CalendarEventsRoute>?
     private let calendarEventsUsecase: CalendarEventsUseCase!
@@ -25,18 +25,32 @@ final class CreateCalendarEventViewModel: ViewModel {
         self.calendarEventsUsecase = useCaseProvider.makeCalendarEventsUseCase()
     }
     
-    func setLocalNotification(event: CalendarEvent) {
+    func setLocalNotification(event: CalendarEvent, repeatCount: Int, repeatSize: RepeatSize) {
+        
+//        let day = 60 * 60 * 24
+//        var interval: Int?
+//
+//        switch repeatSize {
+//        case .weeks:
+//            interval = day * 7 * repeatCount
+//        case .months:
+//            interval = day * 31 * repeatCount
+//        case .years:
+//            interval = day * 365 * repeatCount
+//        }
+//        print(interval)
+        
         let content = UNMutableNotificationContent()
         content.title = event.name ?? ""
         content.body = event.description ?? ""
-        
+
         let dateComponents = Calendar.current.dateComponents([.hour, .day, .month, .year], from: event.date ?? Date())
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-        
+
         let request = UNNotificationRequest(identifier: event.uuid,
                                             content: content,
                                             trigger: trigger)
-        
+
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.add(request) { (error) in
             if error != nil {
@@ -47,7 +61,7 @@ final class CreateCalendarEventViewModel: ViewModel {
 
     // MARK: Transform
 
-    func transform(input: CreateCalendarEventViewModel.Input) -> CreateCalendarEventViewModel.Output {
+    override func transform(input: Input) -> Output {
         let title = Driver.just("Create".localized())
         let activityIndicator = ActivityIndicator()
         
@@ -55,9 +69,12 @@ final class CreateCalendarEventViewModel: ViewModel {
             return !$0.isEmpty && !$1
         }
         
-        let eventInfo = Driver.combineLatest(input.calendarEventTitle, input.calendarEventDate, input.selection.startWith([1, "week(s)"]))
+        let isEditing = Driver<Bool>.just(true)
+        let isUpdating = Driver<Bool>.just(false)
         
-        let save = input.saveTrigger.withLatestFrom(eventInfo)
+        let eventInfo = Driver.combineLatest(input.calendarEventTitle, input.calendarEventDate, input.selection.startWith([1, "weeks".localized()]))
+        
+        let save = input.editTrigger.withLatestFrom(eventInfo)
             .map { (title, date, frequency) in
                 let event: CalendarEvent
                 
@@ -82,9 +99,11 @@ final class CreateCalendarEventViewModel: ViewModel {
                                      repeatSize: repeatSize,
                                      encrypted: false)
                 
+                self.setLocalNotification(event: event, repeatCount: repeatCount, repeatSize: repeatSize)
+                
                 UNUserNotificationCenter.current().requestAuthorization(options:
                     [[.alert, .sound, .badge]], completionHandler: { (granted, error) in
-                        self.setLocalNotification(event: event)
+                        self.setLocalNotification(event: event, repeatCount: repeatCount, repeatSize: repeatSize)
                 })
                 
                 return event
@@ -95,37 +114,30 @@ final class CreateCalendarEventViewModel: ViewModel {
                     .asDriverOnErrorJustComplete().flatMap({ (_) -> Driver<Void> in
                         return Driver.just(())
                     })
-        }
+            }
         
         let dismiss = Driver.of(save)
-            .merge().do(onNext: {
+            .merge()
+            .do(onNext: {
                 self.coordinator?.coordinate(to: .overview)
             })
         
-        let calendarEvents = Driver<[[CustomStringConvertible]]>.just([[1, 2, 3, 4, 5, 6], ["week(s)", "month(s)", "year(s)"]])
+        let calendarEvents = Driver<[[CustomStringConvertible]]>.just([[1, 2, 3, 4, 5, 6], ["weeks".localized(), "months".localized(), "years".localized()]])
         
+        let editButtonTitle = isEditing
+            .map { isEditing -> String in
+                return isEditing == true ? "save".localized() : "edit".localized()
+            }
 
         return Output(title: title,
+                      editButtonTitle: editButtonTitle,
                       saveEnabled: canSave,
-                      dismiss: dismiss,
-                      calendarEvents: calendarEvents)
-    }
-}
-
-// MARK: - ViewModel
-
-extension CreateCalendarEventViewModel {
-    struct Input {
-        let saveTrigger: Driver<Void>
-        let calendarEventTitle: Driver<String>
-        let calendarEventDate: Driver<Date>
-        let selection: Driver<[CustomStringConvertible]>
-    }
-
-    struct Output {
-        let title: Driver<String>
-        let saveEnabled: Driver<Bool>
-        let dismiss: Driver<Void>
-        let calendarEvents: Driver<[[CustomStringConvertible]]>
+                      isEditing: isEditing,
+                      isUpdating: isUpdating,
+                      calendarEvents: calendarEvents,
+                      date: Driver<Date>.just(Date()),
+                      eventDescription: input.calendarEventTitle,
+                      delete: Driver<Void>.just(()),
+                      dismiss: dismiss)
     }
 }

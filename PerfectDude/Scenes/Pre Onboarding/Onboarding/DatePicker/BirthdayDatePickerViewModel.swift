@@ -27,7 +27,7 @@ final class BirthdayDatePickerViewModel: BaseDatePickerViewModel {
     // MARK: Transform
 
     override func transform(input: Input) -> Output {
-        let title = Driver.just("When is her birthday?".localized())
+        let title = Driver.just("birthday_question".localized())
         
         let continueButtonTitle = Driver.just("".localized())
         

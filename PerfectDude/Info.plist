@@ -22,6 +22,16 @@
 	<array>
 		<dict>
 			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>PerfectDude</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>perfectdude</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
 			<string>MyBlockstackApp</string>
@@ -32,13 +42,13 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string>This app requires access to camera</string>
+	<string>So you can add pictures to gift ideas</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>This app requires access to photo library</string>
+	<string>So you can add pictures to gift ideas</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
