@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                 delegate: self,
                                                 coordinatorFactory: CoordinatorFactory(),
                                                 factory: ControllerFactory(),
-                                                useCaseProvider: UseCaseProvider().blockstackUseCaseProvider)
+                                                useCaseProvider: UseCaseProvider().mockUseCaseProvider)
         applicationCoordinator?.start()
         
         return true

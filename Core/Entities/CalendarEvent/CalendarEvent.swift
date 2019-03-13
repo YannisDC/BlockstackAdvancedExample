@@ -29,6 +29,7 @@ public struct CalendarEvent: Codable, Identifiable, Cryptable {
     public var location: String? // Optional
     public var repeatCount: Int = 0
     public var repeatSize: RepeatSize = .weeks
+//    public var notificationIds: [String]
     
     public var uuid: String
     public var encrypted: Bool

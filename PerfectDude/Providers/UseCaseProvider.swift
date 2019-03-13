@@ -11,17 +11,20 @@ import Core
 import RxSwift
 import BlockstackPlatform
 import FirebasePlatform
+import MockPlatform
 
 final class UseCaseProvider {
     
     public let blockstackUseCaseProvider: Core.UseCaseProvider
     private let externalDependencies = FirebasePlatform.ExternalDependency()
     public let firebaseUseCaseProvider: Core.UseCaseProvider
+    public let mockUseCaseProvider: Core.UseCaseProvider
     
     init() {
         blockstackUseCaseProvider = BlockstackPlatform.UseCaseProvider()
         externalDependencies.setup()
         firebaseUseCaseProvider = FirebasePlatform.UseCaseProvider()
+        mockUseCaseProvider = MockPlatform.UseCaseProvider()
     }
     
 }

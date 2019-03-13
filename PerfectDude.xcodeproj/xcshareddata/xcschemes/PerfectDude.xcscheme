@@ -88,6 +88,16 @@
                ReferencedContainer = "container:PerfectDude.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DE415C4B22392B66002EA0D9"
+               BuildableName = "MockPlatformTests.xctest"
+               BlueprintName = "MockPlatformTests"
+               ReferencedContainer = "container:PerfectDude.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
