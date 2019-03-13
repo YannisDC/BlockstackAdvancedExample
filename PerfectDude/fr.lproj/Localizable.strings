@@ -6,7 +6,7 @@
   Copyright © 2019 yannisdecleene. All rights reserved.
 */
 
-"Likes" = "Favoris";
+"likes" = "Favoris";
 "events" = "Rappels";
 "settings" = "Réglages";
 

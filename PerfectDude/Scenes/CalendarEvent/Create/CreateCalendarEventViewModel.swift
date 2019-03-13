@@ -78,6 +78,8 @@ final class CreateCalendarEventViewModel: CalendarEventViewModel {
             .map { (title, date, frequency) in
                 let event: CalendarEvent
                 
+                print(Calendar.current.getDatesForSpecialDayReminder(specialDate: Date()))
+                
                 guard frequency.count == 2,
                     let repeatCount = frequency[0] as? Int,
                     let repeatSize = RepeatSize(rawValue: frequency[1].description) else {

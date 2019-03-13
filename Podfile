@@ -57,3 +57,7 @@ target 'FirebasePlatform' do
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
 end
+
+target 'MockPlatform' do
+    common
+end
