@@ -33,8 +33,6 @@ class LikeTests: XCTestCase {
             return
         }
         
-//        let likeDecoded = Like(description: "", image: nil, tags: [])
-        
         like = likeDecoded
     }
 
@@ -48,13 +46,6 @@ class LikeTests: XCTestCase {
         XCTAssertEqual(like.image, nil)
         XCTAssertEqual(like.uuid, "982FC894-AA05-489D-8BD4-A0C246B4244B")
         XCTAssertEqual(like.encrypted, true)
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
     }
 
 }

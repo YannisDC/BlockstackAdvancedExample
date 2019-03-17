@@ -122,7 +122,6 @@
 		DE96F6EF21935FB7007A342A /* PerfectDudeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6EE21935FB7007A342A /* PerfectDudeTests.swift */; };
 		DE96F6FA21935FB7007A342A /* PerfectDudeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F6F921935FB7007A342A /* PerfectDudeUITests.swift */; };
 		DE96F71521936244007A342A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; };
-		DE96F71C21936244007A342A /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE96F71B21936244007A342A /* CoreTests.swift */; };
 		DE96F71E21936244007A342A /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = DE96F70E21936243007A342A /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DE96F72121936244007A342A /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; };
 		DE96F72221936244007A342A /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DE96F70C21936243007A342A /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -521,7 +520,6 @@
 		DE96F70E21936243007A342A /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		DE96F70F21936243007A342A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE96F71421936243007A342A /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE96F71B21936244007A342A /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		DE96F71D21936244007A342A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE96F72B2193633F007A342A /* UseCaseProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseCaseProvider.swift; sourceTree = "<group>"; };
 		DE96F7302193633F007A342A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -1182,7 +1180,6 @@
 		DE96F71A21936244007A342A /* CoreTests */ = {
 			isa = PBXGroup;
 			children = (
-				DE96F71B21936244007A342A /* CoreTests.swift */,
 				DED86241223EC27E00576ED4 /* LikeTests.swift */,
 				DE96F71D21936244007A342A /* Info.plist */,
 			);
@@ -2776,7 +2773,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DED86242223EC27E00576ED4 /* LikeTests.swift in Sources */,
-				DE96F71C21936244007A342A /* CoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
