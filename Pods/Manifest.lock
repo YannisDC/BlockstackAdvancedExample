@@ -2,6 +2,8 @@ PODS:
   - Blockstack (0.4.0):
     - CryptoSwift
   - CryptoSwift (0.13.1)
+  - Firebase (5.15.0):
+    - Firebase/Core (= 5.15.0)
   - Firebase/Auth (5.15.0):
     - Firebase/CoreOnly
     - FirebaseAuth (= 5.2.0)
@@ -78,12 +80,16 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.4.0):
     - RxAtomic (~> 4.4)
+  - RxTest (4.4.0):
+    - RxAtomic (~> 4.4)
+    - RxSwift (~> 4.0)
   - SDVersion (4.3.2)
   - SwiftLint (0.29.2)
   - TagListView (1.3.2)
 
 DEPENDENCIES:
   - Blockstack
+  - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
@@ -93,6 +99,7 @@ DEPENDENCIES:
   - KeychainAccess
   - RxCocoa
   - RxSwift
+  - RxTest
   - SDVersion
   - SwiftLint
   - TagListView (~> 1.0)
@@ -120,6 +127,7 @@ SPEC REPOS:
     - RxAtomic
     - RxCocoa
     - RxSwift
+    - RxTest
     - SDVersion
     - SwiftLint
     - TagListView
@@ -146,10 +154,11 @@ SPEC CHECKSUMS:
   RxAtomic: eacf60db868c96bfd63320e28619fe29c179656f
   RxCocoa: df63ebf7b9a70d6b4eeea407ed5dd4efc8979749
   RxSwift: 5976ecd04fc2fefd648827c23de5e11157faa973
+  RxTest: 19d03286bdc0a3aaea5d61d4cde31fdf4bb8a5ba
   SDVersion: 18f32c835c1543611fcfae3c6accd9a04b90597e
   SwiftLint: 47df60bdea6e7e902b193b6596db8683aafd86a3
   TagListView: 0c7e9c26b9aff858224ee6b155f5fcacd9e27c83
 
-PODFILE CHECKSUM: b931581c6e4008ed666d109c236f16b6a9230288
+PODFILE CHECKSUM: 2b0df7cdf901c9322f0b30c72a10741d71e41855
 
 COCOAPODS: 1.5.3

@@ -1,5 +1,5 @@
 //
-//  TestLikesUseCase.swift
+//  MockLikesUseCase.swift
 //  PerfectDude
 //
 //  Created by Yannis De Cleene on 31/01/2019.
@@ -11,7 +11,7 @@ import XCTest
 @testable import Core
 import RxSwift
 
-final class TestLikesUseCase: Core.LikesUseCase {
+final class MockLikesUseCase: Core.LikesUseCase {
     func save(like: Like) -> Maybe<String> {
         return Maybe<String>.create { maybe in
             maybe(.success(""))

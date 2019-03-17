@@ -1,5 +1,5 @@
 //
-//  TestAuthUseCase.swift
+//  MockAuthUseCase.swift
 //  PerfectDude
 //
 //  Created by Yannis De Cleene on 31/01/2019.
@@ -11,7 +11,7 @@ import XCTest
 @testable import Core
 import RxSwift
 
-final class TestAuthUseCase: Core.AuthUseCase {
+final class MockAuthUseCase: Core.AuthUseCase {
     func signIn() -> Single<Void> {
         return Single.create { single in
             single(.success(()))

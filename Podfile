@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 def common
     pod 'RxSwift'
     pod 'RxCocoa'
+    pod 'RxTest'
     pod 'SwiftLint'
     pod 'KeychainAccess'
     pod 'GoogleAnalytics'
@@ -44,11 +45,19 @@ end
 
 target 'Core' do
     common
+
+    target 'CoreTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'BlockstackPlatform' do
     common
     pod 'Blockstack'
+
+    target 'BlockstackPlatformTests' do
+        inherit! :search_paths
+    end
 end
 
 target 'FirebasePlatform' do
@@ -56,8 +65,17 @@ target 'FirebasePlatform' do
     pod 'Firebase/Core'
     pod 'Firebase/Auth'
     pod 'Firebase/Database'
+
+    target 'FirebasePlatformTests' do
+        inherit! :search_paths
+        pod 'Firebase'
+    end
 end
 
 target 'MockPlatform' do
     common
+
+    target 'MockPlatformTests' do
+        inherit! :search_paths
+    end
 end

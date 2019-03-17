@@ -1,5 +1,5 @@
 //
-//  TestUseCaseProvider.swift
+//  MockUseCaseProvider.swift
 //  PerfectDude
 //
 //  Created by Yannis De Cleene on 31/01/2019.
@@ -11,22 +11,26 @@ import XCTest
 @testable import Core
 import RxSwift
 
-final class TestUseCaseProvider: Core.UseCaseProvider {
+final class MockUseCaseProvider: Core.UseCaseProvider {
+    
+    func makeProfileUseCase() -> ProfileUseCase {
+        return MockProfileUseCase()
+    }
     
     func makeAuthUseCase() -> AuthUseCase {
-        return TestAuthUseCase()
+        return MockAuthUseCase()
     }
     
     func makeInitUseCase() -> InitUseCase {
-        return TestInitUseCase()
+        return MockInitUseCase()
     }
     
     func makeLikesUseCase() -> LikesUseCase {
-        return TestLikesUseCase()
+        return MockLikesUseCase()
     }
     
     func makeCalendarEventsUseCase() -> CalendarEventsUseCase {
-        return TestCalendarEventsUseCase()
+        return MockCalendarEventsUseCase()
     }
     
 }

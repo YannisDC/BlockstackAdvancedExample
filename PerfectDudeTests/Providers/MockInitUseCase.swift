@@ -1,5 +1,5 @@
 //
-//  TestInitUseCase.swift
+//  MockInitUseCase.swift
 //  PerfectDude
 //
 //  Created by Yannis De Cleene on 31/01/2019.
@@ -11,7 +11,7 @@ import XCTest
 @testable import Core
 import RxSwift
 
-final class TestInitUseCase: Core.InitUseCase {
+final class MockInitUseCase: Core.InitUseCase {
     func initPublishPublicKey() -> Maybe<String> {
         return Maybe<String>.create { maybe in
             maybe(.success(""))

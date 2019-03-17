@@ -1,5 +1,5 @@
 //
-//  TestCalendarEventsUseCase.swift
+//  MockCalendarEventsUseCase.swift
 //  PerfectDude
 //
 //  Created by Yannis De Cleene on 31/01/2019.
@@ -11,7 +11,7 @@ import XCTest
 @testable import Core
 import RxSwift
 
-final class TestCalendarEventsUseCase: Core.CalendarEventsUseCase {
+final class MockCalendarEventsUseCase: Core.CalendarEventsUseCase {
     func save(event: CalendarEvent) -> Maybe<String> {
         return Maybe<String>.create { maybe in
             maybe(.success(""))
